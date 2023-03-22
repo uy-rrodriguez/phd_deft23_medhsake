@@ -1,0 +1,16 @@
+{
+    "backbone": "decapoda-research/llama-65b-hf",
+    "micro_batch_size": 1,
+    "batch_size": 24,
+    "epochs": 1,
+    "learning_rate": 0.0003,
+    "cutoff_len": 256,
+    "warmup_ratio": 0.05,
+    "llama_variant": 65,
+    "is_int8": true,
+    "lora_r": 4,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "prompt": "Ceci est une question de QCM de l'examen de pharmacie. R\u00e9ponds avec la ou les lettres correspondant \u00e0 la bonne r\u00e9ponse.\n\n%s",
+    "output_path": "models/deft_llama-65b-hf_lora_98075de5-9200-4d66-ab35-61ca2a380692"
+}
