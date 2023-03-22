@@ -1,6 +1,9 @@
 System for generating DEFT 2023 outputs from LLMs
 =================================================
 
+This repository uses git LFS for large files.
+Use 'git lfs install' before cloning to retrive the binary files.
+
 Install:
 ```
 pip install -r requirements.txt
