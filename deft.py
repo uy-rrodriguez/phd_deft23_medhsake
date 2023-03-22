@@ -14,11 +14,19 @@ lm_templates_en = [
 
 letters = 'abcdefghijklmnopqrstuvwxyz'
 
-def linearize_instance(instance, include_correct_answers=False):
+def linearize_instance(instance, include_correct_answers=False, add_left_parenthesis=False):
     result = instance['question'] + '\n' + '\n'.join('(%s) %s.' % (k, v) for k, v in instance['answers'].items())
     if include_correct_answers:
         result += '\nRéponse(s) : ' + ' '.join('(%s)' % a for a in instance['correct_answers'])
+    else:
+        result += '\nRéponse(s) :' + (' (' if add_left_parenthesis else '')
     return result
+
+#def linearize_instance(instance, include_correct_answers=False):
+#    result = instance['question'] + '\n' + '\n'.join('(%s) %s.' % (k, v) for k, v in instance['answers'].items())
+#    if include_correct_answers:
+#        result += '\nRéponse(s) : ' + ' '.join('(%s)' % a for a in instance['correct_answers'])
+#    return result
 
 def get_prompt(prompt, instance, few_shots=[]):
     shots = [linearize_instance(shot, include_correct_answers=True) for shot in few_shots]
@@ -33,10 +41,17 @@ def extract_answer(answer, num_answers=5):
         selected = [x.replace(')', '').replace('(', '') for x in selected]
     return list(sorted(set([letter.lower() for letter in selected])))
 
-def hamming(a, b, num):
-    A = [c.upper() if c in a else c for c in letters[:num]]
-    B = [c.upper() if c in b else c for c in letters[:num]]
-    return [x == y for x, y in zip(A, B)].count(True)
+#def hamming(a, b, num):
+#    A = [c.upper() if c in a else c for c in letters[:num]]
+#    B = [c.upper() if c in b else c for c in letters[:num]]
+#    return [x == y for x, y in zip(A, B)].count(True)
+
+def hamming(preds, refs):
+    corrects = [True for p in preds if p in refs]
+    corrects = sum(corrects)
+    total_refs = len(list(set(preds + refs)))
+    return corrects / total_refs
+
 
 def run_inference(generator, corpus_path, template):
     with open(corpus_path) as fp:
@@ -56,7 +71,7 @@ def run_inference(generator, corpus_path, template):
         print(answer, instance['correct_answers'])
         if set(answer) == set(instance['correct_answers']):
             num_exact_correct += 1
-        num_hamming_correct += hamming(answer, instance['correct_answers'], len(instance['answers']))
+        num_hamming_correct += hamming(answer, instance['correct_answers'])
         num_hamming += len(instance['answers'])
         results.append(instance['id'] + ';' + '|'.join(list(sorted(answer))))
 
