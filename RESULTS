@@ -1,0 +1,69 @@
+Résultats sur le dev :
+
+prompt_0 =>
+                    bn/par exact     
+
+bloomz-560m                0.0737    
+en/bloomz-560m             0.1442    
+bloomz-3b                  0.1442    
+en/bloomz-3b               0.1153    ??
+bloomz-7b1                 0.1602    
+bloomz-7b1-mt              0.1762    
+flan-t5-xxl                0.1794    
+flan-ul2                   0.1570    
+tk-instruct-3b-def         0.1346    
+tk-instruct-11b-def        0.1826    
+en/tk-instruct-11b-def     0.1442    
+
+opt-iml-1.3b               0.0673    
+opt-iml-30b                0.1442    
+
+(int8)
+llama_7B                   0.0576    
+llama_7B+alpaca_fr         0.1185                                                                          
+llama_7B+alpaca            0.1217
+llama_7B+alpaca-native     0.1153
+llama_7B+deft              0.1378    
+llama_13B                  0.0769    
+llama_13B+alpaca           0.1474
+llama_13B+deft             0.1730    
+llama_30B                  0.1442    
+llama_30B+alpaca           0.1923
+llama_30B+deft             0.2467    
+llama_65B                  0.1730    
+llama_65B+deft             0.3044      
+
+
+(fp16)
+llama_30B                  0.1891    
+llama_65B                  0.2179    
+
+openai/code-cushman-001    0.1121    
+openai/code-davinci-002    0.3108    
+ai21/j1-jumbo              0.0833    
+
+
+
+=> autres prompts
+code-cushman-001            0.1346
+code-davinci-002_run2       0.3205
+code-davinci-002            0.2435
+gpt-3.5-turbo-0301.run2     0.4551
+gpt-3.5-turbo-0301          0.4038
+text-curie-001              0.1217
+text-davinci-003            0.2884
+
+
+cohere_command-xlarge-beta  0.1057
+
+
+FrenchMedMCQA: A French Multiple-Choice Question Answering Dataset for Medical domain
+https://hal.science/hal-03824241v2/preview/LOUHI_2022___QA_22.pdf#page=2
+
+                 w/o Context Wiki-BM25   HAL-BM25    Wiki-MiniLMv2 HAL-MiniLMv2
+Architecture     Hamming EMR Hamming EMR Hamming EMR Hamming EMR   Hamming EMR
+BioBERT_V1.1     36.19 15.43 38.72 16.72 33.33 14.14 35.13 16.23   34.27 13.98
+PubMedBERT       33.98 14.14 34.00 13.98 35.66 15.59 33.87 14.79   35.44 14.79
+CamemBERT-base   36.24 16.55 34.19 14.46 34.78 15.43 34.66 14.79   34.61 14.95
+XLM-RoBERTa-base 37.92 17.20 31.26 11.89 35.84 16.07 32.47 14.63   33.00 14.95
+BART-base        31.93 15.91 34.98 18.64 33.80 17.68 29.65 12.86   34.65 18.32
