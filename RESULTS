@@ -1,22 +1,26 @@
-Résultats sur le dev :
+Résultats sur le dev (exact match) :
 
 prompt_0 =>
-                    bn/par exact     
 
+# modèles off-the-shelf (avec instruction finetuning)
 bloomz-560m                0.0737    
-en/bloomz-560m             0.1442    
 bloomz-3b                  0.1442    
-en/bloomz-3b               0.1153    ??
 bloomz-7b1                 0.1602    
 bloomz-7b1-mt              0.1762    
 flan-t5-xxl                0.1794    
 flan-ul2                   0.1570    
 tk-instruct-3b-def         0.1346    
 tk-instruct-11b-def        0.1826    
-en/tk-instruct-11b-def     0.1442    
-
+oasst-sft-1-pythia-12b     0.0705
 opt-iml-1.3b               0.0673    
 opt-iml-30b                0.1442    
+
+# trad automatique anglais (pas l'air de marcher)
+en/bloomz-3b               0.1153    ??
+en/bloomz-560m             0.1442    
+en/tk-instruct-11b-def     0.1442    
+
+# modèles llama (+adaptation lora)
 
 (int8)
 llama_7B                   0.0576    
@@ -33,16 +37,15 @@ llama_30B+deft             0.2467
 llama_65B                  0.1730    
 llama_65B+deft             0.3044      
 
-
 (fp16)
 llama_30B                  0.1891    
 llama_65B                  0.2179    
 
+(api)
 openai/code-cushman-001    0.1121    
 openai/code-davinci-002    0.3108    
 ai21/j1-jumbo              0.0833    
-
-
+cohere_command-xlarge-beta 0.1057
 
 => autres prompts
 code-cushman-001            0.1346
@@ -52,9 +55,6 @@ gpt-3.5-turbo-0301.run2     0.4551
 gpt-3.5-turbo-0301          0.4038
 text-curie-001              0.1217
 text-davinci-003            0.2884
-
-
-cohere_command-xlarge-beta  0.1057
 
 
 FrenchMedMCQA: A French Multiple-Choice Question Answering Dataset for Medical domain

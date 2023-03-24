@@ -2,11 +2,11 @@ import re
 import json
 
 lm_templates = [
-'''Ceci est une question de QCM de l\'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.\n\n%s\n\nRéponse : (''',
-'''Corrigé du QCM de pharma.\n%s\nRéponse(s) : (''',
-'''Alice est une excellente pharmacienne. Elle répond aux questions de Pierre qui est interne en pharmacie.\nPierre : ma question est la suivante : %s\n Alice : je connais la bonne réponse et c'est (''',
-'''Correction du QCM de l\'examen de pharmacie. %s\nRéponse(s) : (''',
-'''Alice est une intelligence artificielle experte en pharmacie. Elle répond aux questions de Bob avec précision.\nBob: %s\n Alice: (''',
+'''Ceci est une question de QCM de l\'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.\n\n%s''',
+#'''Corrigé du QCM de pharma.\n%s\nRéponse(s) : (''',
+#'''Alice est une excellente pharmacienne. Elle répond aux questions de Pierre qui est interne en pharmacie.\nPierre : ma question est la suivante : %s\n Alice : je connais la bonne réponse et c'est (''',
+#'''Correction du QCM de l\'examen de pharmacie. %s\nRéponse(s) : (''',
+#'''Alice est une intelligence artificielle experte en pharmacie. Elle répond aux questions de Bob avec précision.\nBob: %s\n Alice: (''',
 ]
 lm_templates_en = [
 '''This is a multiple choice question from the pharma exam. Reply with the letter or the letters corresponding to the correct answer.\n\n%s\n\nAnswer : (''',
@@ -14,9 +14,11 @@ lm_templates_en = [
 
 letters = 'abcdefghijklmnopqrstuvwxyz'
 
-def linearize_instance(instance, include_correct_answers=False, add_left_parenthesis=False):
+def linearize_instance(instance, include_correct_answers=False, add_left_parenthesis=False, bare=False):
     result = instance['question'] + '\n' + '\n'.join('(%s) %s.' % (k, v) for k, v in instance['answers'].items())
-    if include_correct_answers:
+    if bare:
+        return result
+    elif include_correct_answers:
         result += '\nRéponse(s) : ' + ' '.join('(%s)' % a for a in instance['correct_answers'])
     else:
         result += '\nRéponse(s) :' + (' (' if add_left_parenthesis else '')
@@ -28,9 +30,9 @@ def linearize_instance(instance, include_correct_answers=False, add_left_parenth
 #        result += '\nRéponse(s) : ' + ' '.join('(%s)' % a for a in instance['correct_answers'])
 #    return result
 
-def get_prompt(prompt, instance, few_shots=[]):
-    shots = [linearize_instance(shot, include_correct_answers=True) for shot in few_shots]
-    return prompt % ('\n\n'.join(shots + [linearize_instance(instance)]),)
+def get_prompt(prompt, instance, few_shots=[], **kwargs):
+    shots = [linearize_instance(shot, include_correct_answers=True, **kwargs) for shot in few_shots]
+    return prompt % ('\n\n'.join(shots + [linearize_instance(instance, **kwargs)]),)
 
 def extract_answer(answer, num_answers=5):
     answer = re.sub('Ceci est une question de QCM.*', '', answer).strip().lower()
@@ -53,7 +55,7 @@ def hamming(preds, refs):
     return corrects / total_refs
 
 
-def run_inference(generator, corpus_path, template):
+def run_inference(generator, corpus_path, template, **kwargs):
     with open(corpus_path) as fp:
         dev_corpus = json.loads(fp.read())
 
@@ -63,7 +65,7 @@ def run_inference(generator, corpus_path, template):
 
     results = []
     for instance in dev_corpus:
-        prompt = get_prompt(template, instance)
+        prompt = get_prompt(template, instance, **kwargs)
         print(prompt)
         generated = generator(prompt)
         print(generated)
