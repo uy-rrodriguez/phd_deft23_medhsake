@@ -55,6 +55,7 @@ gpt-3.5-turbo-0301.run2     0.4551
 gpt-3.5-turbo-0301          0.4038
 text-curie-001              0.1217
 text-davinci-003            0.2884
+gpt-4                       0.7788
 
 
 FrenchMedMCQA: A French Multiple-Choice Question Answering Dataset for Medical domain

@@ -8,6 +8,8 @@ python run_opt-iml.py output/opt-iml-30b_prompt0.txt ../json/dev.json opt-iml-30
 
 python run_api.py output/code-cushman-001_prompt0.txt ../json/dev.json openai/code-cushman-001 | tee logs/code-cushman-001_prompt0.txt
 python run_api.py output/code-davinci-002_prompt0.txt ../json/dev.json openai/code-davinci-002 | tee logs/code-davinci-002_prompt0.txt
+python run_api.py output/gpt-4-0314_prompt0.txt ../json/dev.json openai/gpt-4-0314 | tee logs/gpt-4-0314_prompt0.txt
+
 python run_api.py output/j1-jumbo_prompt0.txt ../json/dev.json ai21/j1-jumbo | tee logs/j1-jumbo_prompt0.txt
 
 python run_bloomz.py output/en_bloomz-560m_prompt0.txt ../json/dev-en.json bloomz-560m en/0 | tee logs/en_bloomz-560m_prompt0.txt

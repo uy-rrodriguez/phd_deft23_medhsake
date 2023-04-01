@@ -5,7 +5,7 @@ import backoff
 openai.api_key = OPENAI_TOKEN
 
 openai_lm_models = ['text-davinci-003', 'text-davinci-002', 'code-davinci-002', 'code-cushman-001', 'text-curie-001', 'text-babbage-001', 'text-ada-001', 'davinci', 'curie', 'babage', 'ada']
-openai_chat_models = ['gpt-3.5-turbo-0301', 'gpt-3.5-turbo']
+openai_chat_models = ['gpt-3.5-turbo-0301', 'gpt-3.5-turbo', 'gpt-4', 'gpt-4-0314', 'gpt-4-32k', 'gpt-4-32k-0314']
 
 @backoff.on_exception(backoff.expo, (openai.error.RateLimitError, openai.error.APIError))
 def openai_complete(prompt, model='text-davinci-003'):
@@ -40,6 +40,7 @@ def main(result_path: str, corpus_path: str, model: str = 'openai/gpt-3.5-turbo-
     def generate(input_string):
         if api == 'openai':
             if llm in openai_chat_models:
+                #print('This is a chat model')
                 return openai_chat(input_string, llm)
             else:
                 return openai_complete(input_string, llm)
