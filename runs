@@ -5,6 +5,7 @@ python run_bloomz.py output/bloomz-560m_prompt0.txt ../json/dev.json bloomz-560m
 python run_tkinstruct.py output/tk-instruct-3b-def_prompt0.txt ../json/dev.json tk-instruct-3b-def | tee logs/tk-instruct-3b-def_prompt0.txt
 python run_tkinstruct.py output/tk-instruct-11b-def_prompt0.txt ../json/dev.json tk-instruct-11b-def | tee logs/tk-instruct-11b-def_prompt0.txt
 python run_opt-iml.py output/opt-iml-30b_prompt0.txt ../json/dev.json opt-iml-30b | tee logs/opt-iml-30b_prompt0.txt
+python run_galactica.py output/galactica-30b_prompt0.txt ../json/dev.json galactica-30b | tee logs/galactica-30b_prompt0.txt
 
 python run_api.py output/code-cushman-001_prompt0.txt ../json/dev.json openai/code-cushman-001 | tee logs/code-cushman-001_prompt0.txt
 python run_api.py output/code-davinci-002_prompt0.txt ../json/dev.json openai/code-davinci-002 | tee logs/code-davinci-002_prompt0.txt

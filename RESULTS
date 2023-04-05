@@ -14,6 +14,9 @@ tk-instruct-11b-def        0.1826
 oasst-sft-1-pythia-12b     0.0705
 opt-iml-1.3b               0.0673    
 opt-iml-30b                0.1442    
+galactica-125m             0.0128
+galactica-1.2b             0.0192
+galactica-6.7b             0.0352
 
 # trad automatique anglais (pas l'air de marcher)
 en/bloomz-3b               0.1153    ??
@@ -30,6 +33,7 @@ llama_7B+alpaca-native     0.1153
 llama_7B+deft              0.1378    
 llama_13B                  0.0769    
 llama_13B+alpaca           0.1474
+llama_13B+vicuna           0.1538
 llama_13B+deft             0.1730    
 llama_30B                  0.1442    
 llama_30B+alpaca           0.1923
