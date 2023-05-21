@@ -17,6 +17,8 @@ opt-iml-30b                0.1442
 galactica-125m             0.0128
 galactica-1.2b             0.0192
 galactica-6.7b             0.0352
+mpt-instruct-7b            0.0641
+pmc-llama-7b               0.0224
 
 # trad automatique anglais (pas l'air de marcher)
 en/bloomz-3b               0.1153    ??

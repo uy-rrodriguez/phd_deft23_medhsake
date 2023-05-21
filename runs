@@ -18,3 +18,4 @@ python run_bloomz.py output/en_bloomz-3b_prompt0.txt ../json/dev-en.json bloomz-
 
 python run_tkinstruct.py output/en_tk-instruct-11b-def_prompt0.txt ../json/dev-en.json tk-instruct-11b-def en/0 | tee logs/en_tk-instruct-11b-def_prompt0.txt
 python run_open_assistant.py output/oasst-sft-1-pythia-12b_prompt0.txt ../json/dev.json | tee logs/oasst-sft-1-pythia-12b_prompt0.txt
+python run_pmc_llama.py output/pmc_llama_prompt0.txt data/dev.json | tee logs/pmc_llama_prompt0.txt

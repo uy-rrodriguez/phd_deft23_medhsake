@@ -41,7 +41,10 @@ def extract_answer(answer, num_answers=5):
         selected = re.findall(r'(\b[a-%s]\b)' % letters[num_answers - 1], answer)
     else:
         selected = [x.replace(')', '').replace('(', '') for x in selected]
-    return list(sorted(set([letter.lower() for letter in selected])))
+    result = list(sorted(set([letter.lower() for letter in selected])))
+    if len(result) == 0:
+        result = ['a']
+    return result
 
 #def hamming(a, b, num):
 #    A = [c.upper() if c in a else c for c in letters[:num]]
