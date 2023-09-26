@@ -29,11 +29,18 @@ en/tk-instruct-11b-def     0.1442
 
 (int8)
 llama_7B                   0.0576    
+llama2-7b                  0.0833
+llama2-7b-chat             0.0801
 llama_7B+alpaca_fr         0.1185                                                                          
 llama_7B+alpaca            0.1217
 llama_7B+alpaca-native     0.1153
 llama_7B+deft              0.1378    
+llama2-7b-deft             0.1410
+llama2-7b-deft-noprompt    0.2179
 llama_13B                  0.0769    
+llama2-13b                 0.1442
+llama2-13b-chat            0.1474
+llama2-13b-deft            0.2788
 llama_13B+alpaca           0.1474
 llama_13B+vicuna           0.1538
 llama_13B+deft             0.1730    
@@ -41,7 +48,11 @@ llama_30B                  0.1442
 llama_30B+alpaca           0.1923
 llama_30B+deft             0.2467    
 llama_65B                  0.1730    
+llama2-70b                 0.2051
+llama2-70b-chat            0.2211
 llama_65B+deft             0.3044      
+llama2-70b-deft            0.4455
+llama2-70b-comp            0.4679
 
 (fp16)
 llama_30B                  0.1891    
@@ -74,3 +85,5 @@ PubMedBERT       33.98 14.14 34.00 13.98 35.66 15.59 33.87 14.79   35.44 14.79
 CamemBERT-base   36.24 16.55 34.19 14.46 34.78 15.43 34.66 14.79   34.61 14.95
 XLM-RoBERTa-base 37.92 17.20 31.26 11.89 35.84 16.07 32.47 14.63   33.00 14.95
 BART-base        31.93 15.91 34.98 18.64 33.80 17.68 29.65 12.86   34.65 18.32
+
+

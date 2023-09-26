@@ -1,21 +1,33 @@
-python run_flan-ul2.py output/flan-ul2_prompt0.txt ../json/dev.json | tee logs/flan-ul2_prompt0.txt
-python run_flan-t5-xxl.py output/flan-t5-xxl_prompt0.txt ../json/dev.json | tee logs/flan-t5-xxl_prompt0.txt
-python run_bloomz.py output/bloomz-7b1-mt_prompt0.txt ../json/dev.json bloomz-7b1-mt | tee logs/bloomz-7b1-mt_prompt0.txt
-python run_bloomz.py output/bloomz-560m_prompt0.txt ../json/dev.json bloomz-560m | tee logs/bloomz-560m_prompt0.txt
-python run_tkinstruct.py output/tk-instruct-3b-def_prompt0.txt ../json/dev.json tk-instruct-3b-def | tee logs/tk-instruct-3b-def_prompt0.txt
-python run_tkinstruct.py output/tk-instruct-11b-def_prompt0.txt ../json/dev.json tk-instruct-11b-def | tee logs/tk-instruct-11b-def_prompt0.txt
-python run_opt-iml.py output/opt-iml-30b_prompt0.txt ../json/dev.json opt-iml-30b | tee logs/opt-iml-30b_prompt0.txt
-python run_galactica.py output/galactica-30b_prompt0.txt ../json/dev.json galactica-30b | tee logs/galactica-30b_prompt0.txt
+python run_flan-ul2.py output/flan-ul2_prompt0.txt data/dev.json | tee logs/flan-ul2_prompt0.txt
+python run_flan-t5-xxl.py output/flan-t5-xxl_prompt0.txt data/dev.json | tee logs/flan-t5-xxl_prompt0.txt
+python run_bloomz.py output/bloomz-7b1-mt_prompt0.txt data/dev.json bloomz-7b1-mt | tee logs/bloomz-7b1-mt_prompt0.txt
+python run_bloomz.py output/bloomz-560m_prompt0.txt data/dev.json bloomz-560m | tee logs/bloomz-560m_prompt0.txt
+python run_tkinstruct.py output/tk-instruct-3b-def_prompt0.txt data/dev.json tk-instruct-3b-def | tee logs/tk-instruct-3b-def_prompt0.txt
+python run_tkinstruct.py output/tk-instruct-11b-def_prompt0.txt data/dev.json tk-instruct-11b-def | tee logs/tk-instruct-11b-def_prompt0.txt
+python run_opt-iml.py output/opt-iml-30b_prompt0.txt data/dev.json opt-iml-30b | tee logs/opt-iml-30b_prompt0.txt
+python run_galactica.py output/galactica-30b_prompt0.txt data/dev.json galactica-30b | tee logs/galactica-30b_prompt0.txt
 
-python run_api.py output/code-cushman-001_prompt0.txt ../json/dev.json openai/code-cushman-001 | tee logs/code-cushman-001_prompt0.txt
-python run_api.py output/code-davinci-002_prompt0.txt ../json/dev.json openai/code-davinci-002 | tee logs/code-davinci-002_prompt0.txt
-python run_api.py output/gpt-4-0314_prompt0.txt ../json/dev.json openai/gpt-4-0314 | tee logs/gpt-4-0314_prompt0.txt
+python run_api.py output/code-cushman-001_prompt0.txt data/dev.json openai/code-cushman-001 | tee logs/code-cushman-001_prompt0.txt
+python run_api.py output/code-davinci-002_prompt0.txt data/dev.json openai/code-davinci-002 | tee logs/code-davinci-002_prompt0.txt
+python run_api.py output/gpt-4-0314_prompt0.txt data/dev.json openai/gpt-4-0314 | tee logs/gpt-4-0314_prompt0.txt
 
-python run_api.py output/j1-jumbo_prompt0.txt ../json/dev.json ai21/j1-jumbo | tee logs/j1-jumbo_prompt0.txt
+python run_api.py output/j1-jumbo_prompt0.txt data/dev.json ai21/j1-jumbo | tee logs/j1-jumbo_prompt0.txt
 
-python run_bloomz.py output/en_bloomz-560m_prompt0.txt ../json/dev-en.json bloomz-560m en/0 | tee logs/en_bloomz-560m_prompt0.txt
-python run_bloomz.py output/en_bloomz-3b_prompt0.txt ../json/dev-en.json bloomz-3b en/0 | tee logs/en_bloomz-3b_prompt0.txt
+python run_bloomz.py output/en_bloomz-560m_prompt0.txt data/dev-en.json bloomz-560m en/0 | tee logs/en_bloomz-560m_prompt0.txt
+python run_bloomz.py output/en_bloomz-3b_prompt0.txt data/dev-en.json bloomz-3b en/0 | tee logs/en_bloomz-3b_prompt0.txt
 
-python run_tkinstruct.py output/en_tk-instruct-11b-def_prompt0.txt ../json/dev-en.json tk-instruct-11b-def en/0 | tee logs/en_tk-instruct-11b-def_prompt0.txt
-python run_open_assistant.py output/oasst-sft-1-pythia-12b_prompt0.txt ../json/dev.json | tee logs/oasst-sft-1-pythia-12b_prompt0.txt
+python run_tkinstruct.py output/en_tk-instruct-11b-def_prompt0.txt data/dev-en.json tk-instruct-11b-def en/0 | tee logs/en_tk-instruct-11b-def_prompt0.txt
+python run_open_assistant.py output/oasst-sft-1-pythia-12b_prompt0.txt data/dev.json | tee logs/oasst-sft-1-pythia-12b_prompt0.txt
 python run_pmc_llama.py output/pmc_llama_prompt0.txt data/dev.json | tee logs/pmc_llama_prompt0.txt
+
+python run_llama2.py output/llama2-7b_prompt0.txt data/dev.json llama-2-7b-hf | tee logs/llama2-7b_prompt0.txt
+python run_llama2.py output/llama2-7b-chat_prompt0.txt data/dev.json llama-2-7b-chat-hf | tee logs/llama2-7b-chat_prompt0.txt
+python run_llama2.py output/llama2-13b_prompt0.txt data/dev.json llama-2-13b-hf | tee logs/llama2-13b_prompt0.txt
+python run_llama2.py output/llama2-13b-chat_prompt0.txt data/dev.json llama-2-13b-chat-hf | tee logs/llama2-13b-chat_prompt0.txt
+python run_llama2.py output/llama2-70b_prompt0.txt data/dev.json llama-2-70b-hf | tee logs/llama2-70b_prompt0.txt
+python run_llama2.py output/llama2-70b-chat_prompt0.txt data/dev.json llama-2-70b-chat-hf | tee logs/llama2-70b-chat_prompt0.txt
+python run_llama2_finetuned.py output/llama2-7b-deft_prompt0.txt data/dev.json llama-2-7b-hf models/llama-2-7b-deft | tee logs/llama2-7b-deft_prompt0.txt
+python run_llama2_finetuned.py output/llama2-7b-deft-noprompt_prompt0.txt data/dev.json llama-2-7b-hf models/llama-2-7b-deft-noprompt | tee logs/llama2-7b-deft-noprompt_prompt0.txt
+python run_llama2_finetuned.py output/llama2-13b-deft_prompt0.txt data/dev.json llama-2-13b-hf models/llama-2-13b-deft | tee logs/llama2-13b-deft_prompt0.txt
+python run_llama2_finetuned.py output/llama2-70b-deft_prompt0.txt data/dev.json llama-2-70b-hf models/llama-2-70b-deft | tee logs/llama2-70b-deft_prompt0.txt
+python run_llama2_finetuned.py output/llama2-70b-deft-noprompt_prompt0.txt data/dev.json llama-2-70b-hf models/llama-2-70b-deft-noprompt | tee logs/llama2-70b-deft-noprompt_prompt0.txt

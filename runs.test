@@ -1,0 +1,4 @@
+python run_llama.py --model_path=llama_models/deft_llama-65b-hf_lora_98075de5-9200-4d66-ab35-61ca2a380692/ --output_path=output_test/test_llama-65b-lora_prompt0.txt --corpus_path=data/test.json | tee logs/test_llama-65b-lora_prompt0.txt
+python run_api.py output_test/test_gpt-4-0314_prompt0.txt data/test.json openai/gpt-4-0314 | tee logs/test_gpt-4-0314_prompt0.txt
+python run_api.py output_test/test_gpt-3.5-turbo-0301_prompt0.txt data/test.json openai/gpt-3.5-turbo-0301 | tee logs/test_gpt-3.5-turbo-0301_prompt0.txt
+

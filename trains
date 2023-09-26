@@ -1,0 +1,8 @@
+#!/bin/bash
+source env.sh
+python finetune.py /storage/raid1/corpora/llama2-weights/convert/llama-2-7b-hf/ data/train.json data/dev.json ./models/llama-2-7b-deft/ llama-2-7b-deft_001
+python finetune.py /storage/raid1/corpora/llama2-weights/convert/llama-2-7b-hf/ data/train.json data/dev.json ./models/llama-2-7b-deft-noprompt/ llama-2-7b-deft_002 --train_on_completions_only=True
+python finetune.py /storage/raid1/corpora/llama2-weights/convert/llama-2-13b-hf/ data/train.json data/dev.json ./models/llama-2-13b-deft/ llama-2-13b-deft_003
+python finetune.py /storage/raid1/corpora/llama2-weights/convert/llama-2-13b-hf/ data/train.json data/dev.json ./models/llama-2-13b-deft-noprompt/ llama-2-13b-deft_004 --train_on_completions_only=True
+python finetune.py /storage/raid1/corpora/llama2-weights/convert/llama-2-70b-hf/ data/train.json data/dev.json ./models/llama-2-70b-deft/ llama-2-70b-deft_005
+python finetune.py /storage/raid1/corpora/llama2-weights/convert/llama-2-70b-hf/ data/train.json data/dev.json ./models/llama-2-70b-deft-noprompt/ llama-2-70b-deft_006 --train_on_completions_only=True

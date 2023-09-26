@@ -1,6 +1,8 @@
 System for generating DEFT 2023 outputs from LLMs
 =================================================
 
+* Update 2023-09-26: add code to finetune and perform inference with LLaMa2
+
 The DEFT'23 shared task consists in answering pharma exam MCQs. This system converts the questions and possible answers to prompts and uses LLMs to generate answers.
 The approach is described in our [paper](http://talnarchives.atala.org/CORIA-TALN/CORIA-TALN-2023/479307.pdf). It ranked 1st at the shared task.
 This repository contains scripts to generate prompts, run off-the-shelf models and finetune the LLaMa models. It also contains the LoRA weights for the finetuned models. 

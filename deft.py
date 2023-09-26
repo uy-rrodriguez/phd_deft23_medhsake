@@ -14,12 +14,15 @@ lm_templates_en = [
 
 letters = 'abcdefghijklmnopqrstuvwxyz'
 
-def linearize_instance(instance, include_correct_answers=False, add_left_parenthesis=False, bare=False):
+def linearize_instance(instance, include_correct_answers=False, include_full_answers=False, add_left_parenthesis=False, bare=False, **kwargs):
     result = instance['question'] + '\n' + '\n'.join('(%s) %s.' % (k, v) for k, v in instance['answers'].items())
     if bare:
         return result
     elif include_correct_answers:
-        result += '\nRéponse(s) : ' + ' '.join('(%s)' % a for a in instance['correct_answers'])
+        if include_full_answers:
+            result += '\nRéponse(s) : ' + '; '.join('(%s) %s' % (a, instance['answers'][a]) for a in instance['correct_answers']) + '.\n'
+        else:
+            result += '\nRéponse(s) : ' + ' '.join('(%s)' % a for a in instance['correct_answers'])
     else:
         result += '\nRéponse(s) :' + (' (' if add_left_parenthesis else '')
     return result
@@ -34,8 +37,10 @@ def get_prompt(prompt, instance, few_shots=[], **kwargs):
     shots = [linearize_instance(shot, include_correct_answers=True, **kwargs) for shot in few_shots]
     return prompt % ('\n\n'.join(shots + [linearize_instance(instance, **kwargs)]),)
 
-def extract_answer(answer, num_answers=5):
+def extract_answer(answer, num_answers=5, stop_at_line_break=False, **kwargs):
     answer = re.sub('Ceci est une question de QCM.*', '', answer).strip().lower()
+    if stop_at_line_break:
+      answer = re.split(r'\n[ \t]*\n', answer)[0]
     selected = re.findall(r'^[a-%s]\)|\([a-%s]\)' % (letters[num_answers - 1], letters[num_answers - 1]), answer)
     if len(selected) == 0:
         selected = re.findall(r'(\b[a-%s]\b)' % letters[num_answers - 1], answer)
@@ -69,10 +74,10 @@ def run_inference(generator, corpus_path, template, **kwargs):
     results = []
     for instance in dev_corpus:
         prompt = get_prompt(template, instance, **kwargs)
-        print(prompt)
+        print('PROMPT: [%s]' % prompt)
         generated = generator(prompt)
-        print(generated)
-        answer = extract_answer(generated, len(instance['answers']))
+        print('GENERATED: [%s]' % generated)
+        answer = extract_answer(generated, len(instance['answers']), **kwargs)
         print(answer, instance['correct_answers'])
         if set(answer) == set(instance['correct_answers']):
             num_exact_correct += 1
