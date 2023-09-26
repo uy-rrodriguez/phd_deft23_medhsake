@@ -3,7 +3,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 def main(result_path: str, corpus_path: str, model: str = 'llama-2-7b-hf', template_id: str = '0'):
-    checkpoint = '/storage/raid1/corpora/llama2-weights/convert/' + model
+    checkpoint = 'llama2-weights/convert/' + model
 
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     tokenizer.pad_token = tokenizer.eos_token

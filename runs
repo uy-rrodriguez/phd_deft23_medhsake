@@ -20,6 +20,7 @@ python run_tkinstruct.py output/en_tk-instruct-11b-def_prompt0.txt data/dev-en.j
 python run_open_assistant.py output/oasst-sft-1-pythia-12b_prompt0.txt data/dev.json | tee logs/oasst-sft-1-pythia-12b_prompt0.txt
 python run_pmc_llama.py output/pmc_llama_prompt0.txt data/dev.json | tee logs/pmc_llama_prompt0.txt
 
+# llama2
 python run_llama2.py output/llama2-7b_prompt0.txt data/dev.json llama-2-7b-hf | tee logs/llama2-7b_prompt0.txt
 python run_llama2.py output/llama2-7b-chat_prompt0.txt data/dev.json llama-2-7b-chat-hf | tee logs/llama2-7b-chat_prompt0.txt
 python run_llama2.py output/llama2-13b_prompt0.txt data/dev.json llama-2-13b-hf | tee logs/llama2-13b_prompt0.txt
@@ -27,7 +28,8 @@ python run_llama2.py output/llama2-13b-chat_prompt0.txt data/dev.json llama-2-13
 python run_llama2.py output/llama2-70b_prompt0.txt data/dev.json llama-2-70b-hf | tee logs/llama2-70b_prompt0.txt
 python run_llama2.py output/llama2-70b-chat_prompt0.txt data/dev.json llama-2-70b-chat-hf | tee logs/llama2-70b-chat_prompt0.txt
 python run_llama2_finetuned.py output/llama2-7b-deft_prompt0.txt data/dev.json llama-2-7b-hf models/llama-2-7b-deft | tee logs/llama2-7b-deft_prompt0.txt
-python run_llama2_finetuned.py output/llama2-7b-deft-noprompt_prompt0.txt data/dev.json llama-2-7b-hf models/llama-2-7b-deft-noprompt | tee logs/llama2-7b-deft-noprompt_prompt0.txt
+python run_llama2_finetuned.py output/llama2-7b-deft-comp_prompt0.txt data/dev.json llama-2-7b-hf models/llama-2-7b-deft-comp | tee logs/llama2-7b-deft-comp_prompt0.txt
 python run_llama2_finetuned.py output/llama2-13b-deft_prompt0.txt data/dev.json llama-2-13b-hf models/llama-2-13b-deft | tee logs/llama2-13b-deft_prompt0.txt
+python run_llama2_finetuned.py output/llama2-13b-deft-comp_prompt0.txt data/dev.json llama-2-13b-hf models/llama-2-13b-deft-comp | tee logs/llama2-13b-deft-comp_prompt0.txt
 python run_llama2_finetuned.py output/llama2-70b-deft_prompt0.txt data/dev.json llama-2-70b-hf models/llama-2-70b-deft | tee logs/llama2-70b-deft_prompt0.txt
-python run_llama2_finetuned.py output/llama2-70b-deft-noprompt_prompt0.txt data/dev.json llama-2-70b-hf models/llama-2-70b-deft-noprompt | tee logs/llama2-70b-deft-noprompt_prompt0.txt
+python run_llama2_finetuned.py output/llama2-70b-deft-comp_prompt0.txt data/dev.json llama-2-70b-hf models/llama-2-70b-deft-comp | tee logs/llama2-70b-deft-comp_prompt0.txt

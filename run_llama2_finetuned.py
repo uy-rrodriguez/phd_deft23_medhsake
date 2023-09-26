@@ -5,7 +5,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
 import finetune_llama2
 
 def main(result_path: str, corpus_path: str, base_model: str, lora_model: str, template_id: str = '0'):
-    checkpoint = '/storage/raid1/corpora/llama2-weights/convert/' + base_model
+    checkpoint = 'llama2-weights/convert/' + base_model
 
     llm, tokenizer = finetune_llama2.load_for_inference(checkpoint, lora_model)
     generation_config = GenerationConfig(
