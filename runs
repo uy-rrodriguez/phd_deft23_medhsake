@@ -33,3 +33,7 @@ python run_llama2_finetuned.py output/llama2-13b-deft_prompt0.txt data/dev.json 
 python run_llama2_finetuned.py output/llama2-13b-deft-comp_prompt0.txt data/dev.json llama-2-13b-hf models/llama-2-13b-deft-comp | tee logs/llama2-13b-deft-comp_prompt0.txt
 python run_llama2_finetuned.py output/llama2-70b-deft_prompt0.txt data/dev.json llama-2-70b-hf models/llama-2-70b-deft | tee logs/llama2-70b-deft_prompt0.txt
 python run_llama2_finetuned.py output/llama2-70b-deft-comp_prompt0.txt data/dev.json llama-2-70b-hf models/llama-2-70b-deft-comp | tee logs/llama2-70b-deft-comp_prompt0.txt
+
+# mistral
+python run_zephir.py output/zephir-7b_prompt0.txt clean/data/dev.json HuggingFaceH4/zephyr-7b-beta | tee logs/zerphir-7b_prompt0.txt
+python run_mistral.py output/mistral-7b-instruct-0.1_prompt0.txt clean/data/dev.json mistralai/Mistral-7B-Instruct-v0.1 | tee logs/mistral-7b-instruct-0.1_prompt0.txt
