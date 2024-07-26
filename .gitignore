@@ -1,0 +1,9 @@
+# Environment
+api_keys.py
+conda-environment.yml
+
+# Batch execution configuration
+slurm*
+
+# Build files
+**/__pycache__/
