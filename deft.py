@@ -164,4 +164,3 @@ def template_from_id(desc):
 def write_results(results, output_path):
     with open(output_path, 'w') as fp:
         fp.write('\n'.join(results) + '\n')
-
