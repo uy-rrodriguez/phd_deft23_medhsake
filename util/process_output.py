@@ -66,7 +66,7 @@ def load_logs(paths: list[str]) -> list[dict]:
     """
     data = []
     pattern = get_filename_pattern()
-    
+
     for path in paths:
         print(f"\n==> {path} <==", file=sys.stderr)
 
@@ -82,7 +82,7 @@ def load_logs(paths: list[str]) -> list[dict]:
             emr = float(lines[0].split(": ")[1])
             hamming = float(lines[1].split(": ")[1])
             emr_by_class = json.loads(
-                "{" 
+                "{"
                 + lines[2]
                 .split("{")[1]
                 .replace("\'", "\"")
@@ -132,7 +132,7 @@ def load_outputs(paths: list[str], corpus_path: str) -> list[dict]:
                 hamming_rate = deft.hamming(generated, expected)
                 all_match.append(is_match)
                 all_hamming.append(hamming_rate)
-        
+
         emr_by_class, hamming_by_class = get_average_by_difficulty(
             corpus,
             all_match,
@@ -178,13 +178,13 @@ def group_results_by_shots(df: pd.DataFrame) -> pd.DataFrame:
     deviation.
     """
     df_groups = df.groupby(by="shots")
-    df_mean = df_groups.mean()
+    df = df_groups.mean()
 
     # Include standard deviation
     df_std = df_groups.std()
-    df_std.rename(inplace=True, columns=lambda k: f"{k}_std")
 
-    df = df_mean.join(df_std)
+    for i, (k, series) in enumerate(df_std.items()):
+        df.insert(i * 2 + 1 , f"{k}_std", series)
     return df
 
 
@@ -230,7 +230,9 @@ def plot_results(df: pd.DataFrame, use_finetuned: bool = False) -> None:
         df.boxplot(by="shots", column=col, ax=ax)
         fig.suptitle(None)
         ax.set_title(title)
-        fig.savefig(f"output/llama3/plots/{col}_by_shot{suffix}.png")
+        save_path = f"output/llama3/plots/{col}_by_shot{suffix}.png"
+        fig.savefig(save_path)
+        print(f"Plot saved in {save_path}", file=sys.stderr)
 
         # Plot all rates for each number of shots
         # df_groups = df.groupby(by="shots")
@@ -246,10 +248,7 @@ def plot_results(df: pd.DataFrame, use_finetuned: bool = False) -> None:
         #     fig.savefig(f"output/llama3/plots/{col}_by_class_shots{shots}{suffix}.png")
 
 
-if __name__ == "__main__":
-    force_reload = False
-    use_finetuned = True
-
+def main(use_finetuned: bool = True, force_reload: bool = False) -> None:
     basedir = "output/llama3/paper"
     suffix = "_finetuned" if use_finetuned else ""
     presaved_results = f"{basedir}/pre_processed_outputs{suffix}.json"
@@ -276,3 +275,8 @@ if __name__ == "__main__":
 
     df = group_results_by_shots(df)
     print_results(df, split_rates=True, head_only=False)
+
+
+if __name__ == "__main__":
+    import fire
+    fire.Fire(main)

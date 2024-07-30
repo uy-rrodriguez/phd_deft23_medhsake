@@ -24,7 +24,7 @@ def load_corpus(corpus: str | object) -> pd.DataFrame:
     # print(df.head())
     # print("\n\nCorpus info:")
     # print(df.info())
-    
+
     # Cut in N balanced classes
     # print("\n\nEqual-sized classes (pandas.qcut):")
     bins_qcut = pd.qcut(df.medshake_difficulty, len(LABELS), labels=LABELS)
@@ -38,7 +38,7 @@ def load_corpus(corpus: str | object) -> pd.DataFrame:
     # print(bins_cut.value_counts())
 
     # colours = np.linspace(0, 1, len(LABELS))
-    # colourdict = dict(zip(LABELS, colours)) 
+    # colourdict = dict(zip(LABELS, colours))
     colourdict = {
         "very easy": "#FDE725",
         "easy": "#5EC962",
@@ -122,7 +122,7 @@ def get_average_by_difficulty(
     return matches_avg, hamming_avg
 
 
-if __name__ == "__main__":
+def main() -> None:
     # plot_question_answer_rate(
     #   "data/dev-medshake-score.json",
     #   "output/llama3/plots/questions_medshake_classes.png",
@@ -134,3 +134,8 @@ if __name__ == "__main__":
     )
     print(emr)
     print(ham)
+
+
+if __name__ == "__main__":
+    import fire
+    fire.Fire(main)
