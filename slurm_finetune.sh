@@ -11,12 +11,21 @@
 #SBATCH --mail-type=ALL
 #
 # Run multiple commands in parallel:
-#--SBATCH --array=1-6%2
-#--SBATCH --array=2
+#--SBATCH --array=2-3%1
+#SBATCH --array=4
 #
 
 # Handle Slurm Task ID
-# TASK=${SLURM_ARRAY_TASK_ID:=0}
+TASK=${SLURM_ARRAY_TASK_ID:=0}
+
+# Whether to train on completions
+# if [[ $TASK == 3 ]]
+# then
+#     TRAIN_COMPLETIONS=False
+# else
+#     TRAIN_COMPLETIONS=True
+# fi
+TRAIN_COMPLETIONS=True
 
 # Static parameters
 ENV=deft2023
@@ -32,14 +41,15 @@ echo "Activating conda environment $ENV"
 conda activate $ENV
 
 # Generate suffix for file names
-SUFF=_002_$(date +"%Y%m%d")
+SUFF=00${TASK}_$(date +"%Y%m%d")
 
 
 echo "Training LLaMa3"
 python finetune_llama3.py \
     --train_dataset_name="data/train.json" \
-    --eval_dataset_name="data/dev-medshake-score.json" \
-    --new_model_path="llama3_models/llama-3-8b-deft$SUFF/" \
-    --run_name="llama-3-8b-deft$SUFF" \
+    --new_model_path="llama3_models/llama-3-8b-deft_$SUFF/" \
+    --run_name="llama-3-8b-deft_$SUFF" \
+    --output_dir="train_results/$SUFF/" \
+    --train_on_completions_only=$TRAIN_COMPLETIONS \
     2>&1 \
-    | tee logs/llama3/finetuning/llama3-8b-deft$SUFF.txt
+    | tee logs/llama3/finetuning/llama3-8b-deft_$SUFF.txt

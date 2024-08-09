@@ -42,37 +42,37 @@ def load_data(path: str):
 
 
 def finetune_lora(
-        train_dataset_name: str, 
-        eval_dataset_name: str, 
-        new_model_path: str, 
+        train_dataset_name: str,
+        new_model_path: str,
         run_name: str,
+        eval_dataset_name: str = "",
         model_name: str = "meta-llama/Meta-Llama-3-8B",
-        lora_r:int = 4, 
-        lora_alpha: int = 16, 
-        lora_dropout: float = 0.05, 
-        use_4bit: bool = True, 
-        bnb_4bit_compute_dtype: str = "float16", 
-        bnb_4bit_quant_type: str = "nf4", 
-        use_nested_quant: bool = False, 
-        output_dir: str = "train_results/", 
-        num_train_epochs: int = 1, 
-        fp16: bool = False, 
-        bf16: bool = True, 
+        lora_r:int = 4,
+        lora_alpha: int = 16,
+        lora_dropout: float = 0.05,
+        use_4bit: bool = True,
+        bnb_4bit_compute_dtype: str = "float16",
+        bnb_4bit_quant_type: str = "nf4",
+        use_nested_quant: bool = False,
+        output_dir: str = "train_results/",
+        num_train_epochs: int = 1,
+        fp16: bool = False,
+        bf16: bool = True,
         batch_size: int = 4,
         micro_batch_size: int = 4,
-        gradient_checkpointing: bool = True, 
-        max_grad_norm: float = 0.3, 
-        learning_rate: float = 3e-4, 
-        weight_decay: float = 0.001, 
-        optim: str = "paged_adamw_32bit", 
-        lr_scheduler_type: str = "cosine", 
-        max_steps: int = -1, 
-        warmup_ratio: float = 0.05, 
-        group_by_length: bool = True, 
-        save_steps: int = 0, 
-        logging_steps: int = 1, 
-        max_seq_length: int = 256, 
-        packing: bool = False, 
+        gradient_checkpointing: bool = True,
+        max_grad_norm: float = 0.3,
+        learning_rate: float = 3e-4,
+        weight_decay: float = 0.001,
+        optim: str = "paged_adamw_32bit",
+        lr_scheduler_type: str = "cosine",
+        max_steps: int = -1,
+        warmup_ratio: float = 0.05,
+        group_by_length: bool = True,
+        save_steps: int = 0,
+        logging_steps: int = 1,
+        max_seq_length: int = 256,
+        packing: bool = False,
         device_map: str = '{"":0}',
         train_on_completions_only: bool = False):
 
@@ -152,7 +152,8 @@ def finetune_lora(
         tokens =  tokenizer.tokenize(response_template, add_special_tokens=False)
         token_ids = tokenizer.encode(response_template, add_special_tokens=False)
         print(list(zip(tokens, token_ids)))
-        collator = trl.DataCollatorForCompletionOnlyLM(token_ids[1:], tokenizer=tokenizer)
+        # collator = trl.DataCollatorForCompletionOnlyLM(token_ids[1:], tokenizer=tokenizer)
+        collator = trl.DataCollatorForCompletionOnlyLM(token_ids, tokenizer=tokenizer)
     else:
         collator = None
 
@@ -176,12 +177,12 @@ def finetune_lora(
     trainer.model.save_pretrained(new_model_path)
 
 
-# def load_for_inference(model_name: str, 
-#         lora_model: str, 
-#         use_4bit: bool = True, 
-#         bnb_4bit_compute_dtype: str = "float16", 
-#         bnb_4bit_quant_type: str = "nf4", 
-#         use_nested_quant: bool = False, 
+# def load_for_inference(model_name: str,
+#         lora_model: str,
+#         use_4bit: bool = True,
+#         bnb_4bit_compute_dtype: str = "float16",
+#         bnb_4bit_quant_type: str = "nf4",
+#         use_nested_quant: bool = False,
 #         device_map='{"":0}'):
 
 #     compute_dtype = getattr(torch, bnb_4bit_compute_dtype)
