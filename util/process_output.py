@@ -23,21 +23,43 @@ except ImportError:
     import deft
 
 
-def get_filename_pattern(finetuned_modifier: str = "?"):
+GENERIC_RE = \
+    r"(?P<model>.+(?P<finetuned>_tuned){tuned_modifier}.+?)" \
+    r"_prompt(?P<prompt>{prompt_modifier})" \
+    r".*" \
+    r"_shots(?P<shots>\d+)" \
+    r"(?P<with_answer_txt>_answertxt){answertxt_modifier}" \
+    r"_(?P<run>\d+)" \
+    r"\.txt"
+RE_DEFAULT_ARGS = {
+    "tuned_modifier": "?",
+    "prompt_modifier": "\d+",
+    "answertxt_modifier": "?",
+}
+FILENAME_REGEXS = {
+    "default":
+        GENERIC_RE.format(**RE_DEFAULT_ARGS),
+    "finetuned":
+        GENERIC_RE.format(**{**RE_DEFAULT_ARGS, "tuned_modifier": ""}),
+    "with_prompt_nbr":
+        GENERIC_RE.format(**{**RE_DEFAULT_ARGS,
+                             "prompt_modifier": "{prompt_nbr}"}),
+    "with_answer_txt":
+        GENERIC_RE.format(**{**RE_DEFAULT_ARGS, "answertxt_modifier": ""}),
+}
+
+
+def get_filename_pattern(regex_key: str = "default", **regex_args: str):
     """
     Returns the filename pattern for log and output files.
 
     Parameters:
-     - finetuned_modifier: Use "?" (default) to match all files, "{0}" to
-       exclude output from finetuned models, or "" to only match those files.
+        - filename_regex: Key representing the regex to use, from those defined
+            in `FILENAME_REGEXS`.
+        - regex_args: (Optional) Parameters to build the regex if the template
+            found is a string template that expects named parameters.
     """
-    path_re = r"(?P<model>.+?)" \
-        r"_shots(?P<shots>\d+)" \
-        r"_medshake" \
-        r"(?P<finetuned>_finetuned)" f"{finetuned_modifier}" \
-        r"_(?P<run>\d+)" \
-        r"\.txt"
-        # r"_prompt(?P<prompt>\d+)" \
+    path_re = FILENAME_REGEXS[regex_key].format(**regex_args)
     return re.compile(path_re)
 
 
@@ -48,24 +70,20 @@ def parse_path(path: str, pattern: re.Pattern = None) -> dict:
     pattern = pattern or get_filename_pattern()
     path_data = pattern.search(path)
     if not path_data:
-        shots_nbr = is_finetuned = run_nbr = 0
-    else:
-        shots_nbr = int(path_data.group("shots"))
-        run_nbr = int(path_data.group("run"))
-        is_finetuned = int(path_data.group("finetuned") is not None)
+        return {}
     return {
-        "shots": shots_nbr,
-        "run": run_nbr,
-        "finetuned": is_finetuned,
+        k: int(v) if v.isdigit() else 1
+        for k, v in path_data.groupdict().items()
+        if k not in ["model"]
     }
 
 
-def load_logs(paths: list[str]) -> list[dict]:
+def load_logs(paths: list[str], pattern: str = None) -> list[dict]:
     """
     Loads log files and returns the list of extracted results found at the end.
     """
     data = []
-    pattern = get_filename_pattern()
+    pattern = pattern or get_filename_pattern()
 
     for path in paths:
         print(f"\n==> {path} <==", file=sys.stderr)
@@ -109,10 +127,12 @@ def load_logs(paths: list[str]) -> list[dict]:
     return data
 
 
-def load_outputs(paths: list[str], corpus_path: str) -> list[dict]:
+def load_outputs(paths: list[str], corpus_path: str,
+                 pattern: str = None) -> list[dict]:
     """
     Loads output files and returns the list of extracted results.
     """
+    pattern = pattern or get_filename_pattern()
     data = []
     with open(corpus_path, "r") as f:
         corpus = json.load(f)
@@ -120,13 +140,16 @@ def load_outputs(paths: list[str], corpus_path: str) -> list[dict]:
         print(f"\n==> {path} <==", file=sys.stderr)
 
         # Read run parameters from file name
-        path_data = parse_path(path)
+        path_data = parse_path(path, pattern)
 
         all_match = []
         all_hamming = []
         with open(path, "r") as f:
             for i, line in enumerate(f.readlines()):
-                generated = line.strip().split(";")[1].split("|")
+                try:
+                    generated = line.strip().split(";")[1].split("|")
+                except IndexError as e:
+                    raise IndexError(f"Parsing failed in line '{line}'", e)
                 expected = corpus[i]["correct_answers"]
                 is_match = set(generated) == set(expected)
                 hamming_rate = deft.hamming(generated, expected)
@@ -219,11 +242,10 @@ def print_results(df: pd.DataFrame, head_only=True, split_rates=False) -> None:
                 print(df)
 
 
-def plot_results(df: pd.DataFrame, use_finetuned: bool = False) -> None:
+def plot_results(df: pd.DataFrame, suffix: str = "") -> None:
     """
     Create plots for EMR and Hamming rate of data grouping by shots.
     """
-    suffix = "_finetuned" if use_finetuned else ""
     for col, title in [("emr", "EMR"), ("hamming", "Hamming rate")]:
         # Plot rate grouped by shot
         fig, ax = plt.subplots()
@@ -248,30 +270,39 @@ def plot_results(df: pd.DataFrame, use_finetuned: bool = False) -> None:
         #     fig.savefig(f"output/llama3/plots/{col}_by_class_shots{shots}{suffix}.png")
 
 
-def main(use_finetuned: bool = True, force_reload: bool = False) -> None:
-    basedir = "output/llama3/paper"
-    suffix = "_finetuned" if use_finetuned else ""
+def main(
+        basedir: str = "output/llama3/paper",
+        force_reload: bool = False,
+        regex_key: str = "default",
+        **regex_args: str,
+) -> None:
+    suffix = f"_{regex_key}" if regex_key != "default" else ""
     presaved_results = f"{basedir}/pre_processed_outputs{suffix}.json"
 
     if not force_reload and os.path.exists(presaved_results):
         with open(presaved_results) as f:
             results = json.load(f)
     else:
-        finetuned_modifier = "{0}" if not use_finetuned else ""
-        pattern = get_filename_pattern(finetuned_modifier=finetuned_modifier)
+        pattern = get_filename_pattern(regex_key=regex_key, **regex_args)
+        print("Filename pattern:", pattern)
         paths = [
             os.path.join(basedir, f)
             for f in os.listdir(basedir)
             if pattern.match(f)
         ]
-        # results = load_logs(paths)
-        results = load_outputs(paths, "data/dev-medshake-score.json")
+        print("Files to process:", *paths, sep="\n")
+        # results = load_logs(paths, pattern)
+        results = load_outputs(paths, "data/dev-medshake-score.json", pattern)
+        print("Results:", results)
+
+        if not results:
+            return
         with open(presaved_results, "w") as f:
             json.dump(results, f)
 
     df = get_results_dataframe(results, group_by_shots=True)
 
-    plot_results(df, use_finetuned=use_finetuned)
+    plot_results(df, suffix=suffix)
 
     df = group_results_by_shots(df)
     print_results(df, split_rates=True, head_only=False)
