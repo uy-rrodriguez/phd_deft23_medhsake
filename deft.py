@@ -3,29 +3,28 @@ import json
 import random
 
 lm_templates = [
-'''Ceci est une question de QCM de l\'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.\n\n%s\nRéponse(s) : (''',
+'''Ceci est une question de QCM de l\'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.\n\n%s''',
+# '''%s''',
 #'''Corrigé du QCM de pharma.\n%s\nRéponse(s) : (''',
 #'''Alice est une excellente pharmacienne. Elle répond aux questions de Pierre qui est interne en pharmacie.\nPierre : ma question est la suivante : %s\n Alice : je connais la bonne réponse et c'est (''',
 #'''Correction du QCM de l\'examen de pharmacie. %s\nRéponse(s) : (''',
 #'''Alice est une intelligence artificielle experte en pharmacie. Elle répond aux questions de Bob avec précision.\nBob: %s\n Alice: (''',
 ]
-lm_shots_intro_context = '''Pour contexte, une question de QCM est une question suivie de plusieurs options identifiées avec des lettres (a), (b), (c), (d) et (e). Il est attendu que la réponse contienne uniquement la ou les lettres correspondant à la bonne réponse. '''
-lm_shots_intro = [
-    lm_shots_intro_context + '''Tu seras présenté avec une question de QCM et tu dois répondre uniquement avec la ou les lettres correspondant à la bonne réponse. Voici quelques examples de questions et le format de réponse attendu.\n\n%s\n\nMaintenant, tu dois suivre la consigne suivante :''',
-    lm_shots_intro_context + '''Voici quelques examples de questions et le format de réponse attendu.\n\n%s''',
-]
-lm_shot_template = '''EXEMPLE :\n%s'''
+# lm_shots_intro_context = '''Pour contexte, une question de QCM est une question suivie de plusieurs options identifiées avec des lettres (a), (b), (c), (d) et (e). Il est attendu que la réponse contienne uniquement la ou les lettres correspondant à la bonne réponse. '''
+# lm_shots_intro = [
+#     lm_shots_intro_context + '''Tu seras présenté avec une question de QCM et tu dois répondre uniquement avec la ou les lettres correspondant à la bonne réponse. Voici quelques examples de questions et le format de réponse attendu.\n\n%s\n\nMaintenant, tu dois suivre la consigne suivante :''',
+#     lm_shots_intro_context + '''Voici quelques examples de questions et le format de réponse attendu.\n\n%s''',
+# ]
+# lm_shot_template = '''EXEMPLE :\n%s'''
 lm_templates_en = [
 '''This is a multiple choice question from the pharma exam. Reply with the letter or the letters corresponding to the correct answer.\n\n%s\n\nAnswer : (''',
 ]
 
 letters = 'abcdefghijklmnopqrstuvwxyz'
 
-def linearize_instance(instance, include_correct_answers=False, include_full_answers=False, add_left_parenthesis=False, bare=False, **kwargs):
+def linearize_instance(instance, include_correct_answers=False, include_full_answers=False, add_left_parenthesis=False, **kwargs):
     result = instance['question'] + '\n' + '\n'.join('(%s) %s.' % (k, v) for k, v in instance['answers'].items())
-    if bare:
-        return result
-    elif include_correct_answers:
+    if include_correct_answers:
         if include_full_answers:
             result += '\nRéponse(s) : ' + '; '.join('(%s) %s' % (a, instance['answers'][a]) for a in instance['correct_answers']) + '.\n'
         else:
@@ -70,16 +69,25 @@ def get_prompt(prompt, instance,
     if num_shots > 0:
         few_shots = get_random_shots(num_shots, few_shots_corpus, fixed_shots_idx)
         shots = [
-            linearize_instance(shot, bare=False, include_correct_answers=True,
-                            **kwargs)
+            linearize_instance(shot, include_correct_answers=True, include_full_answers=True, **kwargs)
             for shot in few_shots
         ]
-        return "%s\n\n%s" % (
-            lm_shots_intro[1] % "\n\n".join([lm_shot_template % s for s in shots]),
-            prompt % linearize_instance(instance, bare=True, **kwargs),
+
+        # Output with intro before few-shots about multiple-choice questions
+        #
+        # return "%s\n\n%s" % (
+        #     lm_shots_intro[1] % "\n\n".join([lm_shot_template % s for s in shots]),
+        #     prompt % linearize_instance(instance, bare=True, **kwargs),
+        # )
+
+        # Output without intro before few-shots about multiple-choice questions
+        #
+        return "\n\n".join(
+            [prompt % s for s in shots]
+            + [prompt % linearize_instance(instance, add_left_parenthesis=True, **kwargs)]
         )
     else:
-        return prompt % linearize_instance(instance, bare=True, **kwargs)
+        return prompt % linearize_instance(instance, add_left_parenthesis=True, **kwargs)
 
 def extract_answer(answer, num_answers=5, stop_at_line_break=False, **kwargs):
     answer = re.sub('Ceci est une question de QCM.*', '', answer).strip().lower()
