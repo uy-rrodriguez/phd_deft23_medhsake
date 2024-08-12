@@ -72,7 +72,7 @@ def parse_path(path: str, pattern: re.Pattern = None) -> dict:
     if not path_data:
         return {}
     return {
-        k: int(v) if v.isdigit() else 1
+        k: 0 if v is None else (int(v) if v.isdigit() else 1)
         for k, v in path_data.groupdict().items()
         if k not in ["model"]
     }
