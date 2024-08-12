@@ -2,6 +2,9 @@ import re
 import json
 import random
 
+import numpy as np
+
+
 lm_templates = [
 '''Ceci est une question de QCM de l\'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.\n\n%s''',
 # '''%s''',
@@ -119,10 +122,6 @@ def run_inference(generator, corpus_path, template, num_shots=0, **kwargs):
     with open(corpus_path) as fp:
         dev_corpus = json.loads(fp.read())
 
-    num_exact_correct = 0
-    num_hamming_correct = 0
-    num_hamming = 0
-
     results = []
     all_match = []
     all_hamming = []
@@ -138,19 +137,15 @@ def run_inference(generator, corpus_path, template, num_shots=0, **kwargs):
         answer = extract_answer(generated, len(instance['answers']), **kwargs)
         print(answer, instance['correct_answers'])
         is_exact_match = set(answer) == set(instance['correct_answers'])
-        if is_exact_match:
-            num_exact_correct += 1
         hamming_val = hamming(answer, instance['correct_answers'])
-        num_hamming_correct += hamming_val
-        num_hamming += len(instance['answers'])
         results.append(instance['id'] + ';' + '|'.join(list(sorted(answer))))
 
         all_match.append(is_exact_match)
         all_hamming.append(hamming_val)
 
-    print('EXACT MATCH:', num_exact_correct / len(dev_corpus))
+    print('EXACT MATCH:', np.average(all_match))
     # print('HAMMING DIST:', num_hamming_correct / num_hamming)
-    print('HAMMING DIST:', num_hamming_correct / len(dev_corpus))
+    print('HAMMING RATE:', np.average(all_hamming))
 
     from util import classify_questions as cq
     emr_by_class, hamming_by_class = cq.get_average_by_difficulty(
@@ -159,7 +154,7 @@ def run_inference(generator, corpus_path, template, num_shots=0, **kwargs):
         all_hamming,
     )
     print('EXACT MATCH AVG BY CLASS:', emr_by_class)
-    print('HAMMING DIST AVG BY CLASS:', hamming_by_class)
+    print('HAMMING RATE AVG BY CLASS:', hamming_by_class)
 
     return results
 
