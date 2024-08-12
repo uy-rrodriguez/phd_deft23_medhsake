@@ -69,7 +69,7 @@ def get_prompt(prompt, instance,
     if num_shots > 0:
         few_shots = get_random_shots(num_shots, few_shots_corpus, fixed_shots_idx)
         shots = [
-            linearize_instance(shot, include_correct_answers=True, include_full_answers=True, **kwargs)
+            linearize_instance(shot, include_correct_answers=True, **kwargs)
             for shot in few_shots
         ]
 

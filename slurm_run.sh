@@ -92,5 +92,6 @@ python run_llama3.py \
     --model="$MODEL" \
     --prompt_template_id="'$PROMPT_ID'" \
     --num_shots=$NUM_SHOTS \
+    --shots_full_answer=$WITH_ANSWER_TXT \
     2>&1 \
     | tee logs/$DIR/llama3-8b_${SUFF}.txt

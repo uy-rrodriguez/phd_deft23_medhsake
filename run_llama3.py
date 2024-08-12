@@ -3,7 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 
 # Disable progress bars (cleaner logs)
-import datasets 
+import datasets
 datasets.disable_progress_bar()
 
 
@@ -12,10 +12,13 @@ from util.hugging_face import hf_login
 hf_login()
 
 
-def main(result_path: str, corpus_path: str,
-         model: str = "meta-llama/Meta-Llama-3-8B",
-         prompt_template_id: str = "0",
-         num_shots: int = 0):
+def main(
+    result_path: str, corpus_path: str,
+    model: str = "meta-llama/Meta-Llama-3-8B",
+    prompt_template_id: str = "0",
+    num_shots: int = 0,
+    shots_full_answer: bool = False,
+):
 
     tokenizer = AutoTokenizer.from_pretrained(model)
     tokenizer.pad_token = tokenizer.eos_token
@@ -27,7 +30,7 @@ def main(result_path: str, corpus_path: str,
         # load_in_4bit=True,
         # bnb_4bit_quant_type="nf4",
         # bnb_4bit_compute_type=torch.bfloat16,
-        # llm_int8_enable_fp32_cpu_offload=True, 
+        # llm_int8_enable_fp32_cpu_offload=True,
     )
     device_map = {
         "": 0
@@ -54,7 +57,7 @@ def main(result_path: str, corpus_path: str,
     import deft
     results = deft.run_inference(
         generate, corpus_path, deft.template_from_id(prompt_template_id),
-        num_shots=num_shots,
+        num_shots=num_shots, include_full_answers=shots_full_answer,
     )
     deft.write_results(results, result_path)
 
