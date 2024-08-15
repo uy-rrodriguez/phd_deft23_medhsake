@@ -68,7 +68,7 @@ fi
 SUFF=${SUFF}_${NUM_RUN}
 
 # Sub-directory for logs and output files
-DIR=llama3/tuned_002_20240731
+DIR=llama3/tuned_003_20240730
 
 # Select appropriate prompt id in deft.py
 if [[ $PROMPT_TPL == 1 || $PROMPT_TPL == 2 ]]; then
