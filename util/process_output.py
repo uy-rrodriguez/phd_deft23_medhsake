@@ -24,7 +24,7 @@ except ImportError:
 
 
 GENERIC_RE = \
-    r"(?P<model>.+(?P<finetuned>_tuned){tuned_modifier}.+?)" \
+    r"(?P<model>[^_]+(?P<finetuned>_tuned.*?){tuned_modifier})" \
     r"_prompt(?P<prompt>{prompt_modifier})" \
     r".*" \
     r"_shots(?P<shots>\d+)" \
@@ -40,35 +40,37 @@ RATE_TITLES = {
 }
 
 
-RE_DEFAULT_ARGS = {
-    "tuned_modifier": "?",
-    "prompt_modifier": "\d+",
-    "answertxt_modifier": "?",
-}
-FILENAME_REGEXS = {
-    "default":
-        GENERIC_RE.format(**RE_DEFAULT_ARGS),
-    "finetuned":
-        GENERIC_RE.format(**{**RE_DEFAULT_ARGS, "tuned_modifier": ""}),
-    "with_prompt_nbr":
-        GENERIC_RE.format(**{**RE_DEFAULT_ARGS,
-                             "prompt_modifier": "{prompt_nbr}"}),
-    "with_answer_txt":
-        GENERIC_RE.format(**{**RE_DEFAULT_ARGS, "answertxt_modifier": ""}),
-}
-
-
-def get_filename_pattern(regex_key: str = "default", **regex_args: str):
+def get_filename_pattern(
+        regex_prompt_nbr: int = None,
+        regex_finetuned: bool = None,
+        regex_answer_txt: bool = None,
+):
     """
     Returns the filename pattern for log and output files.
 
     Parameters:
-        - filename_regex: Key representing the regex to use, from those defined
-            in `FILENAME_REGEXS`.
-        - regex_args: (Optional) Parameters to build the regex if the template
-            found is a string template that expects named parameters.
+        - regex_prompt_nbr: (Optional) Number to only select files with this
+            prompt number.
+        - regex_finetuned: (Optional) Whether to include or exclude files for
+            finetuned models (contain "tuned"). If not given, no filtering is
+            done.
+        - regex_answer_txt: (Optional) Whether to include or exclude files for
+            shots with full answer text (contain "answertxt"). If not given, no
+            filtering is done.
     """
-    path_re = FILENAME_REGEXS[regex_key].format(**regex_args)
+    path_re = GENERIC_RE.format(**{
+        "prompt_modifier":
+            "\d+" if regex_prompt_nbr is None
+            else regex_prompt_nbr,
+        "tuned_modifier":
+            "?" if regex_finetuned is None
+            else "" if regex_finetuned
+            else "{0}",
+        "answertxt_modifier":
+            "?" if regex_answer_txt is None
+            else "" if regex_answer_txt
+            else "{0}",
+    })
     return re.compile(path_re)
 
 
@@ -324,18 +326,31 @@ def plot_results(df: pd.DataFrame, suffix: str = "") -> None:
 def main(
         basedir: str = "output/llama3/paper",
         force_reload: bool = False,
-        regex_key: str = "default",
-        **regex_args: str,
+        regex_prompt_nbr: int = None,
+        regex_finetuned: bool = None,
+        regex_answer_txt: bool = None,
 ) -> None:
-    suffix = f"_{regex_key}" if regex_key != "default" else ""
+    # Build output suffix based on regex parameters
+    suffix = ""
+    if regex_prompt_nbr is not None:
+        suffix += f"_prompt{regex_prompt_nbr}"
+    if regex_finetuned is not None:
+        suffix += f"_tuned{1 if regex_finetuned else 0}"
+    if regex_answer_txt is not None:
+        suffix += f"_answertxt{1 if regex_answer_txt else 0}"
+
     presaved_results = f"{basedir}/pre_processed_outputs{suffix}.json"
 
     if not force_reload and os.path.exists(presaved_results):
         with open(presaved_results) as f:
             results = json.load(f)
     else:
-        pattern = get_filename_pattern(regex_key=regex_key, **regex_args)
-        print("Filename pattern:", pattern)
+        pattern = get_filename_pattern(
+            regex_prompt_nbr,
+            regex_finetuned,
+            regex_answer_txt,
+        )
+        print("Filename pattern:", pattern.pattern)
         paths = [
             os.path.join(basedir, f)
             for f in os.listdir(basedir)
