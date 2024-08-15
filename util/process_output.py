@@ -295,6 +295,91 @@ def print_results(df: pd.DataFrame, head_only=True, split_rates=False) -> None:
                 print(df)
 
 
+def print_results_latex(df: pd.DataFrame, title: str) -> None:
+    """
+    Prints results from the given DataFrame as a LaTeX table.
+    """
+    headers = ["shots"] + [h for h in df]
+    content = []
+    for shots, rates_series in df.iterrows():
+        content.append([shots] + [r for r in rates_series])
+
+    template = """\
+\\begin{{table}}[H]
+\\centering
+\\begin{{tabular}}{{@{{}}{alignments}@{{}}}}
+\\multicolumn{{{num_columns}}}{{c}}{{{title}}} \\\\
+\\toprule
+{headers} \\midrule
+{content} \\bottomrule
+\\end{{tabular}}
+\\caption{{Rate results...}}
+\\label{{table:res_...}}
+\\end{{table}}
+"""
+
+    def latex_clean_header(header: str) -> str:
+        header = re.sub(r"^\w+?_", r"", header)
+        header = header.replace("_", "\\_")
+        return header
+
+    def latex_df_format_column(column: pd.Series) -> pd.Series:
+        # Do not highlight shots and standard deviation
+        if re.match(r"shots|.*_std", column.name):
+            return column.apply(lambda v: f"{v:.6f}".rstrip("0").rstrip("."))
+        # Highlight the highest two if there are more than 2 rows, otherwise
+        # highlight only the first
+        n = 2 if len(column) > 2 else 1
+        largest = column.nlargest(n).values
+        def value_to_latex(v: any) -> str:
+            v_str = f"{v:.6f}".rstrip("0")
+            if v == largest[0]:
+                return f"\\textbf{{{v_str}}}"
+            if n > 1 and v == largest[1]:
+                return f"{{\\ul|{v_str}}}"
+            return f"{v_str}"
+        return column.apply(value_to_latex)
+
+    def latex_df_print(df: pd.DataFrame) -> str:
+        df = df.rename(latex_clean_header, axis="columns")
+        df = df.apply(latex_df_format_column)
+
+        def build_formatter(col):
+            def formatter(v):
+                return f"{v: <{df[col].str.len().max()}s}"
+            return formatter
+
+        formatters = {}
+        for col in df.select_dtypes("object"):
+            formatters[col] = build_formatter(col)
+
+        df_str = df.to_string(
+            formatters=formatters,
+            index=False,
+            justify="left",
+        )
+
+        df_str = re.sub(r" ([^\s])", r" & \1", df_str)
+        df_str = re.sub(r"$", r" \\\\", df_str, flags=re.MULTILINE)
+        df_str = re.sub(r"\|", " ", df_str)
+        return df_str
+
+    df = pd.DataFrame(columns=headers, data=content)
+    tabular = latex_df_print(df)
+    tabular_lines = tabular.splitlines()
+
+    result = template.format(
+        num_columns=len(headers),
+        title=title,
+        alignments="l" * len(headers),
+        headers=tabular_lines[0],
+        content="\n".join([l for l in tabular_lines[1:]]),
+    )
+
+    # Print full table
+    print(result)
+
+
 def plot_results(df: pd.DataFrame, suffix: str = "") -> None:
     """
     Create plots for EMR and Hamming rate of data grouping by shots.
@@ -368,10 +453,14 @@ def main(
 
     df = get_results_dataframe(results, group_by_shots=True)
 
-    plot_results(df, suffix=suffix)
+    # plot_results(df, suffix=suffix)
 
     df = group_results_by_shots(df)
-    print_results(df, split_rates=True, head_only=False)
+    # print_results(df, split_rates=True, head_only=False)
+
+    for prefix, _df in split_results_by_rate(df).items():
+        # print(f"\n{RATE_TITLES[prefix]}:")
+        print_results_latex(_df, RATE_TITLES[prefix])
 
 
 if __name__ == "__main__":
