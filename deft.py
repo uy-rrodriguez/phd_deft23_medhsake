@@ -118,6 +118,23 @@ def hamming(preds, refs):
     return corrects / total_refs
 
 
+def medshake_rate(predicted: list[str], instance: dict[str, any],
+                  max_score: int = 2) -> float:
+    """
+    Returns a rate based on the MedShake score for the answer predicted by the
+    model. If the combination of predicted answers is not found in the instance
+    data, the result is 0.
+
+    Since MedShake scores 2 for the correct answer, 1 for an incomplete answer,
+    and 0 for everything else, this function will output: 1, 0.5, or 0,
+    respectively.
+    """
+    # Generate a key based on the predicted answers (they are already sorted)
+    med_key = " ".join(predicted)
+    med_data = instance["medshake"].get(med_key, {})
+    return med_data.get("score", 0) / max_score
+
+
 def run_inference(generator, corpus_path, template, num_shots=0, **kwargs):
     with open(corpus_path) as fp:
         dev_corpus = json.loads(fp.read())
@@ -125,6 +142,7 @@ def run_inference(generator, corpus_path, template, num_shots=0, **kwargs):
     results = []
     all_match = []
     all_hamming = []
+    all_medshake = []
     for instance in dev_corpus:
         prompt = get_prompt(
             template, instance,
@@ -143,18 +161,25 @@ def run_inference(generator, corpus_path, template, num_shots=0, **kwargs):
         all_match.append(is_exact_match)
         all_hamming.append(hamming_val)
 
+        medshake = medshake_rate(answer, instance)
+        all_medshake.append(medshake)
+
     print('EXACT MATCH:', np.average(all_match))
     # print('HAMMING DIST:', num_hamming_correct / num_hamming)
     print('HAMMING RATE:', np.average(all_hamming))
+    print('MEDSHAKE RATE:', np.average(all_medshake))
 
     from util import classify_questions as cq
-    emr_by_class, hamming_by_class = cq.get_average_by_difficulty(
-        corpus_path,
-        all_match,
-        all_hamming,
-    )
+    emr_by_class, hamming_by_class, medshake_by_class = \
+        cq.get_average_by_difficulty(
+            corpus_path,
+            all_match,
+            all_hamming,
+            all_medshake,
+        )
     print('EXACT MATCH AVG BY CLASS:', emr_by_class)
     print('HAMMING RATE AVG BY CLASS:', hamming_by_class)
+    print('MEDSHAKE RATE AVG BY CLASS:', medshake_by_class)
 
     return results
 

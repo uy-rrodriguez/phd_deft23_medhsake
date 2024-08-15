@@ -31,6 +31,15 @@ GENERIC_RE = \
     r"(?P<with_answer_txt>_answertxt){answertxt_modifier}" \
     r"_(?P<run>\d+)" \
     r"\.txt"
+
+
+RATE_TITLES = {
+    "emr": "EMR",
+    "hamming": "Hamming rate",
+    "medshake": "MedShake rate",
+}
+
+
 RE_DEFAULT_ARGS = {
     "tuned_modifier": "?",
     "prompt_modifier": "\d+",
@@ -93,21 +102,28 @@ def load_logs(paths: list[str], pattern: str = None) -> list[dict]:
 
         # Read last lines of the file to find rates
         tail = subprocess.run(
-            ["tail", "-n", "4", path], capture_output=True, text=True)
+            ["tail", "-n", "6", path], capture_output=True, text=True)
         print(tail.stdout, file=sys.stderr)
         lines = tail.stdout.splitlines()
         try:
             emr = float(lines[0].split(": ")[1])
             hamming = float(lines[1].split(": ")[1])
+            medshake = float(lines[2].split(": ")[1])
             emr_by_class = json.loads(
                 "{"
-                + lines[2]
+                + lines[3]
                 .split("{")[1]
                 .replace("\'", "\"")
             )
             hamming_by_class = json.loads(
                 "{"
-                + lines[3]
+                + lines[4]
+                .split("{")[1]
+                .replace("\'", "\"")
+            )
+            medshake_by_class = json.loads(
+                "{"
+                + lines[5]
                 .split("{")[1]
                 .replace("\'", "\"")
             )
@@ -119,8 +135,10 @@ def load_logs(paths: list[str], pattern: str = None) -> list[dict]:
             **path_data,
             "emr": emr,
             "hamming": hamming,
+            "medshake": medshake,
             "emr_by_class": emr_by_class,
             "hamming_by_class": hamming_by_class,
+            "medshake_by_class": medshake_by_class,
         }
         print(json.dumps(results, indent=2), file=sys.stderr)
         data.append(results)
@@ -144,30 +162,38 @@ def load_outputs(paths: list[str], corpus_path: str,
 
         all_match = []
         all_hamming = []
+        all_medshake = []
         with open(path, "r") as f:
             for i, line in enumerate(f.readlines()):
                 try:
                     generated = line.strip().split(";")[1].split("|")
                 except IndexError as e:
                     raise IndexError(f"Parsing failed in line '{line}'", e)
-                expected = corpus[i]["correct_answers"]
+                instance = corpus[i]
+                expected = instance["correct_answers"]
                 is_match = set(generated) == set(expected)
                 hamming_rate = deft.hamming(generated, expected)
+                medshake_rate = deft.medshake_rate(generated, instance)
                 all_match.append(is_match)
                 all_hamming.append(hamming_rate)
+                all_medshake.append(medshake_rate)
 
-        emr_by_class, hamming_by_class = get_average_by_difficulty(
-            corpus,
-            all_match,
-            all_hamming,
-        )
+        emr_by_class, hamming_by_class, medshake_by_class = \
+            get_average_by_difficulty(
+                corpus,
+                all_match,
+                all_hamming,
+                all_medshake,
+            )
 
         results = {
             **path_data,
             "emr": np.average(all_match),
             "hamming": np.average(all_hamming),
+            "medshake": np.average(all_medshake),
             "emr_by_class": emr_by_class,
             "hamming_by_class": hamming_by_class,
+            "medshake_by_class": medshake_by_class,
         }
         print(json.dumps(results, indent=2), file=sys.stderr)
         data.append(results)
@@ -189,7 +215,12 @@ def get_results_dataframe(results: list[dict], group_by_shots=False) \
     df_ham.rename(inplace=True, columns=lambda k: "hamming_" + "_".join(k.split()))
     df = df.join(df_ham)
 
-    df.drop(inplace=True, columns=["emr_by_class", "hamming_by_class"])
+    df_med = pd.DataFrame(df["medshake_by_class"].tolist())
+    df_med.rename(inplace=True, columns=lambda k: "medshake_" + "_".join(k.split()))
+    df = df.join(df_med)
+
+    df.drop(inplace=True, columns=["emr_by_class", "hamming_by_class",
+                                   "medshake_by_class"])
 
     # print(df.head())
     return df
@@ -211,10 +242,35 @@ def group_results_by_shots(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def split_results_by_rate(df: pd.DataFrame, exclude_std_by_class: bool = True) \
+        -> dict[str, pd.DataFrame]:
+    """
+    Splits the results in multiple DataFrames, one per measured rate (emr,
+    hamming, medshake).
+
+    The returned frames exclude columns not related to rates.
+
+    Parameters:
+        df: DataFrame with results to split.
+        exclude_std_by_class: If True (default), the columns with standard
+            deviation by MedShake class are also excluded.
+    """
+    prefixes = "|".join(RATE_TITLES.keys())
+    # df = df.filter(regex=prefixes)
+    # Ignore columns with standard deviation by class
+    if exclude_std_by_class:
+        df = df.drop(columns=list(df.filter(regex=f"({prefixes})(_.+)+_std")))
+    return {
+        # This will keep only columns with rates
+        prefix: df.filter(regex=prefix)
+        for prefix in RATE_TITLES.keys()
+    }
+
+
 def print_results(df: pd.DataFrame, head_only=True, split_rates=False) -> None:
     """
     Prints results from the given DataFrame, optionally split by rate
-    (emr, hamming).
+    (emr, hamming, medshake).
     """
     # Print full table
     with pd.option_context(
@@ -222,15 +278,10 @@ def print_results(df: pd.DataFrame, head_only=True, split_rates=False) -> None:
             "display.max_columns", None,
             "expand_frame_repr", None,
     ):
-        # Keep only columns with rates
-        df = df.filter(regex="emr|hamming")
-        # Ignore columns with standard deviation by class
-        df = df.drop(columns=list(df.filter(regex="(emr|hamming)(_.+)+_std")))
-
         if split_rates:
-            for col, title in [("emr", "EMR:"), ("hamming", "\nHamming rate:")]:
-                print(title)
-                _df = df.filter(regex=col)
+            df_by_prefix = split_results_by_rate(df)
+            for prefix, _df in df_by_prefix.items():
+                print(f"\n{RATE_TITLES[prefix]}:")
                 if head_only:
                     print(_df.head())
                 else:
@@ -246,13 +297,13 @@ def plot_results(df: pd.DataFrame, suffix: str = "") -> None:
     """
     Create plots for EMR and Hamming rate of data grouping by shots.
     """
-    for col, title in [("emr", "EMR"), ("hamming", "Hamming rate")]:
+    for prefix, title in RATE_TITLES.items():
         # Plot rate grouped by shot
         fig, ax = plt.subplots()
-        df.boxplot(by="shots", column=col, ax=ax)
+        df.boxplot(by="shots", column=prefix, ax=ax)
         fig.suptitle(None)
         ax.set_title(title)
-        save_path = f"output/llama3/plots/{col}_by_shot{suffix}.png"
+        save_path = f"output/llama3/plots/{prefix}_by_shot{suffix}.png"
         fig.savefig(save_path)
         print(f"Plot saved in {save_path}", file=sys.stderr)
 
@@ -260,14 +311,14 @@ def plot_results(df: pd.DataFrame, suffix: str = "") -> None:
         # df_groups = df.groupby(by="shots")
         # for shots, _ in df_groups:
         #     fig, ax = plt.subplots()
-        #     _df = df[df["shots"] == shots].filter(regex=col)
-        #     def renamer(col: str) -> None:
-        #         parts = col.split("_")
-        #         return col if len(parts) == 1 else "_".join(parts[1:])
+        #     _df = df[df["shots"] == shots].filter(regex=prefix)
+        #     def renamer(prefix: str) -> None:
+        #         parts = prefix.split("_")
+        #         return prefix if len(parts) == 1 else "_".join(parts[1:])
         #     _df.rename(inplace=True, columns=renamer)
         #     _df.plot(ax=ax, kind="box", grid=True)
         #     ax.set_title(f"{title} {shots}-shot")
-        #     fig.savefig(f"output/llama3/plots/{col}_by_class_shots{shots}{suffix}.png")
+        #     fig.savefig(f"output/llama3/plots/{prefix}_by_class_shots{shots}{suffix}.png")
 
 
 def main(

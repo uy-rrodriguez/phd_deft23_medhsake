@@ -32,8 +32,8 @@ def load_corpus(corpus: str | object) -> pd.DataFrame:
     # print(bins_qcut.value_counts())
 
     # print("\n\nEqual-ranged classes (pandas.cut):")
-    bins_cut = pd.cut(df.medshake_difficulty, len(LABELS), right=True,
-                      labels=LABELS)
+    # bins_cut = pd.cut(df.medshake_difficulty, len(LABELS), right=True,
+    #                   labels=LABELS)
     # print(bins_cut.head())
     # print(bins_cut.value_counts())
 
@@ -47,11 +47,11 @@ def load_corpus(corpus: str | object) -> pd.DataFrame:
         "very hard": "#440154",
     }
 
-    df["medshake_class_qcut"] = bins_qcut
-    df["colour_qcut"] = df["medshake_class_qcut"].apply(lambda x: colourdict[x])
+    df["medshake_class"] = bins_qcut
+    df["colour_qcut"] = df["medshake_class"].apply(lambda x: colourdict[x])
 
-    df["medshake_class_cut"] = bins_cut
-    df["colour_cut"] = df["medshake_class_cut"].apply(lambda x: colourdict[x])
+    # df["medshake_class_cut"] = bins_cut
+    # df["colour_cut"] = df["medshake_class_cut"].apply(lambda x: colourdict[x])
 
     return df
 
@@ -76,7 +76,7 @@ def plot_question_answer_rate(corpus_path: str, save_path: str) -> None:
 
     ax[0].set_title("Equal-sized classes (pandas.qcut)")
     for label in reversed(LABELS):
-        _df = df[df["medshake_class_qcut"] == label]
+        _df = df[df["medshake_class"] == label]
         ax[0].scatter(_df.index, _df["medshake_difficulty"], c=_df["colour_qcut"], label=label)
     ax[0].legend()
 
@@ -102,14 +102,17 @@ def plot_question_answer_rate(corpus_path: str, save_path: str) -> None:
 def get_average_by_difficulty(
         corpus: str | object, match_results: list[bool],
         hamming_results: list[float],
-    ) -> tuple[dict[str, float], dict[str, float]]:
+        medshake_results: list[float],
+    ) -> tuple[dict[str, float], dict[str, float], dict[str, float]]:
 
     df = load_corpus(corpus)
     matches_by_class = {k: [] for k in LABELS}
     hamming_by_class = {k: [] for k in LABELS}
+    medshake_by_class = {k: [] for k in LABELS}
     for i, sample in df.iterrows():
-        matches_by_class[sample.medshake_class_qcut].append(match_results[i])
-        hamming_by_class[sample.medshake_class_qcut].append(hamming_results[i])
+        matches_by_class[sample.medshake_class].append(match_results[i])
+        hamming_by_class[sample.medshake_class].append(hamming_results[i])
+        medshake_by_class[sample.medshake_class].append(medshake_results[i])
 
     matches_avg = {
         k: np.average(v)
@@ -119,7 +122,11 @@ def get_average_by_difficulty(
         k: np.average(v)
         for k, v in hamming_by_class.items()
     }
-    return matches_avg, hamming_avg
+    medshake_avg = {
+        k: np.average(v)
+        for k, v in medshake_by_class.items()
+    }
+    return matches_avg, hamming_avg, medshake_avg
 
 
 def main() -> None:
@@ -127,13 +134,14 @@ def main() -> None:
     #   "data/dev-medshake-score.json",
     #   "output/llama3/plots/questions_medshake_classes.png",
     # )
-    emr, ham = get_average_by_difficulty(
+    emr, ham, med = get_average_by_difficulty(
         "data/dev-medshake-score.json",
         np.random.choice(a=[False, True], size=(1000,)),
         np.random.rand(1000),
     )
     print(emr)
     print(ham)
+    print(med)
 
 
 if __name__ == "__main__":
