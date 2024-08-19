@@ -269,7 +269,7 @@ def split_results_by_rate(df: pd.DataFrame, exclude_std_by_class: bool = True) \
     }
 
 
-def print_results(df: pd.DataFrame, head_only=True, split_rates=False) -> None:
+def print_results(df: pd.DataFrame, head_only=True, split_rates=True) -> None:
     """
     Prints results from the given DataFrame, optionally split by rate
     (emr, hamming, medshake).
@@ -295,35 +295,54 @@ def print_results(df: pd.DataFrame, head_only=True, split_rates=False) -> None:
                 print(df)
 
 
-def print_results_latex(df: pd.DataFrame, title: str) -> None:
+def latex_print_results(df: pd.DataFrame, table_title: str = "",
+                        single_table: bool = False) -> None:
     """
-    Prints results from the given DataFrame as a LaTeX table.
-    """
-    headers = ["shots"] + [h for h in df]
-    content = []
-    for shots, rates_series in df.iterrows():
-        content.append([shots] + [r for r in rates_series])
+    Prints resulting rates from the given DataFrame as multiple LaTeX tables.
 
-    template = """\
+    If single_table is True, all rates are printed in a single table, split by
+    an empty row.
+    """
+    template_table = """\
 \\begin{{table}}[H]
 \\centering
 \\begin{{tabular}}{{@{{}}{alignments}@{{}}}}
-\\multicolumn{{{num_columns}}}{{c}}{{{title}}} \\\\
-\\toprule
-{headers} \\midrule
-{content} \\bottomrule
+{title}\
+{content}\
 \\end{{tabular}}
 \\caption{{Rate results...}}
 \\label{{table:res_...}}
 \\end{{table}}
 """
+    template_title = """\
+\\\\
+\\multicolumn{{8}}{{c}}{{\\textbf{{{title}}}}} \\\\
+\\\\
+"""
+    template_rate = """\
+\\multicolumn{{{num_columns}}}{{c}}{{{title}}} \\\\
+\\toprule
+{headers} \\midrule
+{content} \\bottomrule
+"""
+    template_sep = """\
+\\\\
+"""
 
     def latex_clean_header(header: str) -> str:
+        """
+        Returns the given header cleaned to escape special characters.
+        """
         header = re.sub(r"^\w+?_", r"", header)
         header = header.replace("_", "\\_")
         return header
 
     def latex_df_format_column(column: pd.Series) -> pd.Series:
+        """
+        Given a Series corresponding to a column with numeric values, returns
+        LaTeX code to format the numbers and highlight first and second highest
+        values.
+        """
         # Do not highlight shots and standard deviation
         if re.match(r"shots|.*_std", column.name):
             return column.apply(lambda v: f"{v:.6f}".rstrip("0").rstrip("."))
@@ -340,18 +359,27 @@ def print_results_latex(df: pd.DataFrame, title: str) -> None:
             return f"{v_str}"
         return column.apply(value_to_latex)
 
-    def latex_df_print(df: pd.DataFrame) -> str:
+    def latex_df_to_str(df: pd.DataFrame,
+                        min_col_widths: list | None = None) -> str:
+        """
+        Returns a DataFrame with numeric content as LaTeX rows, highlighting
+        first and second highest values, and cells with equal width per column.
+        """
         df = df.rename(latex_clean_header, axis="columns")
         df = df.apply(latex_df_format_column)
 
-        def build_formatter(col):
+        def build_formatter(idx, col):
             def formatter(v):
-                return f"{v: <{df[col].str.len().max()}s}"
+                max_len = df[col].str.len().max()
+                if min_col_widths is not None:
+                    max_len = max(max_len, min_col_widths[idx])
+                    min_col_widths[idx] = max_len
+                return f"{v: <{max_len}s}"
             return formatter
 
         formatters = {}
-        for col in df.select_dtypes("object"):
-            formatters[col] = build_formatter(col)
+        for idx, col in enumerate(df.select_dtypes("object")):
+            formatters[col] = build_formatter(idx, col)
 
         df_str = df.to_string(
             formatters=formatters,
@@ -364,19 +392,67 @@ def print_results_latex(df: pd.DataFrame, title: str) -> None:
         df_str = re.sub(r"\|", " ", df_str)
         return df_str
 
-    df = pd.DataFrame(columns=headers, data=content)
-    tabular = latex_df_print(df)
-    tabular_lines = tabular.splitlines()
+    def latex_rate_to_str(df: pd.DataFrame, rate_title: str,
+                          min_col_widths: list | None = None) -> str:
+        """
+        Returns LaTeX rows with the data for a single rate.
+        """
+        headers = ["shots"] + [h for h in df]
+        content = []
+        for shots, rates_series in df.iterrows():
+            content.append([shots] + [r for r in rates_series])
 
-    result = template.format(
-        num_columns=len(headers),
-        title=title,
-        alignments="l" * len(headers),
-        headers=tabular_lines[0],
-        content="\n".join([l for l in tabular_lines[1:]]),
-    )
+        df = pd.DataFrame(columns=headers, data=content)
+        tabular = latex_df_to_str(df, min_col_widths)
+        tabular_lines = tabular.splitlines()
 
-    # Print full table
+        return template_rate.format(
+            num_columns=len(headers),
+            title=rate_title,
+            headers=tabular_lines[0],
+            content="\n".join([l for l in tabular_lines[1:]]),
+        )
+
+    # Process results rate by rate and print them as LaTeX tables
+    df_by_rate = split_results_by_rate(df)
+    num_columns = len(next(iter(df_by_rate.values())).columns) + 1
+
+    # When printing a single table, to make the columns of all rates the same
+    # width, we pass the widths of the last loop to the next
+    min_col_widths = [0] * num_columns if single_table else None
+    first_prefix = None
+
+    latex_by_rate = {}
+    for prefix, _df in df_by_rate.items():
+        if single_table and first_prefix is None:
+            first_prefix = prefix
+        latex_by_rate[prefix] = latex_rate_to_str(
+            _df, RATE_TITLES[prefix], min_col_widths)
+
+    # Re-generate the first table to adjust the min column width
+    if single_table:
+        latex_by_rate[first_prefix] = latex_rate_to_str(
+            df_by_rate[first_prefix], RATE_TITLES[first_prefix], min_col_widths)
+
+    default_args = {
+        "title":
+            template_title.format(title=table_title)
+            if table_title else "",
+        "alignments": "l" * num_columns,
+    }
+    if single_table:
+        result = template_table.format(
+            **default_args,
+            content=template_sep.join([s for s in latex_by_rate.values()]),
+        )
+    else:
+        result = "\n".join([
+            template_table.format(
+                **default_args,
+                content=rate_content,
+            )
+            for rate_content in latex_by_rate.values()
+        ])
     print(result)
 
 
@@ -458,9 +534,7 @@ def main(
     df = group_results_by_shots(df)
     # print_results(df, split_rates=True, head_only=False)
 
-    for prefix, _df in split_results_by_rate(df).items():
-        # print(f"\n{RATE_TITLES[prefix]}:")
-        print_results_latex(_df, RATE_TITLES[prefix])
+    latex_print_results(df, single_table=True, table_title="Results of model X")
 
 
 if __name__ == "__main__":
