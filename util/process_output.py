@@ -34,9 +34,9 @@ GENERIC_RE = \
 
 
 RATE_TITLES = {
+    "medshake": "MedShake rate",
     "emr": "EMR",
     "hamming": "Hamming rate",
-    "medshake": "MedShake rate",
 }
 
 
