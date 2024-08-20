@@ -420,19 +420,14 @@ def latex_print_results(df: pd.DataFrame, table_title: str = "",
     # When printing a single table, to make the columns of all rates the same
     # width, we pass the widths of the last loop to the next
     min_col_widths = [0] * num_columns if single_table else None
-    first_prefix = None
+    # A second pass is needed to re-generate tables adjusting the column width
+    num_generations = 2 if single_table else 1
 
     latex_by_rate = {}
-    for prefix, _df in df_by_rate.items():
-        if single_table and first_prefix is None:
-            first_prefix = prefix
-        latex_by_rate[prefix] = latex_rate_to_str(
-            _df, RATE_TITLES[prefix], min_col_widths)
-
-    # Re-generate the first table to adjust the min column width
-    if single_table:
-        latex_by_rate[first_prefix] = latex_rate_to_str(
-            df_by_rate[first_prefix], RATE_TITLES[first_prefix], min_col_widths)
+    for _ in range(num_generations):
+        for prefix, _df in df_by_rate.items():
+            latex_by_rate[prefix] = latex_rate_to_str(
+                _df, RATE_TITLES[prefix], min_col_widths)
 
     default_args = {
         "title":
@@ -453,6 +448,8 @@ def latex_print_results(df: pd.DataFrame, table_title: str = "",
             )
             for rate_content in latex_by_rate.values()
         ])
+
+    print("LaTeX table:")
     print(result)
 
 
