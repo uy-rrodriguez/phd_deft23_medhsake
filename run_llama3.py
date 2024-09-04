@@ -13,16 +13,13 @@ hf_login()
 
 
 def main(
-    result_path: str, corpus_path: str,
-    model: str = "meta-llama/Meta-Llama-3-8B",
+    corpus_path: str,
+    result_path: str,
+    model_path: str,
     prompt_template_id: str = "0",
     num_shots: int = 0,
     shots_full_answer: bool = False,
 ):
-
-    tokenizer = AutoTokenizer.from_pretrained(model)
-    tokenizer.pad_token = tokenizer.eos_token
-    tokenizer.padding_side = "right"
 
     quant_config=BitsAndBytesConfig(
         load_in_8bit=True,
@@ -35,16 +32,19 @@ def main(
     device_map = {
         "": 0
     }
-    llm = AutoModelForCausalLM.from_pretrained(
-        model,
+    model = AutoModelForCausalLM.from_pretrained(
+        model_path,
         device_map=device_map,
         torch_dtype=torch.float16,
         quantization_config=quant_config,
     )
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+    tokenizer.pad_token = tokenizer.eos_token
+    tokenizer.padding_side = "right"
 
     def generate(input_string):
         inputs = tokenizer(input_string, return_tensors="pt")
-        outputs = llm.generate(
+        outputs = model.generate(
             input_ids=inputs.input_ids.to("cuda"),
             attention_mask=inputs.attention_mask,
             max_new_tokens=32,
