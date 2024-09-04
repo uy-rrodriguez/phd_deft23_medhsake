@@ -117,6 +117,16 @@ elif [[ $PROMPT_TPL == 4 ]]; then
     PROMPT_ID=2
 fi
 
+# Use of special padding token must be True if the fine-tuned model was trained
+# with the same parameter
+SPECIAL_PAD=False
+# SPECIAL_PAD=$(awk -v ArrayTaskID=$TASK '$1==ArrayTaskID {print $7}' $CONFIG)
+# if [[ $SPECIAL_PAD == 1 ]]; then
+#     SPECIAL_PAD=True
+# else
+#     SPECIAL_PAD=False
+# fi
+
 
 # Activate Conda environment before running the code
 echo "Activating conda environment $ENV"
@@ -130,6 +140,7 @@ python $RUN_SCRIPT \
     --corpus_path=data/dev-medshake-score.json \
     --result_path=output/$DIR/${FILENAME}_${SUFF}.txt \
     --model_path="$MODEL" \
+    --use_special_pad_token=$SPECIAL_PAD \
     --prompt_template_id="'$PROMPT_ID'" \
     --num_shots=$NUM_SHOTS \
     --shots_full_answer=$WITH_ANSWER_TXT \

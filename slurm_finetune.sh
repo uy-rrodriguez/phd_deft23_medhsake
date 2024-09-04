@@ -55,6 +55,12 @@ if [[ $SLURM_ARRAY_TASK_ID == 51 ]]; then
     FULL_ANSWERS=False
 fi
 
+# Whether to use a special token for padding, instead of EOS
+SPECIAL_PAD=False
+if [[ $SLURM_ARRAY_TASK_ID == 6 || $SLURM_ARRAY_TASK_ID == 7 ]]; then
+    SPECIAL_PAD=True
+fi
+
 
 echo "Activating conda environment $ENV"
 conda activate $ENV
@@ -70,6 +76,7 @@ python finetune_llama3.py \
     --run_name="llama-3-8b-deft_$SUFF" \
     --output_dir="train_results/$SUFF/" \
     --train_on_completions_only=$TRAIN_COMPLETIONS \
+    --use_special_pad_token=$SPECIAL_PAD \
     --prompt_template_id=$PROMPT_ID \
     --include_full_answers=$FULL_ANSWERS \
     --max_seq_length=512 \

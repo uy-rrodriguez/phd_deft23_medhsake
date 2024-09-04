@@ -28,6 +28,7 @@ def load_data(
         tokenizer: AutoTokenizer,
         prompt_template_id: int,
         include_full_answers: bool,
+        end_with_eos: bool,
 ) -> datasets.Dataset:
     with open(path) as fp:
         corpus = json.loads(fp.read())
@@ -39,7 +40,7 @@ def load_data(
                 instance,
                 include_correct_answers=True,
                 include_full_answers=include_full_answers,
-            ),
+            ) + (tokenizer.eos_token if end_with_eos else ""),
         }
         for instance in corpus
     ]
@@ -82,6 +83,7 @@ def finetune_lora(
         packing: bool = False,
         device_map: str = '{"":0}',
         train_on_completions_only: bool = True,
+        use_special_pad_token: bool = False,
         include_full_answers: bool = True,
 ):
 
@@ -116,7 +118,12 @@ def finetune_lora(
 
     # Load LLaMA tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-    tokenizer.pad_token = tokenizer.eos_token
+    if use_special_pad_token:
+        tokenizer.add_special_tokens(
+            {"pad_token": "<|reserved_special_token_250|>"})
+        model.config.pad_token_id = tokenizer.pad_token_id
+    else:
+        tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right" # Fix weird overflow issue with fp16 training
 
     # Load training data
@@ -125,6 +132,7 @@ def finetune_lora(
         tokenizer,
         prompt_template_id,
         include_full_answers,
+        end_with_eos=use_special_pad_token,
     )
     #eval_dataset = load_data(eval_dataset_name)
 

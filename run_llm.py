@@ -16,6 +16,7 @@ def main(
     corpus_path: str,
     result_path: str,
     model_path: str,
+    use_special_pad_token: bool = False,
     prompt_template_id: str = "0",
     num_shots: int = 0,
     shots_full_answer: bool = False,
@@ -39,7 +40,12 @@ def main(
         quantization_config=quant_config,
     )
     tokenizer = AutoTokenizer.from_pretrained(model_path)
-    tokenizer.pad_token = tokenizer.eos_token
+    if use_special_pad_token:
+        tokenizer.add_special_tokens(
+            {"pad_token": "<|reserved_special_token_250|>"})
+        model.config.pad_token_id = tokenizer.pad_token_id
+    else:
+        tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
 
     def generate(input_string):
