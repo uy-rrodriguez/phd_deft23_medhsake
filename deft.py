@@ -171,7 +171,26 @@ def medshake_rate(predicted: list[str], instance: dict[str, any],
     return med_data.get("score", 0) / max_score
 
 
-def run_inference(generator, corpus_path, template, num_shots=0, **kwargs):
+def run_single_inference(instance, generator, corpus, template, num_shots=0,
+                         **kwargs) -> tuple:
+    prompt = get_prompt(
+        template, instance,
+        num_shots=num_shots, few_shots_corpus=corpus,
+        **kwargs
+    )
+    print('PROMPT: [%s]' % prompt)
+    generated = generator(prompt)
+    print('GENERATED: [%s]' % generated)
+    answer = extract_answer(generated, len(instance['answers']), **kwargs)
+    answer = list(sorted(answer))
+    print(answer, instance['correct_answers'])
+    is_exact_match = set(answer) == set(instance['correct_answers'])
+    hamming_val = hamming(answer, instance['correct_answers'])
+    medshake = medshake_rate(answer, instance)
+    return answer, is_exact_match, hamming_val, medshake
+
+
+def run_inference(generator, corpus_path: str, template, num_shots=0, **kwargs):
     with open(corpus_path) as fp:
         dev_corpus = json.loads(fp.read())
 
@@ -180,29 +199,17 @@ def run_inference(generator, corpus_path, template, num_shots=0, **kwargs):
     all_hamming = []
     all_medshake = []
     for instance in dev_corpus:
-        prompt = get_prompt(
-            template, instance,
-            num_shots=num_shots, few_shots_corpus=dev_corpus,
-            **kwargs
-        )
-        print('PROMPT: [%s]' % prompt)
-        generated = generator(prompt)
-        print('GENERATED: [%s]' % generated)
-        answer = extract_answer(generated, len(instance['answers']), **kwargs)
-        print(answer, instance['correct_answers'])
-        is_exact_match = set(answer) == set(instance['correct_answers'])
-        hamming_val = hamming(answer, instance['correct_answers'])
+        answer, is_exact_match, hamming_val, medshake = \
+            run_single_inference(instance, generator, dev_corpus, template,
+                                 num_shots, **kwargs)
         results.append(instance['id'] + ';' + '|'.join(list(sorted(answer))))
-
         all_match.append(is_exact_match)
         all_hamming.append(hamming_val)
-
-        medshake = medshake_rate(answer, instance)
         all_medshake.append(medshake)
 
     print('EXACT MATCH:', np.average(all_match))
     # print('HAMMING DIST:', num_hamming_correct / num_hamming)
-    print('HAMMING RATE:', np.average(all_hamming))
+    print('HAMMING SCORE:', np.average(all_hamming))
     print('MEDSHAKE RATE:', np.average(all_medshake))
 
     from util import classify_questions as cq
@@ -214,7 +221,7 @@ def run_inference(generator, corpus_path, template, num_shots=0, **kwargs):
             all_medshake,
         )
     print('EXACT MATCH AVG BY CLASS:', emr_by_class)
-    print('HAMMING RATE AVG BY CLASS:', hamming_by_class)
+    print('HAMMING SCORE AVG BY CLASS:', hamming_by_class)
     print('MEDSHAKE RATE AVG BY CLASS:', medshake_by_class)
 
     return results
