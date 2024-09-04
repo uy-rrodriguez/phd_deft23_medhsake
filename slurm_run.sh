@@ -48,7 +48,7 @@ MODEL_ID=$(echo "$MODEL_REF" | grep -Po "/[\d]+_" | grep -Po "[\d]+") # Numeric 
 RUN_SCRIPT=run_llm.py
 
 if [[ "$MODEL_FAMILY" == "llama3" ]]; then
-MODEL=meta-llama/Meta-Llama-3-8B
+    MODEL=meta-llama/Meta-Llama-3-8B
     LOCAL_MODEL=models/llama3/llama-3-8b-deft_${MODEL_NAME}
     DIR=llama3
     FILENAME=llama3-8b
