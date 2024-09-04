@@ -6,8 +6,20 @@ import numpy as np
 
 
 lm_templates = [
-'''Ceci est une question de QCM de l\'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.\n\n%s''',
-# '''%s''',
+'''Ceci est une question de QCM de l\'examen de pharmacie. Réponds avec la ou \
+les lettres correspondant à la bonne réponse.\n\n%s
+Réponse(s) : %s\n''',
+'''%s\nRéponse(s) : %s''',
+'''Below is an instruction that describes a task, paired with an input that \
+provides further context. Write a response that appropriately completes the \
+request.
+### Instruction: We are giving you a scientific question and five answers \
+options (associated to "a", "b", "c", "d", "e"). Your task is to find the \
+correct answer(s) based on scientific facts, knowledge and reasoning. Don't \
+generate anything other than one of the following characters: 'a b c d e'.
+### Input: Ceci est une question de QCM de l\'examen de pharmacie. Réponds \
+avec la ou les lettres correspondant à la bonne réponse. %s
+### Response: %s''',
 #'''Corrigé du QCM de pharma.\n%s\nRéponse(s) : (''',
 #'''Alice est une excellente pharmacienne. Elle répond aux questions de Pierre qui est interne en pharmacie.\nPierre : ma question est la suivante : %s\n Alice : je connais la bonne réponse et c'est (''',
 #'''Correction du QCM de l\'examen de pharmacie. %s\nRéponse(s) : (''',
@@ -23,18 +35,28 @@ lm_templates_en = [
 '''This is a multiple choice question from the pharma exam. Reply with the letter or the letters corresponding to the correct answer.\n\n%s\n\nAnswer : (''',
 ]
 
+lm_response_templates = [
+    "Réponse(s) :",
+    "Réponse(s) :",
+    "### Response:",
+]
+
 letters = 'abcdefghijklmnopqrstuvwxyz'
 
-def linearize_instance(instance, include_correct_answers=False, include_full_answers=False, add_left_parenthesis=False, **kwargs):
-    result = instance['question'] + '\n' + '\n'.join('(%s) %s.' % (k, v) for k, v in instance['answers'].items())
+def linearize_instance(
+        instance, include_correct_answers=False, include_full_answers=False,
+        add_left_parenthesis=True, **kwargs,
+) -> tuple[str, str]:
+    question = instance['question'] + '\n' + '\n'.join('(%s) %s.' % (k, v) for k, v in instance['answers'].items())
+    answers = ""
     if include_correct_answers:
         if include_full_answers:
-            result += '\nRéponse(s) : ' + '; '.join('(%s) %s' % (a, instance['answers'][a]) for a in instance['correct_answers']) + '.\n'
+            answers = '; '.join('(%s) %s' % (a, instance['answers'][a]) for a in instance['correct_answers'])
         else:
-            result += '\nRéponse(s) : ' + ' '.join('(%s)' % a for a in instance['correct_answers'])
-    else:
-        result += '\nRéponse(s) :' + (' (' if add_left_parenthesis else '')
-    return result
+            answers = ' '.join('(%s)' % a for a in instance['correct_answers'])
+    elif add_left_parenthesis:
+        answers = "("
+    return (question, answers)
 
 #def linearize_instance(instance, include_correct_answers=False):
 #    result = instance['question'] + '\n' + '\n'.join('(%s) %s.' % (k, v) for k, v in instance['answers'].items())
@@ -42,7 +64,9 @@ def linearize_instance(instance, include_correct_answers=False, include_full_ans
 #        result += '\nRéponse(s) : ' + ' '.join('(%s)' % a for a in instance['correct_answers'])
 #    return result
 
-def get_random_shots(num_shots, corpus, fixed_shots_idx=None):
+def get_random_shots(
+        num_shots: int, corpus: any, fixed_shots_idx: list[int] = None,
+) -> list[dict]:
     """
     Helper to select random QA from the training corpus, to use as few shots.
     """
@@ -64,15 +88,27 @@ def get_random_shots(num_shots, corpus, fixed_shots_idx=None):
     return shots
 
 
-def get_prompt(prompt, instance,
-               num_shots=0, few_shots_corpus=None, fixed_shots_idx=None,
-               **kwargs):
-    assert num_shots == 0 or few_shots_corpus is not None, \
-        "A corpus is required to randomly select the few shots"
+def get_prompt(
+        prompt_tpl: str, instance: any,
+        num_shots: int = 0, few_shots_corpus: any = None,
+        fixed_shots_idx: list[int] = None,
+        **kwargs,
+) -> str:
+    assert (
+        num_shots == 0 or few_shots_corpus is not None,
+        "A corpus is required to randomly select the few shots",
+    )
     if num_shots > 0:
-        few_shots = get_random_shots(num_shots, few_shots_corpus, fixed_shots_idx)
+        few_shots = get_random_shots(
+            num_shots, few_shots_corpus, fixed_shots_idx)
         shots = [
-            linearize_instance(shot, include_correct_answers=True, **kwargs)
+            linearize_instance(
+                shot,
+                **{
+                    **kwargs,
+                    "include_correct_answers": True,
+                },
+            )
             for shot in few_shots
         ]
 
@@ -86,11 +122,11 @@ def get_prompt(prompt, instance,
         # Output without intro before few-shots about multiple-choice questions
         #
         return "\n\n".join(
-            [prompt % s for s in shots]
-            + [prompt % linearize_instance(instance, add_left_parenthesis=True, **kwargs)]
+            [prompt_tpl % s for s in shots]
+            + [prompt_tpl % linearize_instance(instance, **kwargs)]
         )
     else:
-        return prompt % linearize_instance(instance, add_left_parenthesis=True, **kwargs)
+        return prompt_tpl % linearize_instance(instance, **kwargs)
 
 def extract_answer(answer, num_answers=5, stop_at_line_break=False, **kwargs):
     answer = re.sub('Ceci est une question de QCM.*', '', answer).strip().lower()
@@ -183,12 +219,52 @@ def run_inference(generator, corpus_path, template, num_shots=0, **kwargs):
 
     return results
 
-def template_from_id(desc):
+def template_from_id(desc: str) -> str:
     if desc.startswith('en'):
         return lm_templates_en[int(desc[3:])]
     else:
         return lm_templates[int(desc)]
 
+def response_template_from_id(desc: str) -> str:
+    return lm_response_templates[int(desc)]
+
 def write_results(results, output_path):
     with open(output_path, 'w') as fp:
         fp.write('\n'.join(results) + '\n')
+
+
+def test_get_prompt(
+        id: str, template: int, num_shots: int = 0,
+        include_correct_answers: bool = False,
+        include_full_answers: bool = False,
+        add_left_parenthesis: bool = False,
+) -> None:
+    """
+    Prints the prompt generated for a given instance id and template.
+    """
+    print(id, template)
+    with open("data/dev-medshake-score.json") as f:
+        corpus = json.load(f)
+    instance = next(filter(lambda x: x["id"] == id, corpus))
+    if not instance:
+        print("Instance not found")
+    prompt = get_prompt(
+        template_from_id(str(template)), instance, num_shots, corpus,
+        include_correct_answers=include_correct_answers,
+        include_full_answers=include_full_answers,
+        add_left_parenthesis=add_left_parenthesis,
+    )
+    print(prompt)
+
+
+def main(method_name: str, *args, **kwargs):
+    import deft
+    method = getattr(deft, method_name)
+    if not method:
+        raise f"Method '{method_name}' not found"
+    return method(*args, **kwargs)
+
+
+if __name__ == "__main__":
+    import fire
+    fire.Fire(main)
