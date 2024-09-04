@@ -138,8 +138,8 @@ def extract_answer(answer, num_answers=5, stop_at_line_break=False, **kwargs):
     else:
         selected = [x.replace(')', '').replace('(', '') for x in selected]
     result = list(sorted(set([letter.lower() for letter in selected])))
-    if len(result) == 0:
-        result = ['a']
+    # if len(result) == 0:
+    #     result = ['a']
     return result
 
 #def hamming(a, b, num):
