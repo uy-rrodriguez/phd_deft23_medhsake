@@ -11,6 +11,8 @@ from transformers import (
     BitsAndBytesConfig,
 )
 
+import deft
+
 
 # Disable progress bars (cleaner logs)
 datasets.disable_progress_bar()
@@ -21,18 +23,22 @@ from util.hugging_face import hf_login
 hf_login()
 
 
-def load_data(path: str):
-    import deft
+def load_data(
+        path: str,
+        tokenizer: AutoTokenizer,
+        prompt_template_id: int,
+        include_full_answers: bool,
+) -> datasets.Dataset:
     with open(path) as fp:
         corpus = json.loads(fp.read())
-    template = deft.lm_templates[0]
+    template = deft.lm_templates[prompt_template_id]
     corpus = [
         {
             "text": deft.get_prompt(
                 template,
                 instance,
                 include_correct_answers=True,
-                include_full_answers=True,
+                include_full_answers=include_full_answers,
             ),
         }
         for instance in corpus
@@ -45,6 +51,7 @@ def finetune_lora(
         train_dataset_name: str,
         new_model_path: str,
         run_name: str,
+        prompt_template_id: int,
         eval_dataset_name: str = "",
         model_name: str = "meta-llama/Meta-Llama-3-8B",
         lora_r:int = 4,
@@ -74,11 +81,11 @@ def finetune_lora(
         max_seq_length: int = 256,
         packing: bool = False,
         device_map: str = '{"":0}',
-        train_on_completions_only: bool = False):
+        train_on_completions_only: bool = True,
+        include_full_answers: bool = True,
+):
 
     device_map = json.loads(device_map)
-    train_dataset = load_data(train_dataset_name)
-    #eval_dataset = load_data(eval_dataset_name)
 
     # Load tokenizer and model with QLoRA configuration
     compute_dtype = getattr(torch, bnb_4bit_compute_dtype)
@@ -111,6 +118,15 @@ def finetune_lora(
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right" # Fix weird overflow issue with fp16 training
+
+    # Load training data
+    train_dataset = load_data(
+        train_dataset_name,
+        tokenizer,
+        prompt_template_id,
+        include_full_answers,
+    )
+    #eval_dataset = load_data(eval_dataset_name)
 
     # Load LoRA configuration
     peft_config = peft.LoraConfig(
@@ -148,7 +164,7 @@ def finetune_lora(
     )
 
     if train_on_completions_only:
-        response_template = "Réponse(s) :"
+        response_template = deft.response_template_from_id(prompt_template_id)
         tokens =  tokenizer.tokenize(response_template, add_special_tokens=False)
         token_ids = tokenizer.encode(response_template, add_special_tokens=False)
         print(list(zip(tokens, token_ids)))
