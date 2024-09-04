@@ -36,7 +36,7 @@ GENERIC_RE = \
 RATE_TITLES = {
     "medshake": "MedShake rate",
     "emr": "EMR",
-    "hamming": "Hamming rate",
+    "hamming": "Hamming score",
 }
 
 
@@ -97,7 +97,7 @@ def load_logs(paths: list[str], pattern: str = None) -> list[dict]:
     pattern = pattern or get_filename_pattern()
 
     for path in paths:
-        print(f"\n==> {path} <==", file=sys.stderr)
+        # print(f"\n==> {path} <==", file=sys.stderr)
 
         # Read run parameters from file name
         path_data = parse_path(path, pattern)
@@ -105,7 +105,7 @@ def load_logs(paths: list[str], pattern: str = None) -> list[dict]:
         # Read last lines of the file to find rates
         tail = subprocess.run(
             ["tail", "-n", "6", path], capture_output=True, text=True)
-        print(tail.stdout, file=sys.stderr)
+        # print(tail.stdout, file=sys.stderr)
         lines = tail.stdout.splitlines()
         try:
             emr = float(lines[0].split(": ")[1])
@@ -142,7 +142,7 @@ def load_logs(paths: list[str], pattern: str = None) -> list[dict]:
             "hamming_by_class": hamming_by_class,
             "medshake_by_class": medshake_by_class,
         }
-        print(json.dumps(results, indent=2), file=sys.stderr)
+        # print(json.dumps(results, indent=2), file=sys.stderr)
         data.append(results)
     return data
 
@@ -157,7 +157,7 @@ def load_outputs(paths: list[str], corpus_path: str,
     with open(corpus_path, "r") as f:
         corpus = json.load(f)
     for path in paths:
-        print(f"\n==> {path} <==", file=sys.stderr)
+        # print(f"\n==> {path} <==", file=sys.stderr)
 
         # Read run parameters from file name
         path_data = parse_path(path, pattern)
@@ -197,7 +197,7 @@ def load_outputs(paths: list[str], corpus_path: str,
             "hamming_by_class": hamming_by_class,
             "medshake_by_class": medshake_by_class,
         }
-        print(json.dumps(results, indent=2), file=sys.stderr)
+        # print(json.dumps(results, indent=2), file=sys.stderr)
         data.append(results)
     return data
 
@@ -351,9 +351,10 @@ def latex_print_results(df: pd.DataFrame, table_title: str = "",
         n = 2 if len(column) > 2 else 1
         largest = column.nlargest(n).values
         def value_to_latex(v: any) -> str:
-            v_str = f"{v:.6f}".rstrip("0")
+            # v_str = f"{v:.6f}".rstrip("0")
+            v_str = f"{v:.3g}"
             if v == largest[0]:
-                return f"\\textbf{{{v_str}}}"
+                return f"{{\\bf|{v_str}}}"
             if n > 1 and v == largest[1]:
                 return f"{{\\ul|{v_str}}}"
             return f"{v_str}"
@@ -455,7 +456,7 @@ def latex_print_results(df: pd.DataFrame, table_title: str = "",
 
 def plot_results(df: pd.DataFrame, suffix: str = "") -> None:
     """
-    Create plots for EMR and Hamming rate of data grouping by shots.
+    Create plots for EMR and Hamming score of data grouping by shots.
     """
     for prefix, title in RATE_TITLES.items():
         # Plot rate grouped by shot
@@ -508,16 +509,16 @@ def main(
             regex_finetuned,
             regex_answer_txt,
         )
-        print("Filename pattern:", pattern.pattern)
+        print("Filename pattern:", pattern.pattern, file=sys.stderr)
         paths = [
             os.path.join(basedir, f)
             for f in os.listdir(basedir)
             if pattern.match(f)
         ]
-        print("Files to process:", *paths, sep="\n")
+        print("Files to process:", *paths, sep="\n", file=sys.stderr)
         # results = load_logs(paths, pattern)
         results = load_outputs(paths, "data/dev-medshake-score.json", pattern)
-        print("Results:", results)
+        # print("Results:", results, file=sys.stderr)
 
         if not results:
             return
