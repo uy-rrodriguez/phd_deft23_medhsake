@@ -166,7 +166,7 @@ def medshake_rate(predicted: list[str], instance: dict[str, any],
     respectively.
     """
     # Generate a key based on the predicted answers (they are already sorted)
-    med_key = " ".join(predicted)
+    med_key = " ".join(sorted(predicted))
     med_data = instance["medshake"].get(med_key, {})
     return med_data.get("score", 0) / max_score
 
