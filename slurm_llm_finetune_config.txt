@@ -1,0 +1,20 @@
+ArrayTaskID	Completions	SpecialPad	Prompt	AnswerText	MaxSeqLength	ModelRef
+1			1			0			2		1			256				llama3
+2			1			0			2		1			256				llama3
+3			0			0			2		1			256				llama3
+4			1			0			2		0			256				llama3
+5			1			0			4		1			512				llama3
+6			1			1			4		1			512				llama3
+7			1			1			2		1			512				llama3
+
+8			1			0			2		1			512				mistral
+9			1			0			4		1			512				mistral
+
+10			1			0			2		1			512				biomistral
+11			1			0			4		1			512				biomistral
+
+12			1			0			2		1			512				apollo
+13			1			0			4		1			512				apollo
+
+14			1			0			2		1			512				llama3-70b
+15			1			0			4		1			512				llama3-70b
