@@ -1,5 +1,10 @@
 import json
 
+# Wandb authentication, used to track training
+# (Done at the very beginning, otherwise there is an error with PyArrow,
+# imported by other packages)
+from util.w_and_b import wandb_login
+
 import pandas as pd
 import peft
 import torch
@@ -49,12 +54,12 @@ def load_data(
 
 
 def finetune_lora(
-        train_dataset_name: str,
+        model_checkpoint: str,
         new_model_path: str,
         run_name: str,
-        prompt_template_id: int,
+        train_dataset_name: str,
         eval_dataset_name: str = "",
-        model_name: str = "meta-llama/Meta-Llama-3-8B",
+        prompt_template_id: int = 0,
         lora_r:int = 4,
         lora_alpha: int = 16,
         lora_dropout: float = 0.05,
@@ -82,10 +87,13 @@ def finetune_lora(
         max_seq_length: int = 256,
         packing: bool = False,
         device_map: str = '{"":0}',
+        report_to: str = "wandb",
         train_on_completions_only: bool = True,
         use_special_pad_token: bool = False,
         include_full_answers: bool = True,
 ):
+    if report_to == "wandb":
+        wandb_login()
 
     device_map = json.loads(device_map)
 
@@ -109,15 +117,18 @@ def finetune_lora(
 
     # Load base model
     model = AutoModelForCausalLM.from_pretrained(
-        model_name,
+        model_checkpoint,
         quantization_config=bnb_config,
         device_map=device_map
     )
     model.config.use_cache = False
     model.config.pretraining_tp = 1
 
-    # Load LLaMA tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+    # Load tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_checkpoint,
+        trust_remote_code=True,
+    )
     if use_special_pad_token:
         tokenizer.add_special_tokens(
             {"pad_token": "<|reserved_special_token_250|>"})
@@ -156,7 +167,6 @@ def finetune_lora(
         gradient_accumulation_steps=batch_size // micro_batch_size,
         optim=optim,
         save_steps=save_steps,
-        logging_steps=logging_steps,
         learning_rate=learning_rate,
         weight_decay=weight_decay,
         fp16=fp16,
@@ -167,17 +177,18 @@ def finetune_lora(
         group_by_length=group_by_length,
         lr_scheduler_type=lr_scheduler_type,
         run_name=run_name,
-        report_to="none",
-        # report_to="wandb",
+
+        # W&B config
+        report_to=report_to,
+        logging_steps=logging_steps,  # how often to log to W&B
     )
 
     if train_on_completions_only:
         response_template = deft.response_template_from_id(prompt_template_id)
-        tokens =  tokenizer.tokenize(response_template, add_special_tokens=False)
+        # tokens =  tokenizer.tokenize(response_template, add_special_tokens=False)
         token_ids = tokenizer.encode(response_template, add_special_tokens=False)
-        print(list(zip(tokens, token_ids)))
-        # collator = trl.DataCollatorForCompletionOnlyLM(token_ids[1:], tokenizer=tokenizer)
-        collator = trl.DataCollatorForCompletionOnlyLM(token_ids, tokenizer=tokenizer)
+        collator = trl.DataCollatorForCompletionOnlyLM(token_ids[1:], tokenizer=tokenizer)
+        # collator = trl.DataCollatorForCompletionOnlyLM(token_ids, tokenizer=tokenizer)
     else:
         collator = None
 
