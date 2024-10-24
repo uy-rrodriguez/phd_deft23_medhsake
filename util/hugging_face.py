@@ -2,6 +2,11 @@
 Module with useful functions to access HuggingFace datasets and models.
 """
 
+import huggingface_hub
+
+import api_keys
+
+
 def silent(callback):
     """
     Decorator to silence standard output. Useful during login.
@@ -20,6 +25,4 @@ def silent(callback):
 
 @silent
 def hf_login():
-    from huggingface_hub import login
-    from api_keys import HF_TOKEN
-    login(token=HF_TOKEN)
+    huggingface_hub.login(token=api_keys.HF_TOKEN)
