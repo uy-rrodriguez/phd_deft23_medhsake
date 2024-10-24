@@ -1,5 +1,9 @@
 #!/bin/bash -l
 #
+# Helper to run scripts using sbatch. Execution is wrapped in a function to
+# automatically start reading logs with "tail", and propose to cancel the job
+# and delete output files on exit.
+#
 
 # Counts the number of output files generated for the given job id
 function count_files() {
@@ -16,12 +20,19 @@ function on_tail_close() {
 
     read -p "Delete output file? [y/N] " del
     if [[ "$del" == "y" ]]; then
-        rm "$slurm_file"
+        sleep 0.5
+        rm slurm-${slurm_id}.out slurm-${slurm_id}_*.out 2>/dev/null
     fi
 }
 
 
 # Process arguments
+if [[ $# < 1 ]]; then
+    echo "Missing path to script" 1>&2
+    exit 1
+fi;
+
+# Handle script name
 SCRIPT=$1
 if [[ "$1" == "run" ]]; then
     SCRIPT=slurm_run.sh
@@ -29,7 +40,13 @@ elif [[ "$1" == "finetune" ]]; then
     SCRIPT=slurm_finetune.sh
 fi
 
-info=$(sbatch "$SCRIPT")
+# Handle extra arguments for the script
+shift
+ARGS="$@"
+
+
+# Run script as a Slurm background job
+info=$(sbatch "$SCRIPT" "$ARGS")
 # info="Submitted job id 903164"
 echo $info
 
