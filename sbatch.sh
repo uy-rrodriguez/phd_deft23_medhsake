@@ -5,11 +5,6 @@
 # and delete output files on exit.
 #
 
-# Counts the number of output files generated for the given job id
-function count_files() {
-    echo $(ls -l slurm-$1*.out 2>/dev/null | wc -l)
-}
-
 # Handles closing of the tail command, to cancel the job and remove the output
 function on_tail_close() {
     echo
@@ -23,8 +18,21 @@ function on_tail_close() {
         sleep 0.5
         rm slurm-${slurm_id}.out slurm-${slurm_id}_*.out 2>/dev/null
     fi
+
+    exit 0
 }
 
+# Capture Ctrl+C used to stop tail
+trap on_tail_close INT
+
+
+################################################################################
+
+
+# Counts the number of output files generated for the given job id
+function count_files() {
+    echo $(ls -l slurm-$1*.out 2>/dev/null | wc -l)
+}
 
 # Process arguments
 if [[ $# < 1 ]]; then
@@ -48,7 +56,11 @@ ARGS="$@"
 # Run script as a Slurm background job
 info=$(sbatch "$SCRIPT" "$ARGS")
 # info="Submitted job id 903164"
+slurm_code=$?
 echo $info
+if [[ $slurm_code -gt 0 ]]; then
+    exit $slurm_code
+fi
 
 slurm_id=$(echo "$info" | grep -Po "\d+")
 
@@ -68,9 +80,6 @@ else
     read -p "Task number of the file to read: " slurm_task_id
     slurm_file=slurm-${slurm_id}_${slurm_task_id}.out
 fi
-
-# Capture Ctrl+C used to stop tail
-trap on_tail_close INT
 
 # Read Slurm output file
 echo Reading file $slurm_file
