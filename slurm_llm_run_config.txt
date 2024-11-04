@@ -1,32 +1,32 @@
 ################################################################################
 #									LLAMA-3									   #
 ################################################################################
-ArrayTaskID	Prompt	NumShots	AnswerText	ModelName					NumRun
+ArrayTaskID	Prompt	NumShots	AnswerText	ModelRef					NumRun
 1			2		0			0			llama3						1
-2			1		1			0			llama3						1
-3			2		2			1			llama3						1
-4			2		3			1			llama3						1
+2			2		1			0			llama3						1
+3			2		2			0			llama3						1
+4			2		3			0			llama3						1
 5			1		4			0			llama3						1
 6			1		5			0			llama3						1
 
 7			2		0			0			llama3						2
-8			1		1			0			llama3						2
-9			2		2			1			llama3						2
-10			2		3			1			llama3						2
+8			2		1			0			llama3						2
+9			2		2			0			llama3						2
+10			2		3			0			llama3						2
 11			1		4			0			llama3						2
 12			1		5			0			llama3						2
 
 13			2		0			0			llama3						3
-14			1		1			0			llama3						3
-15			2		2			1			llama3						3
-16			2		3			1			llama3						3
+14			2		1			0			llama3						3
+15			2		2			0			llama3						3
+16			2		3			0			llama3						3
 17			1		4			0			llama3						3
 18			1		5			0			llama3						3
 
 19			2		0			0			llama3						4
-20			1		1			0			llama3						4
-21			2		2			1			llama3						4
-22			2		3			1			llama3						4
+20			2		1			0			llama3						4
+21			2		2			0			llama3						4
+22			2		3			0			llama3						4
 23			1		4			0			llama3						4
 24			1		5			0			llama3						4
 
@@ -191,6 +191,68 @@ ArrayTaskID	Prompt	NumShots	AnswerText	ModelName					NumRun
 
 
 
+137			2		0			0			llama3_70b					1
+138			2		1			0			llama3_70b					1
+139			2		2			0			llama3_70b					1
+140			2		3			0			llama3_70b					1
+141			2		4			0			llama3_70b					1
+142			2		5			0			llama3_70b					1
+
+143			2		0			0			llama3_70b					2
+144			2		1			0			llama3_70b					2
+145			2		2			0			llama3_70b					2
+146			2		3			0			llama3_70b					2
+147			2		4			0			llama3_70b					2
+148			2		5			0			llama3_70b					2
+
+149			2		0			0			llama3_70b					3
+150			2		1			0			llama3_70b					3
+151			2		2			0			llama3_70b					3
+152			2		3			0			llama3_70b					3
+153			2		4			0			llama3_70b					3
+154			2		5			0			llama3_70b					3
+
+155			2		0			0			llama3_70b					4
+156			2		1			0			llama3_70b					4
+157			2		2			0			llama3_70b					4
+158			2		3			0			llama3_70b					4
+159			2		4			0			llama3_70b					4
+160			2		5			0			llama3_70b					4
+
+
+
+
+161			4		0			0			llama3_70b					1
+162			4		1			0			llama3_70b					1
+163			4		2			0			llama3_70b					1
+164			4		3			0			llama3_70b					1
+165			4		4			0			llama3_70b					1
+166			4		5			0			llama3_70b					1
+
+167			4		0			0			llama3_70b					2
+168			4		1			0			llama3_70b					2
+169			4		2			0			llama3_70b					2
+170			4		3			0			llama3_70b					2
+171			4		4			0			llama3_70b					2
+172			4		5			0			llama3_70b					2
+
+173			4		0			0			llama3_70b					3
+174			4		1			0			llama3_70b					3
+175			4		2			0			llama3_70b					3
+176			4		3			0			llama3_70b					3
+177			4		4			0			llama3_70b					3
+178			4		5			0			llama3_70b					3
+
+179			4		0			0			llama3_70b					4
+180			4		1			0			llama3_70b					4
+181			4		2			0			llama3_70b					4
+182			4		3			0			llama3_70b					4
+183			4		4			0			llama3_70b					4
+184			4		5			0			llama3_70b					4
+
+
+
+
 ################################################################################
 #								MMED-LLAMA-3								   #
 ################################################################################
@@ -286,64 +348,122 @@ ArrayTaskID	Prompt	NumShots	AnswerText	ModelName					NumRun
 448			2		5			1			mistral						4
 
 
+449			4		0			0			mistral						1
+450			4		1			0			mistral						1
+451			4		2			0			mistral						1
+452			4		3			0			mistral						1
+453			4		4			0			mistral						1
+454			4		5			0			mistral						1
+
+455			4		0			0			mistral						2
+456			4		1			0			mistral						2
+457			4		2			0			mistral						2
+458			4		3			0			mistral						2
+459			4		4			0			mistral						2
+460			4		5			0			mistral						2
+
+461			4		0			0			mistral						3
+462			4		1			0			mistral						3
+463			4		2			0			mistral						3
+464			4		3			0			mistral						3
+465			4		4			0			mistral						3
+466			4		5			0			mistral						3
+
+467			4		0			0			mistral						4
+468			4		1			0			mistral						4
+469			4		2			0			mistral						4
+470			4		3			0			mistral						4
+471			4		4			0			mistral						4
+472			4		5			0			mistral						4
 
 
-448			4		0			0			mistral						1
-449			4		1			0			mistral						1
-450			4		2			0			mistral						1
-451			4		3			0			mistral						1
-452			4		4			0			mistral						1
-453			4		5			0			mistral						1
+473			4		0			1			mistral						1
+474			4		1			1			mistral						1
+475			4		2			1			mistral						1
+476			4		3			1			mistral						1
+477			4		4			1			mistral						1
+478			4		5			1			mistral						1
 
-454			4		0			0			mistral						2
-455			4		1			0			mistral						2
-456			4		2			0			mistral						2
-457			4		3			0			mistral						2
-458			4		4			0			mistral						2
-459			4		5			0			mistral						2
+479			4		0			1			mistral						2
+480			4		1			1			mistral						2
+481			4		2			1			mistral						2
+482			4		3			1			mistral						2
+483			4		4			1			mistral						2
+484			4		5			1			mistral						2
 
-460			4		0			0			mistral						3
-461			4		1			0			mistral						3
-462			4		2			0			mistral						3
-463			4		3			0			mistral						3
-464			4		4			0			mistral						3
-465			4		5			0			mistral						3
+485			4		0			1			mistral						3
+486			4		1			1			mistral						3
+487			4		2			1			mistral						3
+488			4		3			1			mistral						3
+489			4		4			1			mistral						3
+490			4		5			1			mistral						3
 
-466			4		0			0			mistral						4
-467			4		1			0			mistral						4
-468			4		2			0			mistral						4
-469			4		3			0			mistral						4
-470			4		4			0			mistral						4
-471			4		5			0			mistral						4
+491			4		0			1			mistral						4
+492			4		1			1			mistral						4
+493			4		2			1			mistral						4
+494			4		3			1			mistral						4
+495			4		4			1			mistral						4
+496			4		5			1			mistral						4
 
 
-472			4		0			1			mistral						1
-473			4		1			1			mistral						1
-474			4		2			1			mistral						1
-475			4		3			1			mistral						1
-476			4		4			1			mistral						1
-477			4		5			1			mistral						1
 
-478			4		0			1			mistral						2
-479			4		1			1			mistral						2
-480			4		2			1			mistral						2
-481			4		3			1			mistral						2
-482			4		4			1			mistral						2
-483			4		5			1			mistral						2
 
-484			4		0			1			mistral						3
-485			4		1			1			mistral						3
-486			4		2			1			mistral						3
-487			4		3			1			mistral						3
-488			4		4			1			mistral						3
-489			4		5			1			mistral						3
+497			2		0			0			mistral/008_20241031		1
+498			2		1			0			mistral/008_20241031		1
+499			2		2			0			mistral/008_20241031		1
+500			2		3			0			mistral/008_20241031		1
+501			2		4			0			mistral/008_20241031		1
+502			2		5			0			mistral/008_20241031		1
 
-490			4		0			1			mistral						4
-491			4		1			1			mistral						4
-492			4		2			1			mistral						4
-493			4		3			1			mistral						4
-494			4		4			1			mistral						4
-495			4		5			1			mistral						4
+503			2		0			0			mistral/008_20241031		2
+504			2		1			0			mistral/008_20241031		2
+505			2		2			0			mistral/008_20241031		2
+506			2		3			0			mistral/008_20241031		2
+507			2		4			0			mistral/008_20241031		2
+508			2		5			0			mistral/008_20241031		2
+
+509			2		0			0			mistral/008_20241031		3
+510			2		1			0			mistral/008_20241031		3
+511			2		2			0			mistral/008_20241031		3
+512			2		3			0			mistral/008_20241031		3
+513			2		4			0			mistral/008_20241031		3
+514			2		5			0			mistral/008_20241031		3
+
+515			2		0			0			mistral/008_20241031		4
+516			2		1			0			mistral/008_20241031		4
+517			2		2			0			mistral/008_20241031		4
+518			2		3			0			mistral/008_20241031		4
+519			2		4			0			mistral/008_20241031		4
+520			2		5			0			mistral/008_20241031		4
+
+
+521			4		0			0			mistral/009_20241016		1
+522			4		1			0			mistral/009_20241016		1
+523			4		2			0			mistral/009_20241016		1
+524			4		3			0			mistral/009_20241016		1
+525			4		4			0			mistral/009_20241016		1
+526			4		5			0			mistral/009_20241016		1
+
+527			4		0			0			mistral/009_20241016		2
+528			4		1			0			mistral/009_20241016		2
+529			4		2			0			mistral/009_20241016		2
+530			4		3			0			mistral/009_20241016		2
+531			4		4			0			mistral/009_20241016		2
+532			4		5			0			mistral/009_20241016		2
+
+533			4		0			0			mistral/009_20241016		3
+534			4		1			0			mistral/009_20241016		3
+535			4		2			0			mistral/009_20241016		3
+536			4		3			0			mistral/009_20241016		3
+537			4		4			0			mistral/009_20241016		3
+538			4		5			0			mistral/009_20241016		3
+
+539			4		0			0			mistral/009_20241016		4
+540			4		1			0			mistral/009_20241016		4
+541			4		2			0			mistral/009_20241016		4
+542			4		3			0			mistral/009_20241016		4
+543			4		4			0			mistral/009_20241016		4
+544			4		5			0			mistral/009_20241016		4
 
 
 
@@ -378,3 +498,248 @@ ArrayTaskID	Prompt	NumShots	AnswerText	ModelName					NumRun
 622			2		3			0			biomistral					4
 623			2		4			0			biomistral					4
 624			2		5			0			biomistral					4
+
+
+625			4		0			0			biomistral					1
+626			4		1			0			biomistral					1
+627			4		2			0			biomistral					1
+628			4		3			0			biomistral					1
+629			4		4			0			biomistral					1
+630			4		5			0			biomistral					1
+
+631			4		0			0			biomistral					2
+632			4		1			0			biomistral					2
+633			4		2			0			biomistral					2
+634			4		3			0			biomistral					2
+635			4		4			0			biomistral					2
+636			4		5			0			biomistral					2
+
+637			4		0			0			biomistral					3
+638			4		1			0			biomistral					3
+639			4		2			0			biomistral					3
+640			4		3			0			biomistral					3
+641			4		4			0			biomistral					3
+642			4		5			0			biomistral					3
+
+643			4		0			0			biomistral					4
+644			4		1			0			biomistral					4
+645			4		2			0			biomistral					4
+646			4		3			0			biomistral					4
+647			4		4			0			biomistral					4
+648			4		5			0			biomistral					4
+
+
+
+
+649			2		0			0			biomistral/010_20241031		1
+650			2		1			0			biomistral/010_20241031		1
+651			2		2			0			biomistral/010_20241031		1
+652			2		3			0			biomistral/010_20241031		1
+653			2		4			0			biomistral/010_20241031		1
+654			2		5			0			biomistral/010_20241031		1
+
+655			2		0			0			biomistral/010_20241031		2
+656			2		1			0			biomistral/010_20241031		2
+657			2		2			0			biomistral/010_20241031		2
+658			2		3			0			biomistral/010_20241031		2
+659			2		4			0			biomistral/010_20241031		2
+660			2		5			0			biomistral/010_20241031		2
+
+661			2		0			0			biomistral/010_20241031		3
+662			2		1			0			biomistral/010_20241031		3
+663			2		2			0			biomistral/010_20241031		3
+664			2		3			0			biomistral/010_20241031		3
+665			2		4			0			biomistral/010_20241031		3
+666			2		5			0			biomistral/010_20241031		3
+
+667			2		0			0			biomistral/010_20241031		4
+668			2		1			0			biomistral/010_20241031		4
+669			2		2			0			biomistral/010_20241031		4
+670			2		3			0			biomistral/010_20241031		4
+671			2		4			0			biomistral/010_20241031		4
+672			2		5			0			biomistral/010_20241031		4
+
+
+
+
+673			4		0			0			biomistral/011_20241016		1
+674			4		1			0			biomistral/011_20241016		1
+675			4		2			0			biomistral/011_20241016		1
+676			4		3			0			biomistral/011_20241016		1
+677			4		4			0			biomistral/011_20241016		1
+678			4		5			0			biomistral/011_20241016		1
+
+679			4		0			0			biomistral/011_20241016		2
+680			4		1			0			biomistral/011_20241016		2
+681			4		2			0			biomistral/011_20241016		2
+682			4		3			0			biomistral/011_20241016		2
+683			4		4			0			biomistral/011_20241016		2
+684			4		5			0			biomistral/011_20241016		2
+
+685			4		0			0			biomistral/011_20241016		3
+686			4		1			0			biomistral/011_20241016		3
+687			4		2			0			biomistral/011_20241016		3
+688			4		3			0			biomistral/011_20241016		3
+689			4		4			0			biomistral/011_20241016		3
+690			4		5			0			biomistral/011_20241016		3
+
+691			4		0			0			biomistral/011_20241016		4
+692			4		1			0			biomistral/011_20241016		4
+693			4		2			0			biomistral/011_20241016		4
+694			4		3			0			biomistral/011_20241016		4
+695			4		4			0			biomistral/011_20241016		4
+696			4		5			0			biomistral/011_20241016		4
+
+
+
+
+################################################################################
+#									APOLLO									   #
+################################################################################
+801			2		0			0			apollo						1
+802			2		1			0			apollo						1
+803			2		2			0			apollo						1
+804			2		3			0			apollo						1
+805			2		4			0			apollo						1
+806			2		5			0			apollo						1
+
+807			2		0			0			apollo						2
+808			2		1			0			apollo						2
+809			2		2			0			apollo						2
+810			2		3			0			apollo						2
+811			2		4			0			apollo						2
+812			2		5			0			apollo						2
+
+813			2		0			0			apollo						3
+814			2		1			0			apollo						3
+815			2		2			0			apollo						3
+816			2		3			0			apollo						3
+817			2		4			0			apollo						3
+818			2		5			0			apollo						3
+
+819			2		0			0			apollo						4
+820			2		1			0			apollo						4
+821			2		2			0			apollo						4
+822			2		3			0			apollo						4
+823			2		4			0			apollo						4
+824			2		5			0			apollo						4
+
+
+825			4		0			0			apollo						1
+826			4		1			0			apollo						1
+827			4		2			0			apollo						1
+828			4		3			0			apollo						1
+829			4		4			0			apollo						1
+830			4		5			0			apollo						1
+
+831			4		0			0			apollo						2
+832			4		1			0			apollo						2
+833			4		2			0			apollo						2
+834			4		3			0			apollo						2
+835			4		4			0			apollo						2
+836			4		5			0			apollo						2
+
+837			4		0			0			apollo						3
+838			4		1			0			apollo						3
+839			4		2			0			apollo						3
+840			4		3			0			apollo						3
+841			4		4			0			apollo						3
+842			4		5			0			apollo						3
+
+843			4		0			0			apollo						4
+844			4		1			0			apollo						4
+845			4		2			0			apollo						4
+846			4		3			0			apollo						4
+847			4		4			0			apollo						4
+848			4		5			0			apollo						4
+
+
+849			4		0			1			apollo						1
+850			4		1			1			apollo						1
+851			4		2			1			apollo						1
+852			4		3			1			apollo						1
+853			4		4			1			apollo						1
+854			4		5			1			apollo						1
+
+855			4		0			1			apollo						2
+856			4		1			1			apollo						2
+857			4		2			1			apollo						2
+858			4		3			1			apollo						2
+859			4		4			1			apollo						2
+860			4		5			1			apollo						2
+
+861			4		0			1			apollo						3
+862			4		1			1			apollo						3
+863			4		2			1			apollo						3
+864			4		3			1			apollo						3
+865			4		4			1			apollo						3
+866			4		5			1			apollo						3
+
+867			4		0			1			apollo						4
+868			4		1			1			apollo						4
+869			4		2			1			apollo						4
+870			4		3			1			apollo						4
+871			4		4			1			apollo						4
+872			4		5			1			apollo						4
+
+
+
+
+873			2		0			0			apollo/012_20241031			1
+874			2		1			0			apollo/012_20241031			1
+875			2		2			0			apollo/012_20241031			1
+876			2		3			0			apollo/012_20241031			1
+877			2		4			0			apollo/012_20241031			1
+878			2		5			0			apollo/012_20241031			1
+
+879			2		0			0			apollo/012_20241031			2
+880			2		1			0			apollo/012_20241031			2
+881			2		2			0			apollo/012_20241031			2
+882			2		3			0			apollo/012_20241031			2
+883			2		4			0			apollo/012_20241031			2
+884			2		5			0			apollo/012_20241031			2
+
+885			2		0			0			apollo/012_20241031			3
+886			2		1			0			apollo/012_20241031			3
+887			2		2			0			apollo/012_20241031			3
+888			2		3			0			apollo/012_20241031			3
+889			2		4			0			apollo/012_20241031			3
+890			2		5			0			apollo/012_20241031			3
+
+891			2		0			0			apollo/012_20241031			4
+892			2		1			0			apollo/012_20241031			4
+893			2		2			0			apollo/012_20241031			4
+894			2		3			0			apollo/012_20241031			4
+895			2		4			0			apollo/012_20241031			4
+896			2		5			0			apollo/012_20241031			4
+
+
+
+
+897			4		0			0			apollo/013_20241016			1
+898			4		1			0			apollo/013_20241016			1
+899			4		2			0			apollo/013_20241016			1
+900			4		3			0			apollo/013_20241016			1
+901			4		4			0			apollo/013_20241016			1
+902			4		5			0			apollo/013_20241016			1
+
+903			4		0			0			apollo/013_20241016			2
+904			4		1			0			apollo/013_20241016			2
+905			4		2			0			apollo/013_20241016			2
+906			4		3			0			apollo/013_20241016			2
+907			4		4			0			apollo/013_20241016			2
+908			4		5			0			apollo/013_20241016			2
+
+909			4		0			0			apollo/013_20241016			3
+910			4		1			0			apollo/013_20241016			3
+911			4		2			0			apollo/013_20241016			3
+912			4		3			0			apollo/013_20241016			3
+913			4		4			0			apollo/013_20241016			3
+914			4		5			0			apollo/013_20241016			3
+
+915			4		0			0			apollo/013_20241016			4
+916			4		1			0			apollo/013_20241016			4
+917			4		2			0			apollo/013_20241016			4
+918			4		3			0			apollo/013_20241016			4
+919			4		4			0			apollo/013_20241016			4
+920			4		5			0			apollo/013_20241016			4
