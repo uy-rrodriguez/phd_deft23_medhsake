@@ -7,8 +7,7 @@ import numpy as np
 
 lm_templates = [
 '''Ceci est une question de QCM de l\'examen de pharmacie. Réponds avec la ou \
-les lettres correspondant à la bonne réponse.\n\n%s
-Réponse(s) : %s\n''',
+les lettres correspondant à la bonne réponse.\n\n%s\nRéponse(s) : %s''',
 '''%s\nRéponse(s) : %s''',
 '''Below is an instruction that describes a task, paired with an input that \
 provides further context. Write a response that appropriately completes the \
@@ -54,6 +53,7 @@ def linearize_instance(
             answers = '; '.join('(%s) %s' % (a, instance['answers'][a]) for a in instance['correct_answers'])
         else:
             answers = ' '.join('(%s)' % a for a in instance['correct_answers'])
+        answers = answers + "\n"
     elif add_left_parenthesis:
         answers = "("
     return (question, answers)
