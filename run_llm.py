@@ -1,3 +1,11 @@
+"""
+Script to generate MCQ responses using a given model checkpoint and test data.
+
+Sampling options based on: https://huggingface.co/blog/how-to-generate
+"""
+
+from typing import Optional
+
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
@@ -20,7 +28,22 @@ def main(
     prompt_template_id: str = "0",
     num_shots: int = 0,
     shots_full_answer: bool = False,
+    # Optional parameters to the model's "generate" method
+    **generate_kwargs
 ):
+    # Hyper-parameters
+    generate_kwargs = {
+        k: v
+        for k, v in generate_kwargs.items()
+        if v is not None
+    }
+    if len(generate_kwargs):
+        print(
+            "Hyperparameters:",
+            *[f"  - {k}: {v}" for k, v in generate_kwargs.items()],
+            "\n",
+            sep="\n",
+        )
 
     quant_config=BitsAndBytesConfig(
         load_in_8bit=True,
@@ -33,7 +56,7 @@ def main(
     device_map = {
         "": 0
     }
-    model = AutoModelForCausalLM.from_pretrained(
+    model: AutoModelForCausalLM = AutoModelForCausalLM.from_pretrained(
         model_path,
         device_map=device_map,
         torch_dtype=torch.float16,
@@ -55,6 +78,10 @@ def main(
             attention_mask=inputs.attention_mask,
             max_new_tokens=32,
             pad_token_id=tokenizer.eos_token_id,
+
+            # Handle optional parameters
+            # https://huggingface.co/docs/transformers/en/generation_strategies
+            **generate_kwargs
         )
 
         generated = tokenizer.decode(outputs[0], skip_special_tokens=True)
