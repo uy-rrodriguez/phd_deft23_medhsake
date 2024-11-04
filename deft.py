@@ -142,6 +142,12 @@ def extract_answer(answer, num_answers=5, stop_at_line_break=False, **kwargs):
     #     result = ['a']
     return result
 
+
+def batch_emr(preds_list, refs_list):
+    score = [p == r for p, r in zip(preds_list, refs_list)]
+    return sum(score) / len(score)
+
+
 #def hamming(a, b, num):
 #    A = [c.upper() if c in a else c for c in letters[:num]]
 #    B = [c.upper() if c in b else c for c in letters[:num]]
@@ -152,6 +158,11 @@ def hamming(preds, refs):
     corrects = sum(corrects)
     total_refs = len(list(set(preds + refs)))
     return corrects / total_refs
+
+
+def batch_hamming(preds_list, refs_list):
+    score = [hamming(p, r) for p, r in zip(preds_list, refs_list)]
+    return sum(score) / len(score)
 
 
 def medshake_rate(predicted: list[str], instance: dict[str, any],
