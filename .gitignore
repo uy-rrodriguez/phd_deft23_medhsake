@@ -1,3 +1,7 @@
+# Hide output for a clean list of changes (comment to commit outputs)
+logs/
+output/
+
 # Environment
 api_keys.py
 conda-environment.yml
@@ -7,3 +11,13 @@ slurm*
 
 # Build files
 **/__pycache__/
+
+# Extra output
+models/
+logs/llama3/exploration/
+logs/llama3/finetuning/
+output/llama3/exploratory/
+output/**/*.json
+output/**/*.png
+train_results/
+wandb/
