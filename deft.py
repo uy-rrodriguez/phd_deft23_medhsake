@@ -313,7 +313,7 @@ def test_get_prompt(
     Prints the prompt generated for a given instance id and template.
     """
     print(id, template)
-    with open("data/dev-medshake-score.json") as f:
+    with open("data/test-medshake-score.json") as f:
         corpus = json.load(f)
     instance = next(filter(lambda x: x["id"] == id, corpus))
     if not instance:
@@ -332,7 +332,7 @@ def test_kl_divergence(id: str, *answers: list[str]) -> None:
     Prints the KL divergence for a given instance id and predicted answers.
     """
     print(id, answers)
-    with open("data/dev-medshake-score.json") as f:
+    with open("data/test-medshake-score.json") as f:
         corpus = json.load(f)
     instance = next(filter(lambda x: x["id"] == id, corpus))
     if not instance:
