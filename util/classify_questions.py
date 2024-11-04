@@ -80,7 +80,7 @@ def test_shannon_entropy(id: str, deduplicate_answers: bool,
     Prints the Shannon entropy for a given instance id.
     """
     print(id, deduplicate_answers, use_natural_log)
-    with open("data/dev-medshake-score.json") as f:
+    with open("data/test-medshake-score.json") as f:
         import json
         corpus = json.load(f)
     instance = next(filter(lambda x: x["id"] == id, corpus))
@@ -295,7 +295,7 @@ def get_average_by_difficulty(
 
 
 def main() -> None:
-    df = load_corpus("data/dev-medshake-score.json")
+    df = load_corpus("data/test-medshake-score.json")
 
     plot_question_classification(
         df,
