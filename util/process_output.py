@@ -25,9 +25,9 @@ except ImportError:
 
 GENERIC_RE = \
     r"(?P<model>[^_]+(?P<finetuned>_tuned.*?){tuned_modifier})" \
-    r"_prompt(?P<prompt>{prompt_modifier})" \
+    r"(_prompt(?P<prompt>{prompt_nbr})){prompt_modifier}" \
     r".*" \
-    r"_shots(?P<shots>\d+)" \
+    r"(_shots(?P<shots>\d+)){shots_modifier}" \
     r"(?P<with_answer_txt>_answertxt){answertxt_modifier}" \
     r"_(?P<run>\d+)" \
     r"\.txt"
@@ -42,7 +42,9 @@ RATE_TITLES = {
 
 def get_filename_pattern(
         regex_prompt_nbr: int = None,
+        regex_no_prompt: bool = None,
         regex_finetuned: bool = None,
+        regex_no_shots: bool = None,
         regex_answer_txt: bool = None,
 ):
     """
@@ -59,13 +61,19 @@ def get_filename_pattern(
             filtering is done.
     """
     path_re = GENERIC_RE.format(**{
-        "prompt_modifier":
+        "prompt_nbr":
             "\d+" if regex_prompt_nbr is None
             else regex_prompt_nbr,
+        "prompt_modifier":
+            "{0}" if regex_no_prompt
+            else "",
         "tuned_modifier":
             "?" if regex_finetuned is None
             else "" if regex_finetuned
             else "{0}",
+        "shots_modifier":
+            "{0}" if regex_no_shots
+            else "",
         "answertxt_modifier":
             "?" if regex_answer_txt is None
             else "" if regex_answer_txt
@@ -203,8 +211,7 @@ def load_outputs(paths: list[str], corpus_path: str,
     return data
 
 
-def get_results_dataframe(results: list[dict], group_by_shots=False) \
-        -> pd.DataFrame:
+def get_results_dataframe(results: list[dict]) -> pd.DataFrame:
     """
     Returns a DataFrame after pre-processing the given results.
     """
@@ -296,8 +303,10 @@ def print_results(df: pd.DataFrame, head_only=True, split_rates=True) -> None:
                 print(df)
 
 
-def latex_print_results(df: pd.DataFrame, table_title: str = "",
-                        single_table: bool = False) -> None:
+def latex_print_results(
+        df: pd.DataFrame, table_title: str = "",
+        single_table: bool = False, highlight_top: bool = True,
+) -> None:
     """
     Prints resulting rates from the given DataFrame as multiple LaTeX tables.
 
@@ -338,15 +347,17 @@ def latex_print_results(df: pd.DataFrame, table_title: str = "",
         header = header.replace("_", "\\_")
         return header
 
-    def latex_df_format_column(column: pd.Series) -> pd.Series:
+    def latex_df_format_column(
+            column: pd.Series, highlight_top: bool) -> pd.Series:
         """
         Given a Series corresponding to a column with numeric values, returns
         LaTeX code to format the numbers and highlight first and second highest
         values.
         """
         # Do not highlight shots and standard deviation
-        if re.match(r"shots|.*_std", column.name):
-            return column.apply(lambda v: f"{v:.6f}".rstrip("0").rstrip("."))
+        if re.match(r"shots|.*std", column.name):
+            # return column.apply(lambda v: f"{v:.6f}".rstrip("0").rstrip("."))
+            return column.apply(lambda v: f"{v:.3g}")
         # Highlight the highest two if there are more than 2 rows, otherwise
         # highlight only the first
         n = 2 if len(column) > 2 else 1
@@ -354,10 +365,11 @@ def latex_print_results(df: pd.DataFrame, table_title: str = "",
         def value_to_latex(v: any) -> str:
             # v_str = f"{v:.6f}".rstrip("0")
             v_str = f"{v:.3g}"
-            if v == largest[0]:
-                return f"{{\\bf|{v_str}}}"
-            if n > 1 and v == largest[1]:
-                return f"{{\\ul|{v_str}}}"
+            if highlight_top:
+                if v == largest[0]:
+                    return f"{{\\bf|{v_str}}}"
+                if n > 1 and v == largest[1]:
+                    return f"{{\\ul|{v_str}}}"
             return f"{v_str}"
         return column.apply(value_to_latex)
 
@@ -368,7 +380,7 @@ def latex_print_results(df: pd.DataFrame, table_title: str = "",
         first and second highest values, and cells with equal width per column.
         """
         df = df.rename(latex_clean_header, axis="columns")
-        df = df.apply(latex_df_format_column)
+        df = df.apply(latex_df_format_column, args=(highlight_top,))
 
         def build_formatter(idx, col):
             def formatter(v):
@@ -485,9 +497,13 @@ def plot_results(df: pd.DataFrame, suffix: str = "") -> None:
 
 def main(
         basedir: str = "output/llama3/paper",
+        corpus_path: str = "data/test-medshake-score.json",
         force_reload: bool = False,
+        highlight_top: bool = True,
         regex_prompt_nbr: int = None,
+        regex_no_prompt: bool = None,
         regex_finetuned: bool = None,
+        regex_no_shots: bool = None,
         regex_answer_txt: bool = None,
 ) -> None:
     # Build output suffix based on regex parameters
@@ -506,9 +522,11 @@ def main(
             results = json.load(f)
     else:
         pattern = get_filename_pattern(
-            regex_prompt_nbr,
-            regex_finetuned,
-            regex_answer_txt,
+            regex_prompt_nbr=regex_prompt_nbr,
+            regex_no_prompt=regex_no_prompt,
+            regex_finetuned=regex_finetuned,
+            regex_no_shots=regex_no_shots,
+            regex_answer_txt=regex_answer_txt,
         )
         print("Filename pattern:", pattern.pattern, file=sys.stderr)
         paths = [
@@ -516,9 +534,9 @@ def main(
             for f in os.listdir(basedir)
             if pattern.match(f)
         ]
-        print("Files to process:", *paths, sep="\n", file=sys.stderr)
+        print(f"Files to process ({len(paths)}):", *paths, sep="\n", file=sys.stderr)
         # results = load_logs(paths, pattern)
-        results = load_outputs(paths, "data/dev-medshake-score.json", pattern)
+        results = load_outputs(paths, corpus_path, pattern)
         # print("Results:", results, file=sys.stderr)
 
         if not results:
@@ -526,14 +544,15 @@ def main(
         with open(presaved_results, "w") as f:
             json.dump(results, f)
 
-    df = get_results_dataframe(results, group_by_shots=True)
+    df = get_results_dataframe(results)
 
     # plot_results(df, suffix=suffix)
 
     df = group_results_by_shots(df)
     # print_results(df, split_rates=True, head_only=False)
 
-    latex_print_results(df, single_table=True, table_title="Results of model X")
+    latex_print_results(df, single_table=True, table_title="Results of model X",
+                        highlight_top=highlight_top)
 
 
 if __name__ == "__main__":
