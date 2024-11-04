@@ -6,6 +6,7 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --mem=64G
 #SBATCH --constraint='GPURAM_Min_32GB'
+#--SBATCH --constraint='GPURAM_Min_80GB'
 #SBATCH --time=04:00:00
 #SBATCH --requeue
 #SBATCH --mail-type=ALL
@@ -56,7 +57,7 @@ if [[ "$MODEL_FAMILY" == "llama3" ]]; then
     MODEL=meta-llama/Meta-Llama-3-8B
     MODEL_NAME=llama-3-8b-deft_$SUFF
 
-elif [[ "$MODEL_FAMILY" == "llama3-70b" ]]; then
+elif [[ "$MODEL_FAMILY" == "llama3_70b" ]]; then
     MODEL=meta-llama/Meta-Llama-3-70B
     MODEL_NAME=llama-3-70b-deft_$SUFF
 

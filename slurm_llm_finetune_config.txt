@@ -16,5 +16,5 @@ ArrayTaskID	Completions	SpecialPad	Prompt	AnswerText	MaxSeqLength	ModelRef
 12			1			0			2		1			512				apollo
 13			1			0			4		1			512				apollo
 
-14			1			0			2		1			512				llama3-70b
-15			1			0			4		1			512				llama3-70b
+14			1			0			2		1			512				llama3_70b
+15			1			0			4		1			512				llama3_70b
