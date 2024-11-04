@@ -165,7 +165,7 @@ def batch_hamming(preds_list, refs_list):
     return sum(score) / len(score)
 
 
-def medshake_rate(predicted: list[str], instance: dict[str, any],
+def medshake_rate(predicted: list[str], medshake_rates: dict[str, int],
                   max_score: int = 2) -> float:
     """
     Returns a rate based on the MedShake score for the answer predicted by the
@@ -178,7 +178,7 @@ def medshake_rate(predicted: list[str], instance: dict[str, any],
     """
     # Generate a key based on the predicted answers (they are already sorted)
     med_key = " ".join(sorted(predicted))
-    med_data = instance["medshake"].get(med_key, {})
+    med_data = medshake_rates.get(med_key) or {}
     return med_data.get("score", 0) / max_score
 
 
@@ -260,7 +260,7 @@ def run_single_inference(instance, generator, corpus, template, num_shots=0,
     print(answer, instance['correct_answers'])
     is_exact_match = set(answer) == set(instance['correct_answers'])
     hamming_val = hamming(answer, instance['correct_answers'])
-    medshake = medshake_rate(answer, instance)
+    medshake = medshake_rate(answer, instance.get("medshake", {}))
     return answer, is_exact_match, hamming_val, medshake
 
 

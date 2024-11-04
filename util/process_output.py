@@ -175,7 +175,8 @@ def load_outputs(paths: list[str], corpus_path: str,
                 expected = instance["correct_answers"]
                 is_match = set(generated) == set(expected)
                 hamming_rate = deft.hamming(generated, expected)
-                medshake_rate = deft.medshake_rate(generated, instance)
+                medshake_data = instance.get("medshake", {})
+                medshake_rate = deft.medshake_rate(generated, medshake_data)
                 all_match.append(is_match)
                 all_hamming.append(hamming_rate)
                 all_medshake.append(medshake_rate)
