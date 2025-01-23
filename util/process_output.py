@@ -97,7 +97,7 @@ def parse_path(path: str, pattern: re.Pattern = None) -> dict:
     }
 
 
-def load_logs(paths: list[str], pattern: str = None) -> list[dict]:
+def load_log_files(paths: list[str], pattern: str = None) -> list[dict]:
     """
     Loads log files and returns the list of extracted results found at the end.
     """
@@ -155,7 +155,7 @@ def load_logs(paths: list[str], pattern: str = None) -> list[dict]:
     return data
 
 
-def load_outputs(paths: list[str], corpus_path: str,
+def load_output_files(paths: list[str], corpus_path: str,
                  pattern: str = None) -> list[dict]:
     """
     Loads output files and returns the list of extracted results.
@@ -209,6 +209,80 @@ def load_outputs(paths: list[str], corpus_path: str,
         # print(json.dumps(results, indent=2), file=sys.stderr)
         data.append(results)
     return data
+
+
+def gen_output_suffix(
+        regex_prompt_nbr: int = None,
+        regex_finetuned: bool = None,
+        regex_answer_txt: bool = None,
+) -> str:
+    """
+    Builds a suffix for generated files (results cache, plots, etc.) based on
+    the regex parameters of the output files loaded.
+    """
+    suffix = ""
+    if regex_prompt_nbr is not None:
+        suffix += f"_prompt{regex_prompt_nbr}"
+    if regex_finetuned is not None:
+        suffix += f"_tuned{1 if regex_finetuned else 0}"
+    if regex_answer_txt is not None:
+        suffix += f"_answertxt{1 if regex_answer_txt else 0}"
+    return suffix
+
+
+def load_results(
+        basedir: str,
+        corpus_path: str,
+        force_reload: bool = False,
+        regex_prompt_nbr: int = None,
+        regex_no_prompt: bool = None,
+        regex_finetuned: bool = None,
+        regex_no_shots: bool = None,
+        regex_answer_txt: bool = None,
+) -> list[dict]:
+    """
+    Loads and returns result data from output files found in the given
+    directory, filtering by the regex parameters.
+
+    If `force_reload` is False (default), results are loaded from a cached file,
+    if available. Otherwise, results are loaded from the raw output files
+    created when running the experiments.
+    """
+    suffix = gen_output_suffix(
+        regex_prompt_nbr=regex_prompt_nbr,
+        regex_finetuned=regex_finetuned,
+        regex_answer_txt=regex_answer_txt,
+    )
+    presaved_results = f"{basedir}/pre_processed_outputs{suffix}.json"
+
+    if not force_reload and os.path.exists(presaved_results):
+        with open(presaved_results) as f:
+            results: list[dict] = json.load(f)
+    else:
+        pattern = get_filename_pattern(
+            regex_prompt_nbr=regex_prompt_nbr,
+            regex_no_prompt=regex_no_prompt,
+            regex_finetuned=regex_finetuned,
+            regex_no_shots=regex_no_shots,
+            regex_answer_txt=regex_answer_txt,
+        )
+        print("Filename pattern:", pattern.pattern, file=sys.stderr)
+        paths = [
+            os.path.join(basedir, f)
+            for f in os.listdir(basedir)
+            if pattern.match(f)
+        ]
+        print(f"Files found ({len(paths)}):", *paths, sep="\n", file=sys.stderr)
+        # results = load_log_files(paths, pattern)
+        results = load_output_files(paths, corpus_path, pattern)
+        # print("Results:", results, file=sys.stderr)
+
+        if not results:
+            raise "No output files were found when loading results data."
+        with open(presaved_results, "w") as f:
+            json.dump(results, f)
+
+    return results
 
 
 def get_results_dataframe(results: list[dict]) -> pd.DataFrame:
@@ -467,7 +541,7 @@ def latex_print_results(
     print(result)
 
 
-def plot_results(df: pd.DataFrame, suffix: str = "") -> None:
+def box_plot_results(df: pd.DataFrame, basedir: str, suffix: str) -> None:
     """
     Create plots for EMR and Hamming score of data grouping by shots.
     """
@@ -477,7 +551,7 @@ def plot_results(df: pd.DataFrame, suffix: str = "") -> None:
         df.boxplot(by="shots", column=prefix, ax=ax)
         fig.suptitle(None)
         ax.set_title(title)
-        save_path = f"output/llama3/plots/{prefix}_by_shot{suffix}.png"
+        save_path = f"{basedir}/plots/{prefix}_by_shot{suffix}.png"
         fig.savefig(save_path)
         print(f"Plot saved in {save_path}", file=sys.stderr)
 
@@ -496,57 +570,35 @@ def plot_results(df: pd.DataFrame, suffix: str = "") -> None:
 
 
 def main(
-        basedir: str = "output/llama3/paper",
+        basedir: str,
         corpus_path: str = "data/test-medshake-score.json",
         force_reload: bool = False,
-        highlight_top: bool = True,
         regex_prompt_nbr: int = None,
         regex_no_prompt: bool = None,
         regex_finetuned: bool = None,
         regex_no_shots: bool = None,
         regex_answer_txt: bool = None,
+        highlight_top: bool = True,
 ) -> None:
-    # Build output suffix based on regex parameters
-    suffix = ""
-    if regex_prompt_nbr is not None:
-        suffix += f"_prompt{regex_prompt_nbr}"
-    if regex_finetuned is not None:
-        suffix += f"_tuned{1 if regex_finetuned else 0}"
-    if regex_answer_txt is not None:
-        suffix += f"_answertxt{1 if regex_answer_txt else 0}"
-
-    presaved_results = f"{basedir}/pre_processed_outputs{suffix}.json"
-
-    if not force_reload and os.path.exists(presaved_results):
-        with open(presaved_results) as f:
-            results = json.load(f)
-    else:
-        pattern = get_filename_pattern(
-            regex_prompt_nbr=regex_prompt_nbr,
-            regex_no_prompt=regex_no_prompt,
-            regex_finetuned=regex_finetuned,
-            regex_no_shots=regex_no_shots,
-            regex_answer_txt=regex_answer_txt,
-        )
-        print("Filename pattern:", pattern.pattern, file=sys.stderr)
-        paths = [
-            os.path.join(basedir, f)
-            for f in os.listdir(basedir)
-            if pattern.match(f)
-        ]
-        print(f"Files to process ({len(paths)}):", *paths, sep="\n", file=sys.stderr)
-        # results = load_logs(paths, pattern)
-        results = load_outputs(paths, corpus_path, pattern)
-        # print("Results:", results, file=sys.stderr)
-
-        if not results:
-            return
-        with open(presaved_results, "w") as f:
-            json.dump(results, f)
+    results = load_results(
+        basedir=basedir,
+        corpus_path=corpus_path,
+        force_reload=force_reload,
+        regex_prompt_nbr=regex_prompt_nbr,
+        regex_no_prompt=regex_no_prompt,
+        regex_finetuned=regex_finetuned,
+        regex_no_shots=regex_no_shots,
+        regex_answer_txt=regex_answer_txt,
+    )
 
     df = get_results_dataframe(results)
 
-    # plot_results(df, suffix=suffix)
+    # suffix = gen_output_suffix(
+    #     regex_prompt_nbr=regex_prompt_nbr,
+    #     regex_finetuned=regex_finetuned,
+    #     regex_answer_txt=regex_answer_txt,
+    # )
+    # box_plot_results(df, basedir=basedir, suffix=suffix)
 
     df = group_results_by_shots(df)
     # print_results(df, split_rates=True, head_only=False)
