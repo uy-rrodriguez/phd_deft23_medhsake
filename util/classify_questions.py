@@ -91,6 +91,7 @@ def test_shannon_entropy(id: str, deduplicate_answers: bool,
 
 def load_corpus(corpus: str | dict[str, any]) -> pd.DataFrame:
     if isinstance(corpus, str):
+        print(f"Loading corpus '{corpus}'")
         df = pd.read_json(corpus)
     else:
         df = pd.DataFrame(corpus)
@@ -99,12 +100,14 @@ def load_corpus(corpus: str | dict[str, any]) -> pd.DataFrame:
     # print("\n\nCorpus info:")
     # print(df.info())
 
+    # >>> ADJUSTED IN DATA FILE <<<
+    #
     # Adjust MedShake difficulty
     # Source data contains correct response rate, e.g. 0.6 if 60% of students
     # replied to the correct answer, so the higher the value the easier the
     # question. We want to invert this value, so higher values of
     # "medshake_difficulty" represent harder questions.
-    df["medshake_difficulty"] = df["medshake_difficulty"].apply(lambda x: 1 - x)
+    # df["medshake_difficulty"] = df["medshake_difficulty"].apply(lambda x: 1 - x)
     # print(df.info())
 
     # Calculate Shannon entropy
@@ -213,8 +216,7 @@ def plot_num_answers_distribution(
         # One bar per number of answers, with stacked classes
         bars_data = {label: [] for label in LABEL_COLOURS}
         bars_index = []
-        for num_answers, _df in df.groupby(by="nbr_correct_answers",
-                                           observed=False):
+        for num_answers, _df in df.groupby(by="nbr_correct_answers"):
             bars_index.append(num_answers)
             for label, count in _df[class_col].value_counts().items():
                 bars_data[label].append(count)
@@ -297,17 +299,21 @@ def get_average_by_difficulty(
 def main() -> None:
     df = load_corpus("data/test-medshake-score.json")
 
+    # Scatter plot of questions and difficulties (MedShake, Shannon)
+    #
     plot_question_classification(
         df,
-        "output/llama3/plots/questions_classes_medshake_shannon.png",
+        "output/plots/questions_classes_medshake_and_shannon.png",
     )
 
+    # Bar plots of question difficulty vs number of correct answers
+    #
     class_cols = ("medshake_class", "shannon_class_qcut", "shannon_class_cut")
     for class_col in class_cols:
         for bars_stack in (True, False):
             plot_num_answers_distribution(
                 df,
-                "output/llama3/plots/num_answers.png",
+                "output/plots/num_answers.png",
                 bars_stack_by_class=bars_stack,
                 class_col=class_col,
             )
