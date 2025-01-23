@@ -1,0 +1,4356 @@
+[
+    {
+        "tsne0": 10.278519630432129,
+        "tsne1": 18.007923126220703,
+        "id": "5987fa6bffd499eb439c90679d7fbca822d62bc639d1b9c94c68ae20e46f6004",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 0.13993705809116364,
+        "tsne1": 7.35965633392334,
+        "id": "6e87c8575bb9327470a27b7b51f7ea797802157bf3b0e985f62b9164a2ec3287",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -11.325822830200195,
+        "tsne1": 2.263535261154175,
+        "id": "e0e98b574405e9131352337b65e76ce9c8bee4837790d7ad189f63fc40a70899",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 17.478437423706055,
+        "tsne1": 41.17173385620117,
+        "id": "b0fd1cbf8968b8c825e35f3f085fe176831b8ac4f4fa0de63ee7b5111e063c82",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 15.133711814880371,
+        "tsne1": 34.19993209838867,
+        "id": "d0c3a802a9700495b419f9a2ce7b3c66f8def1a140d76c6b9208f4ca1765876b",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -10.679097175598145,
+        "tsne1": 9.24171257019043,
+        "id": "2edc62003bd8eb43f37fed229c6ab67426fb02bda65a62942fc829babf247734",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -12.240435600280762,
+        "tsne1": -6.344210147857666,
+        "id": "2c5fde04eac867475f9fe49f7699cd67ea0e542c932f2d9ea514e6ba4808a43e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 11.952078819274902,
+        "tsne1": 29.909753799438477,
+        "id": "f22d818e376e8ba06161e8802d6716d46476bc4e9a3a6d82a024fa7e1058f3a6",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.7267372012138367,
+        "tsne1": -16.853084564208984,
+        "id": "b2753ebf30c0d6e437db761d635cc26a1de0a934a0fa77ffe4698be9692f037c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 10.490015983581543,
+        "tsne1": 6.774415016174316,
+        "id": "af085eccded221cffb6b17b7d326763a5216e74b0afb2f9db059b992f5556dbb",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -9.519872665405273,
+        "tsne1": 0.06682337075471878,
+        "id": "1ad84c411973058c42451bafa520994b5cd14af984ad63f2391b07c490f2e594",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -12.983787536621094,
+        "tsne1": 0.47823598980903625,
+        "id": "ae2900b7b971a277edae42cbd91da68097dd967e75af2433cb657fb731fb8ea0",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 17.335346221923828,
+        "tsne1": 29.96550178527832,
+        "id": "3520963325e9aca277990467310a64b3e37e36e2ca5e51e9c3b8dc51c3f727cf",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -9.473203659057617,
+        "tsne1": 6.964094161987305,
+        "id": "43fa58321477b018073849319a4dbc96ed90925d39e622ee49ed8d17eef708b7",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.066526889801025,
+        "tsne1": -35.22300720214844,
+        "id": "3b8a6a19fae91fdd8344be0de7f0951835efac89f289c307783f9694329340b6",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.37213134765625,
+        "tsne1": 15.436554908752441,
+        "id": "936d71074ddb80e99c11ea8b348472b63da05fd0ebbddcf0b40580c6f575f3a8",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.644000232219696,
+        "tsne1": 21.853588104248047,
+        "id": "da38bc31fb7735ebe42f826c925ac9b7154adc2b45c73f9049717b0dc837a83c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 17.045133590698242,
+        "tsne1": 40.44337463378906,
+        "id": "211140432102ad0d9240f01be1fc5470bffcdaa5c1b564f83caa093448aecc1c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -8.911256790161133,
+        "tsne1": -27.9472599029541,
+        "id": "3fa92dd8ca82021992b301c716f474147265c4a8c653df4cc00114351a07b8fd",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 13.636781692504883,
+        "tsne1": 27.844030380249023,
+        "id": "d6e0b553a3edff4d6e1129ff300582d5cc48e7c15f950e2639c0ee9fdebb9839",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 0.010438576340675354,
+        "tsne1": -1.2759960889816284,
+        "id": "10d46dbc574f52c41ef510bda751c46fbef28769c6da4ef61158b58c6ab99fa9",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 3.407630205154419,
+        "tsne1": 25.21489906311035,
+        "id": "8f2d2337f460d44a37e6a7c59a561420cbc4190bd3a8c9c2a64d1f6c7440d9a0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -12.724593162536621,
+        "tsne1": -24.59188461303711,
+        "id": "659f13fdad83cdaf287e205cb83a2030d7a75cca8c3c44a063d674e3be98ae35",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 11.091350555419922,
+        "tsne1": 25.126684188842773,
+        "id": "685217249f8527f468aa3e6a297806548eb9a60c5ef0b39f232fb8e2e0aac785",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -11.465733528137207,
+        "tsne1": -4.259668350219727,
+        "id": "a40fe912879fee8af4e4729cb5f70df5d8eb41e384475b52ce433828659d43b3",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -11.687105178833008,
+        "tsne1": -9.583710670471191,
+        "id": "fc1f0c59b7c33534fc5462a95cf57555c1282dd4d681f30eb969749206135a4b",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.731295347213745,
+        "tsne1": -38.47123336791992,
+        "id": "31395d1bd94e205299347e2dce3e0f7a9324287ee8cd9cf8647ae2a0ed708948",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 14.459487915039062,
+        "tsne1": 30.344711303710938,
+        "id": "6d9c4adc05323e7c8442c71f4c5988a0bff15763fc066a2506cab67059aae4ea",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -8.39240837097168,
+        "tsne1": -37.57435989379883,
+        "id": "865261ecb987e58a270d737b6eb7a9b064e5f00de8aad2000d53d9c1295f5e97",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -14.402926445007324,
+        "tsne1": -23.779069900512695,
+        "id": "c403beb752ba6001252d91255e82951043fc83380f9090e4bdd284646ae3a4c5",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.748831748962402,
+        "tsne1": -30.802101135253906,
+        "id": "764774ee5f73341bfd4a125d9f54b8a5a8d075de82316184b05dbdcd36bbc680",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.308688163757324,
+        "tsne1": 34.341861724853516,
+        "id": "d85217bd70810ce70c205b36c587bcc0606128e94d9d72b2e5fadcea24d37de5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -12.428772926330566,
+        "tsne1": -8.3005952835083,
+        "id": "4f9a08621af940bb57b3f3e553e31bc04e55fbc7ef1ee690b792803a5c3a6206",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.5658016204833984,
+        "tsne1": -1.604100227355957,
+        "id": "2111e19120c5ba0cf91e27e1ac6582a721118d5e28ad1f180e952cbb23a75949",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -9.725156784057617,
+        "tsne1": -34.0845947265625,
+        "id": "41a990ad489df44efc6d91e9cca5d006195f887e6c5d38b1634dc8732fecc39d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -10.496731758117676,
+        "tsne1": -2.3615121841430664,
+        "id": "19d47a189e59d39f276014f27f8011f39078c426c95ac701b5426a8dcfb8066b",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 16.284317016601562,
+        "tsne1": 17.035964965820312,
+        "id": "3823539d1cd3b12e2b0f617214791a0b383e3c7ad8e704c363cfadc7f4b0ded1",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.23838511109352112,
+        "tsne1": -2.002084732055664,
+        "id": "ae825ad394bc541773898633876b38c06a6bb6929288563e4b17b386e2d3923b",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 13.521734237670898,
+        "tsne1": 12.93057918548584,
+        "id": "7ff9ef0bd762b4a44373c79a1cd94f01b46e18782872c3a0f7e56f835cc78c2b",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.41710802912712097,
+        "tsne1": -17.63916015625,
+        "id": "0601a891c9d026afb6783b7151b2c503e96dbdf04e238ed33d7f465c40556ef3",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -7.59412956237793,
+        "tsne1": 6.963320255279541,
+        "id": "315cf87e3220b68ba16a80ef20cde5e6cb621e747936c3afb1cf06781af7cb60",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 14.522027969360352,
+        "tsne1": 8.613330841064453,
+        "id": "aad20ea917f71518ebd1cde09d57a53f978218167934f7f5be014931734246c5",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.493951797485352,
+        "tsne1": 16.89142608642578,
+        "id": "a6a3bca858352e6920d77835f80826a50a9a0837659ebe45c8f2c622f626e9f9",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -10.674507141113281,
+        "tsne1": -9.797952651977539,
+        "id": "bfbdcc98e015cc1543cc2f6a75e7a1f329980fcf114c77f71e3d3c835e090699",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 13.979658126831055,
+        "tsne1": 24.7045955657959,
+        "id": "64537a67b26efa0468ac12b14025d08291a8e7dd2db6edff7a729e51fc3be241",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.8765417337417603,
+        "tsne1": 4.370927810668945,
+        "id": "e225425f6ce4d5f76aa6c192e28d5fb6854c44939124dc143cacf921a91705f0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 8.837385177612305,
+        "tsne1": 31.84596824645996,
+        "id": "4b2bc2282ed403b86197de3ddf02379234e488e9b13f88be9c11118aa6bb7840",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -11.759982109069824,
+        "tsne1": -8.931045532226562,
+        "id": "9a8b558d9423d5a1f7215b1df051a801695f3bfb54be8bbbbf98c6da01489bb8",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 14.594950675964355,
+        "tsne1": 17.00977325439453,
+        "id": "010bdfde9fbc8ebbc89faa16256006c69a7046b7a5d55586881e88cbef9f0d6f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 16.78017807006836,
+        "tsne1": 39.0792350769043,
+        "id": "27c6960d5b7537bdb3ec9c49b43a14c84d07214755edf0023b61700ce35b7e96",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -10.883905410766602,
+        "tsne1": 5.493425369262695,
+        "id": "90790765526e1753e069ea31b819a220000d6f1bf32e4376e964a50057bd5d17",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 1.1634242534637451,
+        "tsne1": -6.000990867614746,
+        "id": "64db6dea952c1125a87504c10fad17bba21b9f981f27effbd7c51d24c349b1c7",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -8.855405807495117,
+        "tsne1": 0.9591324925422668,
+        "id": "c571617f6a3efdccc4996a73b1f2d132c373c34ae48095c2255052d20b9fa390",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -8.533947944641113,
+        "tsne1": -26.038318634033203,
+        "id": "975fd1da43f804d1acf8e9499550507cb3306641577024ee7f3bbadd91a94504",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 3.458390712738037,
+        "tsne1": -21.935640335083008,
+        "id": "a2cd8b9b85e13ec868234a5be2af2929bdc0323b1c770973fd7822c976e5c803",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 15.366904258728027,
+        "tsne1": 9.244050025939941,
+        "id": "c3c65f665c0e921a6f89d65e2481c072b03584f6700143244dbd27052311ee4b",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -13.803747177124023,
+        "tsne1": -23.80409049987793,
+        "id": "408d9148a7d4fe696f2759551e670423ad520d6691a76f06a5245afa346ac1f5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 15.698719024658203,
+        "tsne1": 41.078041076660156,
+        "id": "a000a29563515e528ca52d0f767fad37b2cb375d055a75af38a08d5de061202e",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 11.979778289794922,
+        "tsne1": 10.382490158081055,
+        "id": "bf3387e9057049f6d64f1a211e5089834ef63284d3e643e1ef7e171c2725c96a",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 4.12663459777832,
+        "tsne1": 33.18907928466797,
+        "id": "40d55f025f842ff61b29b9e402587fc5a96cbd89b48e3ac10d9e0cdb7c118560",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -11.203365325927734,
+        "tsne1": 3.2137396335601807,
+        "id": "1d030b96ef9eb4322ebe06ca88816d9d79255310186b1dc7cbebe47412b2971e",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 8.492020606994629,
+        "tsne1": -18.176237106323242,
+        "id": "121a9d15573f50b227e2c313a15ef24342b77dc1782af361d4afb3725fbcacc0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.912472724914551,
+        "tsne1": 5.770379543304443,
+        "id": "ac29ed04c05a5997155fc643d6a0ab7f9a56f93f1c338e9c83131f98a9e55083",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 5.564566135406494,
+        "tsne1": 24.67450523376465,
+        "id": "9bffdaff6fa4f731328c893ee5a44f2bf156b5830815a7b090ba5cd32ee3cea6",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.822734355926514,
+        "tsne1": 27.539791107177734,
+        "id": "4ccc8c19f52ce9f91a59dccd19dc2b0b4f613134126ce073d68744c1577bee80",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.39594194293022156,
+        "tsne1": -0.9210307598114014,
+        "id": "86839f95be2ea5dd42130982659459270303996bb84ff1f1dca4752beac62ff5",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -11.155122756958008,
+        "tsne1": -20.478839874267578,
+        "id": "6336f54d03384b53631cd4465bac7284f2ad69d739ad4eb6064785bfe076b74f",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.896085262298584,
+        "tsne1": 32.2792854309082,
+        "id": "df592aaaac89dfe5c0a720aa586875bb4c6ab7e947fd4de95f6b606a78e59e1a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 10.678906440734863,
+        "tsne1": 7.607546806335449,
+        "id": "44081bfd9e3f45f2068e611d9e717d6c72ad4da45ea43843d85a7c86b2e976f1",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 14.430789947509766,
+        "tsne1": 43.67218017578125,
+        "id": "0477c89a7d6260cda04bc9100edd6e9a3682e4d72af625313f21bd9b0c9074cc",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -1.3180851936340332,
+        "tsne1": -44.046356201171875,
+        "id": "006e1bacf5401adafd5797448a7feed411a1b4d1ae2b5ace26c669c33fcc0100",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 1.326785683631897,
+        "tsne1": -40.62504196166992,
+        "id": "d591fb46015300909dedddf20c871f31840a79b9cf9ffb9903f11d38d2ac33bd",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 7.643261432647705,
+        "tsne1": 27.878387451171875,
+        "id": "3047a5c822c23a46eeda51b82c4473b88a6d68ec7dc36c1ab2e2d76feea97b90",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 6.109004020690918,
+        "tsne1": 33.734230041503906,
+        "id": "dc241313b1fa2cf09d2a4eb61385d664ff0155eb5876e846193f9bd55053bd7c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 10.754698753356934,
+        "tsne1": 13.394868850708008,
+        "id": "84356ed16cb494481fabde3ce0cd5f6c912096923eb3da61f400563facea113f",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -10.434228897094727,
+        "tsne1": -33.35944366455078,
+        "id": "5b445d238a7f6dc90f7e01ac8c236df239009f58547eecb5cdec812115c1b4d9",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 2.2744295597076416,
+        "tsne1": -48.86960220336914,
+        "id": "027c3bdebcbf81cb2031b7d84e409784d3cff2d8ee96369c764d5d0b012cfc3c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 6.8575310707092285,
+        "tsne1": 34.1065673828125,
+        "id": "56fca142b17a0a9a89f10b8a62d61fb35ce347f2aeda5c5d0d866948c3c64f01",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -16.054828643798828,
+        "tsne1": -10.041754722595215,
+        "id": "debbb0fdae6ec9bb9d4cb5e2a5f109c015a1ff0fc970d9ba1333895c18d69a6b",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 7.862393379211426,
+        "tsne1": -19.45467758178711,
+        "id": "fa7abab35186343a06fc12b0c1b30c3c3b629355b00741007e2d12df97602a51",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -12.732580184936523,
+        "tsne1": -25.150400161743164,
+        "id": "4797da41aaabf9e1904bdbdeb14e86f13cf22d3cd452c8949147644282b55bc2",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 15.021729469299316,
+        "tsne1": 39.62273025512695,
+        "id": "f6cd3cb440435910326ca606e03c32cda515cf496e530e400cd10af70d1ba4e3",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -13.501471519470215,
+        "tsne1": -24.96245765686035,
+        "id": "d96f3ae72ac6f5dfb78de1a812693ab2a04d93e701f71c779219babb427aa3b4",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 14.387399673461914,
+        "tsne1": 38.645286560058594,
+        "id": "a558168ed3867b34f92c214a8a879901b66177b2669b4c04b456c1590d415a0e",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.173157691955566,
+        "tsne1": -12.28687858581543,
+        "id": "5a878dfee782358672c7fb5097da39bcaa685a4d6625b05a34be03057503bf03",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.5347797870635986,
+        "tsne1": -30.817468643188477,
+        "id": "376375ac7be85d834ef79534db0808b42f00119d9fa10a215ce83e91bae8c175",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 13.92913818359375,
+        "tsne1": 35.89714431762695,
+        "id": "d37850cf89d11714cc2f54d09bfe6eba265d8025083981da045560adcbe8e1c0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 10.477245330810547,
+        "tsne1": 25.552030563354492,
+        "id": "191928f6920aaa7f431904fa3c7fe9711cbed2c4d5380c8bb09ea72f44ce7198",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 10.451142311096191,
+        "tsne1": 17.416378021240234,
+        "id": "783b0d7a9c565772618edda23c910f6baf4fd6d03a0db37f09e3ce0198efb158",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -9.799864768981934,
+        "tsne1": -12.273577690124512,
+        "id": "1ad13d1b5900fa714effb64cbab2e14dd1e1981d5e6dcc509bf2ceb7f46689bb",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 6.872047424316406,
+        "tsne1": 28.338504791259766,
+        "id": "8ca5960b778e3d70404af005ab891cbd28c86297279b99a8d542343c5340f38a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 2.2301628589630127,
+        "tsne1": -25.071325302124023,
+        "id": "0673ed0867a2a135b70af1466485924fc5eeadc87607a3b60eecc36d7f747f29",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -15.825668334960938,
+        "tsne1": -9.955695152282715,
+        "id": "233420721289b98f8b32b67ee2fd8c74856615fd81fea54f8458e3522b0667f9",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 9.589537620544434,
+        "tsne1": 36.18169403076172,
+        "id": "33a90f07876f5d34a7ef6d7a5947f15442ee572d1a8dea98426177ec6ec51385",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 15.674616813659668,
+        "tsne1": 37.90903091430664,
+        "id": "f6e9b053992b2a37c1cf67c79b68642a366c3c5d045cbbd239efcfec31f10788",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.4533348083496094,
+        "tsne1": 26.31488800048828,
+        "id": "d75cd5c439a89994c2224cab86883c30e1fbef76da3badd046276e76e7710a94",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 0.24937154352664948,
+        "tsne1": -47.9267578125,
+        "id": "9e8bb862f6b04689d7f5e5c615e16b362fa22344b1e09c7cb21fbfa21c092c81",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -6.729586601257324,
+        "tsne1": 2.2139484882354736,
+        "id": "78073195b1ac51a96879d9fcaee98c3608a41e153bbe9cdd6b10219004e86b0e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 12.88869857788086,
+        "tsne1": 30.430706024169922,
+        "id": "c9ab288f1dc864c6eecacb311113da896e534a2962fab592bec53248256aa49a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 5.493169784545898,
+        "tsne1": 38.874176025390625,
+        "id": "a67bf78cf1e33618e1be8cbd2e32f103935581d9ca1b3b04e265d592f3ed8229",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 9.834346771240234,
+        "tsne1": 39.080810546875,
+        "id": "300555fe69f9ed05aa6911988878a7c9a516abbf5d698034375b02cd839cca24",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 8.734057426452637,
+        "tsne1": 33.502559661865234,
+        "id": "2c861fcd1edd2215a1017ec3a8cf4a0991e1b427bcd13af952516476d55446eb",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 13.407480239868164,
+        "tsne1": 31.280458450317383,
+        "id": "87047c5a29f02242efb044b9ae4823564f387f57789c0e056b86575ff658acd8",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -18.89769172668457,
+        "tsne1": -12.4695405960083,
+        "id": "f62a0634682c4f9507f9f90fdb8d798fed2881e20aa584a99d5ac9caa36fcd41",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.7778264284133911,
+        "tsne1": 4.284660339355469,
+        "id": "460054f1d96efa0ea41c81b20fa5bd3084c71e0cabcc95736409963cef790f79",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -14.22587776184082,
+        "tsne1": -13.106563568115234,
+        "id": "67d3f9754e77e9728336ab63e34f6d2d2bbd87c37ff07e748c5948f72f0805aa",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -13.666657447814941,
+        "tsne1": -22.744691848754883,
+        "id": "b0731f4eea865555ff233fa584ccd74191d2bfa6e7272b93796ba28b5dd52c84",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -14.831993103027344,
+        "tsne1": -3.451955556869507,
+        "id": "5f94025a58c95460f885cc3638d84cb0ebc073477c292b5ee8b7b34b83f5d9b8",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 8.68501091003418,
+        "tsne1": 12.540308952331543,
+        "id": "2dff80a9f7455c5c45cbf746b3df819fd9ae604a30b7666fc96a80a6c8da1046",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 2.309762477874756,
+        "tsne1": 8.863690376281738,
+        "id": "f3890ef077161be4d51b7970c67fedb272d61cf9394f2c1ca0d7a5434cdf30ba",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -5.48667049407959,
+        "tsne1": 14.138041496276855,
+        "id": "21fc853602ebb790908feda1c4866bfd37ce1aead501f957a0f785560fd289d1",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 15.89517593383789,
+        "tsne1": 15.981550216674805,
+        "id": "21af3d9a6ba8d6d80ddefe270d2605a45112c4652486eadb733169ab550fdff9",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.9361245632171631,
+        "tsne1": -21.795867919921875,
+        "id": "7544e043baf6db91f5988b5e845591574dd493a7a21b76662859c9265afeef14",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -6.022306442260742,
+        "tsne1": -39.75121307373047,
+        "id": "e822c5d45d81e7fbeb0559df0371ec56318f1ce20bce3704617d81c6e3566378",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 14.872030258178711,
+        "tsne1": 42.32838821411133,
+        "id": "fc19ffc63ee299512880e7fb69f5b465a3e70810a2acb09ad64e11c3feddab60",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.367633819580078,
+        "tsne1": 10.34156322479248,
+        "id": "a5e148d70609404babc3de5ba510bf88e815d6e968c89c2898f7468669b8e41c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -13.658000946044922,
+        "tsne1": -13.642796516418457,
+        "id": "04f8d85bd851ba83ebc610a44475d07feb3c277e3d74890bb6d1f506a72d3715",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 5.353259086608887,
+        "tsne1": 27.804439544677734,
+        "id": "d9e24d741ed30018535571b43737b85fac094d8aeccf5529c63aeaec6dc181c3",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 14.23757266998291,
+        "tsne1": 35.07997131347656,
+        "id": "29bff72f9ea3988ca964ccb6cfd3827fa76b02198895484ee72bde328826c17c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.785517692565918,
+        "tsne1": 14.980220794677734,
+        "id": "857af39f4018a5865566bf6a2bb676f4530259eef0e7b74098568465d3b985bf",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -15.819035530090332,
+        "tsne1": -14.283042907714844,
+        "id": "d1c4b441a3eb403b2cb295339c5b46043f7025061a578bb371901abd5980ec1d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.988892078399658,
+        "tsne1": 26.703336715698242,
+        "id": "5bcc403a1bb1ee89219645907261a3ef461fdfc0acb685840e84c009023b2084",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 11.089916229248047,
+        "tsne1": 9.09259033203125,
+        "id": "da0b4e8ad4daeb6826beb02636492333273ec4cee88bcc4accd4963ebab34f1c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -14.146197319030762,
+        "tsne1": -36.3455810546875,
+        "id": "62f2b8345ea35a7d7632cdc235d3443f5d5fddcb196b949a275424b398d14860",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.6978437900543213,
+        "tsne1": -39.242103576660156,
+        "id": "f2393bfa7d3d449b3ada2614babbf33c67cd7abe394dde93a55dbf1338d6b507",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -11.443025588989258,
+        "tsne1": 4.5896315574646,
+        "id": "8aa59e91d5034008fd0fc4ddcdf6ad7a542f1512c923432d1d00a2de0e08f365",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 4.786834239959717,
+        "tsne1": 34.09754180908203,
+        "id": "480af13f69ac820ebea8d03043b19f588beeca37c5084c25701c35ba3e21f5e5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 15.64044189453125,
+        "tsne1": 36.29813003540039,
+        "id": "d9016adbf17d4c3c2268c44cb63deedb1a3e772033c78369c3531d7e9ee57f6d",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 14.135834693908691,
+        "tsne1": 42.68831253051758,
+        "id": "b765593ffa2eff0640244cc1278c88b8f20154c7e2bf51c2db74f41db1c4ee2d",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -8.372357368469238,
+        "tsne1": -11.363487243652344,
+        "id": "d8f14df2307513af3f990143dbcef5180c2f34851795a41f81a684c66b3db53e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -16.816734313964844,
+        "tsne1": -4.9363789558410645,
+        "id": "79ca0a11cefd98df010875a24afe5fd68873086371f7caa93fce8b98dd56f261",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -11.08731460571289,
+        "tsne1": -10.475906372070312,
+        "id": "d1ac681820dba7d24eaf4e85d2910eac633038529f5e76e33d3825c247dad3c2",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 1.223859190940857,
+        "tsne1": -16.497873306274414,
+        "id": "5dc4cd85dfefe065d376e7170df00db819adb9d052e9167368c947266eb8ecff",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.526851654052734,
+        "tsne1": -38.01081848144531,
+        "id": "9472b95a9ce4434d4f2071ce4a5975a62971945ec027ebe34647e7e18e471d83",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -14.136390686035156,
+        "tsne1": -32.6173210144043,
+        "id": "5edab32f21c625f8837a390ed6a06bbd5f8a4e055f534d73cf3cc521411e9646",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -10.279276847839355,
+        "tsne1": -25.23035430908203,
+        "id": "07e1b170713e4055fc840f2d397837d025c310fced1428f9ce369d614fe4c6bf",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 8.685654640197754,
+        "tsne1": 28.589597702026367,
+        "id": "4a759c80a3b3545f81db24e7b47c8ec689ca5277dd14f21aad6973bff0aa9426",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.756448984146118,
+        "tsne1": -6.263821125030518,
+        "id": "b01f7947a5a2466ded3a9102ac5325c4593bc77c47ad98b149b551b092d3f6f1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 5.209830284118652,
+        "tsne1": 29.32623291015625,
+        "id": "24b82074c9be47140b10ef3c79945d3f2a0d3abdfd502d9b42bbf2e1bdfe9a06",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.0355067253112793,
+        "tsne1": -48.805503845214844,
+        "id": "0816b580b006aadbb44dbd8c5e03d0d6fbbef306c7c49a57d10978c08153651f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -10.08116340637207,
+        "tsne1": 7.631975173950195,
+        "id": "a454f4b88989d3fa6231543478fd172c9e2b706ea697ba96eb17acc68b4b5e56",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.284672975540161,
+        "tsne1": -7.1072869300842285,
+        "id": "fd7410093cc177f78338721d66e137f8ddc725b2b77cc857723c222870d1208e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -14.088278770446777,
+        "tsne1": -33.714027404785156,
+        "id": "8b5bffd0597808f3dde06f4d611f98ee5112ffdf363a0b6fa7662199efd5d8f5",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 1.5006099939346313,
+        "tsne1": -20.942861557006836,
+        "id": "703781b7552370064bc15fabb82cd146c5e15cfdf5885c4c392697fb741b73c6",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -8.77665901184082,
+        "tsne1": 6.171167850494385,
+        "id": "8cf99599282f8552b0d1d89552c1d33c91e8a080cbdb84995e3d91c900e0d515",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.398050546646118,
+        "tsne1": 14.696938514709473,
+        "id": "e3f2292173eee60f00d8d0210afe0fd14933f1c0591caa111a7fe6398e439762",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -15.0545015335083,
+        "tsne1": -14.360197067260742,
+        "id": "54d5e92772672ee3a7a3fe540188a11b24e0c6ad42ce427257f25ca72fa226d2",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 15.187215805053711,
+        "tsne1": 16.567588806152344,
+        "id": "5f52c0e7a416a8e7ca710aad1072beaeca45b6da5af7b9e18f9df596442ea471",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -5.323824882507324,
+        "tsne1": 15.242851257324219,
+        "id": "e969e1569ed563be5e8b4b5096b010c37d7b6c9274e92af60c6981dc17b0dfe5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 7.853282451629639,
+        "tsne1": 28.698989868164062,
+        "id": "1d46d9b10054e2beeb910d4515eb0f982af1e51ac0b9670976c79d96650f4fcf",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.3864579498767853,
+        "tsne1": -21.469057083129883,
+        "id": "60d24104e19e0cc9a56838634ce7ab421bf282f42b1291b71f58ab2031f0d3fd",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 12.673810958862305,
+        "tsne1": 41.36698913574219,
+        "id": "471d8f521e147135db9509d561918a4fef3cd2194b6c1b1db736d07ba998f00c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 17.17100715637207,
+        "tsne1": 30.650466918945312,
+        "id": "d97e51b2f58f0e2567f3b0ed2bf0a514c13aabe63ea8acf4d427ac64da5a5590",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -11.050159454345703,
+        "tsne1": -20.025781631469727,
+        "id": "a3643245476680d98a2a16360b0c73c8ac48e37cc87cf4aeb7cfc57f252f841d",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 7.440861701965332,
+        "tsne1": -21.55967903137207,
+        "id": "bde000821222f19645080b5eee31404d5595156b3493e5dade324659c698261e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -12.374844551086426,
+        "tsne1": -27.23995018005371,
+        "id": "b716f85aa2ae4e2946b04694f267cb484a453f2c43558954be3f595d626bcd1e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 11.446586608886719,
+        "tsne1": 13.937063217163086,
+        "id": "36f1f0cca9be14a4953bb3413c586f46a7112db69a97eba409bff15470c35222",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.82710075378418,
+        "tsne1": 27.034311294555664,
+        "id": "49215e2d40793d8c514cb8137ef47f6648f58576db39574dfc4a8a0bbb96ddf5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.466542720794678,
+        "tsne1": 29.41329574584961,
+        "id": "0c050786042de0245a4a036ff49ae78278bda9bd19a2ad6719eaf77a4378dd93",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -14.243559837341309,
+        "tsne1": -14.988872528076172,
+        "id": "b5515b1c36036c7147865b19cd10274c991b6611c2c235bf7e7410014d801e1d",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 13.300277709960938,
+        "tsne1": 23.298934936523438,
+        "id": "b445f1ecf28e34ecb908501b3cf2caf60030b170e9143cf7d5c9c95993c05629",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.9042809009552,
+        "tsne1": -36.27445983886719,
+        "id": "d3789b56f5d02bdc567e6ca3e53d288e06c68ef5bd3072f5a504b353b7a3732f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -10.03799057006836,
+        "tsne1": -11.15720272064209,
+        "id": "aa0cb5441f725d6a3695e9d7bda36ca67e740b53c796b5f03f9b6bd4e0bf426a",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 13.793807029724121,
+        "tsne1": 8.444540023803711,
+        "id": "d2498d155fd76da77e73d268cff1d3f5b9cbbe5f347c1b8162523d95e525cc7d",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 8.15717887878418,
+        "tsne1": 16.831270217895508,
+        "id": "d8b17a0e91388316b2e2e78dc103b81c8dd6de782b4297d9c6a619877e54d6ab",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.52119380235672,
+        "tsne1": 2.516615629196167,
+        "id": "5d2d671898651a5aad92804c93c0bd2c45aec5415a6633648fff467d2c29cb08",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.9772036671638489,
+        "tsne1": -39.15943145751953,
+        "id": "d87d34ad3f96cbf598d614a11f8e21c81c979f63baeac8aae1b82d6b85133dba",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.893789291381836,
+        "tsne1": 13.611607551574707,
+        "id": "96d78efc54e7409774615a0da65c9746df951b903dbffa0a16bea28b8eed4d02",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.1427829265594482,
+        "tsne1": 7.221971035003662,
+        "id": "5aa949d30bd686f41da624eaea72f7abe4188a5f68c66925f0d4833d91dff1a6",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -15.115435600280762,
+        "tsne1": -7.107668399810791,
+        "id": "8d577c60a10b335076efdd11b193d51bcc56774932509c99e1614460c0ec658c",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.4129895865917206,
+        "tsne1": 8.898335456848145,
+        "id": "fa431ebae3fad101574ec565b2d6fd954c8513ff3c30f68f3a31ddda21a8c467",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -1.0183570384979248,
+        "tsne1": 5.483804225921631,
+        "id": "e8a8a0dae64f8385c9a9d68912ec1d2a3ed6bce4b8076ab9b26546843c6b7386",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 11.928202629089355,
+        "tsne1": 24.25807762145996,
+        "id": "1a4e46e623fb523a98eedd558fd72ecd538b95eb6a054e5caa69d3cf336c7c32",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 1.9301186800003052,
+        "tsne1": -19.848892211914062,
+        "id": "b0af89386ccd9946cb6291b13e90257b8f7e1006febe61bf97e5c9b88e6be43f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -10.122618675231934,
+        "tsne1": -34.194541931152344,
+        "id": "9abdf434a8693bea4c435e265e7343daddb8e3890b817b18d4420ef8de64e549",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -11.84964370727539,
+        "tsne1": -25.65001678466797,
+        "id": "226a294b3447635c21f592e180a1ef7beb4133e6843e601c05cd2b376e0d40d2",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -9.510266304016113,
+        "tsne1": 5.362377643585205,
+        "id": "edfb28e892718bcd6067bb2e038912b2c5e35020c49722f418b81eedefef4ec6",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.0915380716323853,
+        "tsne1": 18.602521896362305,
+        "id": "8fa3b9b3dd41944cffb807fdc2aa8ebe79e8b87632937ee31e0d9552dcdc453f",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 10.913216590881348,
+        "tsne1": 42.023582458496094,
+        "id": "c2462c5559da313d58f1f623370c84d4476a085a571c8b5bc0c27cfb7e782d93",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.239562034606934,
+        "tsne1": 39.24739074707031,
+        "id": "f068f75629412b77e23af76c614a5c449e9165a70b57a5b6ed5b330607ce875b",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.111749529838562,
+        "tsne1": 2.8950414657592773,
+        "id": "a761e4acc8dc0b61489788ee7beacd1df569839895c8278791809dd92fe5241e",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 13.635939598083496,
+        "tsne1": 44.43904495239258,
+        "id": "df51c2c730da9cfbd6ff7e5697d77cb631eb510373d5255b562c133c88e64545",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 0.04675528407096863,
+        "tsne1": 21.697372436523438,
+        "id": "f1f62a4bcca3213c0e70510bf34420223d2a0c4fd4d33ff774aec5e2adf6b5bc",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 12.519017219543457,
+        "tsne1": 41.98291778564453,
+        "id": "bee55fa264c7bbebf656c4ecf03bfc92d039e92d12b3225c1d2ae3c66521e0c0",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.2178468704223633,
+        "tsne1": 31.985666275024414,
+        "id": "076c46854ca060089d29d49426e1453fc7a0809d4999c9e93ff1dbaa6749fce1",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 15.783974647521973,
+        "tsne1": 42.064605712890625,
+        "id": "2595e8ea445fd30cec7ea78b1429b61ecbb64ed318ce7f8fef9a66c81ec864df",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -2.1213529109954834,
+        "tsne1": -37.299137115478516,
+        "id": "abde9ba7b39615e71e0b0897efb0f5b2923b78dad1dc7a8cddece77ca3206b63",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -11.632587432861328,
+        "tsne1": -34.732906341552734,
+        "id": "0fafb68a1d8696cd6f6aabffdfef6db68a3991d53e3b58f5037a37060be84b06",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -10.18290901184082,
+        "tsne1": 3.0216002464294434,
+        "id": "b4b62e1007d6722fd845f63eb09ba87026d2ba1609e893ffb58931c848d18561",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -12.961573600769043,
+        "tsne1": -11.491049766540527,
+        "id": "371eaeacb72ca46b80a1e0b874ac3484c0e36e06918cbed1ae51ee5647382c13",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.40702486038208,
+        "tsne1": -30.070449829101562,
+        "id": "17b39190ad0d1de9f2eea8df3f1c477726631dbf14b5c2e1ed8f52a0e0ba7717",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -8.283778190612793,
+        "tsne1": -26.9592227935791,
+        "id": "35b29e7e9fba6ce4871d86375e797096d77928a74c79e5087b08a1e8fb0bbadd",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -13.104728698730469,
+        "tsne1": -36.4390983581543,
+        "id": "60235314573810f3b56e323f034bb721e02135fd6fc2ca4ddf095050ddb25e7c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -9.067471504211426,
+        "tsne1": -9.981819152832031,
+        "id": "b604c4ba0bfebe2dbcb9d70cb4a34e981348597592a04304d020155a90b65eef",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 17.333118438720703,
+        "tsne1": 29.903236389160156,
+        "id": "c3ce275d1d8d35e1f84375bb1678685f7e96faced2b74591c15c6f26a199d946",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 2.344363212585449,
+        "tsne1": -26.163280487060547,
+        "id": "9df7fe61b1f0c40ebdb9bdb75b8b4daadc9e81a1303517410baceb23be2b3d78",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 0.3527414798736572,
+        "tsne1": 8.398152351379395,
+        "id": "8672178ab7e6e4559258cf4636a09ac8735a49fdc6a6fe4676fddc8de3daec7d",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -9.016121864318848,
+        "tsne1": -10.718281745910645,
+        "id": "5b7a922475101e412d5efe99f156fb97f656580b4c8e0d865ce3703f219790b7",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 0.2912249267101288,
+        "tsne1": -16.707618713378906,
+        "id": "c9dac5035e4237678428a6c577f99b231c7165df4b7a4adf38f639a973a15ce2",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.656982421875,
+        "tsne1": 22.39739418029785,
+        "id": "698c58c0451c125ae6bc8e599892e2c661e39569b5f9da76401baa56a9264883",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -9.040754318237305,
+        "tsne1": -0.6560717225074768,
+        "id": "888c5b817187f2196c1335b280c4f8dd311366025e3478b57ffb993836a953c6",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 3.033301591873169,
+        "tsne1": 9.799577713012695,
+        "id": "37e0b787ba01c8d41693b27ad9e1c35f4a528b0ffb8fcb750826fa1af60165ad",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 11.680891990661621,
+        "tsne1": 42.466461181640625,
+        "id": "f7b4ed11d611ce20159f6acef5ebd3dcd886230a0f5ace2c66aad279b48a6161",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -10.78450870513916,
+        "tsne1": 4.468781471252441,
+        "id": "38bbe2825513e0c79094970d55cc7fe8c468933d0133720e5e3dcb2e87ef1f78",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.493945598602295,
+        "tsne1": 14.557319641113281,
+        "id": "c42f5e45949e2f6c7c333af9fe30057bad92b01101d3d302ce7743104e7e748e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -11.305214881896973,
+        "tsne1": -28.040180206298828,
+        "id": "7bffb2181b6cbed83edbf3aa05e2d6f528a52a3a5791181ddf0bdc0204799c3a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -14.429754257202148,
+        "tsne1": -3.5726277828216553,
+        "id": "305d1b1735faabc2f0cffecef01ff8353f4ef28e502c4e038cfc4a21c2ed89ee",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -10.255871772766113,
+        "tsne1": 6.46467924118042,
+        "id": "0a99003f70f56a173c4c376563eca2b1fe0b3c7346c0529ae7638be82ddfb057",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 15.154438972473145,
+        "tsne1": 35.642333984375,
+        "id": "a70da093be082115c8c94031c3a9c8a89b1524b055185a626ec36d527bcb5179",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.614607334136963,
+        "tsne1": -37.64601516723633,
+        "id": "d9f6968d7fa614a93c5161cb78830b279fa98e1180a5a5e54ebf20818226cf6f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -7.568905830383301,
+        "tsne1": 8.86645221710205,
+        "id": "d28b6393a918dcafcced37ecbab40485db489f75ec42263d549ab54bc2f7e058",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.789651393890381,
+        "tsne1": 34.045230865478516,
+        "id": "b1348c3149f554240bf9fc5c1126b0d23a05a1bca3186e3c5ca56f0b5532d236",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 5.2476606369018555,
+        "tsne1": -17.138872146606445,
+        "id": "d9d3bfb9d44c7eaf0152b55ac132b26656c07027f24e6940852ec4aea445dda4",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -2.8086698055267334,
+        "tsne1": -37.63467025756836,
+        "id": "56bce4e738d9233813f4d69231c89daeb208e631aeb8c86a0b34301d32325785",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 3.272170066833496,
+        "tsne1": 30.850017547607422,
+        "id": "ea5c7708b01850f111afbc8ffacb1e1a17f1e61f627d22d75cf23e39823d5b37",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 0.31928104162216187,
+        "tsne1": 19.10429573059082,
+        "id": "15b9b9572a46e93a829b853f2be9989f75c24b42ff78330ecfc7c9bdd9b2c6b8",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 2.254565715789795,
+        "tsne1": 23.72016143798828,
+        "id": "249c002dbcceccc99bc4e1f9962f7df34cfc2df538af747932209dad07769969",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -1.1910954713821411,
+        "tsne1": 26.62867546081543,
+        "id": "e231278bb6f2f060d199153e5ece6fba161548b81c86379badac3040d5546070",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 13.877318382263184,
+        "tsne1": 37.041709899902344,
+        "id": "484335f3df3d963b90502dccf37e5ebb3e5d5b49fc0d2c134046ac4621787344",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -11.00049877166748,
+        "tsne1": -25.079509735107422,
+        "id": "8adc679084dec7ba650dfbd6a0645e1b89f4ad8f29f6a89ae7e0778b4be1797f",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -6.634828090667725,
+        "tsne1": 11.058048248291016,
+        "id": "cf9d92163831bb556364b78edf889894f28de154bbaec1b2e37fbd56e6bb0145",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.5016889572143555,
+        "tsne1": 3.4683821201324463,
+        "id": "13a1c824137e92e10c9d1c6b74397e82e9cb5e20875dde28326a29b6e0695876",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.853584289550781,
+        "tsne1": 13.08609676361084,
+        "id": "367dbd0eb24825f13bc4fd358ec48d2f88e77f5524f389851966a3aa9dbd094b",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -10.859904289245605,
+        "tsne1": 2.0167226791381836,
+        "id": "c8002a0bdc368928d62a2acc9a22a8fd569dbeda5ef3c0d9b9e024eb746317f3",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 16.212783813476562,
+        "tsne1": 41.21758270263672,
+        "id": "1dd3157c1d14f619b641fd343f06de6e80fa2e1604cb7db6194702cd5a364833",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.139857053756714,
+        "tsne1": 1.7153143882751465,
+        "id": "13da824aaffe979d72ce65e40555ff9c03249cd6ebee5d1dfa3cd19acbd90536",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -15.235611915588379,
+        "tsne1": -34.93153381347656,
+        "id": "3ee417c44e84980fbe1faae0df3f222d04e5a26f07020867417030fed79e4ac6",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 9.927051544189453,
+        "tsne1": 18.533512115478516,
+        "id": "0252459f5e49a4e0931890f0d85b9e3d951375b230b101395ec3f2b72304a1cd",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.3085330724716187,
+        "tsne1": -14.519369125366211,
+        "id": "32aeb6d9077508eceb3ffd6ca732c0ede827d6f6c7d1056e962774f5b0f1568e",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -12.21750545501709,
+        "tsne1": -12.497504234313965,
+        "id": "08b196345fd0598df94797a220b1c277d7ecd6c2b17a6f94607315ac26dd08d1",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -5.167571067810059,
+        "tsne1": -29.16551399230957,
+        "id": "eb53684d212d616bea679bd8e8b9c222e76def42865c233d3ec0baa634fb6491",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 14.106322288513184,
+        "tsne1": 13.73886775970459,
+        "id": "7ba45fde3d7cdc0160e3b7a7e6b16dae3889a849e034cb421e357e782c3e8e20",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.444520473480225,
+        "tsne1": 39.53168487548828,
+        "id": "6c2974cb2fea0241b1bc27dc496cb68ab8781a9eb404fa0002348c092db8e564",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 11.629364013671875,
+        "tsne1": 39.6239128112793,
+        "id": "29369b894c369081504bb45d18b500f19f4c881aee842250bb1da877e52ac85c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -11.41179084777832,
+        "tsne1": -36.002716064453125,
+        "id": "b65a276923de4bb80095c5b33656ed46de6197263f8c8d16fe95418b18a7f6a5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -8.984515190124512,
+        "tsne1": 9.026544570922852,
+        "id": "3cc564744e5d27dd9e5a1ff34943a16faa4ac0df6a44ff3ec0192d594e487d1d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 16.37199592590332,
+        "tsne1": 42.86057662963867,
+        "id": "dfd0018862a4db04de282549948c46544fb6311e443483e1189f1a54d37d1de7",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.44612106680870056,
+        "tsne1": 6.146205425262451,
+        "id": "cc5b57929bef269aabc52046f8b0d9762a8e06127744187704f7c0ea743ae0bc",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -9.63785457611084,
+        "tsne1": -10.089345932006836,
+        "id": "7325841572efc0853cff04a6f1f66203a2f37019003a7e959daf729eed17064e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.214297294616699,
+        "tsne1": 10.836681365966797,
+        "id": "675adcc9d8af2ad48526fb1a54489c58dee6bb14173b5debdca83ecd36bf081c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.210848569869995,
+        "tsne1": -47.673641204833984,
+        "id": "064f896e15a53ff044795f119864725d89c21384bc635b8db24a3999e137d9a0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.6566901206970215,
+        "tsne1": -1.390204906463623,
+        "id": "4881a28837f4589e6112751a96e50db7c8c3487c9fd07ec6e2e2f4ab9b381ed3",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.4487671852111816,
+        "tsne1": 23.044553756713867,
+        "id": "d6b36b0bc855caaec627ede481e0061dcc6b56e23ac1b5ca212d2dc8e5426541",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 2.736510992050171,
+        "tsne1": -20.873523712158203,
+        "id": "36154d1c6f5bd688983dd816486cbc50ec5a205518871c228538cfeabb7678d6",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 2.6446409225463867,
+        "tsne1": 7.813311576843262,
+        "id": "641157b58d804d1f6e11c13974d1daba5a5e27298a0dc09943cc9287b9b20fdf",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -8.828349113464355,
+        "tsne1": 2.0007495880126953,
+        "id": "80e87b1c40ffe93f1e6dcbe34aded12e9fe3a685e34ae379c37f32859a43e948",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 15.497533798217773,
+        "tsne1": 27.960590362548828,
+        "id": "00e3ac604c3ea7ca243d15c4902ced2d6409dad62326e67d9ccc05723db2ade9",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 5.6067986488342285,
+        "tsne1": 37.06045150756836,
+        "id": "5f7afacf48107585cb093f695ed3fc04886c484b802c3024106a9cdfcac92575",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 14.160379409790039,
+        "tsne1": 41.47723388671875,
+        "id": "0560575735c0c53dfc43885028d50c4f438fc05766301990dae9206774e919c0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -9.28020191192627,
+        "tsne1": 8.03429889678955,
+        "id": "0259a5585e8fa0250e1ef659fe943388703452bd87bbbb5b2801ddc9d5d41090",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 10.414966583251953,
+        "tsne1": 28.08542251586914,
+        "id": "bc8881c96b87b67c467b1f9209931f722fcf0d8f67d298c7bcafb059c23b45d0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 13.746149063110352,
+        "tsne1": 23.572965621948242,
+        "id": "a2bddbfaa61953047a75f8241fd2a4c04d63df7310954f9096e4285afda9a2ce",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -10.217740058898926,
+        "tsne1": -28.79068946838379,
+        "id": "ed374c8768f734fce80000ff006946102fcadbb2e76e65dab6b57d7b91223d10",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 15.183305740356445,
+        "tsne1": 10.250407218933105,
+        "id": "689b0c9f75c04c4b9ec034f8c70225a19e31413ca473948a47621973217013aa",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.613616943359375,
+        "tsne1": -26.849456787109375,
+        "id": "cf2cca5063867a35e79d2670383ed7a60b2028ee1593fae1239df1cc79854d8a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -12.226485252380371,
+        "tsne1": -5.403924465179443,
+        "id": "7d36e0538e60f56c78b8081d1758b3d3349fdbbaa1bfe9e54a090cc31882621d",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 4.458839416503906,
+        "tsne1": 8.147899627685547,
+        "id": "3ffadf9215f09bc13ed7d0a502edf38194191d78ee89615e3329595343e63f94",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 14.722911834716797,
+        "tsne1": 36.41975021362305,
+        "id": "f17786c6594a2b43e226f7d3298f3efbc5c1c3a575674b2a7207129d57ccd7e2",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.957071304321289,
+        "tsne1": -17.70233154296875,
+        "id": "f49d01f182c948ba098dcc5a90d32efc1eabcf9dc1f68b450d3d87528882178c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 8.857284545898438,
+        "tsne1": 31.975004196166992,
+        "id": "ef3b8b0285517b2289ccc11623c33d86806f1693442489f963f06cf7ed348858",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.911684513092041,
+        "tsne1": 25.617136001586914,
+        "id": "c51df49b00aad2418818dbab94cc08051b5b4a5655fe1bd8c6131c0f6e7d1245",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.592456340789795,
+        "tsne1": 10.105731964111328,
+        "id": "84263d44c6aee114e200fe76b38ccfa6f4fb9367f5079fe10da9921225ccff13",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 15.198541641235352,
+        "tsne1": 9.499449729919434,
+        "id": "6031dd46d29326b73e2815a87d34170503055bb493817f14fad02c6458c3124d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.946261405944824,
+        "tsne1": 35.94085693359375,
+        "id": "c2dc3f530e04c26e52fb50f570f73bf6cdc804ff7b65a12d215049c82f13a90a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -8.255411148071289,
+        "tsne1": 8.142926216125488,
+        "id": "343e64f432a40557ece7226be8f98e79c815d78d12ef53393f1614d2fedb5f7c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 10.508790016174316,
+        "tsne1": 13.016316413879395,
+        "id": "eb3b8576b074afb5645f5e6c4596698002b762acc3621e0fabca6b41b2ebe7ec",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -12.238980293273926,
+        "tsne1": -9.854120254516602,
+        "id": "b9538a11b4176b84c1fa1aa3c1b07be258b613e80904cfea7253e8d0b6dfdc12",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 2.463144302368164,
+        "tsne1": 25.220081329345703,
+        "id": "8d94aa54a3096a3910de69751a3b93e6cf073f6a7b92b98c338153575a2cad91",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 4.497688293457031,
+        "tsne1": 25.925085067749023,
+        "id": "c2c2de8cd5ca4bae48851e572d17b9c697b0733a5201ca855e8de45644670b8f",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.6662983894348145,
+        "tsne1": -4.711006164550781,
+        "id": "21493482c58c6b2cae5bea8feab51d74a6326365d45f2924172a3331d5f02d26",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.206124782562256,
+        "tsne1": -37.44899368286133,
+        "id": "cd16c8346917ab569f80dea9c98437bbf6e81e13b26ccd6879634fb3917479f1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -9.429838180541992,
+        "tsne1": -35.64215850830078,
+        "id": "6a40db09e8ae038ed2e64f9cda5a2dc5628c0784931b2002eefe8feafa5993d1",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.1778645515441895,
+        "tsne1": 7.389341354370117,
+        "id": "28059aab5de2f41166f46218888f5b026e5d1b6e7a4fcf674e8d74a53699f452",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 14.121578216552734,
+        "tsne1": 37.60529708862305,
+        "id": "b55307c5cdff823e714edef4bae49ea269f331f981bff5018781dfa34e16910d",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 14.873418807983398,
+        "tsne1": 31.416259765625,
+        "id": "0d1b9977029b5cdf0f844fe278aa46c6964a4bee860953cda1229b3efa078c53",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -8.838802337646484,
+        "tsne1": -13.258369445800781,
+        "id": "86d27350b580194537e50dc67213ef0ac01a3cd71ee47db3a0959597845514dc",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 10.498321533203125,
+        "tsne1": 39.58070755004883,
+        "id": "5030f7b8ab08e82d4e0c69a38a6984025e5008f2b0b3dbe74d15e3a2e0ec3b3a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -18.860300064086914,
+        "tsne1": -10.215075492858887,
+        "id": "76a86304391c6b309e6bba292e8790601865f4af6b40735787e1a3345e68894e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.59552526473999,
+        "tsne1": 7.370509624481201,
+        "id": "b62e824ebeae2fc29c9b9c0673d956eb7e137f0ec423792d2db99751ad4a10f0",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.587010145187378,
+        "tsne1": -9.41535472869873,
+        "id": "ccf9a41450d2b933070aa1baa1293425cd0e96c23d84cc75b0b7bd3e01672f97",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -13.244051933288574,
+        "tsne1": -21.943758010864258,
+        "id": "8b0e0b23ce24ccdc2211ef61dfffd3ae81a40f558f5caf522874aefa48ece1f4",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -1.4610936641693115,
+        "tsne1": -46.52001953125,
+        "id": "5ba8fb532fb2f97e887dad2b9dddca6019758f2c63c053daa5cfd49b5d6fe946",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -6.504554271697998,
+        "tsne1": 7.637942790985107,
+        "id": "5f60592aa3736764f03e8916c1d5399a89bfc1dd2534908a87e94a951011eadc",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 2.088174819946289,
+        "tsne1": -17.47945213317871,
+        "id": "f511f841854b0f2fc1a47968ffc19287023c005defbd05b45abec23adf46298e",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 14.921537399291992,
+        "tsne1": 40.7431755065918,
+        "id": "ff722a8478a7994d879449b9a10647237a78adb5875623a52ec109c150b2c520",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 13.083194732666016,
+        "tsne1": 27.386669158935547,
+        "id": "d28ed7ad7fd543a90ae73ab0dc60ad74ddce1bb75ca24f76398b7048731e39b7",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 12.113568305969238,
+        "tsne1": 40.86165237426758,
+        "id": "303b8936e9b4548896347b741025a263c1aa55d935d70fccda9f45d418012877",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.536093235015869,
+        "tsne1": -33.377662658691406,
+        "id": "dd06d48347427fe04fb080d04376b8f1c4e311221564494df7d169cc029377fd",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 15.41287612915039,
+        "tsne1": 26.763381958007812,
+        "id": "5c30e5790f44ffdf40e77e39836613df435c6da1b823a734e9800df2fcaff892",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -9.245746612548828,
+        "tsne1": 2.568812608718872,
+        "id": "1f4949fd37b75dffe90dc9c806ebce6adf7ae3cb0bac2c869db9d4eb235ea9e0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -15.193763732910156,
+        "tsne1": -13.701018333435059,
+        "id": "d8d7db9df9c6e07ef3b937f6c9065887155054b68fe8f9b60bb98ef1c7a04b1d",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -10.551406860351562,
+        "tsne1": -35.53675079345703,
+        "id": "2d4eb3c2f697147f1b6432fd9adccf2f4e58d644fa57f5687adf81353dd614b5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 12.379019737243652,
+        "tsne1": 6.942675590515137,
+        "id": "83e1e6444607308fd571fb4990504f7454e121c194ea0d3408fa77bc118152fa",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -14.71072769165039,
+        "tsne1": -6.464527606964111,
+        "id": "98fbced8044d34487ea94edfb249deb6c5718b60c5c4df651547e7e73eaacfe5",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.330153465270996,
+        "tsne1": 17.89191436767578,
+        "id": "f0753f637d5611a7dfd1d72b84b8a7baca134bed12b5535bd088cf050fd3b1f6",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 5.303445339202881,
+        "tsne1": 25.807771682739258,
+        "id": "f34010f11c8571e0d25af5f712f8e242c4265b72427fa03c826ef59283d114e2",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 6.206537246704102,
+        "tsne1": 24.765602111816406,
+        "id": "2196efbd2542952db804cf2b3c461fda7351b6d1cc87fcbec6914834ebb7734c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 14.832426071166992,
+        "tsne1": 32.58918380737305,
+        "id": "550c5d013d8e0b01b1dd9c7f787c5e2d8e1a254226cbab94bba830fe2b63f6a1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.1606600284576416,
+        "tsne1": 2.7812066078186035,
+        "id": "6225eac6f96a81eae73e8c74c67465e2dd3baaf2744e0190b8475b5e6e21e563",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -17.227020263671875,
+        "tsne1": -8.992637634277344,
+        "id": "0820c1474b8defd2b7a64bd9ccb48dbb41a94bf359974a7dd9d874679cedfdca",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 3.720485210418701,
+        "tsne1": 28.956315994262695,
+        "id": "54a6cef0f0c1031986ef1172e13ed1c35a03c8f0a1868c3cbe90dc9b7f3a8da6",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 2.323334217071533,
+        "tsne1": -50.3704833984375,
+        "id": "fc28bdc6427bf440db57a89257c5ce71e00e86c8530292b51743979351527903",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 8.322989463806152,
+        "tsne1": -17.864648818969727,
+        "id": "ff432acfceffeb17115123287685e008aab7376ff74abd635d7fde3844114861",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 1.942341923713684,
+        "tsne1": -1.1618984937667847,
+        "id": "7a5907acecba8aecf26f54b169be0147ad18ded63329387c74aa776547317c62",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 11.348511695861816,
+        "tsne1": 31.45975112915039,
+        "id": "daeeeedcc455bd66063c760a55ca77230f955645bd5434da72409e8cef9a9812",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 10.5440673828125,
+        "tsne1": 14.35783863067627,
+        "id": "1e838306f1a7478ffa91a20fdb5ae474ec24b6b4729392341d8657f546e7eac1",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.28272512555122375,
+        "tsne1": 19.800989151000977,
+        "id": "500cd5ffe77c8184854374ec551681d20c0592ad4228f8d2e874031cb3381a1a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.5681910514831543,
+        "tsne1": 21.109041213989258,
+        "id": "db8bba00cc2ae5c8d152a44b42fc15390cd4cf98ba2cadd77a17fe2d7fa91709",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 11.133244514465332,
+        "tsne1": 9.962181091308594,
+        "id": "d8238537b91f032d474f77581a76a03a8d02b4808294137bf348a61f60d7adbc",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -9.929703712463379,
+        "tsne1": 1.0038375854492188,
+        "id": "48b3e0e3fd8855988c655899fe80f99ac1671f6265f58ba9a7dbe6727a514c69",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -15.520780563354492,
+        "tsne1": -15.851483345031738,
+        "id": "775c30251ee952f9d7d09fd1b75d3d02f0222c18a736c6ea8189ef9c1c73b6d9",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.186244010925293,
+        "tsne1": -36.69806671142578,
+        "id": "5d68b8959733bfc4e937c1b9c519a5808c48ab26e076e7bf82f44de34a44ed5a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.875013828277588,
+        "tsne1": -46.0181884765625,
+        "id": "ef7ebe18547cd186e804cddd1b2beec450c2600fe8a02168355f364f155c202f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.742655634880066,
+        "tsne1": 9.861212730407715,
+        "id": "9a7c992a7c33a399ed0a9e9e92fd945ac76c310716ca2c43456f0a454e3bd034",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 5.984044551849365,
+        "tsne1": 37.977272033691406,
+        "id": "6918b1178fee0bbcf6a8ffd17936f0e088b11dbcc5ea24cbd0abc02a5708f034",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -5.766595840454102,
+        "tsne1": 9.719583511352539,
+        "id": "39a522267f2a604ceb5b7b7a0363f1db12c6abeee1d4c6cb5300eb9c5ed2c274",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -9.168868064880371,
+        "tsne1": -12.045248031616211,
+        "id": "6a7fa6b9959c3bef71b67acfe014f2d069da82c8a0ba0c20dac03a2d8f8ef528",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -12.891587257385254,
+        "tsne1": -35.09980010986328,
+        "id": "bd0613ab9d219130dc83d9289ca304a7c8d47007f87241bb2fec0dd8f33248a4",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 6.96566104888916,
+        "tsne1": 38.909481048583984,
+        "id": "ac50aec4f96a935802c5386c6a052d6334f6807881ecfb4b2f4ec7e83b2f2379",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 2.148200273513794,
+        "tsne1": -15.049493789672852,
+        "id": "b250260e3fdad0df976df266c4ac0fda9e9857af3084c571d4016eeaccdb63cc",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.2721089720726013,
+        "tsne1": -4.174077987670898,
+        "id": "f3b0835b61f69064ad183502cdf85b04c8ac4315f5c3da8dbceca4bce53ec7dd",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.2831774950027466,
+        "tsne1": 27.856586456298828,
+        "id": "e910bd06da203f43ae78b38c261709d14c78819c34f70096b80c52de7d8b88fb",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.9398937225341797,
+        "tsne1": -38.06237030029297,
+        "id": "14b644c476646a37c756f2b0a6021f6efdc87bb6c851d79bb9b8f91981fcb500",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.32948899269104,
+        "tsne1": 19.696090698242188,
+        "id": "653ec75107bc6436ac034b1c216a7cce3fef677075865985d0a95b34d8c6eeea",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 11.373750686645508,
+        "tsne1": 12.63158130645752,
+        "id": "f2b056de36b3649de45b7b5cea1dbc6fa1ffc57dcde14832ee99be9aab3cb3be",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -7.6590752601623535,
+        "tsne1": -16.3460693359375,
+        "id": "dba77b5724b8463cb0b4e67b48cbd2b65a0a35d7ff2d53617e72d62789c1b653",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -6.0699615478515625,
+        "tsne1": -6.207846164703369,
+        "id": "d88ecccc6db355646382cb76347841b3ea1a861d89a275979ff8d30b0e217718",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.14420747756958,
+        "tsne1": 18.951337814331055,
+        "id": "e26bc66ed043f3ee427957d65e3d11c74ea37409325a1896406c51994f8f53b7",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -18.27957534790039,
+        "tsne1": -6.876692771911621,
+        "id": "1f5219efbc86feab52c29300eea1bc2f22aa7f6e8257c5432eea9ea73b70c122",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.959132671356201,
+        "tsne1": -5.22772741317749,
+        "id": "e8fc163faf86327873961088d228181ae08f068d627915e678fc0c3b5b61bc8a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 1.6225389242172241,
+        "tsne1": -47.34600067138672,
+        "id": "1545c2aed326d31f23fbd8b312807f16d52286b4c6f7101a4c28a840cf654f51",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.686639308929443,
+        "tsne1": -13.421170234680176,
+        "id": "0a3a11eeccd106fbefda2cdc3217bf31f31f6e9b54546edd9eb51fd0ac295a2e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 4.863728046417236,
+        "tsne1": 19.10608673095703,
+        "id": "4c0a40502de05e79aacd7131e714319e80300f37a119a944516fbde8e1d006c4",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.9880361557006836,
+        "tsne1": -46.515316009521484,
+        "id": "f11e5096730f8427b6468caacc836c01f2fbedae857c660100ccf1d82822f75f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.2869277894496918,
+        "tsne1": -46.57766342163086,
+        "id": "e6e643baf21dc255db4bdbfae970af7163ac08b2c2211d248dc94140ea1606f4",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 0.9015098214149475,
+        "tsne1": -20.039724349975586,
+        "id": "4aa98f2b2c670f45cb82c911199cf0f20f7e46de27d1c7dea658c03f0ba1a907",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.207538604736328,
+        "tsne1": -17.62079429626465,
+        "id": "cb52e995b80a1aa4fdca6097b30ee78e56dd7647de8caaeaddf210fa578826ab",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.291025400161743,
+        "tsne1": 34.94438552856445,
+        "id": "cfad88f5ec88ff59a9ce8e1f78963ed719b8950541c107168026595092fdb0ad",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 0.6166785359382629,
+        "tsne1": -44.045650482177734,
+        "id": "96cb160f6c4bb6fa408bf052aacbfd464902b7701ad0f08f6daa49a2633fb80d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.6029735803604126,
+        "tsne1": -5.628750324249268,
+        "id": "9578e49829c8204b5b9023412c9ecbeb76538cbd246f8d05ababbfd7de3a85ef",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -8.190705299377441,
+        "tsne1": -33.56184387207031,
+        "id": "f8eb5a84b58e222638e0205e5f7174db9dcc992981144f12332ce3e57b55e7b2",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.5773594379425049,
+        "tsne1": -50.34702682495117,
+        "id": "27bb5b8afe95e3163563ab516963ffadddac35b0215bf0d6b13a4ecd67ef16e1",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.1905484199523926,
+        "tsne1": -3.4161651134490967,
+        "id": "a4fadba3a5a5614bc7e4d49f50fa9ac7897252e21ea69a973dd41d7b00bc407a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -9.6704683303833,
+        "tsne1": -16.199214935302734,
+        "id": "45f5d2b794965c0db03fadd242fb9b846cec45ee4ba83ee4ac23301646e7cdb8",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 15.955008506774902,
+        "tsne1": 22.983339309692383,
+        "id": "b2c7a17894b532b5683f2317becbebb227c5c5dfbd72b2cb52320a154353269c",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -9.06470775604248,
+        "tsne1": -22.224193572998047,
+        "id": "de51de10c78e34c151d0397bb1e37f0cfb82af4df8f7e6c86ee81284e65f594a",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.3800278902053833,
+        "tsne1": -45.510807037353516,
+        "id": "1e2a50c1f6f5855fe4434eaa6089a2ece5e1204e4a54642abf171241b4bdd047",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.5845305919647217,
+        "tsne1": -15.876501083374023,
+        "id": "530bf1970f9d4d7e0d9251ff452c022f7c51b423d55158c01a95db48e471c217",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -12.506227493286133,
+        "tsne1": -13.84488296508789,
+        "id": "c0f89183a7d1c42c560fd8d7a891f99220e4926726b1b1b3502fd1aeb61996ad",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 6.672046661376953,
+        "tsne1": 21.8037109375,
+        "id": "dfb4106caced8f0b72e334f2d96310382e6b7beffbbccd7ec6b3651b105794fc",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -13.95162582397461,
+        "tsne1": -35.295921325683594,
+        "id": "2662a633bfa5b4cdbfc923a437b1b49ffeadd9c49bac371be8d257950acc1803",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -8.683133125305176,
+        "tsne1": -32.984947204589844,
+        "id": "148a3230f7b3b363a92ff0fd70568a0635fc253c7b982363d54670a01bc0bbbb",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 8.659400939941406,
+        "tsne1": 9.44609260559082,
+        "id": "f94cae2efbaa6dca97191808983f5e4feae39089a91d53581b1eaa914eee6ff0",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.8292807340621948,
+        "tsne1": 4.381396293640137,
+        "id": "f7a393ab36ccf9a1aafec7a21316d049176fca6f1cc1a9fffdbf77323a1d06c1",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -16.547128677368164,
+        "tsne1": -9.666916847229004,
+        "id": "924fd9d4441e52d78a04d8aede5b8eaf65b4242f5f030015c0bd9aa5e374e802",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.9803983569145203,
+        "tsne1": -38.80819320678711,
+        "id": "cff0a5ee463590f29b50730744869122aaf3e940fc663570c0fc495624d93d6d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -7.07647705078125,
+        "tsne1": -25.433856964111328,
+        "id": "1f35420dc2bf42a85a59e38c2a429bd58bc85ec1ad8b6990adcbbd9d429829c0",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.7210774421691895,
+        "tsne1": -38.67717742919922,
+        "id": "28d3ffeeada7ce103a3c9f3edaccdb0a8cb99d739e8653251a9c2fff5f656931",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -4.429755210876465,
+        "tsne1": -12.535866737365723,
+        "id": "e31389b2199961dc780bd5b13fee2ddf9c2d65d6c083fe70d0adb2e23c4a01fb",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.760819435119629,
+        "tsne1": 19.06041145324707,
+        "id": "7220866f85ebf0b69fe4d21f094b0cc06db95634de20869f08df49770504c831",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -19.028738021850586,
+        "tsne1": -11.931705474853516,
+        "id": "f2c4615e6e171386e812ab067c4a25f6a0e160d6c9c7fd4d8d51e5cad64cf034",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.42261070013046265,
+        "tsne1": -36.79084014892578,
+        "id": "14fb87c29fc70b684582d0d2070f8b1e622d4ac1fdd5ab40f26cd380cb920f27",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -11.066704750061035,
+        "tsne1": -15.615192413330078,
+        "id": "1241c3c89e5265de1ed509f0029a191aac797488c6f66bd7684ff2e48eee7f62",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -10.06733226776123,
+        "tsne1": -38.68573760986328,
+        "id": "92cda2a6c0d2d9169443f7388f23e09b9dfddaed27caec54be084b5f6b5e3458",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 1.220838189125061,
+        "tsne1": 6.208370208740234,
+        "id": "d10ccaa8220de5bff5bffd4058fa8ca6cebeb95ea70ab134f5c62d3d65a5b61a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -2.558377504348755,
+        "tsne1": -38.77778244018555,
+        "id": "aad29da4ed5ae2c50ec212c8da2392d526e910f428a41e0f2599393f65bfd307",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -17.07134246826172,
+        "tsne1": -7.881818771362305,
+        "id": "ea6397bbe15bd20212137454ead9ec6fb19fb935b29855a4fa574392b1228295",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.5745465755462646,
+        "tsne1": -2.752385377883911,
+        "id": "5200fba97927005c873c73c0466ed52f511c96b4aaca086eafdec1471fa4109b",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -11.815511703491211,
+        "tsne1": 7.808619976043701,
+        "id": "a5fb330deb8caf6a4295dc90df5caabcadd56e8d23f42b568e051a37a8dd1bf6",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 12.675361633300781,
+        "tsne1": 37.58537292480469,
+        "id": "e318c6ffc776c9e52f82a374b86004d1dca17abeeb61d13e56446c65294b70b4",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -7.39168643951416,
+        "tsne1": -17.42255210876465,
+        "id": "a019b2607c0b4ec341564a990fb8f820205769a2b5ac9a40300b570e5e1220c8",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 15.954943656921387,
+        "tsne1": 40.43229293823242,
+        "id": "932008b20316618523225004f999c2efe6f9127e5365794ef5151b049aa73c35",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -17.7463436126709,
+        "tsne1": -5.875741958618164,
+        "id": "410e07d94cb23227d8c3c26fbd834fac934cc6cdfdf0e7a6cc4d8794f2577d29",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.174036026000977,
+        "tsne1": 3.455702066421509,
+        "id": "f138d5ecf48473e97bc8acb0d52f2951220fd0a5fc5d60f7a7a906e00204fbaf",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.1973737478256226,
+        "tsne1": -8.833938598632812,
+        "id": "89942500844f67486d0f49c2f180d4769bb4cdfeb887eff32fd1ac62b1fd4446",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.5388604402542114,
+        "tsne1": 1.5688899755477905,
+        "id": "d372b060a98a39ca30ed25b60ff16add15f9de64f5b7a7c74ead360237d53793",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.5954296588897705,
+        "tsne1": 12.129449844360352,
+        "id": "2ef55d5499ddc0e54bc3a43eded9c5a7deaae8fe610f50712d9b3dbd09a9c23c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 13.651670455932617,
+        "tsne1": 29.310134887695312,
+        "id": "34a7999ed37e9c927a029e8754497ee6e41c56c4633cfc7829ec8ce52adba400",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.6506431102752686,
+        "tsne1": -22.527921676635742,
+        "id": "ff1e46ef0f26bd522cc3f760726dcbc7d5f9f8f99d89bbc00c3287c2def76622",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -14.472938537597656,
+        "tsne1": -2.177199602127075,
+        "id": "2091c47411d7a6841ffccc72331fb7fe26ca0e3667fd99bd5d40ae078eade5ea",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.843615770339966,
+        "tsne1": 10.603208541870117,
+        "id": "caacca40db4962b5f8a92cb4bf096ae6b3410e3034b94638c5d8a58af674fd87",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.8672267198562622,
+        "tsne1": -46.87736511230469,
+        "id": "de70005ad6332d7e4c9d44c0cd667c8b19ec761b2b4b65ebe53e85b849ce75b8",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 13.234474182128906,
+        "tsne1": 28.835508346557617,
+        "id": "6be4d9bcd8ed187f52a62ef6aee31db22bfe1b5d929afde286abbea769e99efc",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 7.702186107635498,
+        "tsne1": 26.560775756835938,
+        "id": "d9bf455c9a06018c9867b8984949681226b80122c7115161063a1f7a110d94fe",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 10.948610305786133,
+        "tsne1": 10.67444133758545,
+        "id": "e7b63bc6af6dc0dfb589fdbfd3e3e90853a3479b2c2e5999cdd06424216bc132",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.003758192062378,
+        "tsne1": -14.067937850952148,
+        "id": "94cbe4da7363609f8643a320e0d9bd8a1d5b26ff50e02f345aa32e9a575ba704",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 6.902604579925537,
+        "tsne1": 15.060283660888672,
+        "id": "04d542154f66a089409ea9933e0cb4a082830dc3e070c1f04982ded2bb698415",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 12.186750411987305,
+        "tsne1": 8.811522483825684,
+        "id": "96e5ccba8a76b9170856aa6d40c8db9323a3c42f0b734a727f81e0e1737719d5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.138925790786743,
+        "tsne1": 21.845169067382812,
+        "id": "87ac06c5c8c0ad3d7032171468229a3a789ae3a44f9fa15581ce445e092b2d00",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.5985006093978882,
+        "tsne1": 11.875009536743164,
+        "id": "f28bda338a1ac57151585ed92b1edab480f58cff1f3c6e6afc26e50ae2b44acd",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -9.133134841918945,
+        "tsne1": -16.626436233520508,
+        "id": "e49f8efe3be331dc87144b22b0d914d4955931dc3b36cca784fc02e139ec8a1e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.2387586832046509,
+        "tsne1": -17.11300277709961,
+        "id": "1e82fc236a3b461618a52a9fccbc8cab0fd3edf690f0b54b173a2dab933b44cd",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.45093244314193726,
+        "tsne1": -3.561720609664917,
+        "id": "57e3d6df58096e13f798ffb3de848de335cfce1c508c82393114899e4f658968",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.0647525787353516,
+        "tsne1": -3.7854690551757812,
+        "id": "ab877cb23e34f37d6dba590faf064465354d4318b598172857ea418412b87a26",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.1263632774353027,
+        "tsne1": -45.12683868408203,
+        "id": "7fdd255f5d3cf45853d49c3423c3c447ed6f2748adcdefbffca2973a0e74a3b2",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.3889497518539429,
+        "tsne1": -36.949989318847656,
+        "id": "09464799430e6491f387cabad954ee9e5e0a20cedd9c40bbb35782d2ee4ac5cd",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.1307759284973145,
+        "tsne1": 22.557491302490234,
+        "id": "510f62e15e6c9278eb198d9f5e0e4eb93b133f9f43ae558628892e25ede489fe",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.4045934677124023,
+        "tsne1": -12.522279739379883,
+        "id": "d155e365a4bcb9b388fdf45587cb5a7d1ca7ca0c0648d29cb1860b609e0feb83",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 8.584866523742676,
+        "tsne1": 8.77428150177002,
+        "id": "829ed552f21d91bc3098f8c41b1321232307c52903d2978f41dda34d9b38291c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.157556056976318,
+        "tsne1": -15.358574867248535,
+        "id": "4650b77f3d072c858451b690e614eb1e02969055f2f4f37b913d4a14c384f699",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 15.3723783493042,
+        "tsne1": 22.481689453125,
+        "id": "f6031bd7600ab4d2052ac1d390b086b8aadce90371049a61aef09e86176288be",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 3.330944538116455,
+        "tsne1": 5.040197372436523,
+        "id": "358144b18910d8da5e6e2022d3c6ba0ff34c455680117ce3cc8a097f54068af1",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 8.527810096740723,
+        "tsne1": 27.203283309936523,
+        "id": "98beed9d1813c5c34f671327721757994bb8bd59978b3ec0d55f11c51f364cac",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -17.853654861450195,
+        "tsne1": -7.83980131149292,
+        "id": "0914f9b01f384db28b2eb1005769d8f53e78090161d76c3f9b3fb5b118be3c7e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 7.130091667175293,
+        "tsne1": 20.5694522857666,
+        "id": "07a766731984f4334b5f38267117a761d3f0db9804224190f8ff8ce2a6703047",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 0.33767667412757874,
+        "tsne1": 14.584979057312012,
+        "id": "a4e45f9f74f4e7745649f8b7fd738430c44b3d4d1bf3435b4ed90bd134c7b5c3",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.882473945617676,
+        "tsne1": -14.857739448547363,
+        "id": "0435cefb7c4d96c6e4cf3de164fceb4974a328b5887cbe724284f8fb1b551e5d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -12.224169731140137,
+        "tsne1": -37.28641128540039,
+        "id": "d7c780035ac7021bbe13f9cca2d9a6f681d8fc8b940b63032b05f9c034255bb1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 6.123576641082764,
+        "tsne1": 20.578062057495117,
+        "id": "27a3496e9a570b45a967d442f9efa678be85e1902a47b9531fdd5ad5644f9863",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -11.596248626708984,
+        "tsne1": -23.1573429107666,
+        "id": "419cf8a56f88bcf29159e12d9c9c3fb5cbcb6b11550b291f01c8a13cf0d9e781",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 4.518045425415039,
+        "tsne1": -16.4168643951416,
+        "id": "07c83f382080e759da1f773d07a6263249e9cb31de30cfc1ae10f591529fbedc",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.902894973754883,
+        "tsne1": 3.2737784385681152,
+        "id": "888d97b511fb34ddd7834ea28614a85564bc40f531eaf794916d15fbab05107e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.3103766441345215,
+        "tsne1": 10.181963920593262,
+        "id": "66e080c49f7dd3779e966d798913160f2a722c772465ea7971692d21259b5c20",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.0747108459472656,
+        "tsne1": -23.022371292114258,
+        "id": "77829593963162833c676df5d9e1d1621531522f7cb7ce8abf9a1316798b383d",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.0006500482559204,
+        "tsne1": 28.989612579345703,
+        "id": "039b6d44a8446729f99152bcf45f5c363af4306c14f27c299a8e85e641125e1d",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -6.665920734405518,
+        "tsne1": -29.153705596923828,
+        "id": "2dcbaab36f12c22e35e000b88c3f242a9fdc651042924f8eef47fba37fc8dcf5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -7.51943302154541,
+        "tsne1": -18.385189056396484,
+        "id": "237912f351bef34fce5bc9076d03d0e0356db26967cc448dd666aa002f837bb4",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -11.100351333618164,
+        "tsne1": -7.427908897399902,
+        "id": "49d4914573e81e8cb23a4e96f78a2de50fe17facc4a00cc555d87fc2ced50886",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 3.483921527862549,
+        "tsne1": 25.87069320678711,
+        "id": "82c5cf132a2df9d7a3e75f5686d2a4d1121a2e055c18bff6b2a44f4dc77e8f55",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.2586617469787598,
+        "tsne1": 20.532058715820312,
+        "id": "841ed8db407070d9817fc5a697b8c9537095da46aa5acb1b39507fb944a27143",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.3405797481536865,
+        "tsne1": 7.828802585601807,
+        "id": "ee02d9f46a9578f49adac5966acc551b7263d8da6a93741a6437c3847557f56c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -11.040594100952148,
+        "tsne1": -21.715700149536133,
+        "id": "9720b25df921fee33e9138d9d04bda54452f6a2467f4370665433275dd260656",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 14.801730155944824,
+        "tsne1": 21.0114803314209,
+        "id": "e3ee508bf027cab5b0d3625219ac574fa1830a24ad7f18fa8d38ac7adfcd90cf",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -11.908235549926758,
+        "tsne1": -21.41486930847168,
+        "id": "5161464a31d919a14ab597d082cfd757c957282dc96ffb12076f2693587dbd0d",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 6.713276386260986,
+        "tsne1": 34.81433868408203,
+        "id": "d866f09e518d30ff9e2d4da2f0f74945012b5614702677af12bb750a2e1a498f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 4.937253952026367,
+        "tsne1": 31.867568969726562,
+        "id": "932767b9362f78813a404b609a90478b0e78833a56254ca6432c4be432f183d3",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.385528802871704,
+        "tsne1": 27.554607391357422,
+        "id": "8fd6a9ec2e54014eeddf80a7bc56386c53e9c6f8bd6c635ddccb696d873c7237",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -6.184550762176514,
+        "tsne1": 12.460491180419922,
+        "id": "b36b6e5c5d94ffbdf9bc74f4b5e92166156658876f7ea8f6fca5d3a756daf0ac",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.5742146968841553,
+        "tsne1": 22.314258575439453,
+        "id": "3d7b3e4ffcfd05da63a69ad44810689335605009844abba81953012465cefb99",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 11.66667652130127,
+        "tsne1": 36.61552810668945,
+        "id": "2ac610fca802cc7842a15d4868fdc5b78ce42a616fdd7211344634a1ebb30518",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -16.890928268432617,
+        "tsne1": -6.35836935043335,
+        "id": "e10963f3188a5063592c3e3d74ddd9bba8a7b437b3157585dbdd2deb1d5dfbe5",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 0.7577584981918335,
+        "tsne1": -49.827880859375,
+        "id": "34c5f89d0ffbdedf5feb82783c41c627fccc34130c33fc6bfbb6cb58eb462803",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.3929953575134277,
+        "tsne1": -44.51687240600586,
+        "id": "dee0e7e7e4b5fa5a1d315e1f0a830e7294c8b17508685cf77e040f92d9ece3b3",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 14.888466835021973,
+        "tsne1": 15.791548728942871,
+        "id": "12867b4469a833520347763d79e86d58d2376f365010811e4a7fef1e6b082599",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 2.19714093208313,
+        "tsne1": -47.93008041381836,
+        "id": "e909f47f00dafe6ce8b2a89cb97a1ad2c2b587732f02778d5cc1a7490ae6d155",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -6.617636203765869,
+        "tsne1": -27.72549057006836,
+        "id": "5c225daedac6b47bde6260a53e2e7227822aecb248ca9667bebf86ee5167715c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.952087879180908,
+        "tsne1": 13.676471710205078,
+        "id": "9aa37e584a9967ac43c26e3ee1a8d3a229994ea906e2963d05814edace2185eb",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.904654502868652,
+        "tsne1": -16.88626480102539,
+        "id": "71e56a21dce3ba0b98fed254f8da8d36a0788dec4a6d3daf69dab1cb00c5efaf",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.6558198928833,
+        "tsne1": 10.972752571105957,
+        "id": "e426bdf6498e30eb773a416e83b22a541a657599cb2a7dd2d02f3f742e6dc8fe",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.1945841908454895,
+        "tsne1": -47.39127731323242,
+        "id": "19cb985c5d674b557c284ef9ee4a0b0a254a3a7fc21604c73a52d02b2fc13965",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -17.747478485107422,
+        "tsne1": -10.356927871704102,
+        "id": "ceb7859c6c50b87f59a6cdcfd43046ffac846bf23b6b536ead8263039c083ce2",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.6018392443656921,
+        "tsne1": -15.532466888427734,
+        "id": "2d368f3968b9bce1bc73c87a1dcfc99d394e3cc37fd8978ad81378580de85f46",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 4.00309419631958,
+        "tsne1": -16.0064640045166,
+        "id": "556bf472609715d814ba6703224ab525b9d03fe4cc2fa2ec2361d6537f5bdefa",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 12.433764457702637,
+        "tsne1": 34.13824462890625,
+        "id": "5911996ab9e39f7c9e545092f5724532f7f8bd6fec6733792c7849ac1ccd9c10",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.1305209398269653,
+        "tsne1": -42.36622619628906,
+        "id": "e13ecb57c37b2657d224cd96303db6ced0a9d8fec5fcd4d0d1dcd77d3b5c6211",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.4551413953304291,
+        "tsne1": 12.11840534210205,
+        "id": "7cb0d29cb5c1c7bf679f9e466c61d7c95397dcccd425876314343341fd0ac425",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -10.698987007141113,
+        "tsne1": -37.03030014038086,
+        "id": "b79d54aaa242032e1fc3d906d3a4c833e5309c26d4227965ccd0f74a68afdb81",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -10.11614990234375,
+        "tsne1": -23.615657806396484,
+        "id": "8604813b8bd3a08606728e1f82b07c7e4d1eab190299d44733e170078f3dc080",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.644102096557617,
+        "tsne1": 15.651857376098633,
+        "id": "ffdd5f177f6cc5f7d57b0547eb48fddccfe06851893f19305367e9be00a06d38",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 4.002571105957031,
+        "tsne1": 35.67288589477539,
+        "id": "13c6872ad8235fb5e7e2e740ef36f3b0acb54ef6ff1fcbd50323781fb7cb453f",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 5.037685394287109,
+        "tsne1": -18.107736587524414,
+        "id": "8563c27fadd4b5c6c3578fab139d38ac1575cc06ab87753828385c33ea54ce81",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 7.155814170837402,
+        "tsne1": 15.716096878051758,
+        "id": "537c125f17f9ede356619b2e212b1b087e5df8f7f3687c01f43a5c1dbbcd919c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 8.324716567993164,
+        "tsne1": 37.74806213378906,
+        "id": "4ff604af10256237042e8eb1e3e06d89e1f80e4ab5dff956bc3c6dccf902b6ed",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.4946646690368652,
+        "tsne1": 5.09755802154541,
+        "id": "732e2881ddac73a8c5c6a488ec5ffa0d00b8ba4a678c88c35d66bbffd41c0430",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.3905248641967773,
+        "tsne1": -14.820558547973633,
+        "id": "e0d2be68e979825357dbf3db67c749ee88711eb96d5aba8553bef79a24c3e370",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 0.5130646824836731,
+        "tsne1": -22.221973419189453,
+        "id": "58a731f77ddb3436e578c05c7514b10f3f713ef93aff7b68730f68fa9435df7a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -6.098173141479492,
+        "tsne1": -27.920875549316406,
+        "id": "843a4ea15801e21989ff9f4756ab0201a6abc642e3408f4d268724192ae0af64",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.987322807312012,
+        "tsne1": -14.17473316192627,
+        "id": "11fe7ce3ac739d4e0056e596d6b5577e5f33cf00695b3820fb3ec9993e0055dd",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.631903171539307,
+        "tsne1": 35.24192810058594,
+        "id": "6897359cd28bccb22cd4323754152ad7569d2049e203ff45a774af7a4d07fc2b",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 3.5577785968780518,
+        "tsne1": 6.40132474899292,
+        "id": "878d784ac3a76b32345dfffce7875bc51c4292a3ff9d517914d53993d71a932e",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 4.103739261627197,
+        "tsne1": 36.26248550415039,
+        "id": "95b92170d553e23114a10b904346c9a93e92d3eef599bb4103fe3d18435da60a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -2.83750319480896,
+        "tsne1": -1.3535385131835938,
+        "id": "fb4ec1c13afd12eaa3cffd7bde4d8676882ade5f9235fbf34948de361b54594f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -6.403674602508545,
+        "tsne1": -28.750499725341797,
+        "id": "5bca89dfa8384755ccab07f1ed3bc73447a5f12ac0defc57f2809d1a4aa3d0db",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 3.1216795444488525,
+        "tsne1": 27.60224151611328,
+        "id": "a2bf9e8874d999fa5eb76a5fe55c7c3d151124cef4ee069aef017685259ad990",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -10.113713264465332,
+        "tsne1": -5.966273784637451,
+        "id": "65d72b9cc58c7a510bb4814c049e5b667383c5e3469d78e59dd7648fc91baec6",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 0.9026245474815369,
+        "tsne1": 13.005499839782715,
+        "id": "8eecf4f246545f1b4e0e99e57d9d8be57da283ebce97146ecb719907334d3048",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.6358792781829834,
+        "tsne1": 11.313287734985352,
+        "id": "8b249dfde61e1a56d64a61641ae72941ec7eaac0febe0d2c9822d0170430229c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 2.089029550552368,
+        "tsne1": 6.987411022186279,
+        "id": "a305baf5aa48bc7f0ae542fa94d0f6a35be9d4233e864f0f2367401838e898c0",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 12.250304222106934,
+        "tsne1": 13.001786231994629,
+        "id": "c3503dccb1484cff90e4d44da65009c8b214250f8d5fa1f039d9bd1762860dd3",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.680668354034424,
+        "tsne1": -10.502411842346191,
+        "id": "af238c8848c05f50cc8288a304dfd88a679d20b1f9934dddc33c419ada605c22",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 11.919981002807617,
+        "tsne1": 33.2232780456543,
+        "id": "8732af1033847b5371fb89c5c2ad88cb2a784c4f2cd8380205b99483a77d038a",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 1.6754608154296875,
+        "tsne1": -46.71096420288086,
+        "id": "9fdefc1eb640754b3601d30685892a98d2e818f35a621847e010afe287fa3c62",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.2253253012895584,
+        "tsne1": -44.59022903442383,
+        "id": "199c98c80bb9d9fb3a8aa0b3d4db825302637c7895458b20ba7a3e4de52941d4",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 6.845153331756592,
+        "tsne1": 18.576053619384766,
+        "id": "b834a42f8da356691760e020134f2bfcdf299a283ea2edd80529d56699364a9c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -8.330559730529785,
+        "tsne1": -23.215970993041992,
+        "id": "16fad5785f8b1dc18e95f58decadfa838d8ec2443ed259ebafce6b9786d539ba",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -6.190537452697754,
+        "tsne1": -34.068565368652344,
+        "id": "cc0381c11bbde3160c422c4bb8d057a53d6849f47299931e23a3e69d8a3877c2",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 1.6592762470245361,
+        "tsne1": -49.68950653076172,
+        "id": "e9fd8efb52736a362311ddcc70fa3b80e638aa47ab64d7d9ccb0c3ed1bdff5f4",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 4.62483549118042,
+        "tsne1": 9.8999605178833,
+        "id": "965635ea6e33a69284ffce759828d68d460702b08dc17ae6c655019fee097115",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -7.707896709442139,
+        "tsne1": -29.26310920715332,
+        "id": "0bb717346394cdf92d40449ed6d942a73a6159c8105514ca88857bde2efcf2ef",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.9737091064453125,
+        "tsne1": -37.95170974731445,
+        "id": "752b954eceaca6ffe936616a528c8ad2138716e182ebc9982d7a9a30d780d393",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 2.9973087310791016,
+        "tsne1": 36.128055572509766,
+        "id": "241f7a29ef2354ebe427f76453593b0a73142feda7dd2dc95a3cd46399b2e1b6",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.423466444015503,
+        "tsne1": 29.099834442138672,
+        "id": "710b3799fa793c0f16970f460e72ab12e86aacea57db915efd0367a0dd097942",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 16.0413875579834,
+        "tsne1": 23.688112258911133,
+        "id": "226ca09f5524fbf695afb24b446e87b516d8fcf56df7dc81b8ed33f4c702b8be",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.169260025024414,
+        "tsne1": -25.599672317504883,
+        "id": "f1d3c4fe493b8eb28fd73df04257d62cd39d78314e07c024a8c4c61743d4633e",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -11.272021293640137,
+        "tsne1": -0.214124858379364,
+        "id": "1a446d2d8063031ada0817ec4450b87e299149e6f52d1be5c1ed14dd1e0b02e1",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -6.838175296783447,
+        "tsne1": -21.802013397216797,
+        "id": "e85c0579f7343025d5e4f0d57da5b39b7491012e4a40b2e44ac6e71dd242dc67",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 13.026406288146973,
+        "tsne1": 25.953609466552734,
+        "id": "fb0667abee07de52a5b121ea0e21f351f41de652485e070c931d7a495ac338d4",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -12.607061386108398,
+        "tsne1": -14.576932907104492,
+        "id": "d96f8f56e960f28e87a2def06bbcbd47e5303fdaaef8840cfd602b1371176fbb",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.678641319274902,
+        "tsne1": -2.8224399089813232,
+        "id": "30ddc1014b32c82abf13a9996133cdb2087c49d889e669492e4263bc529eff1a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 7.792512893676758,
+        "tsne1": 37.26817321777344,
+        "id": "cf662d942b1856ea38a38df662b966a5af3604d4489d5770ffe68a0a266f12d6",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -12.089838027954102,
+        "tsne1": -35.75469207763672,
+        "id": "b5b9c875e76f89ca37ba12c6a725e54cac0d0fedee9e08cb3356b9cf50a844f4",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 7.459770202636719,
+        "tsne1": 23.150440216064453,
+        "id": "1518bdc0957123666260bce9bccad3d160760d8c67bc6fa2b071c05454fbe7ac",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 1.214164137840271,
+        "tsne1": 12.24582576751709,
+        "id": "85a8eb0052cc85ae06a3435e4c0a0b889806557b8a147aa6ca0a156bc234c150",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 4.140635013580322,
+        "tsne1": 38.044464111328125,
+        "id": "0f47b5adf12e6e80c03a29391f3a8a290dd732299d4efa5ce4ccd8f6eafaa444",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 12.022156715393066,
+        "tsne1": 32.909244537353516,
+        "id": "c13218dd958c34b9db56cabcb19f0ab9086578cf3a6428c2a302bb5b772080cb",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 1.0143831968307495,
+        "tsne1": -48.21622085571289,
+        "id": "512cce8d076622fc9ad0387670d5cee91f58357c88208a3a0fdbcd1e62854813",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.388640880584717,
+        "tsne1": 11.244741439819336,
+        "id": "ec25a15a6d2ec75af862e3be96e883bea9132428fbab442c549f7a1f14852de8",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.3545355796813965,
+        "tsne1": -9.94234561920166,
+        "id": "7795f22de8b945d7cd205717ff1ca035ed58df9b19bed3a14c39fbafc48691c1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.414902448654175,
+        "tsne1": -31.644500732421875,
+        "id": "46dfb0483a09feda4e436a8e8720359abaeb19be5346495120fef5c97209fa50",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.156859874725342,
+        "tsne1": -45.38338851928711,
+        "id": "0c14ea576f9bff0a4ed83aa408ca69594029fccc0365b80e0b5b866959517089",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -11.67834186553955,
+        "tsne1": -36.964637756347656,
+        "id": "32a5d894578df9a5016bfc4729f9f3272b2f3b2f187fa5b45eff16a7c646b996",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 8.700699806213379,
+        "tsne1": 14.678726196289062,
+        "id": "68816f56b1b90d975a0362138c0b1dcd6478c793ee5ddf78224f7b4a6159700d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.6444945335388184,
+        "tsne1": -5.385876178741455,
+        "id": "79b149825883e69cf0ce0b822309cac5a1199d628887de2dacdeab1d6b693989",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.708938121795654,
+        "tsne1": -9.07553482055664,
+        "id": "df3a90375808152086d083f20a3e83daae9cfc49e4276f78fd74e12508bb540c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 0.0777113288640976,
+        "tsne1": -19.07046890258789,
+        "id": "f08e4e657f3319c4b7ff2e77f947215a10e3d32434305dc2d5b231c2db30f7b7",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -10.895482063293457,
+        "tsne1": -14.051642417907715,
+        "id": "7d443283e8d451415778e0ab9778894dda51b36dd79e44cf004554f7c6cafc2d",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -13.471929550170898,
+        "tsne1": -25.804563522338867,
+        "id": "b3afb239ff4aba159c686eacf8cc58f695e4ca0a44800af7cbdeb516bd37bb6b",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 6.797860145568848,
+        "tsne1": 13.351035118103027,
+        "id": "9fa562d927e87fd8a338b52f45f5ba506e82f045b752b71d663582b5462f8096",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.6667866706848145,
+        "tsne1": -1.917508602142334,
+        "id": "f0e53b0f42192fc06328beed76d24c9c99516780247006d2bacc13357c3765ef",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.423560619354248,
+        "tsne1": -3.835570812225342,
+        "id": "89a0b53d2460cea52bb0b62a7403f407d43f44d6a9537b47edecb2dfceb1f56c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.259618878364563,
+        "tsne1": -39.03349304199219,
+        "id": "c5546c898221611148b90e835fbb5fabfe527acef715f4f4f7cd6a3552498c34",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -10.70098876953125,
+        "tsne1": -8.811962127685547,
+        "id": "5ad8785ded7653960ebc75d4b3dc43f1a05ed6487699e8336f9ccb68dde71d4e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 2.6375255584716797,
+        "tsne1": -49.836143493652344,
+        "id": "4ebd4a267a67908c67098921000be94852d0837b5688f72cfd9a060e31a64148",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -9.170287132263184,
+        "tsne1": -23.03988265991211,
+        "id": "430184cf8f0102982102151c1b8742f71f4670ac9c0186df4a070b51cff0693f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.1678386926651001,
+        "tsne1": -6.389429569244385,
+        "id": "302d637a8e9100c65a2f15e533ccc87cb615a4a519d4149770ad5e4f87d40a8e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.578594446182251,
+        "tsne1": -44.929561614990234,
+        "id": "592ba18f53011dfa6ac68cb334510f7c0788fc4f6509ba14cf13a55e6744c713",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 16.0004825592041,
+        "tsne1": 25.820680618286133,
+        "id": "a38a920cd656af089d1faba7865f1f8c0f29d555c3f712a72edd0da78bbb7aa4",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.941739082336426,
+        "tsne1": 27.996416091918945,
+        "id": "0b1cdfbe0011dbd94d764c165bf61b4f945a88ac293e0d42f3c85cff72d6e086",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.7975287437438965,
+        "tsne1": 11.068053245544434,
+        "id": "2492aeca1ef4cbfa1cd5d25af28c39ab9a7f997376170fb06c33b507b92c3992",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.0868691205978394,
+        "tsne1": 30.405643463134766,
+        "id": "43d07a84d6d3c440f32de5192a312e8b17b96fa1c76d0ba6addd600c963a82e7",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -7.139702796936035,
+        "tsne1": -39.977317810058594,
+        "id": "0dfa51bcb9e55663e3af34b81ff1f3b35006644843966c9ae9076f263069f6b2",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 0.7833554744720459,
+        "tsne1": 9.339306831359863,
+        "id": "562ceb8d3ddbbdfe5db8344e3ee6d5f174bc4eae3259f545f33da9156e421041",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.1440858840942383,
+        "tsne1": -10.359198570251465,
+        "id": "a16516c2a94065fb646ba1bde955e2b80f20c5be455f19d8fe5524f56f0c663c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 12.684577941894531,
+        "tsne1": 24.877933502197266,
+        "id": "d84d501babfa08efd1d178a246f5629c0e3d1fc4c5e35c2ffd03738af9c0be4f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -8.21745777130127,
+        "tsne1": -29.663841247558594,
+        "id": "5b0f2ed0ccc60097bb4c316cdde81f201124a3041c008cd8a0b44721443daa72",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 7.497769832611084,
+        "tsne1": 21.131885528564453,
+        "id": "1ccb23b5195cad2a5bcf04ab51f84fdfaa414f8aaf5bf834059abf9bb4155fc6",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.4402140378952026,
+        "tsne1": -37.822105407714844,
+        "id": "4d8f47862dd11397b2c61e8cd678851ba70bf47e89c8f1678e205f5cf30b0235",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.0183587074279785,
+        "tsne1": -11.087451934814453,
+        "id": "264d7119a9982af3ceb37311abb51575fb2ccb29b22a5bebe910e3f9ffe5f93d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.6224007606506348,
+        "tsne1": 2.7439117431640625,
+        "id": "acb46dec68cba774b79b5ceaf98aee4eb8b608539f71029d6b764ee277939d39",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.9510049223899841,
+        "tsne1": -18.638944625854492,
+        "id": "5b6df89ace9c8d6e5b40a989145ff9f6ca1553c0ca3e4baf50eedd21181be01e",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 10.860288619995117,
+        "tsne1": 35.746070861816406,
+        "id": "2af6003e077ac3d7d60a852b95a8daf7b1f3bee1e2a92c3f3df2f5be2ba313ba",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 2.5235493183135986,
+        "tsne1": -15.213770866394043,
+        "id": "5b0e7036ca907d2b9cbf8b0126e2640d0d26e6dd239579929b6f7783b1a8f3ca",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -10.516668319702148,
+        "tsne1": -26.066152572631836,
+        "id": "35b03f02e1da8a7efbe17d803308c83539b3d149424c746b5f48aaee8ebfb844",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -12.764065742492676,
+        "tsne1": 2.3162026405334473,
+        "id": "2f29b82db48bdd65bed8300cf4557fd50e2001b7c68305a4abda2d24a9024f05",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 13.902673721313477,
+        "tsne1": 34.323177337646484,
+        "id": "f6a8c29c3e737e4cc0a7beca0fe4693d040f1181c9e41efe79f1b47a5000d30c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.164737701416016,
+        "tsne1": -32.50855255126953,
+        "id": "a9bec2a8b9ff45e2615b585ccbd4273bda3cf7e997881dfe1b861dc4cedd2405",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -7.830086708068848,
+        "tsne1": -34.328125,
+        "id": "1b421d8383dd71f1cc1c21e310bb3f216c812da45f0d39e91273af3179eead42",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 12.418514251708984,
+        "tsne1": 24.20514488220215,
+        "id": "fa90e21446785cd3280783c6abd272b5586db9e5a0a0b9d08e596cf0188178b5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.4628307819366455,
+        "tsne1": -25.737274169921875,
+        "id": "13fd475b89fdbd2120aea5213d868fe2d461696eb8c0ced0a6d6dbcfe7a695f6",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -6.926044940948486,
+        "tsne1": -38.564231872558594,
+        "id": "b5ba57adb34dfd9de72902dfde1916dad2b40fa2e593667e5fe643d8b240268f",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.4106912314891815,
+        "tsne1": -6.901013374328613,
+        "id": "3089c4fb25516458c8b40dee2ba6ed67655378b4a4c94c34305ecb680f6b6197",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -18.012426376342773,
+        "tsne1": -8.268266677856445,
+        "id": "cd19bff6b1aa479548e24789aca460f99f2f1ae41f8b27c657200bfc999ef33d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -16.951684951782227,
+        "tsne1": -5.43605375289917,
+        "id": "ad962b19f08c11952c523864cb2e690d3604e1a1d945510ba433813ab086542c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.150317668914795,
+        "tsne1": -27.51866340637207,
+        "id": "9cb7d3a3ac92d5364ca407d262eb2383abf2a12c0b13786212532588c876c018",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.563490390777588,
+        "tsne1": 12.14709186553955,
+        "id": "0df3d524f56316546f08c36727e73b86d42b5c37381c39084910f086ea49d8ba",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.405961513519287,
+        "tsne1": 12.31177806854248,
+        "id": "41290ee432b4735a38007227232fa8309856dc8d13fd2c9c2aeab317cd920b13",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.745056629180908,
+        "tsne1": -3.770817518234253,
+        "id": "861899716d8d5e750738bd0428cb37b4080d067ffb669096974bfc7e0314fe0d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 14.215696334838867,
+        "tsne1": 15.099984169006348,
+        "id": "90b483905a682bb0635f7364a2e30175f95a5eac29f1e983cd7ad17c0958fa52",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -8.483461380004883,
+        "tsne1": -39.575416564941406,
+        "id": "f5906ad3b38e456e5b7df53adf25776dd4351a0e970d638c98a3ea3c2e3cc1ba",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.125741958618164,
+        "tsne1": -27.700428009033203,
+        "id": "4e05df2f838705ec4862bf618d1026c967a08d4d8221b1e52c492bf2dbcc7776",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.413104295730591,
+        "tsne1": -2.54762601852417,
+        "id": "8306e72c35b1db752c901c7c8af7e53e3200760eaaca315d9249f5b55c329497",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.7167277932167053,
+        "tsne1": -15.595697402954102,
+        "id": "1816bcc1b3814707fb3c392028eb86bbc99f04be82a819f511f4b39f7d0924f3",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 8.551676750183105,
+        "tsne1": 24.984935760498047,
+        "id": "5822b042e632b92581f4de42f29f9caa99576a33a8ca17eb326ffa5666e7adba",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 10.748445510864258,
+        "tsne1": 37.03474044799805,
+        "id": "bff16060bcf039d7735770bfc46e5026c1e057a650015fcaa30e92dadc569018",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.692286729812622,
+        "tsne1": 17.82124900817871,
+        "id": "8ca0b33f6c3d893fffca55d67999d99815c66b9397a5420e66c254b0f81f0264",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 7.9230170249938965,
+        "tsne1": 21.28691864013672,
+        "id": "3b2c2a0a6547e7ec548a2f1a8a811d3718626fa44bb849938929fa123bf4159f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.231380462646484,
+        "tsne1": -45.12360382080078,
+        "id": "7dcc39caa03859ee7d76c721cd528968b9bb576f13faa9bb5c96d8274ea8dba2",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 5.194086074829102,
+        "tsne1": 18.472810745239258,
+        "id": "0ae22f9a7817143a5c3604d0a815a8a423202831bad207684d584a52d28cd64b",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 15.709085464477539,
+        "tsne1": 43.591148376464844,
+        "id": "e3227a1793271dd40f9154fbee7b6176cfb598941bd348f0b1a64a7788b2667f",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 12.149421691894531,
+        "tsne1": 12.342171669006348,
+        "id": "3da08f27c88b42143d45f4d28b5a5a5a103ae383d5b852dd766587825b7a0074",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -7.810441970825195,
+        "tsne1": -27.97357749938965,
+        "id": "7f5ba0b96cff0783c02313e38705b92d6ee2f3f62055bd87a70e5cfd76a82247",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.1476505994796753,
+        "tsne1": -47.394737243652344,
+        "id": "d375bef4477064410d5f84f0c812c52a6cd87e70c1940539f8d799a852de3259",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 15.13769245147705,
+        "tsne1": 21.97981834411621,
+        "id": "de137bb38d9254079c6f063b83cff824932c0bee69bd6861fe14527d9ca89b28",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 11.221245765686035,
+        "tsne1": 38.39767837524414,
+        "id": "f2caea01f94ae5697fa03c802af753592974b11f562d6280392d36b865ee94cb",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.2908007502555847,
+        "tsne1": -45.30998611450195,
+        "id": "a68b1d7a62924476613d3b11f24dcc372994ed311d1e48b1997c18f65c7a0c77",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.786628246307373,
+        "tsne1": -36.75143051147461,
+        "id": "fb02a6271662dbaf28d355a5642ab5fef2d26d04f1ffc5bfe74b4b2ba0232e3f",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -6.784075736999512,
+        "tsne1": -26.167194366455078,
+        "id": "200cd91c63051fba101fbbb7f62aad89b2d43d307eeb81868a85f6a38ab4b064",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 14.532536506652832,
+        "tsne1": 22.439456939697266,
+        "id": "871b97b28bd97fb7ba01989d4b45c39e04bb65d8c9f5f1da569a745aee6c73f5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 15.142077445983887,
+        "tsne1": 43.11350631713867,
+        "id": "be994bfe4ab67dd20501c1b879d295d11e1e55dc79c621ff7c17e665dcb56fd2",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 12.710057258605957,
+        "tsne1": 13.445066452026367,
+        "id": "2ef564600e757cbc96b2a20360cced9f45ab45ff19ba9a230e0715fffd0d52da",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 2.4930756092071533,
+        "tsne1": -45.04453659057617,
+        "id": "27a3fa75f5599aa0669166b7134f327a45182a20f06ec56e41415d263e61ef92",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -6.187483310699463,
+        "tsne1": -24.958755493164062,
+        "id": "410371951775afd64230a4c8d79a50396ef1f3d6792bd124a06ed6d9c7381b99",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -12.37716293334961,
+        "tsne1": -22.665712356567383,
+        "id": "f3689b3fed5367ea0074cbfdb4232a0f21d221c6438fa627a363e87ba7cac7e4",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.7453792095184326,
+        "tsne1": 28.094449996948242,
+        "id": "b6740120781da28d8605a8e50fc1b4732b1d86296a7766edc993010747ae8a46",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.32541558146476746,
+        "tsne1": -38.20889663696289,
+        "id": "9e2cede0c867a8c20bdcfce60f55ab4ac12e8f6210f43d59dbb7ce98ed36922c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.7782784700393677,
+        "tsne1": -39.88949203491211,
+        "id": "ed41f5b22848e84658bfaf88a0c5a9e7dac665ed1f7f559edf5a6257d4d09191",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -8.006178855895996,
+        "tsne1": -24.16645050048828,
+        "id": "ae6133b67b066842321508afb9f59c97bf5af01170e1b763fdc19d16e9efd37a",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 14.502958297729492,
+        "tsne1": 25.998884201049805,
+        "id": "c648dbda554430e18d41a5080d5cc32c3dcb1db88a25ba70389dd2911bedc792",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 0.6036744713783264,
+        "tsne1": -45.40300750732422,
+        "id": "ddb00b0b4703e8fe02b86af7429e5faae3f751cccf5a52d229693b9a987f416a",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.6505777835845947,
+        "tsne1": 5.352048397064209,
+        "id": "99a9f4e5c3cc1a9b01c98d8dd3ee04edcb3a763d8d5e68260799a5599bb67b08",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 0.7933421730995178,
+        "tsne1": -44.738155364990234,
+        "id": "db4e4063f7a92367225025b63929cc868f68f0c6f495eb8ae8333eef8f0f47ae",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 6.088236331939697,
+        "tsne1": 12.219961166381836,
+        "id": "6546b4510fa85ac12d26442b87dccae75cfb5106ab0e4df6ce93a6f3ce8b8b5d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -12.419471740722656,
+        "tsne1": -0.3082558810710907,
+        "id": "2613a81dbca24973fd54581239e579c0aaccb53eed9fb0c3d7cd9819a6d1e77b",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -9.761432647705078,
+        "tsne1": -37.84867477416992,
+        "id": "872955c945ff9ddad296d0fd7316609c27a4366dfc23e5eab6a12c34ae0c5546",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -6.780704021453857,
+        "tsne1": -15.87070369720459,
+        "id": "2d87fd978fda84c936e264ca09c57ae617a149ebd50ebb5fa6bf3cc367bea574",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -5.092716693878174,
+        "tsne1": 4.006814002990723,
+        "id": "687f8052320ccd6785648f2ef83a0810232500488d4b63c189e42fdc6bca02d5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.491028308868408,
+        "tsne1": -5.290160179138184,
+        "id": "f52d7f2c8c403d6ae52e35de26085bdb58e980d9b6c37fd19956f141926247df",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -6.233145236968994,
+        "tsne1": -9.79567813873291,
+        "id": "f213aa560595c8b3c8c86b9ea567282e568e09a035d89cff726787970577a0c7",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.2336329072713852,
+        "tsne1": -23.447006225585938,
+        "id": "3f74d9b51321c830d028d3f86d7e534bbf8db56864dec420aa5c2d7392047d47",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.7739272117614746,
+        "tsne1": 21.46512794494629,
+        "id": "9ca036a63a6dc24404209f00054c9a57fed7a2e5eea3b26e573cc80fc7b6f4f7",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.9492206573486328,
+        "tsne1": -16.847436904907227,
+        "id": "6465903b17f41a15c0131e7675dbf6491844fa457dfbd05bd9548345332c782f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 12.915616989135742,
+        "tsne1": 38.21495056152344,
+        "id": "30fdb46341700100b1371c32bf22828bde63b313cafc4ff3b3a5bdc448e24986",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -13.042250633239746,
+        "tsne1": -33.7398567199707,
+        "id": "d88f6550ce5e29f57f08b0b55b8a5a017e705d1580d92602feb924c96f2e38e1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -7.122950077056885,
+        "tsne1": -24.37834930419922,
+        "id": "808bb6137c18c53d30e5ef01bd2efd6f741b0ee6b1dd1724f911d1b960246092",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -11.098627090454102,
+        "tsne1": -5.68049430847168,
+        "id": "e674172e19f3e393d1332deca6dda8a768e64c666709e6bcb1aafba2e933e212",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 12.712556838989258,
+        "tsne1": 7.7965168952941895,
+        "id": "95b7da41b83a361ef7ae645b6b446b339e07cfa9b822a8732ac01f69b7d82a76",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.912785053253174,
+        "tsne1": -12.533440589904785,
+        "id": "a5b9f9d7726a38f0b404566c82f1591faf427570c651bc20de3a5595e261f2c3",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.736909866333008,
+        "tsne1": -36.440181732177734,
+        "id": "8081f894e896020b61814c1619e310d0ee18c3d7d11f55f7b336fb1cbd28c397",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.254183292388916,
+        "tsne1": -19.58832359313965,
+        "id": "575fc0dcec4479b207127f6edcce7394a0f3c35dba21b0b8c7ccbe440d19f369",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.4467979669570923,
+        "tsne1": -15.892305374145508,
+        "id": "203aece78a9cd9a58435d3a0b3a48685c6e028378acfce2422361aed0bc02fcb",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -13.314332962036133,
+        "tsne1": -34.24379348754883,
+        "id": "54df5c4bb1ebf5a865fe7ed1293aeb70096a78f3170ba489d2af0b9e44d09f05",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.801982879638672,
+        "tsne1": 10.423832893371582,
+        "id": "09c08bd6ccafee7ced165d2d7e8fd24ccc1fabd3b88aa8e7c122e397bcfcc9e4",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 13.194792747497559,
+        "tsne1": 43.23606872558594,
+        "id": "9fb679a24dd7854a07648e5b27f4d98fcff63c21570599e11026ff70402c8309",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 10.302742004394531,
+        "tsne1": 9.529765129089355,
+        "id": "3327974f5713d64e8655141c8fda96a77a463460451775179f334294906d74bc",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -7.2963762283325195,
+        "tsne1": -35.00301742553711,
+        "id": "26d076f433ab4adc93507ea8077946ca218cfb0e60a370f52ad9b25aa5a45958",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.274909496307373,
+        "tsne1": -4.946354866027832,
+        "id": "52a9672bebee8cc621e8355ec8dede46f7d49f2489a67fec95a7ff779b8a582b",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.1493706703186035,
+        "tsne1": 8.46168327331543,
+        "id": "cbfd772be4efcab2e3ce65b799e531b10598b4076a84d554e6bda989e94ff6b1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.527385711669922,
+        "tsne1": -38.2749137878418,
+        "id": "0eaa9b130c71b02a489b874bb544fdb726d4bfee84e390d71cb828abfe6dbf8c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.691216945648193,
+        "tsne1": 0.8643811941146851,
+        "id": "b11a6bc5d435cd584855495ccbfc794e0ce48b402aaaea619f9f67db807840c5",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.956820249557495,
+        "tsne1": -2.9852774143218994,
+        "id": "ed03891524ce6e8dd23b20069c8e57869f904f9d3023acdef57d42442e8a834c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 6.5241827964782715,
+        "tsne1": 36.009742736816406,
+        "id": "504cb028cda0993cb509136be5fe6f8f8e90a52dcda5011ca11aeb024a366f47",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 1.9325064420700073,
+        "tsne1": 18.31238555908203,
+        "id": "35338d2e186b98ddf7c47f95a1add87d54357c405f7d4094dc14ca0b64c41e6e",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.6124069690704346,
+        "tsne1": -15.321141242980957,
+        "id": "416b128df34ae1ae6d6f8f49c82620f9cb80c20bbe3d2087a8622501a5f06ae3",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 13.769071578979492,
+        "tsne1": 33.71354675292969,
+        "id": "4c1fcd56f136b46054708b1bf780e2c1313ec58492e9423f43c41f7f5a539a48",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -7.634542942047119,
+        "tsne1": -10.192976951599121,
+        "id": "20acebe20d5cc6dff588f2d292d90ae597b75638d015618c72d217f0ace9e451",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 1.0384372472763062,
+        "tsne1": -22.608964920043945,
+        "id": "cfa64a1ed4b46dc611b4892a17bf5087dca425d6ee6cb8ec4d68ff3b0d621524",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -9.18998908996582,
+        "tsne1": -34.78341293334961,
+        "id": "c15c98961015929fb379ec38bb879ace0626c496b658b6b8f137709d45f0d3e1",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 5.3333964347839355,
+        "tsne1": 21.045297622680664,
+        "id": "3d0ac69823c95d74860cf16b46702747dac303e5a8347dd065b9f6e76ee7c94e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.960023403167725,
+        "tsne1": 18.508655548095703,
+        "id": "8f416f16d844ad0df92a63a9af2e0d4ee00b3fb7d1826404946f06ffa19ab524",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.9006913304328918,
+        "tsne1": -3.681947708129883,
+        "id": "d1a44c0431fcbfbbf365fb2bddd8f968b7f44a3ea8b188fc8f73621535a89552",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.891308307647705,
+        "tsne1": -22.269441604614258,
+        "id": "34d767b81912263357b2cfcece8456a80baf868514a6fe129405875401c6df1b",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -6.375725269317627,
+        "tsne1": -9.136638641357422,
+        "id": "ee745b6960f195a198806816db72c9d0544b37026095754ad985df5a1c5c1b70",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    }
+]

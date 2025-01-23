@@ -30,3 +30,6 @@ scikit-learn
 
 # UMAP clustering algorithm
 umap-learn
+
+# linear regression
+statsmodels

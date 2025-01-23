@@ -1,0 +1,4978 @@
+[
+    {
+        "tsne0": 5.229620456695557,
+        "tsne1": 5.123062610626221,
+        "tsne2": 0.7362301349639893,
+        "id": "5987fa6bffd499eb439c90679d7fbca822d62bc639d1b9c94c68ae20e46f6004",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.1992335021495819,
+        "tsne1": 3.1426804065704346,
+        "tsne2": -0.44591498374938965,
+        "id": "6e87c8575bb9327470a27b7b51f7ea797802157bf3b0e985f62b9164a2ec3287",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.1234002113342285,
+        "tsne1": 2.1125471591949463,
+        "tsne2": -2.6282403469085693,
+        "id": "e0e98b574405e9131352337b65e76ce9c8bee4837790d7ad189f63fc40a70899",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 11.876262664794922,
+        "tsne1": 12.096973419189453,
+        "tsne2": -2.2441933155059814,
+        "id": "b0fd1cbf8968b8c825e35f3f085fe176831b8ac4f4fa0de63ee7b5111e063c82",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.700162887573242,
+        "tsne1": 9.849549293518066,
+        "tsne2": -1.382205843925476,
+        "id": "d0c3a802a9700495b419f9a2ce7b3c66f8def1a140d76c6b9208f4ca1765876b",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.119409561157227,
+        "tsne1": 5.420963287353516,
+        "tsne2": -2.0840511322021484,
+        "id": "2edc62003bd8eb43f37fed229c6ab67426fb02bda65a62942fc829babf247734",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -5.685169696807861,
+        "tsne1": -0.7896912097930908,
+        "tsne2": -1.970403790473938,
+        "id": "2c5fde04eac867475f9fe49f7699cd67ea0e542c932f2d9ea514e6ba4808a43e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 8.083290100097656,
+        "tsne1": 8.6666841506958,
+        "tsne2": -1.0499563217163086,
+        "id": "f22d818e376e8ba06161e8802d6716d46476bc4e9a3a6d82a024fa7e1058f3a6",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.3515844345092773,
+        "tsne1": -4.937221050262451,
+        "tsne2": 0.2538177967071533,
+        "id": "b2753ebf30c0d6e437db761d635cc26a1de0a934a0fa77ffe4698be9692f037c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 2.4836297035217285,
+        "tsne1": 0.23735885322093964,
+        "tsne2": 1.1447895765304565,
+        "id": "af085eccded221cffb6b17b7d326763a5216e74b0afb2f9db059b992f5556dbb",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.347004413604736,
+        "tsne1": 1.0414979457855225,
+        "tsne2": -2.2556746006011963,
+        "id": "1ad84c411973058c42451bafa520994b5cd14af984ad63f2391b07c490f2e594",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.841378688812256,
+        "tsne1": 2.1487066745758057,
+        "tsne2": -1.4282197952270508,
+        "id": "ae2900b7b971a277edae42cbd91da68097dd967e75af2433cb657fb731fb8ea0",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 10.381131172180176,
+        "tsne1": 7.658245086669922,
+        "tsne2": -1.1485215425491333,
+        "id": "3520963325e9aca277990467310a64b3e37e36e2ca5e51e9c3b8dc51c3f727cf",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.881409168243408,
+        "tsne1": 4.223357200622559,
+        "tsne2": -2.7001616954803467,
+        "id": "43fa58321477b018073849319a4dbc96ed90925d39e622ee49ed8d17eef708b7",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.360996246337891,
+        "tsne1": -10.505473136901855,
+        "tsne2": 3.569349765777588,
+        "id": "3b8a6a19fae91fdd8344be0de7f0951835efac89f289c307783f9694329340b6",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.18938496708869934,
+        "tsne1": 6.652293682098389,
+        "tsne2": -2.0641884803771973,
+        "id": "936d71074ddb80e99c11ea8b348472b63da05fd0ebbddcf0b40580c6f575f3a8",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 1.7036468982696533,
+        "tsne1": 8.259435653686523,
+        "tsne2": -1.8717151880264282,
+        "id": "da38bc31fb7735ebe42f826c925ac9b7154adc2b45c73f9049717b0dc837a83c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 11.641437530517578,
+        "tsne1": 12.013360977172852,
+        "tsne2": -2.1436338424682617,
+        "id": "211140432102ad0d9240f01be1fc5470bffcdaa5c1b564f83caa093448aecc1c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.8832926750183105,
+        "tsne1": -8.310406684875488,
+        "tsne2": 1.9682689905166626,
+        "id": "3fa92dd8ca82021992b301c716f474147265c4a8c653df4cc00114351a07b8fd",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 8.365452766418457,
+        "tsne1": 7.748357772827148,
+        "tsne2": -0.5183663964271545,
+        "id": "d6e0b553a3edff4d6e1129ff300582d5cc48e7c15f950e2639c0ee9fdebb9839",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -1.0371617078781128,
+        "tsne1": -0.4434265196323395,
+        "tsne2": -1.0448355674743652,
+        "id": "10d46dbc574f52c41ef510bda751c46fbef28769c6da4ef61158b58c6ab99fa9",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 3.6785805225372314,
+        "tsne1": 8.602524757385254,
+        "tsne2": -1.6524949073791504,
+        "id": "8f2d2337f460d44a37e6a7c59a561420cbc4190bd3a8c9c2a64d1f6c7440d9a0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.93051290512085,
+        "tsne1": -7.169382572174072,
+        "tsne2": 0.8270052671432495,
+        "id": "659f13fdad83cdaf287e205cb83a2030d7a75cca8c3c44a063d674e3be98ae35",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 6.699039936065674,
+        "tsne1": 7.025933265686035,
+        "tsne2": -0.42989081144332886,
+        "id": "685217249f8527f468aa3e6a297806548eb9a60c5ef0b39f232fb8e2e0aac785",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.26384973526001,
+        "tsne1": -0.027452073991298676,
+        "tsne2": -2.203216791152954,
+        "id": "a40fe912879fee8af4e4729cb5f70df5d8eb41e384475b52ce433828659d43b3",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -5.610122203826904,
+        "tsne1": -2.134693145751953,
+        "tsne2": -1.5037086009979248,
+        "id": "fc1f0c59b7c33534fc5462a95cf57555c1282dd4d681f30eb969749206135a4b",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.371037721633911,
+        "tsne1": -11.459554672241211,
+        "tsne2": 4.801783561706543,
+        "id": "31395d1bd94e205299347e2dce3e0f7a9324287ee8cd9cf8647ae2a0ed708948",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 9.100078582763672,
+        "tsne1": 8.445128440856934,
+        "tsne2": -0.8365177512168884,
+        "id": "6d9c4adc05323e7c8442c71f4c5988a0bff15763fc066a2506cab67059aae4ea",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -5.503006458282471,
+        "tsne1": -11.57518482208252,
+        "tsne2": 4.2068071365356445,
+        "id": "865261ecb987e58a270d737b6eb7a9b064e5f00de8aad2000d53d9c1295f5e97",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.514395713806152,
+        "tsne1": -6.525638103485107,
+        "tsne2": 0.4243876039981842,
+        "id": "c403beb752ba6001252d91255e82951043fc83380f9090e4bdd284646ae3a4c5",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.343705415725708,
+        "tsne1": -9.109783172607422,
+        "tsne2": 2.790926456451416,
+        "id": "764774ee5f73341bfd4a125d9f54b8a5a8d075de82316184b05dbdcd36bbc680",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 8.14570140838623,
+        "tsne1": 10.930667877197266,
+        "tsne2": -2.06591534614563,
+        "id": "d85217bd70810ce70c205b36c587bcc0606128e94d9d72b2e5fadcea24d37de5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.86056661605835,
+        "tsne1": -1.6464310884475708,
+        "tsne2": -1.6626478433609009,
+        "id": "4f9a08621af940bb57b3f3e553e31bc04e55fbc7ef1ee690b792803a5c3a6206",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 0.08675128221511841,
+        "tsne1": -0.6103719472885132,
+        "tsne2": -0.8025152087211609,
+        "id": "2111e19120c5ba0cf91e27e1ac6582a721118d5e28ad1f180e952cbb23a75949",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.810116291046143,
+        "tsne1": -10.161072731018066,
+        "tsne2": 3.002380847930908,
+        "id": "41a990ad489df44efc6d91e9cca5d006195f887e6c5d38b1634dc8732fecc39d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.851996898651123,
+        "tsne1": 0.39687106013298035,
+        "tsne2": -2.247164249420166,
+        "id": "19d47a189e59d39f276014f27f8011f39078c426c95ac701b5426a8dcfb8066b",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 7.498550891876221,
+        "tsne1": 3.1968185901641846,
+        "tsne2": 1.1628011465072632,
+        "id": "3823539d1cd3b12e2b0f617214791a0b383e3c7ad8e704c363cfadc7f4b0ded1",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.2342727184295654,
+        "tsne1": -0.7481111884117126,
+        "tsne2": -1.0699937343597412,
+        "id": "ae825ad394bc541773898633876b38c06a6bb6929288563e4b17b386e2d3923b",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.443963527679443,
+        "tsne1": 2.3309757709503174,
+        "tsne2": 1.3889023065567017,
+        "id": "7ff9ef0bd762b4a44373c79a1cd94f01b46e18782872c3a0f7e56f835cc78c2b",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.6891108155250549,
+        "tsne1": -5.06641149520874,
+        "tsne2": 0.642307460308075,
+        "id": "0601a891c9d026afb6783b7151b2c503e96dbdf04e238ed33d7f465c40556ef3",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.9102141857147217,
+        "tsne1": 3.937603712081909,
+        "tsne2": -2.1319570541381836,
+        "id": "315cf87e3220b68ba16a80ef20cde5e6cb621e747936c3afb1cf06781af7cb60",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 4.60821533203125,
+        "tsne1": -0.1610238254070282,
+        "tsne2": 1.629941463470459,
+        "id": "aad20ea917f71518ebd1cde09d57a53f978218167934f7f5be014931734246c5",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 4.723708629608154,
+        "tsne1": 4.926503658294678,
+        "tsne2": 0.9526792168617249,
+        "id": "a6a3bca858352e6920d77835f80826a50a9a0837659ebe45c8f2c622f626e9f9",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.184286594390869,
+        "tsne1": -2.2975900173187256,
+        "tsne2": -1.330511450767517,
+        "id": "bfbdcc98e015cc1543cc2f6a75e7a1f329980fcf114c77f71e3d3c835e090699",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 7.831433296203613,
+        "tsne1": 6.387867450714111,
+        "tsne2": 0.23834092915058136,
+        "id": "64537a67b26efa0468ac12b14025d08291a8e7dd2db6edff7a729e51fc3be241",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 0.31565746665000916,
+        "tsne1": 1.421859860420227,
+        "tsne2": 0.2802960276603699,
+        "id": "e225425f6ce4d5f76aa6c192e28d5fb6854c44939124dc143cacf921a91705f0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 7.284198760986328,
+        "tsne1": 9.954534530639648,
+        "tsne2": -1.8111321926116943,
+        "id": "4b2bc2282ed403b86197de3ddf02379234e488e9b13f88be9c11118aa6bb7840",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.631410121917725,
+        "tsne1": -2.0143864154815674,
+        "tsne2": -1.5924139022827148,
+        "id": "9a8b558d9423d5a1f7215b1df051a801695f3bfb54be8bbbbf98c6da01489bb8",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 6.874887943267822,
+        "tsne1": 3.5304718017578125,
+        "tsne2": 1.044331669807434,
+        "id": "010bdfde9fbc8ebbc89faa16256006c69a7046b7a5d55586881e88cbef9f0d6f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 11.26179313659668,
+        "tsne1": 11.374688148498535,
+        "tsne2": -1.863600730895996,
+        "id": "27c6960d5b7537bdb3ec9c49b43a14c84d07214755edf0023b61700ce35b7e96",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.675605773925781,
+        "tsne1": 3.602496862411499,
+        "tsne2": -2.6855475902557373,
+        "id": "90790765526e1753e069ea31b819a220000d6f1bf32e4376e964a50057bd5d17",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.11634429544210434,
+        "tsne1": -2.047935962677002,
+        "tsne2": -3.4662234783172607,
+        "id": "64db6dea952c1125a87504c10fad17bba21b9f981f27effbd7c51d24c349b1c7",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.036478519439697,
+        "tsne1": 1.4231574535369873,
+        "tsne2": -2.2417774200439453,
+        "id": "c571617f6a3efdccc4996a73b1f2d132c373c34ae48095c2255052d20b9fa390",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.444976329803467,
+        "tsne1": -7.420341491699219,
+        "tsne2": 1.5592032670974731,
+        "id": "975fd1da43f804d1acf8e9499550507cb3306641577024ee7f3bbadd91a94504",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 0.19787386059761047,
+        "tsne1": -7.051246643066406,
+        "tsne2": 2.4523239135742188,
+        "id": "a2cd8b9b85e13ec868234a5be2af2929bdc0323b1c770973fd7822c976e5c803",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 5.1173787117004395,
+        "tsne1": -0.041739556938409805,
+        "tsne2": 1.6735206842422485,
+        "id": "c3c65f665c0e921a6f89d65e2481c072b03584f6700143244dbd27052311ee4b",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.4303107261657715,
+        "tsne1": -6.571978569030762,
+        "tsne2": 0.4471254348754883,
+        "id": "408d9148a7d4fe696f2759551e670423ad520d6691a76f06a5245afa346ac1f5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 11.237282752990723,
+        "tsne1": 12.415807723999023,
+        "tsne2": -2.2383904457092285,
+        "id": "a000a29563515e528ca52d0f767fad37b2cb375d055a75af38a08d5de061202e",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.061354637145996,
+        "tsne1": 1.5369970798492432,
+        "tsne2": 1.4747105836868286,
+        "id": "bf3387e9057049f6d64f1a211e5089834ef63284d3e643e1ef7e171c2725c96a",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 5.372574329376221,
+        "tsne1": 11.33439826965332,
+        "tsne2": -2.5751376152038574,
+        "id": "40d55f025f842ff61b29b9e402587fc5a96cbd89b48e3ac10d9e0cdb7c118560",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.022856712341309,
+        "tsne1": 2.539008617401123,
+        "tsne2": -2.6558783054351807,
+        "id": "1d030b96ef9eb4322ebe06ca88816d9d79255310186b1dc7cbebe47412b2971e",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 3.293691873550415,
+        "tsne1": -2.030212163925171,
+        "tsne2": 1.6902958154678345,
+        "id": "121a9d15573f50b227e2c313a15ef24342b77dc1782af361d4afb3725fbcacc0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.2746548652648926,
+        "tsne1": 3.4320597648620605,
+        "tsne2": -2.2255704402923584,
+        "id": "ac29ed04c05a5997155fc643d6a0ab7f9a56f93f1c338e9c83131f98a9e55083",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.641557216644287,
+        "tsne1": 7.765214920043945,
+        "tsne2": -1.1794956922531128,
+        "id": "9bffdaff6fa4f731328c893ee5a44f2bf156b5830815a7b090ba5cd32ee3cea6",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.748302936553955,
+        "tsne1": 8.623517036437988,
+        "tsne2": -1.5363835096359253,
+        "id": "4ccc8c19f52ce9f91a59dccd19dc2b0b4f613134126ce073d68744c1577bee80",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.9525174498558044,
+        "tsne1": -0.3937225043773651,
+        "tsne2": -1.125805139541626,
+        "id": "86839f95be2ea5dd42130982659459270303996bb84ff1f1dca4752beac62ff5",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -5.499494552612305,
+        "tsne1": -5.5913777351379395,
+        "tsne2": -0.08936841040849686,
+        "id": "6336f54d03384b53631cd4465bac7284f2ad69d739ad4eb6064785bfe076b74f",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 5.032494068145752,
+        "tsne1": 11.025500297546387,
+        "tsne2": -2.5350775718688965,
+        "id": "df592aaaac89dfe5c0a720aa586875bb4c6ab7e947fd4de95f6b606a78e59e1a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 2.815701961517334,
+        "tsne1": 0.5844480991363525,
+        "tsne2": 1.2608551979064941,
+        "id": "44081bfd9e3f45f2068e611d9e717d6c72ad4da45ea43843d85a7c86b2e976f1",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 10.888849258422852,
+        "tsne1": 13.738595962524414,
+        "tsne2": -2.8044509887695312,
+        "id": "0477c89a7d6260cda04bc9100edd6e9a3682e4d72af625313f21bd9b0c9074cc",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -2.4953372478485107,
+        "tsne1": -14.1236572265625,
+        "tsne2": 5.5337443351745605,
+        "id": "006e1bacf5401adafd5797448a7feed411a1b4d1ae2b5ace26c669c33fcc0100",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.7324492335319519,
+        "tsne1": -11.972216606140137,
+        "tsne2": 5.29782772064209,
+        "id": "d591fb46015300909dedddf20c871f31840a79b9cf9ffb9903f11d38d2ac33bd",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 6.012663841247559,
+        "tsne1": 8.700408935546875,
+        "tsne2": -1.5269333124160767,
+        "id": "3047a5c822c23a46eeda51b82c4473b88a6d68ec7dc36c1ab2e2d76feea97b90",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 6.474984645843506,
+        "tsne1": 11.331424713134766,
+        "tsne2": -2.3869078159332275,
+        "id": "dc241313b1fa2cf09d2a4eb61385d664ff0155eb5876e846193f9bd55053bd7c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 4.308691501617432,
+        "tsne1": 3.0956013202667236,
+        "tsne2": 1.296369194984436,
+        "id": "84356ed16cb494481fabde3ce0cd5f6c912096923eb3da61f400563facea113f",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.096431732177734,
+        "tsne1": -9.970905303955078,
+        "tsne2": 2.7507145404815674,
+        "id": "5b445d238a7f6dc90f7e01ac8c236df239009f58547eecb5cdec812115c1b4d9",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.679943323135376,
+        "tsne1": -15.573970794677734,
+        "tsne2": 7.339140892028809,
+        "id": "027c3bdebcbf81cb2031b7d84e409784d3cff2d8ee96369c764d5d0b012cfc3c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 6.851231098175049,
+        "tsne1": 11.358832359313965,
+        "tsne2": -2.414780855178833,
+        "id": "56fca142b17a0a9a89f10b8a62d61fb35ce347f2aeda5c5d0d866948c3c64f01",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.88977575302124,
+        "tsne1": -2.6510541439056396,
+        "tsne2": -2.9422266483306885,
+        "id": "debbb0fdae6ec9bb9d4cb5e2a5f109c015a1ff0fc970d9ba1333895c18d69a6b",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 3.276959180831909,
+        "tsne1": -2.442553758621216,
+        "tsne2": 1.8455501794815063,
+        "id": "fa7abab35186343a06fc12b0c1b30c3c3b629355b00741007e2d12df97602a51",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.954577922821045,
+        "tsne1": -7.180882930755615,
+        "tsne2": 0.847583532333374,
+        "id": "4797da41aaabf9e1904bdbdeb14e86f13cf22d3cd452c8949147644282b55bc2",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 10.552144050598145,
+        "tsne1": 11.959368705749512,
+        "tsne2": -2.0926754474639893,
+        "id": "f6cd3cb440435910326ca606e03c32cda515cf496e530e400cd10af70d1ba4e3",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.119368076324463,
+        "tsne1": -7.221689224243164,
+        "tsne2": 0.858461856842041,
+        "id": "d96f3ae72ac6f5dfb78de1a812693ab2a04d93e701f71c779219babb427aa3b4",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.920442581176758,
+        "tsne1": 11.666671752929688,
+        "tsne2": -2.095510244369507,
+        "id": "a558168ed3867b34f92c214a8a879901b66177b2669b4c04b456c1590d415a0e",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.0526187419891357,
+        "tsne1": -3.13910174369812,
+        "tsne2": -0.4294145703315735,
+        "id": "5a878dfee782358672c7fb5097da39bcaa685a4d6625b05a34be03057503bf03",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.730837106704712,
+        "tsne1": -9.162535667419434,
+        "tsne2": 2.9750258922576904,
+        "id": "376375ac7be85d834ef79534db0808b42f00119d9fa10a215ce83e91bae8c175",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.318978309631348,
+        "tsne1": 10.664908409118652,
+        "tsne2": -1.7327860593795776,
+        "id": "d37850cf89d11714cc2f54d09bfe6eba265d8025083981da045560adcbe8e1c0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 6.564693927764893,
+        "tsne1": 7.217539310455322,
+        "tsne2": -0.5629156827926636,
+        "id": "191928f6920aaa7f431904fa3c7fe9711cbed2c4d5380c8bb09ea72f44ce7198",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 5.166173458099365,
+        "tsne1": 4.872838497161865,
+        "tsne2": 0.8117143511772156,
+        "id": "783b0d7a9c565772618edda23c910f6baf4fd6d03a0db37f09e3ce0198efb158",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.678380012512207,
+        "tsne1": -3.442706346511841,
+        "tsne2": -0.8432644605636597,
+        "id": "1ad13d1b5900fa714effb64cbab2e14dd1e1981d5e6dcc509bf2ceb7f46689bb",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 5.8631510734558105,
+        "tsne1": 8.80362606048584,
+        "tsne2": -1.6402904987335205,
+        "id": "8ca5960b778e3d70404af005ab891cbd28c86297279b99a8d542343c5340f38a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.7235694527626038,
+        "tsne1": -8.42480754852295,
+        "tsne2": 2.914130210876465,
+        "id": "0673ed0867a2a135b70af1466485924fc5eeadc87607a3b60eecc36d7f747f29",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -7.811958312988281,
+        "tsne1": -2.6435091495513916,
+        "tsne2": -3.0344183444976807,
+        "id": "233420721289b98f8b32b67ee2fd8c74856615fd81fea54f8458e3522b0667f9",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 8.02247428894043,
+        "tsne1": 12.018787384033203,
+        "tsne2": 0.358669638633728,
+        "id": "33a90f07876f5d34a7ef6d7a5947f15442ee572d1a8dea98426177ec6ec51385",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 10.428831100463867,
+        "tsne1": 11.183867454528809,
+        "tsne2": -1.576802134513855,
+        "id": "f6e9b053992b2a37c1cf67c79b68642a366c3c5d045cbbd239efcfec31f10788",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.0905184745788574,
+        "tsne1": 10.147599220275879,
+        "tsne2": -2.429201364517212,
+        "id": "d75cd5c439a89994c2224cab86883c30e1fbef76da3badd046276e76e7710a94",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.7429845333099365,
+        "tsne1": -15.091506004333496,
+        "tsne2": 6.851305961608887,
+        "id": "9e8bb862f6b04689d7f5e5c615e16b362fa22344b1e09c7cb21fbfa21c092c81",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -2.8725051879882812,
+        "tsne1": 1.8197747468948364,
+        "tsne2": -2.0544660091400146,
+        "id": "78073195b1ac51a96879d9fcaee98c3608a41e153bbe9cdd6b10219004e86b0e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 8.50581169128418,
+        "tsne1": 8.713311195373535,
+        "tsne2": -0.9104607701301575,
+        "id": "c9ab288f1dc864c6eecacb311113da896e534a2962fab592bec53248256aa49a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 7.434169769287109,
+        "tsne1": 13.263656616210938,
+        "tsne2": -2.9381520748138428,
+        "id": "a67bf78cf1e33618e1be8cbd2e32f103935581d9ca1b3b04e265d592f3ed8229",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 8.71926212310791,
+        "tsne1": 13.018621444702148,
+        "tsne2": -0.9661074876785278,
+        "id": "300555fe69f9ed05aa6911988878a7c9a516abbf5d698034375b02cd839cca24",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 7.664689540863037,
+        "tsne1": 10.636995315551758,
+        "tsne2": -1.9425076246261597,
+        "id": "2c861fcd1edd2215a1017ec3a8cf4a0991e1b427bcd13af952516476d55446eb",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 8.803790092468262,
+        "tsne1": 8.953302383422852,
+        "tsne2": -1.084389567375183,
+        "id": "87047c5a29f02242efb044b9ae4823564f387f57789c0e056b86575ff658acd8",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -8.477978706359863,
+        "tsne1": -2.2497270107269287,
+        "tsne2": -0.6262620687484741,
+        "id": "f62a0634682c4f9507f9f90fdb8d798fed2881e20aa584a99d5ac9caa36fcd41",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.160620093345642,
+        "tsne1": 2.21708083152771,
+        "tsne2": -1.2099952697753906,
+        "id": "460054f1d96efa0ea41c81b20fa5bd3084c71e0cabcc95736409963cef790f79",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.901181221008301,
+        "tsne1": -3.7569522857666016,
+        "tsne2": -1.1016653776168823,
+        "id": "67d3f9754e77e9728336ab63e34f6d2d2bbd87c37ff07e748c5948f72f0805aa",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -7.170925140380859,
+        "tsne1": -6.139232158660889,
+        "tsne2": 0.17978757619857788,
+        "id": "b0731f4eea865555ff233fa584ccd74191d2bfa6e7272b93796ba28b5dd52c84",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -6.7679524421691895,
+        "tsne1": 0.6952264904975891,
+        "tsne2": -2.4516966342926025,
+        "id": "5f94025a58c95460f885cc3638d84cb0ebc073477c292b5ee8b7b34b83f5d9b8",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 2.9820597171783447,
+        "tsne1": 3.3306124210357666,
+        "tsne2": 1.5132871866226196,
+        "id": "2dff80a9f7455c5c45cbf746b3df819fd9ae604a30b7666fc96a80a6c8da1046",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 0.8751421570777893,
+        "tsne1": 3.3256289958953857,
+        "tsne2": 0.25857144594192505,
+        "id": "f3890ef077161be4d51b7970c67fedb272d61cf9394f2c1ca0d7a5434cdf30ba",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.9068441390991211,
+        "tsne1": 6.443188190460205,
+        "tsne2": -2.202540874481201,
+        "id": "21fc853602ebb790908feda1c4866bfd37ce1aead501f957a0f785560fd289d1",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 7.09245491027832,
+        "tsne1": 2.963294267654419,
+        "tsne2": 1.2127020359039307,
+        "id": "21af3d9a6ba8d6d80ddefe270d2605a45112c4652486eadb733169ab550fdff9",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.7179627418518066,
+        "tsne1": -6.749229431152344,
+        "tsne2": 1.4745856523513794,
+        "id": "7544e043baf6db91f5988b5e845591574dd493a7a21b76662859c9265afeef14",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -4.533886909484863,
+        "tsne1": -12.00976276397705,
+        "tsne2": 4.913813591003418,
+        "id": "e822c5d45d81e7fbeb0559df0371ec56318f1ce20bce3704617d81c6e3566378",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 10.994050979614258,
+        "tsne1": 13.198570251464844,
+        "tsne2": -2.6486079692840576,
+        "id": "fc19ffc63ee299512880e7fb69f5b465a3e70810a2acb09ad64e11c3feddab60",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.6345692873001099,
+        "tsne1": 5.10301399230957,
+        "tsne2": -1.819941759109497,
+        "id": "a5e148d70609404babc3de5ba510bf88e815d6e968c89c2898f7468669b8e41c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.649533748626709,
+        "tsne1": -3.951190233230591,
+        "tsne2": -1.0691282749176025,
+        "id": "04f8d85bd851ba83ebc610a44475d07feb3c277e3d74890bb6d1f506a72d3715",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 5.237476825714111,
+        "tsne1": 8.639155387878418,
+        "tsne2": -2.9370930194854736,
+        "id": "d9e24d741ed30018535571b43737b85fac094d8aeccf5529c63aeaec6dc181c3",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.329398155212402,
+        "tsne1": 10.31281566619873,
+        "tsne2": -1.5254664421081543,
+        "id": "29bff72f9ea3988ca964ccb6cfd3827fa76b02198895484ee72bde328826c17c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 4.3198089599609375,
+        "tsne1": 4.003933429718018,
+        "tsne2": 1.0148404836654663,
+        "id": "857af39f4018a5865566bf6a2bb676f4530259eef0e7b74098568465d3b985bf",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.577938079833984,
+        "tsne1": -4.130701065063477,
+        "tsne2": -0.8429569005966187,
+        "id": "d1c4b441a3eb403b2cb295339c5b46043f7025061a578bb371901abd5980ec1d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.695007801055908,
+        "tsne1": 8.267356872558594,
+        "tsne2": -1.269287109375,
+        "id": "5bcc403a1bb1ee89219645907261a3ef461fdfc0acb685840e84c009023b2084",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 3.4914212226867676,
+        "tsne1": 1.245348334312439,
+        "tsne2": 1.427568793296814,
+        "id": "da0b4e8ad4daeb6826beb02636492333273ec4cee88bcc4accd4963ebab34f1c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -7.962716579437256,
+        "tsne1": -11.180328369140625,
+        "tsne2": 2.497379779815674,
+        "id": "62f2b8345ea35a7d7632cdc235d3443f5d5fddcb196b949a275424b398d14860",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.2762341499328613,
+        "tsne1": -11.61972713470459,
+        "tsne2": 4.9881439208984375,
+        "id": "f2393bfa7d3d449b3ada2614babbf33c67cd7abe394dde93a55dbf1338d6b507",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.922482967376709,
+        "tsne1": 3.277742624282837,
+        "tsne2": -2.7061195373535156,
+        "id": "8aa59e91d5034008fd0fc4ddcdf6ad7a542f1512c923432d1d00a2de0e08f365",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 6.073712348937988,
+        "tsne1": 11.63964557647705,
+        "tsne2": -2.7545602321624756,
+        "id": "480af13f69ac820ebea8d03043b19f588beeca37c5084c25701c35ba3e21f5e5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 9.970272064208984,
+        "tsne1": 10.500475883483887,
+        "tsne2": -1.876179814338684,
+        "id": "d9016adbf17d4c3c2268c44cb63deedb1a3e772033c78369c3531d7e9ee57f6d",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 10.719470024108887,
+        "tsne1": 13.396561622619629,
+        "tsne2": -2.770465612411499,
+        "id": "b765593ffa2eff0640244cc1278c88b8f20154c7e2bf51c2db74f41db1c4ee2d",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.925457000732422,
+        "tsne1": -2.812845468521118,
+        "tsne2": -0.8309478759765625,
+        "id": "d8f14df2307513af3f990143dbcef5180c2f34851795a41f81a684c66b3db53e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.9069037437438965,
+        "tsne1": -0.08196525275707245,
+        "tsne2": -2.489506721496582,
+        "id": "79ca0a11cefd98df010875a24afe5fd68873086371f7caa93fce8b98dd56f261",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.270003318786621,
+        "tsne1": -2.4564707279205322,
+        "tsne2": -1.2870047092437744,
+        "id": "d1ac681820dba7d24eaf4e85d2910eac633038529f5e76e33d3825c247dad3c2",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.31152215600013733,
+        "tsne1": -4.475249290466309,
+        "tsne2": 0.5293951630592346,
+        "id": "5dc4cd85dfefe065d376e7170df00db819adb9d052e9167368c947266eb8ecff",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.997282981872559,
+        "tsne1": -11.639381408691406,
+        "tsne2": 4.541661262512207,
+        "id": "9472b95a9ce4434d4f2071ce4a5975a62971945ec027ebe34647e7e18e471d83",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.975902557373047,
+        "tsne1": -9.406075477600098,
+        "tsne2": 2.9326119422912598,
+        "id": "5edab32f21c625f8837a390ed6a06bbd5f8a4e055f534d73cf3cc521411e9646",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.653787612915039,
+        "tsne1": -7.3175554275512695,
+        "tsne2": 1.0504056215286255,
+        "id": "07e1b170713e4055fc840f2d397837d025c310fced1428f9ce369d614fe4c6bf",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 6.566453456878662,
+        "tsne1": 8.77084732055664,
+        "tsne2": -1.4750478267669678,
+        "id": "4a759c80a3b3545f81db24e7b47c8ec689ca5277dd14f21aad6973bff0aa9426",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -2.316927909851074,
+        "tsne1": -1.288892388343811,
+        "tsne2": -1.3737694025039673,
+        "id": "b01f7947a5a2466ded3a9102ac5325c4593bc77c47ad98b149b551b092d3f6f1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 5.172807693481445,
+        "tsne1": 9.604423522949219,
+        "tsne2": -1.9538613557815552,
+        "id": "24b82074c9be47140b10ef3c79945d3f2a0d3abdfd502d9b42bbf2e1bdfe9a06",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.509415328502655,
+        "tsne1": -15.557646751403809,
+        "tsne2": 7.365715503692627,
+        "id": "0816b580b006aadbb44dbd8c5e03d0d6fbbef306c7c49a57d10978c08153651f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.9642333984375,
+        "tsne1": 4.503939151763916,
+        "tsne2": -2.5771524906158447,
+        "id": "a454f4b88989d3fa6231543478fd172c9e2b706ea697ba96eb17acc68b4b5e56",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -2.144540309906006,
+        "tsne1": -1.7876639366149902,
+        "tsne2": -0.9929428100585938,
+        "id": "fd7410093cc177f78338721d66e137f8ddc725b2b77cc857723c222870d1208e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.990541934967041,
+        "tsne1": -9.982295036315918,
+        "tsne2": 3.1720986366271973,
+        "id": "8b5bffd0597808f3dde06f4d611f98ee5112ffdf363a0b6fa7662199efd5d8f5",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.36964088678359985,
+        "tsne1": -6.439573287963867,
+        "tsne2": 1.5693776607513428,
+        "id": "703781b7552370064bc15fabb82cd146c5e15cfdf5885c4c392697fb741b73c6",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.6071887016296387,
+        "tsne1": 3.7073028087615967,
+        "tsne2": -2.4052793979644775,
+        "id": "8cf99599282f8552b0d1d89552c1d33c91e8a080cbdb84995e3d91c900e0d515",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 0.009033408015966415,
+        "tsne1": 6.183352947235107,
+        "tsne2": -1.7746342420578003,
+        "id": "e3f2292173eee60f00d8d0210afe0fd14933f1c0591caa111a7fe6398e439762",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.3795247077941895,
+        "tsne1": -4.154905796051025,
+        "tsne2": -0.9043986201286316,
+        "id": "54d5e92772672ee3a7a3fe540188a11b24e0c6ad42ce427257f25ca72fa226d2",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 6.978718280792236,
+        "tsne1": 3.2491776943206787,
+        "tsne2": 1.1166696548461914,
+        "id": "5f52c0e7a416a8e7ca710aad1072beaeca45b6da5af7b9e18f9df596442ea471",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.43814247846603394,
+        "tsne1": 6.760466575622559,
+        "tsne2": -2.2237722873687744,
+        "id": "e969e1569ed563be5e8b4b5096b010c37d7b6c9274e92af60c6981dc17b0dfe5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 6.298609256744385,
+        "tsne1": 8.830082893371582,
+        "tsne2": -1.5785255432128906,
+        "id": "1d46d9b10054e2beeb910d4515eb0f982af1e51ac0b9670976c79d96650f4fcf",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -1.3560354709625244,
+        "tsne1": -6.661949157714844,
+        "tsne2": 1.4125057458877563,
+        "id": "60d24104e19e0cc9a56838634ce7ab421bf282f42b1291b71f58ab2031f0d3fd",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.513955116271973,
+        "tsne1": 13.02717113494873,
+        "tsne2": -2.64958119392395,
+        "id": "471d8f521e147135db9509d561918a4fef3cd2194b6c1b1db736d07ba998f00c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 10.384296417236328,
+        "tsne1": 7.7993950843811035,
+        "tsne2": -1.1543667316436768,
+        "id": "d97e51b2f58f0e2567f3b0ed2bf0a514c13aabe63ea8acf4d427ac64da5a5590",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.39010763168335,
+        "tsne1": -5.464563369750977,
+        "tsne2": -0.09765715152025223,
+        "id": "a3643245476680d98a2a16360b0c73c8ac48e37cc87cf4aeb7cfc57f252f841d",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 0.3159118890762329,
+        "tsne1": -11.095990180969238,
+        "tsne2": 5.0734944343566895,
+        "id": "bde000821222f19645080b5eee31404d5595156b3493e5dade324659c698261e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.754526138305664,
+        "tsne1": -8.216279029846191,
+        "tsne2": 1.5108000040054321,
+        "id": "b716f85aa2ae4e2946b04694f267cb484a453f2c43558954be3f595d626bcd1e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 4.684511661529541,
+        "tsne1": 3.176706552505493,
+        "tsne2": 1.268498420715332,
+        "id": "36f1f0cca9be14a4953bb3413c586f46a7112db69a97eba409bff15470c35222",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 6.7061872482299805,
+        "tsne1": 7.9509477615356445,
+        "tsne2": -0.9794310331344604,
+        "id": "49215e2d40793d8c514cb8137ef47f6648f58576db39574dfc4a8a0bbb96ddf5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.876223564147949,
+        "tsne1": 9.710753440856934,
+        "tsne2": -2.014033317565918,
+        "id": "0c050786042de0245a4a036ff49ae78278bda9bd19a2ad6719eaf77a4378dd93",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.9612908363342285,
+        "tsne1": -4.560736656188965,
+        "tsne2": -0.7148615121841431,
+        "id": "b5515b1c36036c7147865b19cd10274c991b6611c2c235bf7e7410014d801e1d",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 7.371673583984375,
+        "tsne1": 5.96098518371582,
+        "tsne2": 0.4686168432235718,
+        "id": "b445f1ecf28e34ecb908501b3cf2caf60030b170e9143cf7d5c9c95993c05629",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.0269134044647217,
+        "tsne1": -10.6480131149292,
+        "tsne2": 4.201015472412109,
+        "id": "d3789b56f5d02bdc567e6ca3e53d288e06c68ef5bd3072f5a504b353b7a3732f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.75324821472168,
+        "tsne1": -2.8837053775787354,
+        "tsne2": -1.0171252489089966,
+        "id": "aa0cb5441f725d6a3695e9d7bda36ca67e740b53c796b5f03f9b6bd4e0bf426a",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.307067394256592,
+        "tsne1": -0.0683111771941185,
+        "tsne2": 1.5805470943450928,
+        "id": "d2498d155fd76da77e73d268cff1d3f5b9cbbe5f347c1b8162523d95e525cc7d",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 4.297243595123291,
+        "tsne1": 5.590527057647705,
+        "tsne2": 1.6213945150375366,
+        "id": "d8b17a0e91388316b2e2e78dc103b81c8dd6de782b4297d9c6a619877e54d6ab",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.7873833179473877,
+        "tsne1": 1.2777910232543945,
+        "tsne2": -1.1333167552947998,
+        "id": "5d2d671898651a5aad92804c93c0bd2c45aec5415a6633648fff467d2c29cb08",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.983383059501648,
+        "tsne1": -11.408784866333008,
+        "tsne2": 4.887330055236816,
+        "id": "d87d34ad3f96cbf598d614a11f8e21c81c979f63baeac8aae1b82d6b85133dba",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -1.4239468574523926,
+        "tsne1": 6.468328475952148,
+        "tsne2": -2.5199010372161865,
+        "id": "96d78efc54e7409774615a0da65c9746df951b903dbffa0a16bea28b8eed4d02",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.0794566869735718,
+        "tsne1": 3.5168862342834473,
+        "tsne2": -1.129539132118225,
+        "id": "5aa949d30bd686f41da624eaea72f7abe4188a5f68c66925f0d4833d91dff1a6",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.394415855407715,
+        "tsne1": -1.1899325847625732,
+        "tsne2": -1.4333882331848145,
+        "id": "8d577c60a10b335076efdd11b193d51bcc56774932509c99e1614460c0ec658c",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.1319400668144226,
+        "tsne1": 3.913323163986206,
+        "tsne2": -0.5566768646240234,
+        "id": "fa431ebae3fad101574ec565b2d6fd954c8513ff3c30f68f3a31ddda21a8c467",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.7703153491020203,
+        "tsne1": 2.5394208431243896,
+        "tsne2": -0.9197983145713806,
+        "id": "e8a8a0dae64f8385c9a9d68912ec1d2a3ed6bce4b8076ab9b26546843c6b7386",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 7.015409469604492,
+        "tsne1": 6.485603332519531,
+        "tsne2": -0.05509147793054581,
+        "id": "1a4e46e623fb523a98eedd558fd72ecd538b95eb6a054e5caa69d3cf336c7c32",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.13459976017475128,
+        "tsne1": -5.997572422027588,
+        "tsne2": 1.4385097026824951,
+        "id": "b0af89386ccd9946cb6291b13e90257b8f7e1006febe61bf97e5c9b88e6be43f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -5.939068794250488,
+        "tsne1": -10.128443717956543,
+        "tsne2": 2.972158908843994,
+        "id": "9abdf434a8693bea4c435e265e7343daddb8e3890b817b18d4420ef8de64e549",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -6.435109615325928,
+        "tsne1": -7.437562942504883,
+        "tsne2": 1.0644031763076782,
+        "id": "226a294b3447635c21f592e180a1ef7beb4133e6843e601c05cd2b376e0d40d2",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.029452323913574,
+        "tsne1": 3.4977028369903564,
+        "tsne2": -2.524916410446167,
+        "id": "edfb28e892718bcd6067bb2e038912b2c5e35020c49722f418b81eedefef4ec6",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 0.8898452520370483,
+        "tsne1": 6.980262279510498,
+        "tsne2": -1.7571685314178467,
+        "id": "8fa3b9b3dd41944cffb807fdc2aa8ebe79e8b87632937ee31e0d9552dcdc453f",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 8.685080528259277,
+        "tsne1": 13.239851951599121,
+        "tsne2": -2.968812942504883,
+        "id": "c2462c5559da313d58f1f623370c84d4476a085a571c8b5bc0c27cfb7e782d93",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 8.472860336303711,
+        "tsne1": 13.164745330810547,
+        "tsne2": -1.1097420454025269,
+        "id": "f068f75629412b77e23af76c614a5c449e9165a70b57a5b6ed5b330607ce875b",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.9661492109298706,
+        "tsne1": 1.4761695861816406,
+        "tsne2": -1.252200722694397,
+        "id": "a761e4acc8dc0b61489788ee7beacd1df569839895c8278791809dd92fe5241e",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 10.598119735717773,
+        "tsne1": 14.2793607711792,
+        "tsne2": -2.5960986614227295,
+        "id": "df51c2c730da9cfbd6ff7e5697d77cb631eb510373d5255b562c133c88e64545",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 1.9925957918167114,
+        "tsne1": 8.134073257446289,
+        "tsne2": -1.869994044303894,
+        "id": "f1f62a4bcca3213c0e70510bf34420223d2a0c4fd4d33ff774aec5e2adf6b5bc",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 9.576502799987793,
+        "tsne1": 13.212919235229492,
+        "tsne2": -2.754272937774658,
+        "id": "bee55fa264c7bbebf656c4ecf03bfc92d039e92d12b3225c1d2ae3c66521e0c0",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 4.682395935058594,
+        "tsne1": 11.00709056854248,
+        "tsne2": -2.501297950744629,
+        "id": "076c46854ca060089d29d49426e1453fc7a0809d4999c9e93ff1dbaa6749fce1",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 11.178041458129883,
+        "tsne1": 13.065465927124023,
+        "tsne2": -1.9497170448303223,
+        "id": "2595e8ea445fd30cec7ea78b1429b61ecbb64ed318ce7f8fef9a66c81ec864df",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -2.5071041584014893,
+        "tsne1": -11.122672080993652,
+        "tsne2": 4.71196174621582,
+        "id": "abde9ba7b39615e71e0b0897efb0f5b2923b78dad1dc7a8cddece77ca3206b63",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -6.92831563949585,
+        "tsne1": -10.540425300598145,
+        "tsne2": 2.730238914489746,
+        "id": "0fafb68a1d8696cd6f6aabffdfef6db68a3991d53e3b58f5037a37060be84b06",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.614900588989258,
+        "tsne1": 2.408478021621704,
+        "tsne2": -2.530242681503296,
+        "id": "b4b62e1007d6722fd845f63eb09ba87026d2ba1609e893ffb58931c848d18561",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -6.277534484863281,
+        "tsne1": -3.0153586864471436,
+        "tsne2": -1.3338803052902222,
+        "id": "371eaeacb72ca46b80a1e0b874ac3484c0e36e06918cbed1ae51ee5647382c13",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.2138853073120117,
+        "tsne1": -8.854952812194824,
+        "tsne2": 2.693688154220581,
+        "id": "17b39190ad0d1de9f2eea8df3f1c477726631dbf14b5c2e1ed8f52a0e0ba7717",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.35668420791626,
+        "tsne1": -7.827879428863525,
+        "tsne2": 1.8154947757720947,
+        "id": "35b29e7e9fba6ce4871d86375e797096d77928a74c79e5087b08a1e8fb0bbadd",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.531599044799805,
+        "tsne1": -11.338497161865234,
+        "tsne2": 2.805847406387329,
+        "id": "60235314573810f3b56e323f034bb721e02135fd6fc2ca4ddf095050ddb25e7c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.36860466003418,
+        "tsne1": -2.5337955951690674,
+        "tsne2": -1.1352685689926147,
+        "id": "b604c4ba0bfebe2dbcb9d70cb4a34e981348597592a04304d020155a90b65eef",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 10.375833511352539,
+        "tsne1": 7.643160343170166,
+        "tsne2": -1.143243432044983,
+        "id": "c3ce275d1d8d35e1f84375bb1678685f7e96faced2b74591c15c6f26a199d946",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.8474527597427368,
+        "tsne1": -9.178009986877441,
+        "tsne2": 3.4391589164733887,
+        "id": "9df7fe61b1f0c40ebdb9bdb75b8b4daadc9e81a1303517410baceb23be2b3d78",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 0.01774996891617775,
+        "tsne1": 3.6001973152160645,
+        "tsne2": -0.3670983910560608,
+        "id": "8672178ab7e6e4559258cf4636a09ac8735a49fdc6a6fe4676fddc8de3daec7d",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.252005577087402,
+        "tsne1": -2.6013667583465576,
+        "tsne2": -1.030584692955017,
+        "id": "5b7a922475101e412d5efe99f156fb97f656580b4c8e0d865ce3703f219790b7",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.7194012403488159,
+        "tsne1": -4.730745315551758,
+        "tsne2": 0.42656809091567993,
+        "id": "c9dac5035e4237678428a6c577f99b231c7165df4b7a4adf38f639a973a15ce2",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.352267265319824,
+        "tsne1": 7.252050399780273,
+        "tsne2": -1.3001960515975952,
+        "id": "698c58c0451c125ae6bc8e599892e2c661e39569b5f9da76401baa56a9264883",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.121579647064209,
+        "tsne1": 0.7432713508605957,
+        "tsne2": -2.2156314849853516,
+        "id": "888c5b817187f2196c1335b280c4f8dd311366025e3478b57ffb993836a953c6",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 0.6325604915618896,
+        "tsne1": 3.0968239307403564,
+        "tsne2": 1.2457658052444458,
+        "id": "37e0b787ba01c8d41693b27ad9e1c35f4a528b0ffb8fcb750826fa1af60165ad",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.16744327545166,
+        "tsne1": 13.378411293029785,
+        "tsne2": -3.002906322479248,
+        "id": "f7b4ed11d611ce20159f6acef5ebd3dcd886230a0f5ace2c66aad279b48a6161",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.857081890106201,
+        "tsne1": 3.2432525157928467,
+        "tsne2": -2.6858675479888916,
+        "id": "38bbe2825513e0c79094970d55cc7fe8c468933d0133720e5e3dcb2e87ef1f78",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.3585018515586853,
+        "tsne1": 6.4559712409973145,
+        "tsne2": -2.057870626449585,
+        "id": "c42f5e45949e2f6c7c333af9fe30057bad92b01101d3d302ce7743104e7e748e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -6.181125640869141,
+        "tsne1": -8.592052459716797,
+        "tsne2": 1.802288293838501,
+        "id": "7bffb2181b6cbed83edbf3aa05e2d6f528a52a3a5791181ddf0bdc0204799c3a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -6.671080112457275,
+        "tsne1": 0.6464489102363586,
+        "tsne2": -2.4369864463806152,
+        "id": "305d1b1735faabc2f0cffecef01ff8353f4ef28e502c4e038cfc4a21c2ed89ee",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.1839599609375,
+        "tsne1": 4.06057071685791,
+        "tsne2": -2.6238181591033936,
+        "id": "0a99003f70f56a173c4c376563eca2b1fe0b3c7346c0529ae7638be82ddfb057",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.937494277954102,
+        "tsne1": 10.610978126525879,
+        "tsne2": -1.5726794004440308,
+        "id": "a70da093be082115c8c94031c3a9c8a89b1524b055185a626ec36d527bcb5179",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.322125196456909,
+        "tsne1": -11.175859451293945,
+        "tsne2": 4.635122776031494,
+        "id": "d9f6968d7fa614a93c5161cb78830b279fa98e1180a5a5e54ebf20818226cf6f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.7814464569091797,
+        "tsne1": 4.716413974761963,
+        "tsne2": -2.1999659538269043,
+        "id": "d28b6393a918dcafcced37ecbab40485db489f75ec42263d549ab54bc2f7e058",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.432178020477295,
+        "tsne1": 11.351672172546387,
+        "tsne2": -2.4315881729125977,
+        "id": "b1348c3149f554240bf9fc5c1126b0d23a05a1bca3186e3c5ca56f0b5532d236",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 1.726478099822998,
+        "tsne1": -3.3115057945251465,
+        "tsne2": 1.1736811399459839,
+        "id": "d9d3bfb9d44c7eaf0152b55ac132b26656c07027f24e6940852ec4aea445dda4",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -2.86529541015625,
+        "tsne1": -11.132731437683105,
+        "tsne2": 4.7054829597473145,
+        "id": "56bce4e738d9233813f4d69231c89daeb208e631aeb8c86a0b34301d32325785",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.443118572235107,
+        "tsne1": 10.570956230163574,
+        "tsne2": -2.4678282737731934,
+        "id": "ea5c7708b01850f111afbc8ffacb1e1a17f1e61f627d22d75cf23e39823d5b37",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 1.6773241758346558,
+        "tsne1": 6.903842926025391,
+        "tsne2": -1.4797881841659546,
+        "id": "15b9b9572a46e93a829b853f2be9989f75c24b42ff78330ecfc7c9bdd9b2c6b8",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 3.4556310176849365,
+        "tsne1": 7.640571117401123,
+        "tsne2": -2.511583089828491,
+        "id": "249c002dbcceccc99bc4e1f9962f7df34cfc2df538af747932209dad07769969",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 3.1049892902374268,
+        "tsne1": 10.543865203857422,
+        "tsne2": -2.4943859577178955,
+        "id": "e231278bb6f2f060d199153e5ece6fba161548b81c86379badac3040d5546070",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.292336463928223,
+        "tsne1": 11.189319610595703,
+        "tsne2": -2.0410308837890625,
+        "id": "484335f3df3d963b90502dccf37e5ebb3e5d5b49fc0d2c134046ac4621787344",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.92005729675293,
+        "tsne1": -7.264636516571045,
+        "tsne2": 1.0217392444610596,
+        "id": "8adc679084dec7ba650dfbd6a0645e1b89f4ad8f29f6a89ae7e0778b4be1797f",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.9681488275527954,
+        "tsne1": 5.418417453765869,
+        "tsne2": -2.133366107940674,
+        "id": "cf9d92163831bb556364b78edf889894f28de154bbaec1b2e37fbd56e6bb0145",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.127368927001953,
+        "tsne1": 2.407484769821167,
+        "tsne2": -2.1342568397521973,
+        "id": "13a1c824137e92e10c9d1c6b74397e82e9cb5e20875dde28326a29b6e0695876",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 3.9632620811462402,
+        "tsne1": 3.167656183242798,
+        "tsne2": 1.2447781562805176,
+        "id": "367dbd0eb24825f13bc4fd358ec48d2f88e77f5524f389851966a3aa9dbd094b",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -5.046264171600342,
+        "tsne1": 2.0711605548858643,
+        "tsne2": -2.6067898273468018,
+        "id": "c8002a0bdc368928d62a2acc9a22a8fd569dbeda5ef3c0d9b9e024eb746317f3",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 11.247090339660645,
+        "tsne1": 12.416558265686035,
+        "tsne2": -2.2366275787353516,
+        "id": "1dd3157c1d14f619b641fd343f06de6e80fa2e1604cb7db6194702cd5a364833",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.042158365249634,
+        "tsne1": 1.520352840423584,
+        "tsne2": -1.8394414186477661,
+        "id": "13da824aaffe979d72ce65e40555ff9c03249cd6ebee5d1dfa3cd19acbd90536",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -8.484732627868652,
+        "tsne1": -10.427388191223145,
+        "tsne2": 2.3532791137695312,
+        "id": "3ee417c44e84980fbe1faae0df3f222d04e5a26f07020867417030fed79e4ac6",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 5.191476821899414,
+        "tsne1": 5.347137451171875,
+        "tsne2": 0.8542980551719666,
+        "id": "0252459f5e49a4e0931890f0d85b9e3d951375b230b101395ec3f2b72304a1cd",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.7657992839813232,
+        "tsne1": -3.941208839416504,
+        "tsne2": -0.17319616675376892,
+        "id": "32aeb6d9077508eceb3ffd6ca732c0ede827d6f6c7d1056e962774f5b0f1568e",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -5.923588275909424,
+        "tsne1": -3.525146245956421,
+        "tsne2": -1.1731563806533813,
+        "id": "08b196345fd0598df94797a220b1c277d7ecd6c2b17a6f94607315ac26dd08d1",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.567734479904175,
+        "tsne1": -8.43913459777832,
+        "tsne2": 2.323481798171997,
+        "id": "eb53684d212d616bea679bd8e8b9c222e76def42865c233d3ec0baa634fb6491",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 5.869304656982422,
+        "tsne1": 2.4406087398529053,
+        "tsne2": 1.347592830657959,
+        "id": "7ba45fde3d7cdc0160e3b7a7e6b16dae3889a849e034cb421e357e782c3e8e20",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 7.28836727142334,
+        "tsne1": 13.537986755371094,
+        "tsne2": -2.8375468254089355,
+        "id": "6c2974cb2fea0241b1bc27dc496cb68ab8781a9eb404fa0002348c092db8e564",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.740782737731934,
+        "tsne1": 12.898144721984863,
+        "tsne2": -1.0246342420578003,
+        "id": "29369b894c369081504bb45d18b500f19f4c881aee842250bb1da877e52ac85c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -6.872662544250488,
+        "tsne1": -11.133709907531738,
+        "tsne2": 3.23630690574646,
+        "id": "b65a276923de4bb80095c5b33656ed46de6197263f8c8d16fe95418b18a7f6a5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.3269543647766113,
+        "tsne1": 4.972230434417725,
+        "tsne2": -2.4469287395477295,
+        "id": "3cc564744e5d27dd9e5a1ff34943a16faa4ac0df6a44ff3ec0192d594e487d1d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 11.582942008972168,
+        "tsne1": 13.183014869689941,
+        "tsne2": -2.59747314453125,
+        "id": "dfd0018862a4db04de282549948c46544fb6311e443483e1189f1a54d37d1de7",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.5653300285339355,
+        "tsne1": 2.711329460144043,
+        "tsne2": -0.7328982949256897,
+        "id": "cc5b57929bef269aabc52046f8b0d9762a8e06127744187704f7c0ea743ae0bc",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.489686012268066,
+        "tsne1": -2.4372494220733643,
+        "tsne2": -1.1445332765579224,
+        "id": "7325841572efc0853cff04a6f1f66203a2f37019003a7e959daf729eed17064e",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -2.076141357421875,
+        "tsne1": 5.471930027008057,
+        "tsne2": -2.162261962890625,
+        "id": "675adcc9d8af2ad48526fb1a54489c58dee6bb14173b5debdca83ecd36bf081c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.6509852409362793,
+        "tsne1": -15.206385612487793,
+        "tsne2": 6.499200344085693,
+        "id": "064f896e15a53ff044795f119864725d89c21384bc635b8db24a3999e137d9a0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -1.212742805480957,
+        "tsne1": -0.544625997543335,
+        "tsne2": -1.0249625444412231,
+        "id": "4881a28837f4589e6112751a96e50db7c8c3487c9fd07ec6e2e2f4ab9b381ed3",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.330918312072754,
+        "tsne1": 7.527779579162598,
+        "tsne2": -1.3961005210876465,
+        "id": "d6b36b0bc855caaec627ede481e0061dcc6b56e23ac1b5ca212d2dc8e5426541",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 0.08484821766614914,
+        "tsne1": -6.459089279174805,
+        "tsne2": 1.9067931175231934,
+        "id": "36154d1c6f5bd688983dd816486cbc50ec5a205518871c228538cfeabb7678d6",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.7789419293403625,
+        "tsne1": 2.683800458908081,
+        "tsne2": 0.24707621335983276,
+        "id": "641157b58d804d1f6e11c13974d1daba5a5e27298a0dc09943cc9287b9b20fdf",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.986161708831787,
+        "tsne1": 1.9179917573928833,
+        "tsne2": -2.2857489585876465,
+        "id": "80e87b1c40ffe93f1e6dcbe34aded12e9fe3a685e34ae379c37f32859a43e948",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 9.346491813659668,
+        "tsne1": 7.559295654296875,
+        "tsne2": 0.08217805624008179,
+        "id": "00e3ac604c3ea7ca243d15c4902ced2d6409dad62326e67d9ccc05723db2ade9",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 7.013259410858154,
+        "tsne1": 12.354652404785156,
+        "tsne2": -2.8675646781921387,
+        "id": "5f7afacf48107585cb093f695ed3fc04886c484b802c3024106a9cdfcac92575",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 10.50185489654541,
+        "tsne1": 12.852749824523926,
+        "tsne2": -2.5901851654052734,
+        "id": "0560575735c0c53dfc43885028d50c4f438fc05766301990dae9206774e919c0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -3.595134973526001,
+        "tsne1": 4.6256513595581055,
+        "tsne2": -2.4991135597229004,
+        "id": "0259a5585e8fa0250e1ef659fe943388703452bd87bbbb5b2801ddc9d5d41090",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 7.164637565612793,
+        "tsne1": 8.247178077697754,
+        "tsne2": -1.0423502922058105,
+        "id": "bc8881c96b87b67c467b1f9209931f722fcf0d8f67d298c7bcafb059c23b45d0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 7.438212871551514,
+        "tsne1": 5.900858402252197,
+        "tsne2": 0.44747576117515564,
+        "id": "a2bddbfaa61953047a75f8241fd2a4c04d63df7310954f9096e4285afda9a2ce",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -5.7206196784973145,
+        "tsne1": -8.2948579788208,
+        "tsne2": 2.2670819759368896,
+        "id": "ed374c8768f734fce80000ff006946102fcadbb2e76e65dab6b57d7b91223d10",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 5.272489547729492,
+        "tsne1": 0.18545681238174438,
+        "tsne2": 1.6665090322494507,
+        "id": "689b0c9f75c04c4b9ec034f8c70225a19e31413ca473948a47621973217013aa",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.124401092529297,
+        "tsne1": -7.807237148284912,
+        "tsne2": 1.7772501707077026,
+        "id": "cf2cca5063867a35e79d2670383ed7a60b2028ee1593fae1239df1cc79854d8a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -5.6692657470703125,
+        "tsne1": -0.5115196704864502,
+        "tsne2": -2.10427188873291,
+        "id": "7d36e0538e60f56c78b8081d1758b3d3349fdbbaa1bfe9e54a090cc31882621d",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 1.4333724975585938,
+        "tsne1": 2.4137587547302246,
+        "tsne2": 0.5980069637298584,
+        "id": "3ffadf9215f09bc13ed7d0a502edf38194191d78ee89615e3329595343e63f94",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.487774848937988,
+        "tsne1": 10.609413146972656,
+        "tsne2": -2.0666439533233643,
+        "id": "f17786c6594a2b43e226f7d3298f3efbc5c1c3a575674b2a7207129d57ccd7e2",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 2.650411367416382,
+        "tsne1": -2.4478249549865723,
+        "tsne2": 1.4971463680267334,
+        "id": "f49d01f182c948ba098dcc5a90d32efc1eabcf9dc1f68b450d3d87528882178c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.28566837310791,
+        "tsne1": 9.968435287475586,
+        "tsne2": -1.8030073642730713,
+        "id": "ef3b8b0285517b2289ccc11623c33d86806f1693442489f963f06cf7ed348858",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.378697872161865,
+        "tsne1": 7.861445426940918,
+        "tsne2": -1.1112602949142456,
+        "id": "c51df49b00aad2418818dbab94cc08051b5b4a5655fe1bd8c6131c0f6e7d1245",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -2.010579824447632,
+        "tsne1": 5.216279029846191,
+        "tsne2": -2.05306077003479,
+        "id": "84263d44c6aee114e200fe76b38ccfa6f4fb9367f5079fe10da9921225ccff13",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.146290302276611,
+        "tsne1": 0.01615024171769619,
+        "tsne2": 1.6686397790908813,
+        "id": "6031dd46d29326b73e2815a87d34170503055bb493817f14fad02c6458c3124d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.913381099700928,
+        "tsne1": 12.108990669250488,
+        "tsne2": -1.635770559310913,
+        "id": "c2dc3f530e04c26e52fb50f570f73bf6cdc804ff7b65a12d215049c82f13a90a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.0786163806915283,
+        "tsne1": 4.590846061706543,
+        "tsne2": -2.437656879425049,
+        "id": "343e64f432a40557ece7226be8f98e79c815d78d12ef53393f1614d2fedb5f7c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 4.2363691329956055,
+        "tsne1": 3.112121343612671,
+        "tsne2": 1.2826236486434937,
+        "id": "eb3b8576b074afb5645f5e6c4596698002b762acc3621e0fabca6b41b2ebe7ec",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.734608173370361,
+        "tsne1": -2.195500373840332,
+        "tsne2": -1.4787991046905518,
+        "id": "b9538a11b4176b84c1fa1aa3c1b07be258b613e80904cfea7253e8d0b6dfdc12",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.384852647781372,
+        "tsne1": 8.602662086486816,
+        "tsne2": -1.886117696762085,
+        "id": "8d94aa54a3096a3910de69751a3b93e6cf073f6a7b92b98c338153575a2cad91",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 4.307706356048584,
+        "tsne1": 8.520400047302246,
+        "tsne2": -1.496551752090454,
+        "id": "c2c2de8cd5ca4bae48851e572d17b9c697b0733a5201ca855e8de45644670b8f",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.0426230430603027,
+        "tsne1": -1.6367908716201782,
+        "tsne2": -2.1393492221832275,
+        "id": "21493482c58c6b2cae5bea8feab51d74a6326365d45f2924172a3331d5f02d26",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.799318313598633,
+        "tsne1": -11.820383071899414,
+        "tsne2": 3.913118839263916,
+        "id": "cd16c8346917ab569f80dea9c98437bbf6e81e13b26ccd6879634fb3917479f1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.841855525970459,
+        "tsne1": -10.7241792678833,
+        "tsne2": 3.382427215576172,
+        "id": "6a40db09e8ae038ed2e64f9cda5a2dc5628c0784931b2002eefe8feafa5993d1",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -2.769270420074463,
+        "tsne1": 3.9903292655944824,
+        "tsne2": -2.05940842628479,
+        "id": "28059aab5de2f41166f46218888f5b026e5d1b6e7a4fcf674e8d74a53699f452",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 9.390312194824219,
+        "tsne1": 11.334516525268555,
+        "tsne2": -2.1502914428710938,
+        "id": "b55307c5cdff823e714edef4bae49ea269f331f981bff5018781dfa34e16910d",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.538779258728027,
+        "tsne1": 8.733399391174316,
+        "tsne2": -0.33148306608200073,
+        "id": "0d1b9977029b5cdf0f844fe278aa46c6964a4bee860953cda1229b3efa078c53",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -4.416264533996582,
+        "tsne1": -3.9835305213928223,
+        "tsne2": -0.6916828751564026,
+        "id": "86d27350b580194537e50dc67213ef0ac01a3cd71ee47db3a0959597845514dc",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.136242866516113,
+        "tsne1": 13.121682167053223,
+        "tsne2": -0.9037730097770691,
+        "id": "5030f7b8ab08e82d4e0c69a38a6984025e5008f2b0b3dbe74d15e3a2e0ec3b3a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -8.712139129638672,
+        "tsne1": -2.2549092769622803,
+        "tsne2": -1.6533863544464111,
+        "id": "76a86304391c6b309e6bba292e8790601865f4af6b40735787e1a3345e68894e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 1.430263638496399,
+        "tsne1": 1.472345232963562,
+        "tsne2": 0.9757726788520813,
+        "id": "b62e824ebeae2fc29c9b9c0673d956eb7e137f0ec423792d2db99751ad4a10f0",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.2505284547805786,
+        "tsne1": -3.3323700428009033,
+        "tsne2": -3.41149640083313,
+        "id": "ccf9a41450d2b933070aa1baa1293425cd0e96c23d84cc75b0b7bd3e01672f97",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -6.913560390472412,
+        "tsne1": -5.955948829650879,
+        "tsne2": 0.061873096972703934,
+        "id": "8b0e0b23ce24ccdc2211ef61dfffd3ae81a40f558f5caf522874aefa48ece1f4",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -2.7095189094543457,
+        "tsne1": -14.705499649047852,
+        "tsne2": 6.296168327331543,
+        "id": "5ba8fb532fb2f97e887dad2b9dddca6019758f2c63c053daa5cfd49b5d6fe946",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.5116429328918457,
+        "tsne1": 3.994662046432495,
+        "tsne2": -1.9677364826202393,
+        "id": "5f60592aa3736764f03e8916c1d5399a89bfc1dd2534908a87e94a951011eadc",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 0.12735676765441895,
+        "tsne1": -4.765955924987793,
+        "tsne2": 0.8922725915908813,
+        "id": "f511f841854b0f2fc1a47968ffc19287023c005defbd05b45abec23adf46298e",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 10.819841384887695,
+        "tsne1": 12.436614036560059,
+        "tsne2": -2.2767374515533447,
+        "id": "ff722a8478a7994d879449b9a10647237a78adb5875623a52ec109c150b2c520",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 8.15493392944336,
+        "tsne1": 7.603008270263672,
+        "tsne2": -0.451651394367218,
+        "id": "d28ed7ad7fd543a90ae73ab0dc60ad74ddce1bb75ca24f76398b7048731e39b7",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.491361618041992,
+        "tsne1": 13.139899253845215,
+        "tsne2": -2.169508218765259,
+        "id": "303b8936e9b4548896347b741025a263c1aa55d935d70fccda9f45d418012877",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.4985225200653076,
+        "tsne1": -9.89151382446289,
+        "tsne2": 3.3163065910339355,
+        "id": "dd06d48347427fe04fb080d04376b8f1c4e311221564494df7d169cc029377fd",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 9.023868560791016,
+        "tsne1": 6.922782897949219,
+        "tsne2": 0.026875324547290802,
+        "id": "5c30e5790f44ffdf40e77e39836613df435c6da1b823a734e9800df2fcaff892",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.113106727600098,
+        "tsne1": 2.111039400100708,
+        "tsne2": -2.3292360305786133,
+        "id": "1f4949fd37b75dffe90dc9c806ebce6adf7ae3cb0bac2c869db9d4eb235ea9e0",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.383169651031494,
+        "tsne1": -4.03277063369751,
+        "tsne2": -0.9771837592124939,
+        "id": "d8d7db9df9c6e07ef3b937f6c9065887155054b68fe8f9b60bb98ef1c7a04b1d",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -6.400292873382568,
+        "tsne1": -10.830192565917969,
+        "tsne2": 3.2709195613861084,
+        "id": "2d4eb3c2f697147f1b6432fd9adccf2f4e58d644fa57f5687adf81353dd614b5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.2883806228637695,
+        "tsne1": -0.3776414692401886,
+        "tsne2": 1.4219646453857422,
+        "id": "83e1e6444607308fd571fb4990504f7454e121c194ea0d3408fa77bc118152fa",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.086505889892578,
+        "tsne1": -0.864462673664093,
+        "tsne2": -1.621921420097351,
+        "id": "98fbced8044d34487ea94edfb249deb6c5718b60c5c4df651547e7e73eaacfe5",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 4.88886833190918,
+        "tsne1": 5.181786060333252,
+        "tsne2": 0.6537989974021912,
+        "id": "f0753f637d5611a7dfd1d72b84b8a7baca134bed12b5535bd088cf050fd3b1f6",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 4.567139148712158,
+        "tsne1": 8.301169395446777,
+        "tsne2": -1.3695076704025269,
+        "id": "f34010f11c8571e0d25af5f712f8e242c4265b72427fa03c826ef59283d114e2",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 4.806056976318359,
+        "tsne1": 7.708193778991699,
+        "tsne2": -1.0821030139923096,
+        "id": "2196efbd2542952db804cf2b3c461fda7351b6d1cc87fcbec6914834ebb7734c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.49647045135498,
+        "tsne1": 9.173555374145508,
+        "tsne2": -1.145570993423462,
+        "id": "550c5d013d8e0b01b1dd9c7f787c5e2d8e1a254226cbab94bba830fe2b63f6a1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.5017163753509521,
+        "tsne1": 1.6910064220428467,
+        "tsne2": -1.5673152208328247,
+        "id": "6225eac6f96a81eae73e8c74c67465e2dd3baaf2744e0190b8475b5e6e21e563",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -8.251056671142578,
+        "tsne1": -2.1275153160095215,
+        "tsne2": -2.451205015182495,
+        "id": "0820c1474b8defd2b7a64bd9ccb48dbb41a94bf359974a7dd9d874679cedfdca",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 4.427485942840576,
+        "tsne1": 9.615031242370605,
+        "tsne2": -2.016310214996338,
+        "id": "54a6cef0f0c1031986ef1172e13ed1c35a03c8f0a1868c3cbe90dc9b7f3a8da6",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -0.8242589831352234,
+        "tsne1": -16.087602615356445,
+        "tsne2": 7.573981285095215,
+        "id": "fc28bdc6427bf440db57a89257c5ce71e00e86c8530292b51743979351527903",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.2325351238250732,
+        "tsne1": -2.023499011993408,
+        "tsne2": 1.6570740938186646,
+        "id": "ff432acfceffeb17115123287685e008aab7376ff74abd635d7fde3844114861",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.26813197135925293,
+        "tsne1": -0.4426824748516083,
+        "tsne2": -0.6406784057617188,
+        "id": "7a5907acecba8aecf26f54b169be0147ad18ded63329387c74aa776547317c62",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 8.198101997375488,
+        "tsne1": 9.545968055725098,
+        "tsne2": -1.4350879192352295,
+        "id": "daeeeedcc455bd66063c760a55ca77230f955645bd5434da72409e8cef9a9812",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 4.474259376525879,
+        "tsne1": 3.553194284439087,
+        "tsne2": 1.181104302406311,
+        "id": "1e838306f1a7478ffa91a20fdb5ae474ec24b6b4729392341d8657f546e7eac1",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 1.5343328714370728,
+        "tsne1": 7.341274261474609,
+        "tsne2": -1.6551439762115479,
+        "id": "500cd5ffe77c8184854374ec551681d20c0592ad4228f8d2e874031cb3381a1a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 1.6834120750427246,
+        "tsne1": 8.066462516784668,
+        "tsne2": -1.8912482261657715,
+        "id": "db8bba00cc2ae5c8d152a44b42fc15390cd4cf98ba2cadd77a17fe2d7fa91709",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.7050554752349854,
+        "tsne1": 1.597941279411316,
+        "tsne2": 1.4568644762039185,
+        "id": "d8238537b91f032d474f77581a76a03a8d02b4808294137bf348a61f60d7adbc",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.511902809143066,
+        "tsne1": 1.421325445175171,
+        "tsne2": -2.344939947128296,
+        "id": "48b3e0e3fd8855988c655899fe80f99ac1671f6265f58ba9a7dbe6727a514c69",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.51075553894043,
+        "tsne1": -5.04879903793335,
+        "tsne2": -0.3871968984603882,
+        "id": "775c30251ee952f9d7d09fd1b75d3d02f0222c18a736c6ea8189ef9c1c73b6d9",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.861335754394531,
+        "tsne1": -11.075499534606934,
+        "tsne2": 4.11169958114624,
+        "id": "5d68b8959733bfc4e937c1b9c519a5808c48ab26e076e7bf82f44de34a44ed5a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.2984540462493896,
+        "tsne1": -14.410401344299316,
+        "tsne2": 6.003433704376221,
+        "id": "ef7ebe18547cd186e804cddd1b2beec450c2600fe8a02168355f364f155c202f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 0.8410189747810364,
+        "tsne1": 3.8630869388580322,
+        "tsne2": 0.18542081117630005,
+        "id": "9a7c992a7c33a399ed0a9e9e92fd945ac76c310716ca2c43456f0a454e3bd034",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 7.571764945983887,
+        "tsne1": 12.775408744812012,
+        "tsne2": -2.8854429721832275,
+        "id": "6918b1178fee0bbcf6a8ffd17936f0e088b11dbcc5ea24cbd0abc02a5708f034",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.8056823015213013,
+        "tsne1": 4.949007511138916,
+        "tsne2": -1.8309998512268066,
+        "id": "39a522267f2a604ceb5b7b7a0363f1db12c6abeee1d4c6cb5300eb9c5ed2c274",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.489648342132568,
+        "tsne1": -3.286576509475708,
+        "tsne2": -0.7573561668395996,
+        "id": "6a7fa6b9959c3bef71b67acfe014f2d069da82c8a0ba0c20dac03a2d8f8ef528",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -7.549783229827881,
+        "tsne1": -10.669097900390625,
+        "tsne2": 3.382873296737671,
+        "id": "bd0613ab9d219130dc83d9289ca304a7c8d47007f87241bb2fec0dd8f33248a4",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 7.20554256439209,
+        "tsne1": 13.416474342346191,
+        "tsne2": -1.8911911249160767,
+        "id": "ac50aec4f96a935802c5386c6a052d6334f6807881ecfb4b2f4ec7e83b2f2379",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 0.30635368824005127,
+        "tsne1": -3.902383804321289,
+        "tsne2": 0.02632768638432026,
+        "id": "b250260e3fdad0df976df266c4ac0fda9e9857af3084c571d4016eeaccdb63cc",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.24677564203739166,
+        "tsne1": -1.5050605535507202,
+        "tsne2": -1.7833911180496216,
+        "id": "f3b0835b61f69064ad183502cdf85b04c8ac4315f5c3da8dbceca4bce53ec7dd",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 2.7841672897338867,
+        "tsne1": 10.259868621826172,
+        "tsne2": -3.1150920391082764,
+        "id": "e910bd06da203f43ae78b38c261709d14c78819c34f70096b80c52de7d8b88fb",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.405626058578491,
+        "tsne1": -11.173707008361816,
+        "tsne2": 4.573853015899658,
+        "id": "14b644c476646a37c756f2b0a6021f6efdc87bb6c851d79bb9b8f91981fcb500",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 0.8711982369422913,
+        "tsne1": 7.541001796722412,
+        "tsne2": -2.3153388500213623,
+        "id": "653ec75107bc6436ac034b1c216a7cce3fef677075865985d0a95b34d8c6eeea",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.537258148193359,
+        "tsne1": 2.7361953258514404,
+        "tsne2": 1.3585498332977295,
+        "id": "f2b056de36b3649de45b7b5cea1dbc6fa1ffc57dcde14832ee99be9aab3cb3be",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.943932294845581,
+        "tsne1": -5.346841335296631,
+        "tsne2": -1.4109952449798584,
+        "id": "dba77b5724b8463cb0b4e67b48cbd2b65a0a35d7ff2d53617e72d62789c1b653",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.130544662475586,
+        "tsne1": -1.6166831254959106,
+        "tsne2": -2.87697172164917,
+        "id": "d88ecccc6db355646382cb76347841b3ea1a861d89a275979ff8d30b0e217718",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 2.6210861206054688,
+        "tsne1": 6.073038578033447,
+        "tsne2": -1.0656787157058716,
+        "id": "e26bc66ed043f3ee427957d65e3d11c74ea37409325a1896406c51994f8f53b7",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -8.187128067016602,
+        "tsne1": -1.1192728281021118,
+        "tsne2": -3.0408272743225098,
+        "id": "1f5219efbc86feab52c29300eea1bc2f22aa7f6e8257c5432eea9ea73b70c122",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.311434507369995,
+        "tsne1": -1.2005432844161987,
+        "tsne2": -2.239469528198242,
+        "id": "e8fc163faf86327873961088d228181ae08f068d627915e678fc0c3b5b61bc8a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.0761182308197021,
+        "tsne1": -14.817421913146973,
+        "tsne2": 6.859259605407715,
+        "id": "1545c2aed326d31f23fbd8b312807f16d52286b4c6f7101a4c28a840cf654f51",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.654993772506714,
+        "tsne1": -4.2208333015441895,
+        "tsne2": -1.785414695739746,
+        "id": "0a3a11eeccd106fbefda2cdc3217bf31f31f6e9b54546edd9eb51fd0ac295a2e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.3014421463012695,
+        "tsne1": 5.643906116485596,
+        "tsne2": -0.7975063323974609,
+        "id": "4c0a40502de05e79aacd7131e714319e80300f37a119a944516fbde8e1d006c4",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.810480833053589,
+        "tsne1": -14.63294792175293,
+        "tsne2": 6.263625621795654,
+        "id": "f11e5096730f8427b6468caacc836c01f2fbedae857c660100ccf1d82822f75f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.090296745300293,
+        "tsne1": -14.707908630371094,
+        "tsne2": 6.563470363616943,
+        "id": "e6e643baf21dc255db4bdbfae970af7163ac08b2c2211d248dc94140ea1606f4",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.41588717699050903,
+        "tsne1": -6.207755088806152,
+        "tsne2": 1.174261450767517,
+        "id": "4aa98f2b2c670f45cb82c911199cf0f20f7e46de27d1c7dea658c03f0ba1a907",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 2.706488847732544,
+        "tsne1": -2.3879616260528564,
+        "tsne2": 1.5095291137695312,
+        "id": "cb52e995b80a1aa4fdca6097b30ee78e56dd7647de8caaeaddf210fa578826ab",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.326028823852539,
+        "tsne1": 12.300819396972656,
+        "tsne2": -2.10967755317688,
+        "id": "cfad88f5ec88ff59a9ce8e1f78963ed719b8950541c107168026595092fdb0ad",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.53093421459198,
+        "tsne1": -13.56362533569336,
+        "tsne2": 5.9831743240356445,
+        "id": "96cb160f6c4bb6fa408bf052aacbfd464902b7701ad0f08f6daa49a2633fb80d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.0479998588562012,
+        "tsne1": -1.873998999595642,
+        "tsne2": -2.6364223957061768,
+        "id": "9578e49829c8204b5b9023412c9ecbeb76538cbd246f8d05ababbfd7de3a85ef",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.183587074279785,
+        "tsne1": -10.787216186523438,
+        "tsne2": 2.2310197353363037,
+        "id": "f8eb5a84b58e222638e0205e5f7174db9dcc992981144f12332ce3e57b55e7b2",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.9395266175270081,
+        "tsne1": -16.10173988342285,
+        "tsne2": 7.557361602783203,
+        "id": "27bb5b8afe95e3163563ab516963ffadddac35b0215bf0d6b13a4ecd67ef16e1",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.9921156764030457,
+        "tsne1": -0.8001765608787537,
+        "tsne2": -2.6481776237487793,
+        "id": "a4fadba3a5a5614bc7e4d49f50fa9ac7897252e21ea69a973dd41d7b00bc407a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -4.806536674499512,
+        "tsne1": -5.309478759765625,
+        "tsne2": -2.1308681964874268,
+        "id": "45f5d2b794965c0db03fadd242fb9b846cec45ee4ba83ee4ac23301646e7cdb8",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 8.365943908691406,
+        "tsne1": 5.086545944213867,
+        "tsne2": 0.033802736550569534,
+        "id": "b2c7a17894b532b5683f2317becbebb227c5c5dfbd72b2cb52320a154353269c",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -4.820817947387695,
+        "tsne1": -6.842971324920654,
+        "tsne2": -0.3306225538253784,
+        "id": "de51de10c78e34c151d0397bb1e37f0cfb82af4df8f7e6c86ee81284e65f594a",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.6853227615356445,
+        "tsne1": -14.197052001953125,
+        "tsne2": 6.049716472625732,
+        "id": "1e2a50c1f6f5855fe4434eaa6089a2ece5e1204e4a54642abf171241b4bdd047",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.5183790922164917,
+        "tsne1": -4.892673015594482,
+        "tsne2": -0.8501819968223572,
+        "id": "530bf1970f9d4d7e0d9251ff452c022f7c51b423d55158c01a95db48e471c217",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -6.19545316696167,
+        "tsne1": -4.062488079071045,
+        "tsne2": -1.6243888139724731,
+        "id": "c0f89183a7d1c42c560fd8d7a891f99220e4926726b1b1b3502fd1aeb61996ad",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 4.785325050354004,
+        "tsne1": 6.125299453735352,
+        "tsne2": -1.4618737697601318,
+        "id": "dfb4106caced8f0b72e334f2d96310382e6b7beffbbccd7ec6b3651b105794fc",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.985795974731445,
+        "tsne1": -10.768736839294434,
+        "tsne2": 2.906106948852539,
+        "id": "2662a633bfa5b4cdbfc923a437b1b49ffeadd9c49bac371be8d257950acc1803",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.320975303649902,
+        "tsne1": -10.433432579040527,
+        "tsne2": 2.156442880630493,
+        "id": "148a3230f7b3b363a92ff0fd70568a0635fc253c7b982363d54670a01bc0bbbb",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 2.8989765644073486,
+        "tsne1": 1.8602356910705566,
+        "tsne2": 0.6655581593513489,
+        "id": "f94cae2efbaa6dca97191808983f5e4feae39089a91d53581b1eaa914eee6ff0",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.9151235818862915,
+        "tsne1": 2.0900156497955322,
+        "tsne2": -0.9014838933944702,
+        "id": "f7a393ab36ccf9a1aafec7a21316d049176fca6f1cc1a9fffdbf77323a1d06c1",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -8.010506629943848,
+        "tsne1": -2.4510128498077393,
+        "tsne2": -3.0222930908203125,
+        "id": "924fd9d4441e52d78a04d8aede5b8eaf65b4242f5f030015c0bd9aa5e374e802",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.8029351234436035,
+        "tsne1": -11.481637001037598,
+        "tsne2": 4.254288673400879,
+        "id": "cff0a5ee463590f29b50730744869122aaf3e940fc663570c0fc495624d93d6d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.0464887619018555,
+        "tsne1": -7.983658790588379,
+        "tsne2": 0.624474287033081,
+        "id": "1f35420dc2bf42a85a59e38c2a429bd58bc85ec1ad8b6990adcbbd9d429829c0",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.0974650382995605,
+        "tsne1": -12.334162712097168,
+        "tsne2": 4.116362571716309,
+        "id": "28d3ffeeada7ce103a3c9f3edaccdb0a8cb99d739e8653251a9c2fff5f656931",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.5281758308410645,
+        "tsne1": -4.217366695404053,
+        "tsne2": -2.16581392288208,
+        "id": "e31389b2199961dc780bd5b13fee2ddf9c2d65d6c083fe70d0adb2e23c4a01fb",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 4.4962477684021,
+        "tsne1": 5.247313499450684,
+        "tsne2": -0.279379665851593,
+        "id": "7220866f85ebf0b69fe4d21f094b0cc06db95634de20869f08df49770504c831",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -8.406645774841309,
+        "tsne1": -2.0041167736053467,
+        "tsne2": -0.7463319897651672,
+        "id": "f2c4615e6e171386e812ab067c4a25f6a0e160d6c9c7fd4d8d51e5cad64cf034",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.811211347579956,
+        "tsne1": -10.608709335327148,
+        "tsne2": 4.336081027984619,
+        "id": "14fb87c29fc70b684582d0d2070f8b1e622d4ac1fdd5ab40f26cd380cb920f27",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -5.508220195770264,
+        "tsne1": -4.912291049957275,
+        "tsne2": -2.2115883827209473,
+        "id": "1241c3c89e5265de1ed509f0029a191aac797488c6f66bd7684ff2e48eee7f62",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -6.193549156188965,
+        "tsne1": -12.296107292175293,
+        "tsne2": 3.869786500930786,
+        "id": "92cda2a6c0d2d9169443f7388f23e09b9dfddaed27caec54be084b5f6b5e3458",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 0.08733011037111282,
+        "tsne1": 2.3183929920196533,
+        "tsne2": -0.2786712348461151,
+        "id": "d10ccaa8220de5bff5bffd4058fa8ca6cebeb95ea70ab134f5c62d3d65a5b61a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -2.762817621231079,
+        "tsne1": -11.70118236541748,
+        "tsne2": 3.986870765686035,
+        "id": "aad29da4ed5ae2c50ec212c8da2392d526e910f428a41e0f2599393f65bfd307",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -8.213003158569336,
+        "tsne1": -1.483083724975586,
+        "tsne2": -2.3688321113586426,
+        "id": "ea6397bbe15bd20212137454ead9ec6fb19fb935b29855a4fa574392b1228295",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.6626107692718506,
+        "tsne1": -0.5423164963722229,
+        "tsne2": -2.3580503463745117,
+        "id": "5200fba97927005c873c73c0466ed52f511c96b4aaca086eafdec1471fa4109b",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.901134967803955,
+        "tsne1": 4.848626613616943,
+        "tsne2": -2.078733444213867,
+        "id": "a5fb330deb8caf6a4295dc90df5caabcadd56e8d23f42b568e051a37a8dd1bf6",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 8.59126091003418,
+        "tsne1": 11.739651679992676,
+        "tsne2": -2.0251877307891846,
+        "id": "e318c6ffc776c9e52f82a374b86004d1dca17abeeb61d13e56446c65294b70b4",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.842266798019409,
+        "tsne1": -5.9520721435546875,
+        "tsne2": -1.2328708171844482,
+        "id": "a019b2607c0b4ec341564a990fb8f820205769a2b5ac9a40300b570e5e1220c8",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 11.213900566101074,
+        "tsne1": 12.294113159179688,
+        "tsne2": -2.2081356048583984,
+        "id": "932008b20316618523225004f999c2efe6f9127e5365794ef5151b049aa73c35",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -7.984100341796875,
+        "tsne1": -0.45475417375564575,
+        "tsne2": -2.759726047515869,
+        "id": "410e07d94cb23227d8c3c26fbd834fac934cc6cdfdf0e7a6cc4d8794f2577d29",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.801443338394165,
+        "tsne1": 2.1873250007629395,
+        "tsne2": -0.8856359720230103,
+        "id": "f138d5ecf48473e97bc8acb0d52f2951220fd0a5fc5d60f7a7a906e00204fbaf",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.0125174522399902,
+        "tsne1": -3.3085532188415527,
+        "tsne2": -3.7010951042175293,
+        "id": "89942500844f67486d0f49c2f180d4769bb4cdfeb887eff32fd1ac62b1fd4446",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.1769216060638428,
+        "tsne1": 1.08518648147583,
+        "tsne2": -1.5054107904434204,
+        "id": "d372b060a98a39ca30ed25b60ff16add15f9de64f5b7a7c74ead360237d53793",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.035946249961853,
+        "tsne1": 5.746510982513428,
+        "tsne2": -0.9806227684020996,
+        "id": "2ef55d5499ddc0e54bc3a43eded9c5a7deaae8fe610f50712d9b3dbd09a9c23c",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 8.47153091430664,
+        "tsne1": 8.633973121643066,
+        "tsne2": 0.18794851005077362,
+        "id": "34a7999ed37e9c927a029e8754497ee6e41c56c4633cfc7829ec8ce52adba400",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.205129474401474,
+        "tsne1": -7.2179460525512695,
+        "tsne2": 2.5777840614318848,
+        "id": "ff1e46ef0f26bd522cc3f760726dcbc7d5f9f8f99d89bbc00c3287c2def76622",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -6.460883140563965,
+        "tsne1": 1.2608684301376343,
+        "tsne2": -2.709585666656494,
+        "id": "2091c47411d7a6841ffccc72331fb7fe26ca0e3667fd99bd5d40ae078eade5ea",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.2425099611282349,
+        "tsne1": 5.07393741607666,
+        "tsne2": -0.5446385741233826,
+        "id": "caacca40db4962b5f8a92cb4bf096ae6b3410e3034b94638c5d8a58af674fd87",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.3690999746322632,
+        "tsne1": -14.709080696105957,
+        "tsne2": 6.723640441894531,
+        "id": "de70005ad6332d7e4c9d44c0cd667c8b19ec761b2b4b65ebe53e85b849ce75b8",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 8.325322151184082,
+        "tsne1": 8.229235649108887,
+        "tsne2": -0.1295236051082611,
+        "id": "6be4d9bcd8ed187f52a62ef6aee31db22bfe1b5d929afde286abbea769e99efc",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.754092693328857,
+        "tsne1": 8.205023765563965,
+        "tsne2": -1.1928797960281372,
+        "id": "d9bf455c9a06018c9867b8984949681226b80122c7115161063a1f7a110d94fe",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 3.797018051147461,
+        "tsne1": 1.7748020887374878,
+        "tsne2": 1.3067562580108643,
+        "id": "e7b63bc6af6dc0dfb589fdbfd3e3e90853a3479b2c2e5999cdd06424216bc132",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.198089122772217,
+        "tsne1": -4.195489406585693,
+        "tsne2": -0.8384445309638977,
+        "id": "94cbe4da7363609f8643a320e0d9bd8a1d5b26ff50e02f345aa32e9a575ba704",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 3.1805243492126465,
+        "tsne1": 4.9126386642456055,
+        "tsne2": 1.7383062839508057,
+        "id": "04d542154f66a089409ea9933e0cb4a082830dc3e070c1f04982ded2bb698415",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 3.7295892238616943,
+        "tsne1": 0.7215587496757507,
+        "tsne2": 1.416520357131958,
+        "id": "96e5ccba8a76b9170856aa6d40c8db9323a3c42f0b734a727f81e0e1737719d5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.6918612718582153,
+        "tsne1": 8.039571762084961,
+        "tsne2": -2.9379048347473145,
+        "id": "87ac06c5c8c0ad3d7032171468229a3a789ae3a44f9fa15581ce445e092b2d00",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.2797292172908783,
+        "tsne1": 5.363315105438232,
+        "tsne2": -0.32815125584602356,
+        "id": "f28bda338a1ac57151585ed92b1edab480f58cff1f3c6e6afc26e50ae2b44acd",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.6228508949279785,
+        "tsne1": -5.475451469421387,
+        "tsne2": -1.9295060634613037,
+        "id": "e49f8efe3be331dc87144b22b0d914d4955931dc3b36cca784fc02e139ec8a1e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.3881422281265259,
+        "tsne1": -5.072131156921387,
+        "tsne2": 0.05019431933760643,
+        "id": "1e82fc236a3b461618a52a9fccbc8cab0fd3edf690f0b54b173a2dab933b44cd",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.16846144199371338,
+        "tsne1": -1.1011452674865723,
+        "tsne2": -1.9204542636871338,
+        "id": "57e3d6df58096e13f798ffb3de848de335cfce1c508c82393114899e4f658968",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.750607967376709,
+        "tsne1": -0.7559585571289062,
+        "tsne2": -2.4577174186706543,
+        "id": "ab877cb23e34f37d6dba590faf064465354d4318b598172857ea418412b87a26",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.430997848510742,
+        "tsne1": -14.127534866333008,
+        "tsne2": 5.9036455154418945,
+        "id": "7fdd255f5d3cf45853d49c3423c3c447ed6f2748adcdefbffca2973a0e74a3b2",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.2097933292388916,
+        "tsne1": -10.879414558410645,
+        "tsne2": 4.511911392211914,
+        "id": "09464799430e6491f387cabad954ee9e5e0a20cedd9c40bbb35782d2ee4ac5cd",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 4.992854595184326,
+        "tsne1": 6.470137596130371,
+        "tsne2": -1.1043912172317505,
+        "id": "510f62e15e6c9278eb198d9f5e0e4eb93b133f9f43ae558628892e25ede489fe",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.9172773361206055,
+        "tsne1": -4.1843695640563965,
+        "tsne2": -1.9993185997009277,
+        "id": "d155e365a4bcb9b388fdf45587cb5a7d1ca7ca0c0648d29cb1860b609e0feb83",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 2.62738299369812,
+        "tsne1": 1.6159642934799194,
+        "tsne2": 0.8816973567008972,
+        "id": "829ed552f21d91bc3098f8c41b1321232307c52903d2978f41dda34d9b38291c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.0818127393722534,
+        "tsne1": -3.457798957824707,
+        "tsne2": 0.50887531042099,
+        "id": "4650b77f3d072c858451b690e614eb1e02969055f2f4f37b913d4a14c384f699",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 7.98728084564209,
+        "tsne1": 5.020976543426514,
+        "tsne2": 0.11968351900577545,
+        "id": "f6031bd7600ab4d2052ac1d390b086b8aadce90371049a61aef09e86176288be",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 0.8883816003799438,
+        "tsne1": 1.819566011428833,
+        "tsne2": -1.197687029838562,
+        "id": "358144b18910d8da5e6e2022d3c6ba0ff34c455680117ce3cc8a097f54068af1",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 6.286448955535889,
+        "tsne1": 8.135747909545898,
+        "tsne2": -1.6600385904312134,
+        "id": "98beed9d1813c5c34f671327721757994bb8bd59978b3ec0d55f11c51f364cac",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -8.294910430908203,
+        "tsne1": -1.503818392753601,
+        "tsne2": -2.6157588958740234,
+        "id": "0914f9b01f384db28b2eb1005769d8f53e78090161d76c3f9b3fb5b118be3c7e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 4.708988666534424,
+        "tsne1": 5.860581398010254,
+        "tsne2": -0.9394774436950684,
+        "id": "07a766731984f4334b5f38267117a761d3f0db9804224190f8ff8ce2a6703047",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.1508691310882568,
+        "tsne1": 5.698246479034424,
+        "tsne2": -0.9277973771095276,
+        "id": "a4e45f9f74f4e7745649f8b7fd738430c44b3d4d1bf3435b4ed90bd134c7b5c3",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.0509016513824463,
+        "tsne1": -4.596161365509033,
+        "tsne2": -0.8592525720596313,
+        "id": "0435cefb7c4d96c6e4cf3de164fceb4974a328b5887cbe724284f8fb1b551e5d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -7.26168155670166,
+        "tsne1": -11.588971138000488,
+        "tsne2": 3.413485527038574,
+        "id": "d7c780035ac7021bbe13f9cca2d9a6f681d8fc8b940b63032b05f9c034255bb1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.205412864685059,
+        "tsne1": 5.923398971557617,
+        "tsne2": -1.158717393875122,
+        "id": "27a3496e9a570b45a967d442f9efa678be85e1902a47b9531fdd5ad5644f9863",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -6.395973205566406,
+        "tsne1": -6.036595821380615,
+        "tsne2": 0.9973697066307068,
+        "id": "419cf8a56f88bcf29159e12d9c9c3fb5cbcb6b11550b291f01c8a13cf0d9e781",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.2864450216293335,
+        "tsne1": -3.5759830474853516,
+        "tsne2": 0.839547872543335,
+        "id": "07c83f382080e759da1f773d07a6263249e9cb31de30cfc1ae10f591529fbedc",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.215911865234375,
+        "tsne1": 1.791081190109253,
+        "tsne2": -0.7868192791938782,
+        "id": "888d97b511fb34ddd7834ea28614a85564bc40f531eaf794916d15fbab05107e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 2.0764048099517822,
+        "tsne1": 3.145467519760132,
+        "tsne2": -0.24158844351768494,
+        "id": "66e080c49f7dd3779e966d798913160f2a722c772465ea7971692d21259b5c20",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.7754246592521667,
+        "tsne1": -7.445503234863281,
+        "tsne2": 1.6132185459136963,
+        "id": "77829593963162833c676df5d9e1d1621531522f7cb7ce8abf9a1316798b383d",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.045642375946045,
+        "tsne1": 9.600040435791016,
+        "tsne2": -3.6153793334960938,
+        "id": "039b6d44a8446729f99152bcf45f5c363af4306c14f27c299a8e85e641125e1d",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.017146587371826,
+        "tsne1": -9.099172592163086,
+        "tsne2": 1.5962055921554565,
+        "id": "2dcbaab36f12c22e35e000b88c3f242a9fdc651042924f8eef47fba37fc8dcf5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.511627197265625,
+        "tsne1": -6.0885329246521,
+        "tsne2": -2.052584648132324,
+        "id": "237912f351bef34fce5bc9076d03d0e0356db26967cc448dd666aa002f837bb4",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.34502649307251,
+        "tsne1": -1.6189405918121338,
+        "tsne2": -2.4233484268188477,
+        "id": "49d4914573e81e8cb23a4e96f78a2de50fe17facc4a00cc555d87fc2ced50886",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 3.819470167160034,
+        "tsne1": 8.585506439208984,
+        "tsne2": -1.6937143802642822,
+        "id": "82c5cf132a2df9d7a3e75f5686d2a4d1121a2e055c18bff6b2a44f4dc77e8f55",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.414028286933899,
+        "tsne1": 7.798673629760742,
+        "tsne2": -2.0496082305908203,
+        "id": "841ed8db407070d9817fc5a697b8c9537095da46aa5acb1b39507fb944a27143",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.9057905673980713,
+        "tsne1": 2.5382158756256104,
+        "tsne2": 0.38073575496673584,
+        "id": "ee02d9f46a9578f49adac5966acc551b7263d8da6a93741a6437c3847557f56c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.740840435028076,
+        "tsne1": -6.181601047515869,
+        "tsne2": 0.16867931187152863,
+        "id": "9720b25df921fee33e9138d9d04bda54452f6a2467f4370665433275dd260656",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.5467143058776855,
+        "tsne1": 4.567131519317627,
+        "tsne2": 0.47834256291389465,
+        "id": "e3ee508bf027cab5b0d3625219ac574fa1830a24ad7f18fa8d38ac7adfcd90cf",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -6.068658351898193,
+        "tsne1": -5.977116584777832,
+        "tsne2": 0.02730708010494709,
+        "id": "5161464a31d919a14ab597d082cfd757c957282dc96ffb12076f2693587dbd0d",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 6.8603997230529785,
+        "tsne1": 11.493064880371094,
+        "tsne2": -2.1323626041412354,
+        "id": "d866f09e518d30ff9e2d4da2f0f74945012b5614702677af12bb750a2e1a498f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.435030937194824,
+        "tsne1": 10.747178077697754,
+        "tsne2": -2.2366795539855957,
+        "id": "932767b9362f78813a404b609a90478b0e78833a56254ca6432c4be432f183d3",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.016145706176758,
+        "tsne1": 8.534048080444336,
+        "tsne2": -3.671511173248291,
+        "id": "8fd6a9ec2e54014eeddf80a7bc56386c53e9c6f8bd6c635ddccb696d873c7237",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.5112724304199219,
+        "tsne1": 6.031671047210693,
+        "tsne2": -2.0985724925994873,
+        "id": "b36b6e5c5d94ffbdf9bc74f4b5e92166156658876f7ea8f6fca5d3a756daf0ac",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.753607153892517,
+        "tsne1": 8.141840934753418,
+        "tsne2": -3.1872637271881104,
+        "id": "3d7b3e4ffcfd05da63a69ad44810689335605009844abba81953012465cefb99",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 9.307106971740723,
+        "tsne1": 11.666462898254395,
+        "tsne2": -0.011545427143573761,
+        "id": "2ac610fca802cc7842a15d4868fdc5b78ce42a616fdd7211344634a1ebb30518",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -7.966162204742432,
+        "tsne1": -0.6452102065086365,
+        "tsne2": -2.4493744373321533,
+        "id": "e10963f3188a5063592c3e3d74ddd9bba8a7b437b3157585dbdd2deb1d5dfbe5",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.3179658651351929,
+        "tsne1": -16.087547302246094,
+        "tsne2": 7.469984531402588,
+        "id": "34c5f89d0ffbdedf5feb82783c41c627fccc34130c33fc6bfbb6cb58eb462803",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.0536956787109375,
+        "tsne1": -13.932641983032227,
+        "tsne2": 5.819918155670166,
+        "id": "dee0e7e7e4b5fa5a1d315e1f0a830e7294c8b17508685cf77e040f92d9ece3b3",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 6.736028671264648,
+        "tsne1": 3.066035032272339,
+        "tsne2": 1.1510313749313354,
+        "id": "12867b4469a833520347763d79e86d58d2376f365010811e4a7fef1e6b082599",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.8545715808868408,
+        "tsne1": -15.130537033081055,
+        "tsne2": 7.073292255401611,
+        "id": "e909f47f00dafe6ce8b2a89cb97a1ad2c2b587732f02778d5cc1a7490ae6d155",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.8748221397399902,
+        "tsne1": -8.561190605163574,
+        "tsne2": 1.6136199235916138,
+        "id": "5c225daedac6b47bde6260a53e2e7227822aecb248ca9667bebf86ee5167715c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.1065590381622314,
+        "tsne1": 6.43628454208374,
+        "tsne2": -2.2495203018188477,
+        "id": "9aa37e584a9967ac43c26e3ee1a8d3a229994ea906e2963d05814edace2185eb",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.5671918392181396,
+        "tsne1": -5.288144588470459,
+        "tsne2": -0.4956061840057373,
+        "id": "71e56a21dce3ba0b98fed254f8da8d36a0788dec4a6d3daf69dab1cb00c5efaf",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 3.239943027496338,
+        "tsne1": 2.359372615814209,
+        "tsne2": 1.8060171604156494,
+        "id": "e426bdf6498e30eb773a416e83b22a541a657599cb2a7dd2d02f3f742e6dc8fe",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.9737553596496582,
+        "tsne1": -14.960023880004883,
+        "tsne2": 6.719459533691406,
+        "id": "19cb985c5d674b557c284ef9ee4a0b0a254a3a7fc21604c73a52d02b2fc13965",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -8.427699089050293,
+        "tsne1": -2.7384822368621826,
+        "tsne2": -2.1246604919433594,
+        "id": "ceb7859c6c50b87f59a6cdcfd43046ffac846bf23b6b536ead8263039c083ce2",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.51990807056427,
+        "tsne1": -4.250741481781006,
+        "tsne2": 0.10869717597961426,
+        "id": "2d368f3968b9bce1bc73c87a1dcfc99d394e3cc37fd8978ad81378580de85f46",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.130437970161438,
+        "tsne1": -3.5635364055633545,
+        "tsne2": 0.6757034063339233,
+        "id": "556bf472609715d814ba6703224ab525b9d03fe4cc2fa2ec2361d6537f5bdefa",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.02621078491211,
+        "tsne1": 10.271919250488281,
+        "tsne2": 0.17118167877197266,
+        "id": "5911996ab9e39f7c9e545092f5724532f7f8bd6fec6733792c7849ac1ccd9c10",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.0356963872909546,
+        "tsne1": -12.734108924865723,
+        "tsne2": 5.635199546813965,
+        "id": "e13ecb57c37b2657d224cd96303db6ced0a9d8fec5fcd4d0d1dcd77d3b5c6211",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.01040317676961422,
+        "tsne1": 5.483977317810059,
+        "tsne2": 0.38029080629348755,
+        "id": "7cb0d29cb5c1c7bf679f9e466c61d7c95397dcccd425876314343341fd0ac425",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -6.537471294403076,
+        "tsne1": -11.631855964660645,
+        "tsne2": 3.373826503753662,
+        "id": "b79d54aaa242032e1fc3d906d3a4c833e5309c26d4227965ccd0f74a68afdb81",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -5.505434989929199,
+        "tsne1": -7.13839864730835,
+        "tsne2": 0.1832498013973236,
+        "id": "8604813b8bd3a08606728e1f82b07c7e4d1eab190299d44733e170078f3dc080",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.216977834701538,
+        "tsne1": 5.080738067626953,
+        "tsne2": 1.5914207696914673,
+        "id": "ffdd5f177f6cc5f7d57b0547eb48fddccfe06851893f19305367e9be00a06d38",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.71706485748291,
+        "tsne1": 12.546918869018555,
+        "tsne2": -2.235032320022583,
+        "id": "13c6872ad8235fb5e7e2e740ef36f3b0acb54ef6ff1fcbd50323781fb7cb453f",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 1.8100018501281738,
+        "tsne1": -3.497844696044922,
+        "tsne2": 1.4001214504241943,
+        "id": "8563c27fadd4b5c6c3578fab139d38ac1575cc06ab87753828385c33ea54ce81",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.4003376960754395,
+        "tsne1": 5.0749359130859375,
+        "tsne2": 1.638827919960022,
+        "id": "537c125f17f9ede356619b2e212b1b087e5df8f7f3687c01f43a5c1dbbcd919c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.559990406036377,
+        "tsne1": 12.793997764587402,
+        "tsne2": -0.9624897241592407,
+        "id": "4ff604af10256237042e8eb1e3e06d89e1f80e4ab5dff956bc3c6dccf902b6ed",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.9299240112304688,
+        "tsne1": 2.792400360107422,
+        "tsne2": -1.048663854598999,
+        "id": "732e2881ddac73a8c5c6a488ec5ffa0d00b8ba4a678c88c35d66bbffd41c0430",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 0.7703660726547241,
+        "tsne1": -3.5191798210144043,
+        "tsne2": 0.15560290217399597,
+        "id": "e0d2be68e979825357dbf3db67c749ee88711eb96d5aba8553bef79a24c3e370",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.9192383885383606,
+        "tsne1": -7.1529860496521,
+        "tsne2": 1.589728832244873,
+        "id": "58a731f77ddb3436e578c05c7514b10f3f713ef93aff7b68730f68fa9435df7a",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.805406093597412,
+        "tsne1": -8.588597297668457,
+        "tsne2": 1.7233648300170898,
+        "id": "843a4ea15801e21989ff9f4756ab0201a6abc642e3408f4d268724192ae0af64",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.2743637561798096,
+        "tsne1": -4.506817817687988,
+        "tsne2": -1.478822946548462,
+        "id": "11fe7ce3ac739d4e0056e596d6b5577e5f33cf00695b3820fb3ec9993e0055dd",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.352077960968018,
+        "tsne1": 11.894200325012207,
+        "tsne2": -1.997178554534912,
+        "id": "6897359cd28bccb22cd4323754152ad7569d2049e203ff45a774af7a4d07fc2b",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.3404626846313477,
+        "tsne1": 2.9064292907714844,
+        "tsne2": -0.7311354875564575,
+        "id": "878d784ac3a76b32345dfffce7875bc51c4292a3ff9d517914d53993d71a932e",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 5.82601261138916,
+        "tsne1": 12.665567398071289,
+        "tsne2": -2.2616782188415527,
+        "id": "95b92170d553e23114a10b904346c9a93e92d3eef599bb4103fe3d18435da60a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.2590702772140503,
+        "tsne1": 0.035732947289943695,
+        "tsne2": -2.4147796630859375,
+        "id": "fb4ec1c13afd12eaa3cffd7bde4d8676882ade5f9235fbf34948de361b54594f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.902108669281006,
+        "tsne1": -9.145959854125977,
+        "tsne2": 1.2368464469909668,
+        "id": "5bca89dfa8384755ccab07f1ed3bc73447a5f12ac0defc57f2809d1a4aa3d0db",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.322321891784668,
+        "tsne1": 8.935893058776855,
+        "tsne2": -2.681551218032837,
+        "id": "a2bf9e8874d999fa5eb76a5fe55c7c3d151124cef4ee069aef017685259ad990",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.7056708335876465,
+        "tsne1": -0.872399628162384,
+        "tsne2": -2.2209858894348145,
+        "id": "65d72b9cc58c7a510bb4814c049e5b667383c5e3469d78e59dd7648fc91baec6",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 1.0643593072891235,
+        "tsne1": 5.1018805503845215,
+        "tsne2": -0.4539840817451477,
+        "id": "8eecf4f246545f1b4e0e99e57d9d8be57da283ebce97146ecb719907334d3048",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.9286043047904968,
+        "tsne1": 5.322053909301758,
+        "tsne2": -0.4862957000732422,
+        "id": "8b249dfde61e1a56d64a61641ae72941ec7eaac0febe0d2c9822d0170430229c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 0.46152883768081665,
+        "tsne1": 2.412662982940674,
+        "tsne2": 0.09595328569412231,
+        "id": "a305baf5aa48bc7f0ae542fa94d0f6a35be9d4233e864f0f2367401838e898c0",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 4.876093864440918,
+        "tsne1": 2.529141902923584,
+        "tsne2": 1.371791958808899,
+        "id": "c3503dccb1484cff90e4d44da65009c8b214250f8d5fa1f039d9bd1762860dd3",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -3.95338773727417,
+        "tsne1": -3.0402719974517822,
+        "tsne2": -1.7633092403411865,
+        "id": "af238c8848c05f50cc8288a304dfd88a679d20b1f9934dddc33c419ada605c22",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 8.600553512573242,
+        "tsne1": 9.963883399963379,
+        "tsne2": 0.40073710680007935,
+        "id": "8732af1033847b5371fb89c5c2ad88cb2a784c4f2cd8380205b99483a77d038a",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -1.2012176513671875,
+        "tsne1": -14.750049591064453,
+        "tsne2": 6.806774139404297,
+        "id": "9fdefc1eb640754b3601d30685892a98d2e818f35a621847e010afe287fa3c62",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.9562468528747559,
+        "tsne1": -13.802916526794434,
+        "tsne2": 6.029835224151611,
+        "id": "199c98c80bb9d9fb3a8aa0b3d4db825302637c7895458b20ba7a3e4de52941d4",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 3.9813992977142334,
+        "tsne1": 5.130033493041992,
+        "tsne2": -0.4125829339027405,
+        "id": "b834a42f8da356691760e020134f2bfcdf299a283ea2edd80529d56699364a9c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.670405387878418,
+        "tsne1": -7.323879718780518,
+        "tsne2": -0.23527099192142487,
+        "id": "16fad5785f8b1dc18e95f58decadfa838d8ec2443ed259ebafce6b9786d539ba",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.178720474243164,
+        "tsne1": -10.609962463378906,
+        "tsne2": 2.8483848571777344,
+        "id": "cc0381c11bbde3160c422c4bb8d057a53d6849f47299931e23a3e69d8a3877c2",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.9517648816108704,
+        "tsne1": -16.051652908325195,
+        "tsne2": 7.529540538787842,
+        "id": "e9fd8efb52736a362311ddcc70fa3b80e638aa47ab64d7d9ccb0c3ed1bdff5f4",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 1.8188152313232422,
+        "tsne1": 3.257586717605591,
+        "tsne2": -0.19721432030200958,
+        "id": "965635ea6e33a69284ffce759828d68d460702b08dc17ae6c655019fee097115",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -4.460968017578125,
+        "tsne1": -9.21262264251709,
+        "tsne2": 1.004494309425354,
+        "id": "0bb717346394cdf92d40449ed6d942a73a6159c8105514ca88857bde2efcf2ef",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.151960372924805,
+        "tsne1": -12.253216743469238,
+        "tsne2": 3.8314123153686523,
+        "id": "752b954eceaca6ffe936616a528c8ad2138716e182ebc9982d7a9a30d780d393",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 5.3575663566589355,
+        "tsne1": 12.822379112243652,
+        "tsne2": -2.2493860721588135,
+        "id": "241f7a29ef2354ebe427f76453593b0a73142feda7dd2dc95a3cd46399b2e1b6",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.220970153808594,
+        "tsne1": 9.468770027160645,
+        "tsne2": -3.6007304191589355,
+        "id": "710b3799fa793c0f16970f460e72ab12e86aacea57db915efd0367a0dd097942",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 8.598251342773438,
+        "tsne1": 5.320921897888184,
+        "tsne2": -0.0042890515178442,
+        "id": "226ca09f5524fbf695afb24b446e87b516d8fcf56df7dc81b8ed33f4c702b8be",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.6206297874450684,
+        "tsne1": -8.582826614379883,
+        "tsne2": 0.39780595898628235,
+        "id": "f1d3c4fe493b8eb28fd73df04257d62cd39d78314e07c024a8c4c61743d4633e",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.19162654876709,
+        "tsne1": 1.6084892749786377,
+        "tsne2": -1.329704761505127,
+        "id": "1a446d2d8063031ada0817ec4450b87e299149e6f52d1be5c1ed14dd1e0b02e1",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.732182741165161,
+        "tsne1": -6.916019916534424,
+        "tsne2": -0.5757613778114319,
+        "id": "e85c0579f7343025d5e4f0d57da5b39b7491012e4a40b2e44ac6e71dd242dc67",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 7.758096218109131,
+        "tsne1": 6.959368705749512,
+        "tsne2": -0.1857766956090927,
+        "id": "fb0667abee07de52a5b121ea0e21f351f41de652485e070c931d7a495ac338d4",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -6.295132637023926,
+        "tsne1": -4.356346130371094,
+        "tsne2": -1.705142617225647,
+        "id": "d96f8f56e960f28e87a2def06bbcbd47e5303fdaaef8840cfd602b1371176fbb",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.456434488296509,
+        "tsne1": -0.63900226354599,
+        "tsne2": -3.6913836002349854,
+        "id": "30ddc1014b32c82abf13a9996133cdb2087c49d889e669492e4263bc529eff1a",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 7.198014259338379,
+        "tsne1": 12.71827220916748,
+        "tsne2": -1.0245068073272705,
+        "id": "cf662d942b1856ea38a38df662b966a5af3604d4489d5770ffe68a0a266f12d6",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -7.09895133972168,
+        "tsne1": -11.031083106994629,
+        "tsne2": 2.9773104190826416,
+        "id": "b5b9c875e76f89ca37ba12c6a725e54cac0d0fedee9e08cb3356b9cf50a844f4",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 5.208665370941162,
+        "tsne1": 6.581002235412598,
+        "tsne2": -1.4117909669876099,
+        "id": "1518bdc0957123666260bce9bccad3d160760d8c67bc6fa2b071c05454fbe7ac",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 1.0444921255111694,
+        "tsne1": 4.795718669891357,
+        "tsne2": -0.34676384925842285,
+        "id": "85a8eb0052cc85ae06a3435e4c0a0b889806557b8a147aa6ca0a156bc234c150",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 6.441895961761475,
+        "tsne1": 13.455029487609863,
+        "tsne2": -2.2852437496185303,
+        "id": "0f47b5adf12e6e80c03a29391f3a8a290dd732299d4efa5ce4ccd8f6eafaa444",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 8.558539390563965,
+        "tsne1": 9.824600219726562,
+        "tsne2": 0.3573208153247833,
+        "id": "c13218dd958c34b9db56cabcb19f0ab9086578cf3a6428c2a302bb5b772080cb",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.3873199224472046,
+        "tsne1": -15.219466209411621,
+        "tsne2": 7.0134100914001465,
+        "id": "512cce8d076622fc9ad0387670d5cee91f58357c88208a3a0fdbcd1e62854813",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 2.7069501876831055,
+        "tsne1": 4.280947208404541,
+        "tsne2": 1.9282032251358032,
+        "id": "ec25a15a6d2ec75af862e3be96e883bea9132428fbab442c549f7a1f14852de8",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.07926869392395,
+        "tsne1": -3.0919888019561768,
+        "tsne2": -2.6910817623138428,
+        "id": "7795f22de8b945d7cd205717ff1ca035ed58df9b19bed3a14c39fbafc48691c1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.670720100402832,
+        "tsne1": -9.514824867248535,
+        "tsne2": 2.8369274139404297,
+        "id": "46dfb0483a09feda4e436a8e8720359abaeb19be5346495120fef5c97209fa50",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.943480968475342,
+        "tsne1": -14.174675941467285,
+        "tsne2": 6.01345157623291,
+        "id": "0c14ea576f9bff0a4ed83aa408ca69594029fccc0365b80e0b5b866959517089",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -7.026573181152344,
+        "tsne1": -11.536778450012207,
+        "tsne2": 3.3289988040924072,
+        "id": "32a5d894578df9a5016bfc4729f9f3272b2f3b2f187fa5b45eff16a7c646b996",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.683304786682129,
+        "tsne1": 4.238012790679932,
+        "tsne2": 0.567226231098175,
+        "id": "68816f56b1b90d975a0362138c0b1dcd6478c793ee5ddf78224f7b4a6159700d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 0.3536980450153351,
+        "tsne1": -2.0124337673187256,
+        "tsne2": -3.0862197875976562,
+        "id": "79b149825883e69cf0ce0b822309cac5a1199d628887de2dacdeab1d6b693989",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.220529794692993,
+        "tsne1": -2.7985730171203613,
+        "tsne2": -2.684950828552246,
+        "id": "df3a90375808152086d083f20a3e83daae9cfc49e4276f78fd74e12508bb540c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.6822370886802673,
+        "tsne1": -5.870959281921387,
+        "tsne2": 0.6336549520492554,
+        "id": "f08e4e657f3319c4b7ff2e77f947215a10e3d32434305dc2d5b231c2db30f7b7",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.124084949493408,
+        "tsne1": -3.8066720962524414,
+        "tsne2": -2.604132890701294,
+        "id": "7d443283e8d451415778e0ab9778894dda51b36dd79e44cf004554f7c6cafc2d",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -7.151607513427734,
+        "tsne1": -7.412229537963867,
+        "tsne2": 0.7787070870399475,
+        "id": "b3afb239ff4aba159c686eacf8cc58f695e4ca0a44800af7cbdeb516bd37bb6b",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.2848784923553467,
+        "tsne1": 3.9827446937561035,
+        "tsne2": 0.09917029738426208,
+        "id": "9fa562d927e87fd8a338b52f45f5ba506e82f045b752b71d663582b5462f8096",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.1874958276748657,
+        "tsne1": -0.09976818412542343,
+        "tsne2": -2.4506947994232178,
+        "id": "f0e53b0f42192fc06328beed76d24c9c99516780247006d2bacc13357c3765ef",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.8296443223953247,
+        "tsne1": -1.1881943941116333,
+        "tsne2": -3.134782314300537,
+        "id": "89a0b53d2460cea52bb0b62a7403f407d43f44d6a9537b47edecb2dfceb1f56c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.506420612335205,
+        "tsne1": -11.50671672821045,
+        "tsne2": 4.418136119842529,
+        "id": "c5546c898221611148b90e835fbb5fabfe527acef715f4f4f7cd6a3552498c34",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.23220682144165,
+        "tsne1": -2.1454365253448486,
+        "tsne2": -1.82232666015625,
+        "id": "5ad8785ded7653960ebc75d4b3dc43f1a05ed6487699e8336f9ccb68dde71d4e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.7773237228393555,
+        "tsne1": -16.031173706054688,
+        "tsne2": 7.554976940155029,
+        "id": "4ebd4a267a67908c67098921000be94852d0837b5688f72cfd9a060e31a64148",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -4.941863536834717,
+        "tsne1": -7.096949577331543,
+        "tsne2": -0.1748361885547638,
+        "id": "430184cf8f0102982102151c1b8742f71f4670ac9c0186df4a070b51cff0693f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.40284156799316406,
+        "tsne1": -1.7869482040405273,
+        "tsne2": -3.7350282669067383,
+        "id": "302d637a8e9100c65a2f15e533ccc87cb615a4a519d4149770ad5e4f87d40a8e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.7479166984558105,
+        "tsne1": -13.99423885345459,
+        "tsne2": 6.01738977432251,
+        "id": "592ba18f53011dfa6ac68cb334510f7c0788fc4f6509ba14cf13a55e6744c713",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 9.120438575744629,
+        "tsne1": 6.403586387634277,
+        "tsne2": 0.08669838309288025,
+        "id": "a38a920cd656af089d1faba7865f1f8c0f29d555c3f712a72edd0da78bbb7aa4",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 4.66285514831543,
+        "tsne1": 9.216233253479004,
+        "tsne2": -2.225520610809326,
+        "id": "0b1cdfbe0011dbd94d764c165bf61b4f945a88ac293e0d42f3c85cff72d6e086",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.9553700685501099,
+        "tsne1": 5.376853942871094,
+        "tsne2": -1.7270002365112305,
+        "id": "2492aeca1ef4cbfa1cd5d25af28c39ab9a7f997376170fb06c33b507b92c3992",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 4.585288047790527,
+        "tsne1": 9.64351749420166,
+        "tsne2": -4.118302345275879,
+        "id": "43d07a84d6d3c440f32de5192a312e8b17b96fa1c76d0ba6addd600c963a82e7",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -4.948737621307373,
+        "tsne1": -12.396084785461426,
+        "tsne2": 4.897658348083496,
+        "id": "0dfa51bcb9e55663e3af34b81ff1f3b35006644843966c9ae9076f263069f6b2",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 0.3933812975883484,
+        "tsne1": 3.885664463043213,
+        "tsne2": -0.23302260041236877,
+        "id": "562ceb8d3ddbbdfe5db8344e3ee6d5f174bc4eae3259f545f33da9156e421041",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.6156857013702393,
+        "tsne1": -3.0415995121002197,
+        "tsne2": -2.3139560222625732,
+        "id": "a16516c2a94065fb646ba1bde955e2b80f20c5be455f19d8fe5524f56f0c663c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.290378570556641,
+        "tsne1": 6.3901824951171875,
+        "tsne2": -0.23760372400283813,
+        "id": "d84d501babfa08efd1d178a246f5629c0e3d1fc4c5e35c2ffd03738af9c0be4f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.760378837585449,
+        "tsne1": -9.272188186645508,
+        "tsne2": 1.0292866230010986,
+        "id": "5b0f2ed0ccc60097bb4c316cdde81f201124a3041c008cd8a0b44721443daa72",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 4.889606475830078,
+        "tsne1": 5.74519157409668,
+        "tsne2": -1.1701101064682007,
+        "id": "1ccb23b5195cad2a5bcf04ab51f84fdfaa414f8aaf5bf834059abf9bb4155fc6",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.325817108154297,
+        "tsne1": -11.185588836669922,
+        "tsne2": 4.271512985229492,
+        "id": "4d8f47862dd11397b2c61e8cd678851ba70bf47e89c8f1678e205f5cf30b0235",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.211615800857544,
+        "tsne1": -3.4545352458953857,
+        "tsne2": -2.1905949115753174,
+        "id": "264d7119a9982af3ceb37311abb51575fb2ccb29b22a5bebe910e3f9ffe5f93d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.0416948795318604,
+        "tsne1": 1.541967749595642,
+        "tsne2": -0.9679014086723328,
+        "id": "acb46dec68cba774b79b5ceaf98aee4eb8b608539f71029d6b764ee277939d39",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.9846453070640564,
+        "tsne1": -5.833812236785889,
+        "tsne2": 0.1754157543182373,
+        "id": "5b6df89ace9c8d6e5b40a989145ff9f6ca1553c0ca3e4baf50eedd21181be01e",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 8.721940994262695,
+        "tsne1": 11.522642135620117,
+        "tsne2": 0.3552379608154297,
+        "id": "2af6003e077ac3d7d60a852b95a8daf7b1f3bee1e2a92c3f3df2f5be2ba313ba",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 0.42000022530555725,
+        "tsne1": -3.858210802078247,
+        "tsne2": 0.09238112717866898,
+        "id": "5b0e7036ca907d2b9cbf8b0126e2640d0d26e6dd239579929b6f7783b1a8f3ca",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.732291221618652,
+        "tsne1": -7.680359363555908,
+        "tsne2": 1.010901927947998,
+        "id": "35b03f02e1da8a7efbe17d803308c83539b3d149424c746b5f48aaee8ebfb844",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.870399475097656,
+        "tsne1": 1.964168667793274,
+        "tsne2": -2.9766268730163574,
+        "id": "2f29b82db48bdd65bed8300cf4557fd50e2001b7c68305a4abda2d24a9024f05",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 9.421411514282227,
+        "tsne1": 10.136163711547852,
+        "tsne2": -0.9735522270202637,
+        "id": "f6a8c29c3e737e4cc0a7beca0fe4693d040f1181c9e41efe79f1b47a5000d30c",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.381422519683838,
+        "tsne1": -10.836792945861816,
+        "tsne2": 1.7484019994735718,
+        "id": "a9bec2a8b9ff45e2615b585ccbd4273bda3cf7e997881dfe1b861dc4cedd2405",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -5.026453018188477,
+        "tsne1": -11.103057861328125,
+        "tsne2": 2.54941463470459,
+        "id": "1b421d8383dd71f1cc1c21e310bb3f216c812da45f0d39e91273af3179eead42",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 7.06479024887085,
+        "tsne1": 6.362441539764404,
+        "tsne2": -0.12763512134552002,
+        "id": "fa90e21446785cd3280783c6abd272b5586db9e5a0a0b9d08e596cf0188178b5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -2.301943302154541,
+        "tsne1": -8.561753273010254,
+        "tsne2": 0.6677457094192505,
+        "id": "13fd475b89fdbd2120aea5213d868fe2d461696eb8c0ced0a6d6dbcfe7a695f6",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -4.777709007263184,
+        "tsne1": -12.11318302154541,
+        "tsne2": 4.173202991485596,
+        "id": "b5ba57adb34dfd9de72902dfde1916dad2b40fa2e593667e5fe643d8b240268f",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.7302396297454834,
+        "tsne1": -2.0282859802246094,
+        "tsne2": -3.7406232357025146,
+        "id": "3089c4fb25516458c8b40dee2ba6ed67655378b4a4c94c34305ecb680f6b6197",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -8.340470314025879,
+        "tsne1": -1.6065353155136108,
+        "tsne2": -2.5437042713165283,
+        "id": "cd19bff6b1aa479548e24789aca460f99f2f1ae41f8b27c657200bfc999ef33d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -7.956645965576172,
+        "tsne1": -0.2556389570236206,
+        "tsne2": -2.508643627166748,
+        "id": "ad962b19f08c11952c523864cb2e690d3604e1a1d945510ba433813ab086542c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.873767614364624,
+        "tsne1": -9.348655700683594,
+        "tsne2": 1.076919436454773,
+        "id": "9cb7d3a3ac92d5364ca407d262eb2383abf2a12c0b13786212532588c876c018",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.722517967224121,
+        "tsne1": 6.226624965667725,
+        "tsne2": -0.7321234345436096,
+        "id": "0df3d524f56316546f08c36727e73b86d42b5c37381c39084910f086ea49d8ba",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -0.6376125812530518,
+        "tsne1": 5.677100658416748,
+        "tsne2": -0.4222833216190338,
+        "id": "41290ee432b4735a38007227232fa8309856dc8d13fd2c9c2aeab317cd920b13",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.6863583326339722,
+        "tsne1": -1.1664986610412598,
+        "tsne2": -3.038987636566162,
+        "id": "861899716d8d5e750738bd0428cb37b4080d067ffb669096974bfc7e0314fe0d",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.336741924285889,
+        "tsne1": 2.8855457305908203,
+        "tsne2": 1.1340868473052979,
+        "id": "90b483905a682bb0635f7364a2e30175f95a5eac29f1e983cd7ad17c0958fa52",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.294472694396973,
+        "tsne1": -12.773874282836914,
+        "tsne2": 4.260158061981201,
+        "id": "f5906ad3b38e456e5b7df53adf25776dd4351a0e970d638c98a3ea3c2e3cc1ba",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.8382842540740967,
+        "tsne1": -9.291147232055664,
+        "tsne2": 1.155041217803955,
+        "id": "4e05df2f838705ec4862bf618d1026c967a08d4d8221b1e52c492bf2dbcc7776",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -1.0860354900360107,
+        "tsne1": -0.41424739360809326,
+        "tsne2": -2.4686777591705322,
+        "id": "8306e72c35b1db752c901c7c8af7e53e3200760eaaca315d9249f5b55c329497",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.268513798713684,
+        "tsne1": -4.447747707366943,
+        "tsne2": -0.044745709747076035,
+        "id": "1816bcc1b3814707fb3c392028eb86bbc99f04be82a819f511f4b39f7d0924f3",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 6.0534348487854,
+        "tsne1": 7.175414562225342,
+        "tsne2": -2.0594770908355713,
+        "id": "5822b042e632b92581f4de42f29f9caa99576a33a8ca17eb326ffa5666e7adba",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 8.986148834228516,
+        "tsne1": 12.044076919555664,
+        "tsne2": 0.04461853951215744,
+        "id": "bff16060bcf039d7735770bfc46e5026c1e057a650015fcaa30e92dadc569018",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.11257637292146683,
+        "tsne1": 7.801045894622803,
+        "tsne2": -1.9791736602783203,
+        "id": "8ca0b33f6c3d893fffca55d67999d99815c66b9397a5420e66c254b0f81f0264",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 4.903759002685547,
+        "tsne1": 5.684991359710693,
+        "tsne2": -1.305627703666687,
+        "id": "3b2c2a0a6547e7ec548a2f1a8a811d3718626fa44bb849938929fa123bf4159f",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.05507755279541,
+        "tsne1": -14.074311256408691,
+        "tsne2": 5.704128742218018,
+        "id": "7dcc39caa03859ee7d76c721cd528968b9bb576f13faa9bb5c96d8274ea8dba2",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 3.3285489082336426,
+        "tsne1": 5.412954807281494,
+        "tsne2": -0.7277170419692993,
+        "id": "0ae22f9a7817143a5c3604d0a815a8a423202831bad207684d584a52d28cd64b",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 11.3822660446167,
+        "tsne1": 13.421802520751953,
+        "tsne2": -2.785351276397705,
+        "id": "e3227a1793271dd40f9154fbee7b6176cfb598941bd348f0b1a64a7788b2667f",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 4.769765853881836,
+        "tsne1": 2.5242507457733154,
+        "tsne2": 1.4251198768615723,
+        "id": "3da08f27c88b42143d45f4d28b5a5a5a103ae383d5b852dd766587825b7a0074",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.475253582000732,
+        "tsne1": -8.429967880249023,
+        "tsne2": 1.75923752784729,
+        "id": "7f5ba0b96cff0783c02313e38705b92d6ee2f3f62055bd87a70e5cfd76a82247",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.442748546600342,
+        "tsne1": -14.884177207946777,
+        "tsne2": 6.610223770141602,
+        "id": "d375bef4477064410d5f84f0c812c52a6cd87e70c1940539f8d799a852de3259",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.925384998321533,
+        "tsne1": 4.983878135681152,
+        "tsne2": 0.1325313299894333,
+        "id": "de137bb38d9254079c6f063b83cff824932c0bee69bd6861fe14527d9ca89b28",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 9.59931468963623,
+        "tsne1": 12.544044494628906,
+        "tsne2": -0.2644284963607788,
+        "id": "f2caea01f94ae5697fa03c802af753592974b11f562d6280392d36b865ee94cb",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.00475811958313,
+        "tsne1": -14.001702308654785,
+        "tsne2": 6.126341819763184,
+        "id": "a68b1d7a62924476613d3b11f24dcc372994ed311d1e48b1997c18f65c7a0c77",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.410015106201172,
+        "tsne1": -10.979540824890137,
+        "tsne2": 4.195798397064209,
+        "id": "fb02a6271662dbaf28d355a5642ab5fef2d26d04f1ffc5bfe74b4b2ba0232e3f",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.134921550750732,
+        "tsne1": -8.21029281616211,
+        "tsne2": 0.7890430092811584,
+        "id": "200cd91c63051fba101fbbb7f62aad89b2d43d307eeb81868a85f6a38ab4b064",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 7.8072943687438965,
+        "tsne1": 5.1644062995910645,
+        "tsne2": 0.2582019567489624,
+        "id": "871b97b28bd97fb7ba01989d4b45c39e04bb65d8c9f5f1da569a745aee6c73f5",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 11.178278923034668,
+        "tsne1": 13.41013240814209,
+        "tsne2": -2.7525224685668945,
+        "id": "be994bfe4ab67dd20501c1b879d295d11e1e55dc79c621ff7c17e665dcb56fd2",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 5.106631278991699,
+        "tsne1": 2.4877073764801025,
+        "tsne2": 1.3465806245803833,
+        "id": "2ef564600e757cbc96b2a20360cced9f45ab45ff19ba9a230e0715fffd0d52da",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -0.5544893145561218,
+        "tsne1": -13.676675796508789,
+        "tsne2": 6.322563648223877,
+        "id": "27a3fa75f5599aa0669166b7134f327a45182a20f06ec56e41415d263e61ef92",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.7648303508758545,
+        "tsne1": -8.06710433959961,
+        "tsne2": 0.306923508644104,
+        "id": "410371951775afd64230a4c8d79a50396ef1f3d6792bd124a06ed6d9c7381b99",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -6.5420989990234375,
+        "tsne1": -6.406473636627197,
+        "tsne2": 0.021756775677204132,
+        "id": "f3689b3fed5367ea0074cbfdb4232a0f21d221c6438fa627a363e87ba7cac7e4",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 3.043149948120117,
+        "tsne1": 10.238444328308105,
+        "tsne2": -3.1281614303588867,
+        "id": "b6740120781da28d8605a8e50fc1b4732b1d86296a7766edc993010747ae8a46",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": -1.7081966400146484,
+        "tsne1": -11.38682746887207,
+        "tsne2": 4.632900714874268,
+        "id": "9e2cede0c867a8c20bdcfce60f55ab4ac12e8f6210f43d59dbb7ce98ed36922c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.2242157459259033,
+        "tsne1": -12.17872428894043,
+        "tsne2": 4.36508846282959,
+        "id": "ed41f5b22848e84658bfaf88a0c5a9e7dac665ed1f7f559edf5a6257d4d09191",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -4.4030585289001465,
+        "tsne1": -7.478069305419922,
+        "tsne2": 0.169983372092247,
+        "id": "ae6133b67b066842321508afb9f59c97bf5af01170e1b763fdc19d16e9efd37a",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": 8.451952934265137,
+        "tsne1": 6.790073871612549,
+        "tsne2": 0.023750411346554756,
+        "id": "c648dbda554430e18d41a5080d5cc32c3dcb1db88a25ba70389dd2911bedc792",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.6148250102996826,
+        "tsne1": -13.967226028442383,
+        "tsne2": 6.212076663970947,
+        "id": "ddb00b0b4703e8fe02b86af7429e5faae3f751cccf5a52d229693b9a987f416a",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 0.17975381016731262,
+        "tsne1": 1.864120602607727,
+        "tsne2": -0.3321351408958435,
+        "id": "99a9f4e5c3cc1a9b01c98d8dd3ee04edcb3a763d8d5e68260799a5599bb67b08",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.5449516773223877,
+        "tsne1": -13.762654304504395,
+        "tsne2": 6.105791091918945,
+        "id": "db4e4063f7a92367225025b63929cc868f68f0c6f495eb8ae8333eef8f0f47ae",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": 2.743011713027954,
+        "tsne1": 3.6318750381469727,
+        "tsne2": -0.029589951038360596,
+        "id": "6546b4510fa85ac12d26442b87dccae75cfb5106ab0e4df6ce93a6f3ce8b8b5d",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.754158020019531,
+        "tsne1": 1.9305115938186646,
+        "tsne2": -1.1474213600158691,
+        "id": "2613a81dbca24973fd54581239e579c0aaccb53eed9fb0c3d7cd9819a6d1e77b",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.992733001708984,
+        "tsne1": -12.116910934448242,
+        "tsne2": 3.627267599105835,
+        "id": "872955c945ff9ddad296d0fd7316609c27a4366dfc23e5eab6a12c34ae0c5546",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.667205810546875,
+        "tsne1": -5.134255409240723,
+        "tsne2": -1.1071925163269043,
+        "id": "2d87fd978fda84c936e264ca09c57ae617a149ebd50ebb5fa6bf3cc367bea574",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -2.907841682434082,
+        "tsne1": 2.230179786682129,
+        "tsne2": -0.47884124517440796,
+        "id": "687f8052320ccd6785648f2ef83a0810232500488d4b63c189e42fdc6bca02d5",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.4675559997558594,
+        "tsne1": -1.1002535820007324,
+        "tsne2": -2.1882898807525635,
+        "id": "f52d7f2c8c403d6ae52e35de26085bdb58e980d9b6c37fd19956f141926247df",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.492929220199585,
+        "tsne1": -2.991992712020874,
+        "tsne2": -2.719960927963257,
+        "id": "f213aa560595c8b3c8c86b9ea567282e568e09a035d89cff726787970577a0c7",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.2727583646774292,
+        "tsne1": -7.677231311798096,
+        "tsne2": 1.4748425483703613,
+        "id": "3f74d9b51321c830d028d3f86d7e534bbf8db56864dec420aa5c2d7392047d47",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.482543706893921,
+        "tsne1": 8.008211135864258,
+        "tsne2": -3.072005271911621,
+        "id": "9ca036a63a6dc24404209f00054c9a57fed7a2e5eea3b26e573cc80fc7b6f4f7",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.1098971366882324,
+        "tsne1": -5.134960174560547,
+        "tsne2": -0.37272343039512634,
+        "id": "6465903b17f41a15c0131e7675dbf6491844fa457dfbd05bd9548345332c782f",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 8.964186668395996,
+        "tsne1": 11.905006408691406,
+        "tsne2": -2.0007495880126953,
+        "id": "30fdb46341700100b1371c32bf22828bde63b313cafc4ff3b3a5bdc448e24986",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -7.92207670211792,
+        "tsne1": -10.26686954498291,
+        "tsne2": 3.474625587463379,
+        "id": "d88f6550ce5e29f57f08b0b55b8a5a017e705d1580d92602feb924c96f2e38e1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -4.150282382965088,
+        "tsne1": -7.801164627075195,
+        "tsne2": 0.1893802285194397,
+        "id": "808bb6137c18c53d30e5ef01bd2efd6f741b0ee6b1dd1724f911d1b960246092",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -5.17138147354126,
+        "tsne1": -0.6644598841667175,
+        "tsne2": -2.1427876949310303,
+        "id": "e674172e19f3e393d1332deca6dda8a768e64c666709e6bcb1aafba2e933e212",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 3.6405110359191895,
+        "tsne1": 0.008284277282655239,
+        "tsne2": 1.464029312133789,
+        "id": "95b7da41b83a361ef7ae645b6b446b339e07cfa9b822a8732ac01f69b7d82a76",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.6556646823883057,
+        "tsne1": -4.267885208129883,
+        "tsne2": -2.2220547199249268,
+        "id": "a5b9f9d7726a38f0b404566c82f1591faf427570c651bc20de3a5595e261f2c3",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -3.3341217041015625,
+        "tsne1": -11.612916946411133,
+        "tsne2": 3.509974956512451,
+        "id": "8081f894e896020b61814c1619e310d0ee18c3d7d11f55f7b336fb1cbd28c397",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.708411455154419,
+        "tsne1": -6.49126672744751,
+        "tsne2": -0.06837981194257736,
+        "id": "575fc0dcec4479b207127f6edcce7394a0f3c35dba21b0b8c7ccbe440d19f369",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -1.3918975591659546,
+        "tsne1": -4.699663162231445,
+        "tsne2": -0.23630380630493164,
+        "id": "203aece78a9cd9a58435d3a0b3a48685c6e028378acfce2422361aed0bc02fcb",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -7.88578987121582,
+        "tsne1": -10.38622760772705,
+        "tsne2": 3.364711046218872,
+        "id": "54df5c4bb1ebf5a865fe7ed1293aeb70096a78f3170ba489d2af0b9e44d09f05",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.7305098176002502,
+        "tsne1": 4.893261432647705,
+        "tsne2": -1.2070989608764648,
+        "id": "09c08bd6ccafee7ced165d2d7e8fd24ccc1fabd3b88aa8e7c122e397bcfcc9e4",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 10.256355285644531,
+        "tsne1": 13.765060424804688,
+        "tsne2": -2.901207447052002,
+        "id": "9fb679a24dd7854a07648e5b27f4d98fcff63c21570599e11026ff70402c8309",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 3.3155174255371094,
+        "tsne1": 1.5913175344467163,
+        "tsne2": 1.3499647378921509,
+        "id": "3327974f5713d64e8655141c8fda96a77a463460451775179f334294906d74bc",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -4.7824788093566895,
+        "tsne1": -10.944629669189453,
+        "tsne2": 3.0189011096954346,
+        "id": "26d076f433ab4adc93507ea8077946ca218cfb0e60a370f52ad9b25aa5a45958",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -2.022850513458252,
+        "tsne1": -1.120841145515442,
+        "tsne2": -2.1500051021575928,
+        "id": "52a9672bebee8cc621e8355ec8dede46f7d49f2489a67fec95a7ff779b8a582b",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 1.791614055633545,
+        "tsne1": 1.751962661743164,
+        "tsne2": 1.3191956281661987,
+        "id": "cbfd772be4efcab2e3ce65b799e531b10598b4076a84d554e6bda989e94ff6b1",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.7648305892944336,
+        "tsne1": -11.484500885009766,
+        "tsne2": 4.611963748931885,
+        "id": "0eaa9b130c71b02a489b874bb544fdb726d4bfee84e390d71cb828abfe6dbf8c",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -2.4771361351013184,
+        "tsne1": 1.0505025386810303,
+        "tsne2": -2.0232832431793213,
+        "id": "b11a6bc5d435cd584855495ccbfc794e0ce48b402aaaea619f9f67db807840c5",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -1.7900428771972656,
+        "tsne1": -0.7515389323234558,
+        "tsne2": -3.063105583190918,
+        "id": "ed03891524ce6e8dd23b20069c8e57869f904f9d3023acdef57d42442e8a834c",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 7.008664131164551,
+        "tsne1": 12.114426612854004,
+        "tsne2": -1.8724201917648315,
+        "id": "504cb028cda0993cb509136be5fe6f8f8e90a52dcda5011ca11aeb024a366f47",
+        "medshake_class": "very easy",
+        "medshake_colour": "#FDE725"
+    },
+    {
+        "tsne0": 2.0162367820739746,
+        "tsne1": 6.093108654022217,
+        "tsne2": -1.1241626739501953,
+        "id": "35338d2e186b98ddf7c47f95a1add87d54357c405f7d4094dc14ca0b64c41e6e",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -1.7314493656158447,
+        "tsne1": -4.815361499786377,
+        "tsne2": -1.4198200702667236,
+        "id": "416b128df34ae1ae6d6f8f49c82620f9cb80c20bbe3d2087a8622501a5f06ae3",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 9.147066116333008,
+        "tsne1": 9.98041820526123,
+        "tsne2": -1.0954253673553467,
+        "id": "4c1fcd56f136b46054708b1bf780e2c1313ec58492e9423f43c41f7f5a539a48",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -3.9596240520477295,
+        "tsne1": -3.0459539890289307,
+        "tsne2": -1.8669947385787964,
+        "id": "20acebe20d5cc6dff588f2d292d90ae597b75638d015618c72d217f0ace9e451",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": -0.7731311917304993,
+        "tsne1": -7.303311824798584,
+        "tsne2": 1.6155457496643066,
+        "id": "cfa64a1ed4b46dc611b4892a17bf5087dca425d6ee6cb8ec4d68ff3b0d621524",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -5.79585599899292,
+        "tsne1": -10.715201377868652,
+        "tsne2": 2.8190865516662598,
+        "id": "c15c98961015929fb379ec38bb879ace0626c496b658b6b8f137709d45f0d3e1",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": 3.988950252532959,
+        "tsne1": 6.100274562835693,
+        "tsne2": -1.5174956321716309,
+        "id": "3d0ac69823c95d74860cf16b46702747dac303e5a8347dd065b9f6e76ee7c94e",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    },
+    {
+        "tsne0": 3.6094255447387695,
+        "tsne1": 5.2467169761657715,
+        "tsne2": -0.5858457088470459,
+        "id": "8f416f16d844ad0df92a63a9af2e0d4ee00b3fb7d1826404946f06ffa19ab524",
+        "medshake_class": "very hard",
+        "medshake_colour": "#440154"
+    },
+    {
+        "tsne0": -0.49788105487823486,
+        "tsne1": -1.1787340641021729,
+        "tsne2": -2.054344654083252,
+        "id": "d1a44c0431fcbfbbf365fb2bddd8f968b7f44a3ea8b188fc8f73621535a89552",
+        "medshake_class": "easy",
+        "medshake_colour": "#5EC962"
+    },
+    {
+        "tsne0": -4.332395076751709,
+        "tsne1": -7.0119547843933105,
+        "tsne2": -0.5231394171714783,
+        "id": "34d767b81912263357b2cfcece8456a80baf868514a6fe129405875401c6df1b",
+        "medshake_class": "medium",
+        "medshake_colour": "#21918C"
+    },
+    {
+        "tsne0": -3.4591150283813477,
+        "tsne1": -2.886990547180176,
+        "tsne2": -2.739581346511841,
+        "id": "ee745b6960f195a198806816db72c9d0544b37026095754ad985df5a1c5c1b70",
+        "medshake_class": "hard",
+        "medshake_colour": "#3B528B"
+    }
+]

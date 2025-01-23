@@ -41,6 +41,9 @@ logs/drbert
 output/camembert
 logs/camembert
 
+# Random forests output (too big to commit ~200MB)
+output/analysis/forests
+
 # Extra output
 output/test
 logs/test
