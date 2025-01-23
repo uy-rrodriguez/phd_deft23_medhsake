@@ -289,14 +289,13 @@ def merge_with_metadata(
     tSNE, Random Forest, or Linear Regression. This will remove non numeric
     columns and MedShake and Shannon classes.
     """
-    df = df.copy()
-
     # Try to load existing file
     if not force_reload and data_output_path and os.path.exists(data_output_path):
         print(f"Loading from existent file '{data_output_path}'")
         df = pd.read_json(data_output_path)
     else:
         # Pre-process source data, add metadata and remove unnecessary columns
+        df = df.copy()
 
         # Add metadata from questions and answers
         if include_qa_lengths:
