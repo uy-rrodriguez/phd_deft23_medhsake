@@ -1,0 +1,136 @@
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:04<00:09,  4.57s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.86s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:10<00:00,  3.47s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:10<00:00,  3.65s/it]
+PROMPT: [Ceci est une question de QCM de l'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.
+
+Parmi ces propositions concernant la sérotonine, une seule est fausse, laquelle?
+(a) C'est une amine biogène endogène.
+(b) Elle franchit la barrière hémato-encéphalique.
+(c) Elle est synthétisée à partir du tryptophane alimentaire.
+(d) Elle n'est pas synthétisée dans les plaquettes.
+(e) Son métabolite principal est constitué par le 5 HlAA.
+Réponse(s) : (b) Elle franchit la barrière hémato-encéphalique
+
+
+Ceci est une question de QCM de l'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.
+
+En 1998, sur 85.000 hommes de 60 à 64 ans, 300 cas d'infarctus du myocarde ont été dénombrés dont 270 nouveaux. Parmi les nouveaux cas, 135 sont décédés dans l'année. Le nombre total de décès dus à cette maladie pour l'année est de 150; Parmi les résultats ci-dessous, indiquer celui qui représente le taux d'incidence:
+(a) 135/85.000.
+(b) 300/85.000.
+(c) 150/85.000.
+(d) 270 /85.000.
+(e) 135/270.
+Réponse(s) : (d) 270 /85.000
+
+
+Ceci est une question de QCM de l'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.
+
+Parmi les propositions suivantes concernant la syphilis, quelle est celle qui est exacte?
+(a) Elle est due à une bactérie immobile.
+(b) Son diagnostic peut être effectué après culture du germe en milieux riches.
+(c) La contamination peut être liée à la piqûre d'un insecte vecteur.
+(d) C'est une maladie strictement humaine.
+(e) La transmission de l'agent infectieux se fait essentiellement par transfusion sanguine.
+Réponse(s) : (d) C'est une maladie strictement humaine
+
+
+Ceci est une question de QCM de l'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.
+
+Parmi les propositions suivantes, indiquer celle(s) qui est (sont) exacte(s) ?
+(a) La nifédipine (ADALATE®) est un ester nitrique.
+(b) Le pindolol (VISKEN®) possède une activité sympathomimétique intrinsèque.
+(c) La digoxine est indiquée dans le traitement de l'insuffisance cardiaque.
+(d) Le diltiazem (TILDIEM®) appartient à la classe des inhibiteurs calciques.
+(e) Le vérapamil (ISOPTINE®) est un médicament de première intention pour traiter l'insuffisance cardiaque.
+Réponse(s) : (b) Le pindolol (VISKEN®) possède une activité sympathomimétique intrinsèque; (c) La digoxine est indiquée dans le traitement de l'insuffisance cardiaque; (d) Le diltiazem (TILDIEM®) appartient à la classe des inhibiteurs calciques
+
+
+Ceci est une question de QCM de l'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.
+
+Parmi les propositions suivantes, quelle(s) est (sont) celle(s) qui est (sont) exacte(s)? Une électrode de référence :
+(a) Est une électrode impolarisable.
+(b) Peut être une électrode sélective aux ions fluorure.
+(c) Peut être une électrode au calomel.
+(d) Présente un potentiel variable en fonction de l'intensité du courant.
+(e) Peut être une électrode normale à hydrogène.
+Réponse(s) : (a) Est une électrode impolarisable; (c) Peut être une électrode au calomel; (e) Peut être une électrode normale à hydrogène
+
+
+Ceci est une question de QCM de l'examen de pharmacie. Réponds avec la ou les lettres correspondant à la bonne réponse.
+
+Parmi les propositions suivantes, indiquer celle qui est exacte. Dans les conditions physiologiques, le pH le plus élevé est mesuré dans:
+(a) Le suc gastrique.
+(b) La bile vésiculaire.
+(c) Le suc pancréatique.
+(d) La salive.
+(e) Les sécrétions intestinales.
+Réponse(s) : (
+]
+Traceback (most recent call last):
+  File "/local_disk/apollon/rrodriguez/deft2023-llm/run_llm.py", line 67, in <module>
+    fire.Fire(main)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/fire/core.py", line 143, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/fire/core.py", line 477, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/fire/core.py", line 693, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/local_disk/apollon/rrodriguez/deft2023-llm/run_llm.py", line 59, in main
+    results = deft.run_inference(
+  File "/local_disk/apollon/rrodriguez/deft2023-llm/deft.py", line 256, in run_inference
+    run_single_inference(instance, generator, dev_corpus, template,
+  File "/local_disk/apollon/rrodriguez/deft2023-llm/deft.py", line 235, in run_single_inference
+    generated = generator(prompt)
+  File "/local_disk/apollon/rrodriguez/deft2023-llm/run_llm.py", line 48, in generate
+    outputs = llm.generate(
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/transformers/generation/utils.py", line 2015, in generate
+    result = self._sample(
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/transformers/generation/utils.py", line 2961, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/transformers/models/mistral/modeling_mistral.py", line 1035, in forward
+    outputs = self.model(
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/transformers/models/mistral/modeling_mistral.py", line 809, in forward
+    layer_outputs = decoder_layer(
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/transformers/models/mistral/modeling_mistral.py", line 565, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/transformers/models/mistral/modeling_mistral.py", line 157, in forward
+    return self.down_proj(self.act_fn(self.gate_proj(hidden_state)) * self.up_proj(hidden_state))
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/accelerate/hooks.py", line 169, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/bitsandbytes/nn/modules.py", line 817, in forward
+    out = bnb.matmul(x, self.weight, bias=self.bias, state=self.state)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py", line 556, in matmul
+    return MatMul8bitLt.apply(A, B, out, bias, state)
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/torch/autograd/function.py", line 574, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/users/rrodriguez/.conda/envs/deft2023/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py", line 380, in forward
+    state.subB = (outliers * state.SCB.view(-1, 1) / 127.0).t().contiguous().to(A.dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 224.00 MiB. GPU 0 has a total capacity of 11.92 GiB of which 36.00 MiB is free. Including non-PyTorch memory, this process has 11.88 GiB memory in use. Of the allocated memory 11.03 GiB is allocated by PyTorch, and 335.13 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
