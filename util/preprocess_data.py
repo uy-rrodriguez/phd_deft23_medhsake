@@ -205,7 +205,92 @@ def student_rates():
     # assert med_rate == (27.5/40 + 10/50) / 2  # 0.44375
 
 
+def merge_corpus_with_year_topic():
+    corpus_path = "data/test-medshake-score.json"
+    new_corpus_path = "data/test-medshake-score-YEARS.json"
+    extra_data_path = "data/medshake-year-and-topic.txt"
+
+    print(f"Loading corpus '{corpus_path}")
+    with open(corpus_path) as fp:
+        corpus = json.load(fp)
+
+    print(f"Loading extra data '{extra_data_path}")
+    with open(extra_data_path, encoding="utf-8") as fp:
+        extra = {}
+        it = iter(fp.readlines())
+        line = next(it)
+        while line:
+            year_txt, question_nbr = line[:-1].split()  # E.g.: 2002-nord 9
+            year = int(year_txt.split("-")[0])  # E.g.: "2002-nord" -> 2002
+            question = next(it)[:-1].replace(" ", " ")
+            topic_line = next(it, None)  # E.g.: Physiologie / Biochimie
+            topic_line = topic_line[:-1] if topic_line else None
+            if topic_line:
+                # Clean topic line. E.g. fix: "PharmacologieBactériologie"
+                topic_line = re.sub(r"([a-z])([A-Z])", "\\1|\\2", topic_line)
+                topics = topic_line.lower().split("|")
+            else:
+                topics = ["<undefined>"]
+            obj =  {
+                "year": year,
+                "year_txt": year_txt,
+                "question_nbr": question_nbr,
+                "topic_line": topic_line,
+                "topics": topics,
+            }
+            if question not in extra:
+                extra[question] = [obj]
+            else:
+                extra[question].append(obj)
+            next(it, None)  # Skip "------"
+            line = next(it, None)
+
+    # Merge data when the same question appears multiple times, keep last year
+    ignored = []
+    questions = list(extra.keys())
+    for q in questions:
+        v = extra[q]
+        if len(v) > 1:
+            def equal_values(items, col):
+                return all(items[0][col] == i[col] for i in items)
+            if not all(equal_values(v, k) for k in ("topic_line", "topics")):
+                print(
+                    f"Question removed. Question '{q}' has {len(v)} matches"
+                    f" with varied topics.",
+                    file=sys.stderr)
+                print(
+                    json.dumps(v, indent=2, ensure_ascii=False),
+                    file=sys.stderr)
+                ignored.append(q)
+        extra[q] = v[-1]
+
+    for q in ignored:
+        del extra[q]
+
+    # Add extra data to corpus
+    NEW_COLS = ["year", "year_txt", "topics"]
+    for inst in corpus:
+        q = str(inst["question"]).replace(" ", " ")
+        data = extra.get(q, None)
+        if not data:
+            print(
+                f"No data found for question {inst['id']}: '{q}'",
+                file=sys.stderr)
+        else:
+            inst.update({k: data[k] for k in NEW_COLS})
+
+    import pandas as pd
+    df = pd.DataFrame(corpus)
+    print(df[NEW_COLS].head())
+
+    # Save to new corpus file
+    with open(new_corpus_path, "w") as fp:
+        json.dump(corpus, fp, indent=4, ensure_ascii=False)
+        fp.write("\n")
+
+
 if __name__ == "__main__":
     import fire
     fire.Fire(invert_medshake_difficulty)
     # fire.Fire(student_rates)
+    # fire.Fire(merge_corpus_with_year_topic)
