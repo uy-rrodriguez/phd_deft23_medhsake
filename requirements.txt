@@ -12,7 +12,7 @@ cohere>=3.10.0
 openai>=0.27.2
 backoff>=2.2.1
 
-# for llama 
+# for llama
 datasets
 loralib
 sentencepiece
@@ -21,3 +21,12 @@ git+https://github.com/huggingface/peft.git
 
 #for mpt
 einops
+
+# for plots (optional)
+matplotlib
+
+# for metrics during training, random forests, tSNE
+scikit-learn
+
+# UMAP clustering algorithm
+umap-learn
