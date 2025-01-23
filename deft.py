@@ -92,12 +92,12 @@ def get_prompt(
         prompt_tpl: str, instance: any,
         num_shots: int = 0, few_shots_corpus: any = None,
         fixed_shots_idx: list[int] = None,
+        use_chat_template: bool = False,
         **kwargs,
-) -> str:
-    assert (
-        num_shots == 0 or few_shots_corpus is not None,
-        "A corpus is required to randomly select the few shots",
-    )
+) -> str|list[dict]:
+    assert \
+        num_shots == 0 or few_shots_corpus is not None, \
+        "A corpus is required to randomly select the few shots"
     if num_shots > 0:
         few_shots = get_random_shots(
             num_shots, few_shots_corpus, fixed_shots_idx)
@@ -112,21 +112,68 @@ def get_prompt(
             for shot in few_shots
         ]
 
-        # Output with intro before few-shots about multiple-choice questions
-        #
-        # return "%s\n\n%s" % (
-        #     lm_shots_intro[1] % "\n\n".join([lm_shot_template % s for s in shots]),
-        #     prompt % linearize_instance(instance, bare=True, **kwargs),
-        # )
+        if not use_chat_template:
+            # Output with intro before few-shots about multiple-choice questions
+            #
+            # return "%s\n\n%s" % (
+            #     lm_shots_intro[1] % "\n\n".join([lm_shot_template % s for s in shots]),
+            #     prompt % linearize_instance(instance, bare=True, **kwargs),
+            # )
 
-        # Output without intro before few-shots about multiple-choice questions
-        #
-        return "\n\n".join(
-            [prompt_tpl % s for s in shots]
-            + [prompt_tpl % linearize_instance(instance, **kwargs)]
-        )
+            # Output without intro before few-shots about multiple-choice questions
+            #
+            return "\n\n".join(
+                [prompt_tpl % s for s in shots]
+                + [prompt_tpl % linearize_instance(instance, **kwargs)]
+            )
+        else:
+            # messages = [
+            #     {"role": "user", "content": "What is your favourite condiment?"},
+            #     {"role": "assistant", "content": "Well, I'm quite partial to a good squeeze of fresh lemon juice. It adds just the right amount of zesty flavour to whatever I'm cooking up in the kitchen!"},
+            #     {"role": "user", "content": "Do you have mayonnaise recipes?"}
+            # ]
+            messages = []
+            for question, answers in shots:
+                messages.extend(
+                    [
+                        {
+                            "role": "user",
+                            "content": question,
+                        },
+                        {
+                            "role": "assistant",
+                            "content": answers,
+                        },
+                    ]
+                )
+            question, _ = linearize_instance(
+                instance,
+                **{
+                    **kwargs,
+                    "add_left_parenthesis": False,
+                },
+            )
+            messages.append({
+                "role": "user",
+                "content": question,
+            })
+            return messages
     else:
-        return prompt_tpl % linearize_instance(instance, **kwargs)
+        if not use_chat_template:
+            return prompt_tpl % linearize_instance(instance, **kwargs)
+        else:
+            question, _ = linearize_instance(
+                instance,
+                **{
+                    **kwargs,
+                    "add_left_parenthesis": False,
+                },
+            )
+            messages.append({
+                "role": "user",
+                "content": question,
+            })
+            return messages
 
 def extract_answer(answer, num_answers=5, stop_at_line_break=False, **kwargs):
     answer = re.sub('Ceci est une question de QCM.*', '', answer).strip().lower()
@@ -165,8 +212,8 @@ def batch_hamming(preds_list, refs_list):
     return sum(score) / len(score)
 
 
-def medshake_rate(predicted: list[str], medshake_rates: dict[str, int],
-                  max_score: int = 2) -> float:
+def medshake_rate(predicted: list[str],
+                  medshake_scores: dict[str, dict[str, int]]) -> float:
     """
     Returns a rate based on the MedShake score for the answer predicted by the
     model. If the combination of predicted answers is not found in the instance
@@ -178,7 +225,8 @@ def medshake_rate(predicted: list[str], medshake_rates: dict[str, int],
     """
     # Generate a key based on the predicted answers (they are already sorted)
     med_key = " ".join(sorted(predicted))
-    med_data = medshake_rates.get(med_key) or {}
+    med_data = medshake_scores.get(med_key) or {}
+    max_score = max(x["score"] for x in medshake_scores.values())
     return med_data.get("score", 0) / max_score
 
 
