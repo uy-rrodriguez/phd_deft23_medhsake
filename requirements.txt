@@ -33,3 +33,6 @@ umap-learn
 
 # linear regression
 statsmodels
+
+# NLP for extracting n-grams
+nltk
