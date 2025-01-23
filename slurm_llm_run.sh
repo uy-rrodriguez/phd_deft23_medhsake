@@ -14,7 +14,12 @@
 # Run multiple commands in parallel:
 #--SBATCH --array=402-448%2
 #--SBATCH --array=450-495%2
-#SBATCH --array=601-624%2
+#--SBATCH --array=499-501,505-507,511-513,517-519%3
+#SBATCH --array=569-592%4
+#
+# >>> LLaMa-3-70B
+#--SBATCH --constraint='GPURAM_Min_80GB'
+#--SBATCH --array=139-141,145-147,151-153,157-159%2
 #
 
 source functions.sh
@@ -68,7 +73,7 @@ if [[ "$MODEL_FAMILY" == "llama3" ]]; then
 
 elif [[ "$MODEL_FAMILY" == "llama3_70b" ]]; then
     MODEL=meta-llama/Meta-Llama-3-70B
-    LOCAL_MODEL=models/llama3/llama-3-70b-deft_${MODEL_NAME}
+    LOCAL_MODEL=models/llama3-70b/llama-3-70b-deft_${MODEL_NAME}
     DIR=llama3-70b
     FILENAME=llama3-70b
 
@@ -84,11 +89,24 @@ elif [[ "$MODEL_FAMILY" == "mistral" ]]; then
     DIR=mistral
     FILENAME=mistral
 
+elif [[ "$MODEL_FAMILY" == "mistral_v01" ]]; then
+    MODEL=mistralai/Mistral-7B-v0.1
+    LOCAL_MODEL=models/mistral-v01/mistral-7b-v01-deft_${MODEL_NAME}
+    DIR=mistral-v01
+    FILENAME=mistral-v01
+
 elif [[ "$MODEL_FAMILY" == "biomistral" ]]; then
     MODEL=BioMistral/BioMistral-7B
     LOCAL_MODEL=models/biomistral/biomistral-7b-deft_${MODEL_NAME}
     DIR=biomistral
     FILENAME=biomistral
+
+elif [[ "$MODEL_FAMILY" == "mistral_nachos" ]]; then
+    MODEL=models/ik28/Mistral-Nachos-1920
+    LOCAL_MODEL=models/mistral-nachos/mistral-nachos-deft_${MODEL_NAME}
+    DIR=mistral-nachos
+    FILENAME=mistral-nachos
+    RUN_SCRIPT=run_llm_instruct.py
 
 elif [[ "$MODEL_FAMILY" == "apollo" ]]; then
     MODEL=FreedomIntelligence/Apollo-7B

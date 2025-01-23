@@ -18,3 +18,5 @@ ArrayTaskID	Completions	SpecialPad	Prompt	AnswerText	MaxSeqLength	ModelRef
 
 14			1			0			2		1			512				llama3_70b
 15			1			0			4		1			512				llama3_70b
+
+16			1			0			2		1			512				mistral_v01
