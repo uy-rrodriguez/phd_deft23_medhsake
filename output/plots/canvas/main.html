@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive UMAP Chart</title>
+    <style>
+        html, body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        canvas {
+            position: fixed;
+            /* background: #333333; */
+        }
+        #background {
+            left: 100px;
+            top: 100px;
+        }
+        #foreground {
+            border: 1px solid black;
+        }
+
+        #found {
+            position: fixed;
+            left: 1100px;
+        }
+        #found div {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        #found span {
+            position: absolute;
+            top: 5px;
+            left: -30px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="background" width="800" height="800">Your browser does not support the canvas element.</canvas>
+    <canvas id="foreground" width="1000" height="1000">Your browser does not support the canvas element.</canvas>
+    <div id="found"></div>
+    <script src="data.js"></script>
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
