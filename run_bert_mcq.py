@@ -11,6 +11,13 @@ import json
 import sys
 from typing import Callable, Optional, Union
 
+
+# Wandb authentication, used to track training
+# (Done at the very beginning, otherwise there is an error with PyArrow,
+# imported by other packages)
+from util.w_and_b import wandb_login
+
+
 import datasets
 # import evaluate
 import numpy as np
@@ -41,7 +48,7 @@ import deft
 
 
 # Disable progress bars (cleaner logs)
-# datasets.disable_progress_bar()
+datasets.disable_progress_bar()
 
 
 # HuggingFace authentication
@@ -229,43 +236,41 @@ def instance_tokenizer(
     return result
 
 
-def preds_to_logits(predictions: list, fn: str = "sigmoid", threshold: int = 0.5):
-    if fn == "sigmoid":
-        fn = torch.nn.Sigmoid()
-    elif fn == "relu":
-        fn = torch.nn.ReLU()
-    else:
-        raise ValueError(f"Unrecognised function name '{fn}'")
+def preds_to_logits(predictions: list, threshold: float = 0.5):
+    fn = torch.nn.Sigmoid()
     probs = fn(torch.Tensor(predictions))
     y_pred = np.zeros(probs.shape)
     y_pred[np.where(probs >= threshold)] = 1
     return y_pred
 
 
-def compute_metrics(pred: EvalPrediction):
-    print("\nPrediction obj:", pred, file=sys.stderr)
-    if isinstance(pred.predictions, tuple):
-        preds = pred.predictions[0]
-    else:
-        preds = pred.predictions
+# def compute_metrics(pred: EvalPrediction, threshold: float = 0.5):
+#     # print("\nPrediction obj:", pred, file=sys.stderr)
+#     if isinstance(pred.predictions, tuple):
+#         preds = pred.predictions[0]
+#     else:
+#         preds = pred.predictions
 
-    y_pred = preds_to_logits(preds)
-    # y_pred = preds_to_logits(predictions, fn="relu")
-    print("\nLength:", len(preds), file=sys.stderr)
-    print("Preds:\n", preds, file=sys.stderr)
-    print("Any non-zero in Logits?:", np.any(y_pred), file=sys.stderr)
-    print("Logits:\n", y_pred, file=sys.stderr)
+#     y_pred = preds_to_logits(preds, threshold=threshold)
+#     # y_pred = preds_to_logits(predictions, fn="relu")
+#     # print("\nLength:", len(preds), file=sys.stderr)
+#     # print("Preds:\n", preds, file=sys.stderr)
+#     # print("Any non-zero in Logits?:", np.any(y_pred), file=sys.stderr)
+#     # print("Logits:\n", y_pred, file=sys.stderr)
 
-    y_true = pred.label_ids
-    print("Ref:\n", y_true, file=sys.stderr)
+#     y_true = pred.label_ids
+#     # print("Ref:\n", y_true, file=sys.stderr)
 
-    metrics = {
-        "f1": f1_score(y_true=y_true, y_pred=y_pred, average="macro"),
-        "accuracy": accuracy_score(y_true, y_pred),
-        "hamming": deft.batch_emr(y_pred.tolist(), y_true.tolist()),
-        "emr": deft.batch_hamming(y_pred.tolist(), y_true.tolist()),
-    }
-    return metrics
+#     metrics = {
+#         # Commented out because of error:
+#         #   ValueError: Classification metrics can't handle a mix of multiclass
+#         #   and multilabel-indicator targets
+#         # "f1": f1_score(y_true=y_true, y_pred=y_pred, average="macro"),
+#         # "accuracy": accuracy_score(y_true, y_pred),
+#         "hamming": deft.batch_emr([y_pred.tolist()], [y_true.tolist()]),
+#         "emr": deft.batch_hamming([y_pred.tolist()], [y_true.tolist()]),
+#     }
+#     return metrics
 
 
 def run_training(
@@ -275,8 +280,14 @@ def run_training(
     train_run_name: str,
     new_model_path: str,
     train_output_dir: str = "train_results/",
+    batch_size: int = 32,
+    epochs: int = 1,
+    report_to: str = "none",
     **kwargs
 ):
+    if report_to == "wandb":
+        wandb_login()
+
     tokenizer = AutoTokenizer.from_pretrained(
         model_path,
         clean_up_tokenization_spaces=True,
@@ -293,7 +304,7 @@ def run_training(
             **kwargs,
         },
         batched=True,
-        batch_size=32,
+        batch_size=batch_size,
     )
 
     # quant_config=BitsAndBytesConfig(
@@ -307,7 +318,7 @@ def run_training(
     # device_map = {
     #     "": 0
     # }
-    print(">>>>> BEFORE MODEL.from_pretrained", file=sys.stderr)
+    # print(">>>>> BEFORE MODEL.from_pretrained", file=sys.stderr)
     model = AutoModelForMultipleChoice.from_pretrained(
         model_path,
         # device_map=device_map,
@@ -323,19 +334,25 @@ def run_training(
         save_strategy="epoch",
         load_best_model_at_end=True,
         learning_rate=5e-5,
-        per_device_train_batch_size=16,
-        per_device_eval_batch_size=16,
+        per_device_train_batch_size=batch_size,
+        per_device_eval_batch_size=batch_size,
         # per_device_train_batch_size=1,
         # per_device_eval_batch_size=1,
-        num_train_epochs=1,
+        num_train_epochs=epochs,
         weight_decay=0.01,
         push_to_hub=False,
-        report_to="none",
+
+        # W&B config
+        report_to=report_to,
+        logging_steps=1,  # how often to log to W&B
+
+        # Disable progress bar (cleaner logs)
+        disable_tqdm=True,
 
         # From Yanis Labrak's DEFT 2023
         # learning_rate=2e-5,
-        greater_is_better=True,
-        metric_for_best_model="emr",
+        # greater_is_better=True,
+        # metric_for_best_model="emr",
     )
     trainer = Trainer(
         model=model,
@@ -346,23 +363,25 @@ def run_training(
         data_collator=DataCollatorForMultipleChoice(tokenizer=tokenizer),
 
         # From Yanis Labrak's DEFT 2023
-        compute_metrics=compute_metrics,
+        # compute_metrics=compute_metrics,
     )
     trainer.train()
 
     # Save trained model
+    # print(">>>>> AFTER Trainer.train", file=sys.stderr)
     tokenizer.save_pretrained(new_model_path)
     trainer.model.save_pretrained(new_model_path)
 
 
 def run_inference(
-    model_path: str,
-    corpus_path: str,
-    result_path: str,
+    new_model_path: str,
+    test_corpus_path: str,
+    test_result_path: str,
+    batch_size: int = 32,
     debug: bool = False,
     **kwargs
 ):
-    tokenizer = AutoTokenizer.from_pretrained(model_path)
+    tokenizer = AutoTokenizer.from_pretrained(new_model_path)
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
 
@@ -378,7 +397,7 @@ def run_inference(
     #     "": 0
     # }
     model = AutoModelForMultipleChoice.from_pretrained(
-        model_path,
+        new_model_path,
         # device_map=device_map,
         # torch_dtype=torch.float16,
         # quantization_config=quant_config,
@@ -386,7 +405,7 @@ def run_inference(
 
     # Load dataset and pre-process to tokenize items
     print("Loading dataset")
-    ds = load_dataset(corpus_path)["train"]
+    ds = load_dataset(test_corpus_path)["train"]
     tokenized_ds = ds.map(
         instance_tokenizer,
         fn_kwargs={
@@ -394,7 +413,7 @@ def run_inference(
             **kwargs,
         },
         batched=True,
-        batch_size=32,
+        batch_size=batch_size,
     )
 
     results = []
@@ -448,15 +467,20 @@ def run_inference(
     print("EXACT MATCH:", np.average(all_match))
     print("HAMMING SCORE:", np.average(all_hamming))
     print("MEDSHAKE RATE:", np.average(all_medshake))
-    deft.write_results(results, result_path)
+    deft.write_results(results, test_result_path)
 
 
-def main(method_name: str, *args, **kwargs) -> None:
-    import run_bert_mcq as module
-    method = getattr(module, method_name)
-    if not method:
-        raise f"Method '{method_name}' not found"
-    return method(*args, **kwargs)
+# def main(method_name: str, *args, **kwargs) -> None:
+#     import run_bert_mcq as module
+#     method = getattr(module, method_name)
+#     if not method:
+#         raise f"Method '{method_name}' not found"
+#     return method(*args, **kwargs)
+
+
+def main(*args, **kwargs) -> None:
+    run_training(*args, **kwargs)
+    run_inference(*args, **kwargs)
 
 
 if __name__ == '__main__':

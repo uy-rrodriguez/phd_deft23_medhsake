@@ -113,13 +113,13 @@ def multi_label_metrics(predictions, labels, threshold=0.5):
         return sum(scores) / len(scores)
 
     y_pred = preds_to_logits(predictions, threshold=threshold)
-    print("\nLength:", len(predictions), file=sys.stderr)
-    print("Preds:\n", predictions, file=sys.stderr)
-    print("Any non-zero in Logits?:", np.any(y_pred), file=sys.stderr)
-    print("Logits:\n", y_pred, file=sys.stderr)
+    # print("\nLength:", len(predictions), file=sys.stderr)
+    # print("Preds:\n", predictions, file=sys.stderr)
+    # print("Any non-zero in Logits?:", np.any(y_pred), file=sys.stderr)
+    # print("Logits:\n", y_pred, file=sys.stderr)
 
     y_true = labels
-    print("Ref:\n", y_true, file=sys.stderr)
+    # print("Ref:\n", y_true, file=sys.stderr)
 
     metrics = {
         "f1": f1_score(y_true=y_true, y_pred=y_pred, average="macro"),
@@ -175,8 +175,8 @@ def main(
     new_model_path: str,
     train_output_dir: str = "train_results/",
     max_length: int = 512,
-    report_to: str = "wandb",
     epochs: int = 1,
+    report_to: str = "none",
     test_corpus_path: str = None,
     test_result_path: str = None,
     **kwargs
