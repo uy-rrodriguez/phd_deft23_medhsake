@@ -1,6 +1,6 @@
 # Hide output for a clean list of changes (comment to commit outputs)
-logs/
-output/
+# logs/
+# output/
 
 # Environment
 api_keys.py
@@ -12,12 +12,41 @@ slurm*
 # Build files
 **/__pycache__/
 
+# Output by model
+# llama3
+output/llama3
+logs/llama3
+# llama3-70b
+output/llama3-70b
+logs/llama3-70b
+# apollo
+output/apollo
+logs/apollo
+# mistral
+output/mistral
+logs/mistral
+# mistral-v01
+output/mistral-v01
+logs/mistral-v01
+# biomistral
+output/biomistral
+logs/biomistral
+# mmed-llama
+output/mmed-llama3
+logs/mmed-llama3
+# dr-bert
+output/drbert
+logs/drbert
+# camembert
+output/camembert
+logs/camembert
+
 # Extra output
+output/test
+logs/test
+# output/**/*.json
+# output/**/*.png
+# output/**/*.txt
 models/
-logs/llama3/exploration/
-logs/llama3/finetuning/
-output/llama3/exploratory/
-output/**/*.json
-output/**/*.png
 train_results/
 wandb/
