@@ -35,4 +35,5 @@ fi
 
 streamlit run main.py \
     --browser.gatherUsageStats=false \
-    --global.developmentMode=false
+    --global.developmentMode=false \
+    --server.headless=true
