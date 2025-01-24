@@ -109,7 +109,7 @@
   "tag_mode_question": 0.024191949439979068,
   "tag_positive_negative": 0.024383909556871843,
   "tag_positive_positive": -0.024383909556869927,
-  "tag_single_multiple": 0.08502433497290285,
-  "tag_single_single": -0.17035532908011047,
-  "tag_single_undefined": 0.08533099410721363
+  "tag_answer_multiple": 0.08502433497290285,
+  "tag_answer_single": -0.17035532908011047,
+  "tag_answer_undefined": 0.08533099410721363
 }

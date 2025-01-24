@@ -110,9 +110,9 @@
     "tag_mode_question": 0.05833990861356244,
     "tag_positive_negative": 0.08980817788533776,
     "tag_positive_positive": -0.08790684943065398,
-    "tag_single_multiple": -0.0336294845253822,
-    "tag_single_single": 0.6421844569231824,
-    "tag_single_undefined": -0.6066536439411669
+    "tag_answer_multiple": -0.0336294845253822,
+    "tag_answer_single": 0.6421844569231824,
+    "tag_answer_undefined": -0.6066536439411669
   },
   "hard": {
     "nbr_correct_answers": 0.20552585675657437,
@@ -225,9 +225,9 @@
     "tag_mode_question": -0.008160092180228038,
     "tag_positive_negative": 0.09422027375916421,
     "tag_positive_positive": -0.09887235830251576,
-    "tag_single_multiple": -0.025748109370436225,
-    "tag_single_single": -0.28565033225494046,
-    "tag_single_undefined": 0.30674635708436643
+    "tag_answer_multiple": -0.025748109370436225,
+    "tag_answer_single": -0.28565033225494046,
+    "tag_answer_undefined": 0.30674635708436643
   },
   "medium": {
     "nbr_correct_answers": 0.2789359661802056,
@@ -340,9 +340,9 @@
     "tag_mode_question": 0.08718232931663007,
     "tag_positive_negative": -0.2591146248089266,
     "tag_positive_positive": 0.2575562621444041,
-    "tag_single_multiple": -0.3875369149836658,
-    "tag_single_single": 0.5043479251324112,
-    "tag_single_undefined": -0.11836937282408597
+    "tag_answer_multiple": -0.3875369149836658,
+    "tag_answer_single": 0.5043479251324112,
+    "tag_answer_undefined": -0.11836937282408597
   },
   "very easy": {
     "nbr_correct_answers": -0.8420145231079703,
@@ -455,9 +455,9 @@
     "tag_mode_question": -0.46791492740560836,
     "tag_positive_negative": -0.018527837294161083,
     "tag_positive_positive": 0.034019732771290084,
-    "tag_single_multiple": -0.0962028267215324,
-    "tag_single_single": 0.5796920187809618,
-    "tag_single_undefined": -0.4679972965826632
+    "tag_answer_multiple": -0.0962028267215324,
+    "tag_answer_single": 0.5796920187809618,
+    "tag_answer_undefined": -0.4679972965826632
   },
   "very hard": {
     "nbr_correct_answers": 0.303384136760153,
@@ -570,8 +570,8 @@
     "tag_mode_question": 0.3305527816698018,
     "tag_positive_negative": 0.09361401045096497,
     "tag_positive_positive": -0.10479678717723372,
-    "tag_single_multiple": 0.5431173355952497,
-    "tag_single_single": -1.4405740685604316,
-    "tag_single_undefined": 0.8862739562689294
+    "tag_answer_multiple": 0.5431173355952497,
+    "tag_answer_single": -1.4405740685604316,
+    "tag_answer_undefined": 0.8862739562689294
   }
 }

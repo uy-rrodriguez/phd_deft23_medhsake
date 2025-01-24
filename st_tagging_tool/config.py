@@ -26,7 +26,7 @@ TAGS_CONFIG = {
         "Choose positive option?",
         TAGS_OPTS_POSITIVE,
     ),
-    "tag_single": (
+    "tag_answer": (
         "Number of choices",
         TAGS_OPTS_SINGLE,
     ),
