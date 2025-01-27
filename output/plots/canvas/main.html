@@ -21,15 +21,22 @@
             border: 1px solid black;
         }
 
-        #found {
+        #details {
             position: fixed;
-            left: 1100px;
+            left: 1050px;
+            height: 99vh;
+            overflow-y: scroll;
         }
-        #found div {
+        #details div {
             position: relative;
+            margin-left: 30px;
             margin-bottom: 1rem;
+            transition: background ease .1s;
         }
-        #found span {
+        #details div:hover {
+            background: #EEEEEE;
+        }
+        #details span {
             position: absolute;
             top: 5px;
             left: -30px;
@@ -41,8 +48,9 @@
 </head>
 <body>
     <canvas id="background" width="800" height="800">Your browser does not support the canvas element.</canvas>
+    <canvas id="selection" width="1000" height="1000">Your browser does not support the canvas element.</canvas>
     <canvas id="foreground" width="1000" height="1000">Your browser does not support the canvas element.</canvas>
-    <div id="found"></div>
+    <div id="details"></div>
     <script src="data.js"></script>
     <script src="questions.js"></script>
     <script src="app.js"></script>
