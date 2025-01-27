@@ -271,8 +271,8 @@ def multiplex_column_list(
 
 
 def merge_with_metadata(
-        df: pd.DataFrame,
-        tags_path: str,
+        df: pd.DataFrame = None,
+        tags_path: str = None,
         ignored_tags: tuple[str] = ["tag_highlight"],
         ngrams_path: str | None = None,
         include_qa_lengths: bool = False,

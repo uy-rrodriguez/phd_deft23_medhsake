@@ -809,7 +809,7 @@ def main_linear_regression(
         coefs_output_path=f"{base_path}_coefs.json",
         result_output_path=f"{base_path}_results.txt",
 
-        # coefs_output_path="lin_regression_MY_RIDGE_20250121_1255_coefs",
+        # coefs_output_path="output/analysis/lin_regression/20250122/lin_regression_MY_RIDGE_20250122_coefs",
         # result_output_path=None,
 
         figure_path=f"{base_path}_coefs.png",
@@ -857,7 +857,7 @@ def main_plot_residuals():
         data_path = "output/analysis/regression-data.json"
         print(f"Loading data from file '{data_path}'")
         df = merge_with_metadata(
-            df=None, tags_path=None, data_output_path=data_path,
+            data_output_path=data_path,
             result_ignored_cols=["question", "medshake_class"],
         )
 
