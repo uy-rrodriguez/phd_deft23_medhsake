@@ -27,7 +27,7 @@ GENERIC_RE = \
     r"(?P<model>[^_]+(?P<finetuned>_tuned.*?){tuned_modifier})" \
     r"(_prompt(?P<prompt>{prompt_nbr})){prompt_modifier}" \
     r".*" \
-    r"(_shots(?P<shots>\d+)){shots_modifier}" \
+    r"(_shots(?P<shots>{shots_nbr})){shots_modifier}" \
     r"(?P<with_answer_txt>_answertxt){answertxt_modifier}" \
     r"_(?P<run>\d+)" \
     r"\.txt"
@@ -44,6 +44,7 @@ def get_filename_pattern(
         regex_prompt_nbr: int = None,
         regex_no_prompt: bool = None,
         regex_finetuned: bool = None,
+        regex_shots_nbr: int = None,
         regex_no_shots: bool = None,
         regex_answer_txt: bool = None,
 ):
@@ -62,7 +63,7 @@ def get_filename_pattern(
     """
     path_re = GENERIC_RE.format(**{
         "prompt_nbr":
-            "\d+" if regex_prompt_nbr is None
+            r"\d+" if regex_prompt_nbr is None
             else regex_prompt_nbr,
         "prompt_modifier":
             "{0}" if regex_no_prompt
@@ -71,6 +72,9 @@ def get_filename_pattern(
             "?" if regex_finetuned is None
             else "" if regex_finetuned
             else "{0}",
+        "shots_nbr":
+            r"\d+" if regex_shots_nbr is None
+            else regex_shots_nbr,
         "shots_modifier":
             "{0}" if regex_no_shots
             else "",
@@ -211,8 +215,53 @@ def load_output_files(paths: list[str], corpus_path: str,
     return data
 
 
+def load_output_files_df(
+        paths: list[str],
+        corpus_path: str,
+        pattern: str = None,
+) -> pd.DataFrame:
+    """
+    Loads output files and returns the results as a DataFrame.
+
+    MedShake scores per question are calculated, but no average nor any other
+    calculation is done on the data.
+    """
+    pattern = pattern or get_filename_pattern()
+    data = []
+    with open(corpus_path, "r") as f:
+        corpus = json.load(f)
+    for path in sorted(paths):
+        # Read run parameters from file name
+        path_data = parse_path(path, pattern)
+
+        with open(path, "r") as f:
+            for i, line in enumerate(f.readlines()):
+                try:
+                    question_id, generated = line.strip().split(";")
+                    generated = generated.split("|")
+                except IndexError as e:
+                    raise IndexError(f"Parsing failed in line '{line}'", e)
+                instance = corpus[i]
+                expected = instance["correct_answers"]
+                is_match = set(generated) == set(expected)
+                hamming_rate = deft.hamming(generated, expected)
+                medshake_data = instance.get("medshake", {})
+                medshake_rate = deft.medshake_rate(generated, medshake_data)
+                data.append({
+                    "id": question_id,
+                    **path_data,
+                    "emr": 1 if is_match else 0,
+                    "hamming": hamming_rate,
+                    "medshake": medshake_rate,
+                })
+
+    # print(json.dumps(results, indent=2), file=sys.stderr)
+    return pd.DataFrame(data)
+
+
 def gen_output_suffix(
         regex_prompt_nbr: int = None,
+        regex_shots_nbr: int = None,
         regex_finetuned: bool = None,
         regex_answer_txt: bool = None,
 ) -> str:
@@ -223,6 +272,8 @@ def gen_output_suffix(
     suffix = ""
     if regex_prompt_nbr is not None:
         suffix += f"_prompt{regex_prompt_nbr}"
+    if regex_shots_nbr is not None:
+        suffix += f"_shots{regex_shots_nbr}"
     if regex_finetuned is not None:
         suffix += f"_tuned{1 if regex_finetuned else 0}"
     if regex_answer_txt is not None:
