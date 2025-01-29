@@ -371,7 +371,7 @@ def merge_with_metadata(
             df.filter(regex="id--(tags|ngrams)").columns, axis=1, inplace=True)
 
         if data_output_path:
-            with open(data_output_path, "w") as fp:
+            with open(data_output_path, "w", encoding="utf-8") as fp:
                 print(f"Saving data to '{data_output_path}'")
                 df_dict = [
                     {

@@ -521,8 +521,9 @@ def linear_regression(
         # or not result_output_path or not os.path.exists(result_output_path)
     )
     if not do_reload:
-        # with open(coefs_output_path) as fp:
-        regression_df = pd.read_json(coefs_output_path, orient="index")
+        print(f"Loading coefficients '{coefs_output_path}'")
+        regression_df = pd.read_json(
+            coefs_output_path, orient="index", encoding="utf-8")
         coefs_cols = regression_df.filter(regex=r"coef_.+", axis=1).columns
         cv_coefs_df = regression_df[coefs_cols]
         cv_coefs_df.drop("intercept", axis=0, inplace=True)
@@ -660,7 +661,7 @@ def linear_regression(
                 f"coef_{i}": v
                 for i, v in enumerate(cv_intercepts)
             }
-            with open(coefs_output_path, "w") as fp:
+            with open(coefs_output_path, "w", encoding="utf-8") as fp:
                 json.dump(data, indent=2, fp=fp, ensure_ascii=False)
 
         if split_train_test:

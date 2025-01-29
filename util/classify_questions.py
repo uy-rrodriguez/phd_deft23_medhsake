@@ -92,7 +92,7 @@ def test_shannon_entropy(id: str, deduplicate_answers: bool,
 def load_corpus(corpus: str | dict[str, any]) -> pd.DataFrame:
     if isinstance(corpus, str):
         print(f"Loading corpus '{corpus}'")
-        df = pd.read_json(corpus)
+        df = pd.read_json(corpus, encoding="utf-8")
     else:
         df = pd.DataFrame(corpus)
     # print("\\nCorpus sample:")
