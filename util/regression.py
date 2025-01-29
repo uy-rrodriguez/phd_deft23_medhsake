@@ -485,7 +485,6 @@ def linear_regression(
         ngrams_path: str | None,
         data_output_path: str | None,
         coefs_output_path: str,
-        result_output_path: str,
         figure_path: str,
         significance_level: float = 0.05,
         force_reload: bool = False,
@@ -511,7 +510,6 @@ def linear_regression(
     do_reload = (
         force_reload
         or not coefs_output_path or not os.path.exists(coefs_output_path)
-        # or not result_output_path or not os.path.exists(result_output_path)
     )
     if not do_reload:
         print(f"Loading coefficients '{coefs_output_path}'")
@@ -524,13 +522,6 @@ def linear_regression(
         cv_pvalues_df = regression_df[pvalues_cols]
 
         cv_scores = None
-
-        # with open(result_output_path) as fp:
-        #     results = {}
-        #     for line in fp.readlines():
-        #         line = line[:-1]
-        #         _id, values = line.split(";")
-        #         results[_id] = [float(v) for v in values.split("|")]
     else:
         if use_ngrams:
             assert ngrams_path is not None
@@ -775,10 +766,7 @@ def main_linear_regression(
         # data_output_path=None,
 
         coefs_output_path=f"{base_path}_coefs.json",
-        result_output_path=f"{base_path}_results.txt",
-
         # coefs_output_path="output/analysis/lin_regression/20250122/lin_regression_MY_RIDGE_20250122_coefs",
-        # result_output_path=None,
 
         figure_path=f"{base_path}_coefs.png",
         force_reload=force_reload,
