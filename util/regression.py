@@ -488,6 +488,8 @@ def linear_regression(
         figure_path: str,
         significance_level: float = 0.05,
         force_reload: bool = False,
+        include_qa_lengths: bool = False,
+        include_first_last_words: bool = False,
         normalise: bool = True,
         cv_splits: int = 5,
         cv_balance_classes: bool = True,
@@ -535,8 +537,8 @@ def linear_regression(
             data_output_path=data_output_path,
             force_reload=force_reload,
             result_ignored_cols = ["question"],
-            # include_qa_lengths=True,
-            # include_first_last_words=True,
+            include_qa_lengths=include_qa_lengths,
+            include_first_last_words=include_first_last_words,
             normalise=normalise,
         )
 
@@ -573,7 +575,8 @@ def linear_regression(
             print("\nRunning Linear Regression algorithm")
 
             # Scikit-learn lib
-            from util.linear_model import Ridge, FitPvalues
+            # from util.linear_model import Ridge, FitPvalues
+            from sklearn.linear_model import Ridge
             # reg = ElasticNet(alpha=1.0, l1_ratio=0)
             # reg = LinearRegression()
             reg = Ridge()
@@ -772,6 +775,8 @@ def main_linear_regression(
 
         figure_path=f"{base_path}_coefs.png",
         force_reload=force_reload,
+        include_qa_lengths=True,
+        include_first_last_words=True,
         # normalise=False,
         cv_splits=5,
         # cv_balance_classes=False,
