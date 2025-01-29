@@ -384,58 +384,28 @@ def merge_with_metadata(
                 # print(json.dumps(df_dict, indent=4))
                 json.dump(df_dict, fp, indent=4, ensure_ascii=False)
 
-    # Replace NA with zeros in columns where NA values are expected
-    cols_na = df.filter(
-        regex=r"(first|last|answer|year|topic|tag|ngram)_.+"
-    ).columns
-    df[cols_na] = df[cols_na].fillna(0).astype("int")
+    # Apply appropriate dtypes
+    df["medshake_class"] = df["medshake_class"].astype(str)
+
+    # Replace NA with zeros in all non-categorical columns
+    df = df.fillna(0)
 
     # For selected feature groups (e.g. year), remove columns where there
     # are less than 3 samples with a value for it (e.g. year_2017 if only
     # one sample is for that year).
     if result_filter_cols:
-        # cols_filter = df.filter(
-        #     regex=r"(first|last|answer|year|topic|tag|ngram)_.+"
-        # ).columns
-        cols_filter = cols_na
+        cols_filter = df.filter(
+            regex=r"(first|last|answer|year|topic|tag|ngram)_.+"
+        ).columns
         sums = df[cols_filter].astype("float").sum()
         cols_drop = sums[sums < 3].index
         # print(to_drop)
         df.drop(cols_drop, axis=1, inplace=True)
 
-    # Apply appropriate dtypes
-    df["medshake_class"] = df["medshake_class"].astype(str)
-
-    # Update category of difficulty classes so the index starts at 1
-    # class_cols = df.filter(regex=r"(medshake|shannon)_class(_q?cut)?").columns
-    # df[class_cols] = df[class_cols].astype(
-    #     pd.CategoricalDtype(
-    #         categories=[0] + list(LABEL_COLOURS.keys()), ordered=True))
-
-    # Correct answers combined into a string
-    # choices = ["a", "b", "c", "d", "e"]
-    # df["correct_answers"] = df["correct_answers"].astype(
-    #     pd.CategoricalDtype(
-    #         categories=[
-    #             "".join(comb)
-    #             for i in range(1, len(choices) + 1)
-    #             for comb in combinations(choices, i)
-    #         ],
-    #         ordered=True,
-    #     )
-    # )
-
-    # Convert categorical values to int equivalent
-    for k, t in df.dtypes.items():
-        if t == "category":
-            df[k] = df[k].cat.codes
-
     # Remove columns not needed by the algorithm to follow
     if result_ignored_cols:
         df.drop(result_ignored_cols, axis=1, inplace=True)
 
-    # print(df)
-    # print(df.columns.tolist())
     return df
 
 
