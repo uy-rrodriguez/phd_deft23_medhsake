@@ -6,6 +6,7 @@
 api_keys.py
 conda-environment.yml
 venv/
+gems/
 
 # Batch execution configuration
 slurm*
