@@ -488,6 +488,7 @@ def linear_regression(
         figure_path: str,
         significance_level: float = 0.05,
         force_reload: bool = False,
+        normalise: bool = True,
         cv_splits: int = 5,
         cv_balance_classes: bool = True,
 ):
@@ -536,6 +537,7 @@ def linear_regression(
             result_ignored_cols = ["question"],
             # include_qa_lengths=True,
             # include_first_last_words=True,
+            normalise=normalise,
         )
 
         col_class = "medshake_class"
@@ -770,6 +772,7 @@ def main_linear_regression(
 
         figure_path=f"{base_path}_coefs.png",
         force_reload=force_reload,
+        # normalise=False,
         cv_splits=5,
         # cv_balance_classes=False,
     )

@@ -277,6 +277,7 @@ def merge_with_metadata(
         ngrams_path: str | None = None,
         include_qa_lengths: bool = False,
         include_first_last_words: bool = False,
+        normalise: bool = True,
         data_output_path: str | None = None,
         force_reload: bool = False,
         result_filter_cols: bool = True,
@@ -370,6 +371,22 @@ def merge_with_metadata(
         df.drop(
             df.filter(regex="id--(tags|ngrams)").columns, axis=1, inplace=True)
 
+        # Normalise feature values
+        if normalise:
+            from sklearn import preprocessing
+            norm_ignored_cols = [
+                "id", "question", "medshake_difficulty", "medshake_class",
+            ]
+            # Remember which cells had NaN
+            df_not_na = df.notna()
+            norm_df = df.drop(norm_ignored_cols, axis=1).fillna(0)
+            scaler = preprocessing.MaxAbsScaler()
+            scaled_df = scaler.fit_transform(norm_df)
+            scaled_df = pd.DataFrame(scaled_df, columns=norm_df.columns)
+            df[norm_df.columns] = scaled_df
+            # Restore NaN after normalisation
+            df = df[df_not_na]
+
         if data_output_path:
             with open(data_output_path, "w", encoding="utf-8") as fp:
                 print(f"Saving data to '{data_output_path}'")
@@ -424,6 +441,77 @@ def main_merge_with_metadata(
     )
     print(df.head())
     # print(df[df.filter(regex=r"(first)_.*").columns])
+
+def test_normalise(
+        df: pd.DataFrame,
+        tags_path: str,
+        data_output_path: str | None,
+        figure_path: str,
+        force_reload: bool = False,
+):
+    """
+    Plots corpus with metadata after multiple techniques of normalisation.
+    """
+    df = merge_with_metadata(
+        df,
+        tags_path=tags_path,
+        data_output_path=data_output_path,
+        force_reload=force_reload,
+        result_ignored_cols = ["id", "question", "medshake_class"],
+    )
+
+    # Normalise feature values
+    from sklearn import preprocessing
+    scalers = (
+        None,
+        preprocessing.StandardScaler(),
+        preprocessing.RobustScaler(),
+        preprocessing.MaxAbsScaler(),
+        preprocessing.MinMaxScaler(),
+    )
+    cols = (
+        "nbr_correct_answers",
+        "tag_negation_no",
+        "tag_answer_single",
+        "topic_galénique",
+    )
+    nrows = 2
+    ncols = 3
+    fig = plt.figure(figsize=(9, 5), layout="constrained")
+    # plt.subplots(gridspec_kw={"wspace": 0.1, "hspace": 0.05})
+    gs = plt.GridSpec(nrows, ncols, figure=fig, wspace=0.1, hspace=0.05)
+    for i, sc in enumerate(scalers):
+        j, k = i // ncols, i % ncols
+        ax = fig.add_subplot(gs[j, k])
+        if i == 0:
+            title = "Before scaling"
+            _df = df
+        else:
+            title = f"After scaling {sc.__class__.__name__}"
+            _df = sc.fit_transform(df)
+            _df = pd.DataFrame(_df, columns=df.columns)
+            print(_df)
+        ax.set_title(title)
+        ax.margins(0.1, 0.1)
+        for col in cols:
+            ax.plot(_df[col], label=col)
+    fig.legend(loc=(0.775, 0.065), labels=cols)
+    fig.savefig(figure_path, bbox_inches="tight")
+
+
+def main_test_normalise(
+        # force_reload: bool = False,
+):
+    print("\nNormalise metadata")
+    corpus_path = "data/test-medshake-score.json"
+    df = load_corpus(corpus_path)
+    df = test_normalise(
+        df,
+        tags_path="data/tags-test-medshake-score.json",
+        data_output_path="output/analysis/regression-data.json",
+        figure_path="output/analysis/test_normalisation.png",
+        # force_reload=force_reload,
+    )
 
 
 def tsne(
