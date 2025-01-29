@@ -226,12 +226,12 @@ def main_extract_ngrams():
     extract_ngrams(df, "data/ngrams-test-medshake-score.json")
 
 
-def multiplex_column(
+def one_hot_encode(
         df: pd.DataFrame, col: str, new_prefix: str, drop_col: bool = True,
 ) -> None:
     """
-    Expand one column into multiple columns, one per possible value in the
-    corpus, with values in {NaN, 1}.
+    Apply one-hot encoding to expand one column into multiple columns, one per
+    possible value in the corpus, with values in {NaN, 1}.
 
     The new column for a given possible value will be equal to 1 when the value
     under the original column "col" is equal to it.
@@ -246,12 +246,12 @@ def multiplex_column(
         df.drop(col, axis=1, inplace=True)
 
 
-def multiplex_column_list(
+def one_hot_encode_list(
         df: pd.DataFrame, col: str, new_prefix: str, drop_col: bool = True,
 ) -> None:
     """
-    Expand one column into multiple columns. Equivalent to `multiplex_column`
-    but for columns where the values are lists.
+    Apply one-hot encoding to expand one column into multiple columns.
+    Equivalent to `multiplex_column` but for columns where the values are lists.
 
     The new column for a given possible value will be equal to 1 when the list
     under the original column "col" contains it.
@@ -306,17 +306,17 @@ def merge_with_metadata(
         # starts/ends with the word.
         if include_first_last_words:
             df = calc_first_last_words(df)
-            multiplex_column(df, "first_word", "first")
-            multiplex_column(df, "last_char", "last")
+            one_hot_encode(df, "first_word", "first")
+            one_hot_encode(df, "last_char", "last")
             df.rename(
                 inplace=True,
                 columns=lambda k: "last_other" if k == "last_<other>" else k)
 
         # Transform correct_answers into a string, then into a categorical type
-        multiplex_column_list(df, "correct_answers", "answer")
+        one_hot_encode_list(df, "correct_answers", "answer")
 
         # Expand year to multiple columns
-        multiplex_column(df, "year_txt", "year")
+        one_hot_encode(df, "year_txt", "year")
 
         # Expand topics list to multiple columns
         df["topics"] = df["topics"].apply(
@@ -326,7 +326,7 @@ def merge_with_metadata(
                 for v in x
             ]
         )
-        multiplex_column_list(df, "topics", "topic")
+        one_hot_encode_list(df, "topics", "topic")
 
         # Drop unecessary columns
         drop_cols_re = (
@@ -348,7 +348,7 @@ def merge_with_metadata(
         for col in tag_cols:
             df_tags[col] = df_tags[col].apply(
                 lambda x: x.replace("/", "").replace(" ", ""))
-            multiplex_column(df_tags, col, col)
+            one_hot_encode(df_tags, col, col)
 
         # Load n-grams
         if ngrams_path:
