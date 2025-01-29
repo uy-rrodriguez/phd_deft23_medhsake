@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split, KFold, StratifiedKFold
 from tqdm import tqdm
 
 # Trick to import local packages when this script is run from the terminal
@@ -29,7 +30,7 @@ from classify_questions import load_corpus, LABEL_COLOURS
 
 def async_one_forest(
         df_train_x: pd.DataFrame, df_train_y: pd.DataFrame,
-        df_test: pd.DataFrame, df_test_x: pd.DataFrame, df_test_y: pd.DataFrame,
+        df_test_x: pd.DataFrame, df_test_y: pd.DataFrame,
         feature_names: list[str],
 ) -> dict:
     classes = list(LABEL_COLOURS.keys())
@@ -46,15 +47,14 @@ def async_one_forest(
             df_test_x_ = df_test_x.drop(feature, axis=1)
 
         clf = RandomForestClassifier()
-        clf.fit(df_train_x_, df_train_y)
+        clf.fit(df_train_x_.drop("id", axis=1), df_train_y)
         results = {}
 
-        preds = clf.predict(df_test_x_)
-        for i in range(len(df_test)):
-            inst = df_test.iloc[i]
+        preds = clf.predict(df_test_x_.drop("id", axis=1))
+        for i in range(len(df_test_x_)):
             pred = preds[i]
             exp = df_test_y.iloc[i]
-            results[inst["id"]] = (
+            results[df_test_x_.iloc[i]["id"]] = (
                 pred, exp,
                 classes.index(pred), classes.index(exp),
             )
@@ -64,7 +64,7 @@ def async_one_forest(
 
 def async_random_forest(
         df_train_x: pd.DataFrame, df_train_y: pd.DataFrame,
-        df_test: pd.DataFrame, df_test_x: pd.DataFrame, df_test_y: pd.DataFrame,
+        df_test_x: pd.DataFrame, df_test_y: pd.DataFrame,
         feature_names: list,
         num_cpus: int,
 ) -> dict:
@@ -75,7 +75,7 @@ def async_random_forest(
         results = p.starmap(
             async_one_forest,
             [
-                (df_train_x, df_train_y, df_test, df_test_x, df_test_y, subset)
+                (df_train_x, df_train_y, df_test_x, df_test_y, subset)
                 for subset in subsets
             ],
         )
@@ -123,19 +123,10 @@ def random_forest(
         # df = df[:10]
 
         # Split train/test randomly
-        from numpy.random import default_rng
-        rng = default_rng()
-        train_len = int(len(df.index) * train_len)
-        train_indexes = rng.choice(len(df.index), size=train_len, replace=False)
-        df_train = pd.DataFrame([df.iloc[i] for i in train_indexes])
-        df_test = df[~df.index.isin(df_train.index)]
-
-        # Split X and y for the forests algorithm
         col_y = "medshake_class"
-        df_train_x = df_train.drop(["id", col_y], axis=1)
-        df_train_y = df_train[col_y]
-        df_test_x = df_test.drop(["id", col_y], axis=1)
-        df_test_y = df_test[col_y]
+        df_train_x, df_test_x, df_train_y, df_test_y = train_test_split(
+            df.drop(col_y, axis=1), df[col_y],
+            train_size=train_len, random_state=None)
 
         print("Running Random Forest algorithm")
 
@@ -143,7 +134,7 @@ def random_forest(
         feature_names = [None] + df_train_x.columns.to_list()
 
         all_results = async_random_forest(
-            df_train_x, df_train_y, df_test, df_test_x, df_test_y,
+            df_train_x, df_train_y, df_test_x, df_test_y,
             feature_names, num_cpus,
         )
 
@@ -239,7 +230,7 @@ def main_random_forests(
         "output/analysis/random-forests-data.json",
         f"{base_path}_preds.txt",
         f"{base_path}_rates.txt",
-        train_len=2/3,
+        train_len=0.66,
         num_cpus=num_cpus,
         force_reload=force_reload,
         force_reload_forests=force_reload_forests,
@@ -362,19 +353,10 @@ def logistic_regression(
         )
 
         # Split train/test randomly
-        from numpy.random import default_rng
-        rng = default_rng()
-        train_len = int(len(df.index) / 3 * 2)
-        train_indexes = rng.choice(len(df.index), size=train_len, replace=False)
-        df_train = pd.DataFrame([df.iloc[i] for i in train_indexes])
-        df_test = df[~df.index.isin(df_train.index)]
-
-        # Split X and y for the linear regression algorithm
         col_y = "medshake_class"
-        df_train_x = df_train.drop(col_y, axis=1)
-        df_train_y = df_train[col_y]
-        df_test_x = df_test.drop(col_y, axis=1)
-        df_test_y = df_test[col_y]
+        df_train_x, df_test_x, df_train_y, df_test_y = train_test_split(
+            df.drop(col_y, axis=1), df[col_y],
+            train_size = 0.66, random_state=None)
 
         # Logistic Regression
         print("Running Logistic Regression algorithm")
@@ -507,13 +489,24 @@ def linear_regression(
         figure_path: str,
         significance_level: float = 0.05,
         force_reload: bool = False,
-        cv_splits: int = None,
-        split_train_test: bool = False,
+        cv_splits: int = 5,
+        cv_balance_classes: bool = True,
 ):
     """
     Executes a Linear Regression to determine the most important features that
     predict MedShake score. Utilises the source data enriched with the given
     tags and, optionally, n-grams.
+
+    Data is split in `cv_splits` number of folds for cross-validation. If
+    `balance_classes` is True, the class column is used to balance samples in
+    each fold.
+
+    First, StatsModels is used to determine p-values and eliminate features with
+    a `significance_level` > 0.05.
+
+    Then, Scikit-Learn's Ridge is used to calculate final coefficients.
+
+    Results are plotted in multiple files.
     """
     do_reload = (
         force_reload
@@ -526,9 +519,11 @@ def linear_regression(
             coefs_output_path, orient="index", encoding="utf-8")
         coefs_cols = regression_df.filter(regex=r"coef_.+", axis=1).columns
         cv_coefs_df = regression_df[coefs_cols]
-        cv_coefs_df.drop("intercept", axis=0, inplace=True)
+        cv_coefs_df = cv_coefs_df.drop("intercept", axis=0)
         pvalues_cols = regression_df.filter(regex=r"pvalue_.+", axis=1).columns
         cv_pvalues_df = regression_df[pvalues_cols]
+
+        cv_scores = None
 
         # with open(result_output_path) as fp:
         #     results = {}
@@ -547,61 +542,39 @@ def linear_regression(
             ngrams_path=ngrams_path,
             data_output_path=data_output_path,
             force_reload=force_reload,
-            result_ignored_cols = ["question", "medshake_class"],
+            result_ignored_cols = ["question"],
             # include_qa_lengths=True,
             # include_first_last_words=True,
         )
 
+        col_class = "medshake_class"
+        col_y = "medshake_difficulty"
+        df_class = df[col_class]
+        df = df.drop(col_class, axis=1)
+
         ####### START REGRESSION ###############################################
 
-        from numpy.random import default_rng
-        rng = default_rng()
-
-        # Split train/test randomly
-        if split_train_test:
-            train_len = int(len(df.index) / 3 * 2)
-            train_indexes = rng.choice(
-                len(cv_df.index), size=train_len, replace=False)
-            df_train = pd.DataFrame([cv_df.iloc[i] for i in train_indexes])
-            df_test = cv_df[~cv_df.index.isin(df_train.index)]
-        else:
-            df_train = df
-
-        # Use cross-validation with leave-one-out if specified
-        if not cv_splits:
-            cv_splits = 1
-            cv_split_lens = [len(df_train.index)]
-        else:
-            cv_split_lens = [int(len(df_train.index) / cv_splits)] * cv_splits
-            cv_split_rest = len(df_train.index) % cv_splits
-            for i in range(cv_split_rest):
-                cv_split_lens[i] += 1
-
         # Coefficients and p-values after cross-validation executions
+        cv_scores: list[float] = []
         cv_coefs: list[list[float]] = []
         cv_intercepts: list[float] = []
         cv_pvalues: list[pd.Series] = []
 
-        cv_last_idx = 0
-        for _len in cv_split_lens:
-            # Extract DataFrame split to exclude for cross-validation
-            cv_exclude_df = df_train.iloc[cv_last_idx : cv_last_idx + _len]
-            cv_last_idx = cv_last_idx + _len
-
-            # On each cross-validation step, we exclude only one split
-            cv_df = df_train[~df_train.index.isin(cv_exclude_df.index)]
-
+        # Use cross-validation with leave-one-out, with the split left out being
+        # used as test to calculate score
+        if cv_balance_classes:
+            kf = StratifiedKFold(n_splits=cv_splits)
+        else:
+            kf = KFold(n_splits=cv_splits)
+        for (train_index, test_index) in kf.split(df, df_class):
             # Split X and y for the linear regression algorithm
-            col_y = "medshake_difficulty"
-            df_train_x = cv_df.drop(["id", col_y], axis=1)
-            df_train_y = cv_df[col_y]
+            df_train = df.iloc[train_index]
+            df_train_x = df_train.drop(["id", col_y], axis=1)
+            df_train_y = df_train[col_y]
 
-            # No split train/test within each cross-validation step
-            # df_train_x = df_train.drop(["id"] + col_y, axis=1)
-            # df_train_y = df_train[col_y]
-            # df_test_x = df_test.drop(col_y, axis=1)
-            # df_test_y = df_test[col_y]
-
+            df_test = df.iloc[test_index]
+            df_test_x = df_test.drop(["id", col_y], axis=1)
+            df_test_y = df_test[col_y]
 
             # Linear Regression
             print("\nRunning Linear Regression algorithm")
@@ -614,7 +587,8 @@ def linear_regression(
             reg.fit(df_train_x, df_train_y)
 
             # No score calculated on each cross-validation step
-            # print("Score:", reg.score(df_test_x, df_test_y))
+            cv_scores.append(reg.score(df_test_x, df_test_y))
+            print("Score:", cv_scores[-1])
 
             # if isinstance(reg, FitPvalues):
             #     reg_sum = reg.summary()
@@ -663,39 +637,6 @@ def linear_regression(
             }
             with open(coefs_output_path, "w", encoding="utf-8") as fp:
                 json.dump(data, indent=2, fp=fp, ensure_ascii=False)
-
-        if split_train_test:
-            # Predict MedShake difficulty
-            df_test_x = df_test.drop(col_y, axis=1)
-            df_test_y = df_test[col_y]
-            preds = reg.predict(df_test_x.drop("id", axis=1))
-            results = {
-                _id: [exp, pred]
-                for _id, exp, pred in zip(
-                    df_test_x["id"],
-                    df_test_y,
-                    preds,
-                )
-            }
-            if result_output_path:
-                with open(result_output_path, "w") as fp:
-                    for k, v in results.items():
-                        print(f"{k};{'|'.join(str(x) for x in v)}", file=fp)
-
-    # # Process resulting rates
-    # if split_train_test:
-    #     num_correct = sum([
-    #         int(r[0] * 10) == int(r[1] * 10)
-    #         for r in results.values()
-    #     ])
-    #     distances = [
-    #         abs(r[0] - r[1])
-    #         for r in results.values()
-    #     ]
-    #     print(
-    #         f"Accuracy {num_correct}/{len(results)}",
-    #         num_correct / len(results))
-    #     print("Distance (avg)", np.average(distances))
 
     ############################################################################
 
@@ -756,16 +697,19 @@ def linear_regression(
         single_plot=True)
 
     # Cross-validation Histogram of coefficients and std. deviation
-    def hist_plot(_df, sort_col, sort_asc, suptitle, ylabel, figure_path):
-        hist_df = (
-            _df
-                .filter(items=selected_feat_df.index, axis=0)
-                .sort_index(
-                    key=lambda _: abs(selected_feat_df[sort_col]),
-                    ascending=sort_asc)
-                .T
+    def hist_plot(
+            _df, filter_selected, sort_asc, suptitle, ylabel,
+            figsize, figure_path
+    ):
+        hist_df = _df
+        if filter_selected:
+            hist_df = _df.filter(items=selected_feat_df.index, axis=0)
+        hist_df = hist_df.sort_index(
+            key=lambda x: hist_df.loc[x].T.mean().abs(),
+            ascending=sort_asc
         )
-        fig, ax = plt.subplots(figsize=(12, 8))
+        hist_df = hist_df.T
+        fig, ax = plt.subplots(figsize=figsize)
         fig.suptitle(suptitle)
         ax.set_xlabel("Features")
         ax.set_ylabel(ylabel)
@@ -777,15 +721,38 @@ def linear_regression(
         fig.savefig(figure_path, bbox_inches="tight")
 
     hist_plot(
-        cv_coefs_df, "coef", False,
+        cv_coefs_df, True, False,
         "MCQ cross-validation coefficients",
-        "Coefficient",
+        "Coefficient", (12, 8),
         figure_path.replace(".", "_hist."))
     hist_plot(
-        cv_pvalues_df, "pvalue", True,
+        cv_pvalues_df, True, True,
         "MCQ cross-validation p-values",
-        "P-value",
+        "P-value", (12, 8),
         figure_path.replace("coefs.", "pvalues_hist."))
+
+    hist_plot(
+        cv_coefs_df, False, False,
+        "MCQ cross-validation all coefficients",
+        "Coefficient", (50, 8),
+        figure_path.replace(".", "_hist_all."))
+    hist_plot(
+        cv_pvalues_df, False, True,
+        "MCQ cross-validation all p-values",
+        "P-value", (50, 8),
+        figure_path.replace("coefs.", "pvalues_hist_all."))
+
+    # Prediction scores during cross-validation
+    if cv_scores:
+        fig, ax = plt.subplots()
+        fig.suptitle("MCQ cross-validation prediction scores")
+        ax.set_xlabel("Cross-validation runs")
+        ax.set_ylabel("Score")
+        ax.axhline(y=np.average(cv_scores), color="r", linestyle="-")
+        ax.plot(
+            [i for i in range(1, cv_splits + 1)], cv_scores,
+            c=LABEL_COLOURS["hard"])
+        fig.savefig(figure_path.replace("coefs.", "scores."), bbox_inches="tight")
 
 
 def main_linear_regression(
@@ -816,7 +783,7 @@ def main_linear_regression(
         figure_path=f"{base_path}_coefs.png",
         force_reload=force_reload,
         cv_splits=5,
-        split_train_test=False,
+        # cv_balance_classes=False,
     )
 
 
