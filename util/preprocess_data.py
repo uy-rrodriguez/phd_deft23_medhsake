@@ -205,15 +205,10 @@ def student_rates():
     # assert med_rate == (27.5/40 + 10/50) / 2  # 0.44375
 
 
-def merge_corpus_with_year_topic():
-    corpus_path = "data/test-medshake-score.json"
-    new_corpus_path = "data/test-medshake-score-YEARS.json"
-    extra_data_path = "data/medshake-year-and-topic.txt"
-
-    print(f"Loading corpus '{corpus_path}")
-    with open(corpus_path) as fp:
-        corpus = json.load(fp)
-
+def _load_medshake_data(extra_data_path: str) -> dict:
+    """
+    Helper to load a file with the latest data downloaded from MedShake.
+    """
     print(f"Loading extra data '{extra_data_path}")
     with open(extra_data_path, encoding="utf-8") as fp:
         extra = {}
@@ -244,6 +239,26 @@ def merge_corpus_with_year_topic():
                 extra[question].append(obj)
             next(it, None)  # Skip "------"
             line = next(it, None)
+    return extra
+
+
+def _load_corpus(corpus_path: str) -> list[dict]:
+    """
+    Helper to load the corpus as a list of Python dicts.
+    """
+    print(f"Loading corpus '{corpus_path}")
+    with open(corpus_path) as fp:
+        corpus = json.load(fp)
+    return corpus
+
+
+def merge_corpus_with_year_topic():
+    corpus_path = "data/test-medshake-score.json"
+    new_corpus_path = "data/test-medshake-score-YEARS.json"
+    extra_data_path = "data/medshake-year-and-topic.txt"
+
+    corpus = _load_corpus(corpus_path)
+    extra = _load_medshake_data(extra_data_path)
 
     # Merge data when the same question appears multiple times, keep last year
     ignored = []
