@@ -11,6 +11,7 @@ YEARS_NORD_SUD = 2002.upto(2011).to_a
 URL_BASE = "https://www.medshake.net/pharmacie/concours-internat/annales/qcm/voir"
 
 DEBUG = false
+
 if DEBUG
   YEARS = [2015]
   NUMBERS = [39]
@@ -18,7 +19,7 @@ if DEBUG
 else
   YEARS = 1991.upto(2023)
   NUMBERS = 1.upto(60)
-  SLEEP = 0.1
+  SLEEP = 0.01
 end
 
 
@@ -44,7 +45,8 @@ end
 
 def launch
 
-  puts "["
+  out_path = "rb_scrap_medshake/medshake-year-and-topic.json"
+  results = []
 
   YEARS.each do |year|
     ["", "nord", "sud"].each do |suffix|
@@ -73,6 +75,21 @@ def launch
         # Extract question cleaning the text, removing "&nbsp;"
         question = doc.css("div.qcm.row").text.strip.split("\n")[3].chomp.gsub(" ", " ").strip
         $stderr.puts question
+
+        # Extract answers
+        re = /([A-E])\s+-\s+(.+)/
+        answers = {}
+        correct = []
+        doc.css(".repQCM li").each do |li|
+          txt = li.text.delete("\r\n").gsub(/[ \s]+/, " ").strip
+          md = re.match(txt)
+          answers[md[1].downcase] = md[2]
+          if li.classes.include? "repOk"
+            correct.push(md[1].downcase)
+          end
+        end
+        # $stderr.puts answers
+        # $stderr.puts correct
 
 
         # Parse student responses
@@ -104,25 +121,29 @@ def launch
         # Print data as JSON
         data = {
           "question": question,
+          "answers": answers,
+          "correct_answers": correct,
           "medshake": rates,
           "year": year,
           "year_txt": year_suffix,
           "question_nbr": nbr,
           "topics": topics
         }
-        puts JSON.generate(
-          data,
-          opts={indent: "    ", space: " ", object_nl: "\n", array_nl: "\n"},
-        ) + ","
+        results.push(data)
 
-
-        # puts "------"
         sleep(SLEEP)
       end
+
+      # Trigger storage after each year, to prevent losing all data if the
+      # script is aborted prematurely
+      results_txt = JSON.generate(
+        results,
+        opts={indent: "    ", space: " ", object_nl: "\n", array_nl: "\n"},
+      )
+      File.write(out_path, results_txt)
+
     end
   end
-
-  puts "]"
 
 end
 
