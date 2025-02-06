@@ -38,17 +38,65 @@ class LegendTitle(object):
             x0, y0,
             # r'\underline{' + orig_handle + '}',
             orig_handle,
-            usetex=True, **self.text_props)
+            usetex=False, **self.text_props)
         handlebox.add_artist(title)
         return title
 
 
+def load_model_results_output(
+        corpus_with_tags: pd.DataFrame,
+        corpus_path: str = "data/test-medshake-score.json",
+        llm_output_dir: str = "output/llama3/tuned_002_20240731",
+        class_col = "medshake_class",
+        force_reload: bool = True,
+) -> pd.DataFrame:
+    """
+    Helper to load model output files and calculate average scores.
+    The "medshake" score is calculated from the actual responses given by the
+    LLM to each question.
+    """
+    # Arguments used to load LLM output files
+    llm_kwargs = {
+        "regex_prompt_nbr": 2,
+        "regex_shots_nbr": 2,
+        "regex_finetuned": True,
+        "regex_answer_txt": False,
+    }
+    suffix = gen_output_suffix(**llm_kwargs)
+    presaved_llm_results = \
+        f"{llm_output_dir}/raw_rates_outputs{suffix}_details.json"
+
+    if not force_reload and os.path.exists(presaved_llm_results):
+        llm_results_df = pd.read_json(presaved_llm_results, orient="records")
+    else:
+        pattern = get_filename_pattern(**llm_kwargs)
+        print("Filename pattern:", pattern.pattern)
+        paths = [
+            os.path.join(llm_output_dir, f)
+            for f in os.listdir(llm_output_dir)
+            if pattern.match(f)
+        ]
+        print(f"Files found ({len(paths)}):", *paths, sep="\n")
+        llm_results_df = load_output_files_df(paths, corpus_path, pattern)
+
+        if not len(llm_results_df):
+            raise "No output files were found when loading results data."
+        with open(presaved_llm_results, "w") as f:
+            llm_results_df.to_json(f, orient="records")
+
+    # Group results by ID (join all result files) and calculate average
+    # Note: This DataFrame is indexed by ID
+    llm_results_df = llm_results_df.groupby(by="id").mean()
+    # Add MedShake class to LLM results for later use
+    llm_results_df = llm_results_df.join(
+        corpus_with_tags.groupby("id").first()[class_col])
+
+
 def plot_tags_topics(
         corpus_path: str = "data/test-medshake-score.json",
-        # tags_path: str = "data/tags-test-medshake-score.json",
         data_output_path: str = "output/analysis/regression-data.json",
-        llm_output_dir: str = "output/llama3/tuned_002_20240731",
-        figure_path: str = "output/compare/compare.png",
+        model_output_dir: str = "output/llama3/tuned_002_20240731",
+        figure_path: str = "output/compare/model_outputs/compare.png",
         plot_all: bool = False,
 ) -> None:
     """
@@ -91,42 +139,13 @@ def plot_tags_topics(
             else:
                 columns_config[base].append(val)
 
-    # Enrich data with rates based on model output
-    force_reload = True
-    # arguments used to load LLM output files
-    llm_kwargs = {
-        "regex_prompt_nbr": 2,
-        "regex_shots_nbr": 2,
-        "regex_finetuned": True,
-        "regex_answer_txt": False,
-    }
-    suffix = gen_output_suffix(**llm_kwargs)
-    presaved_llm_results = \
-        f"{llm_output_dir}/raw_rates_outputs{suffix}_details.json"
-
-    if not force_reload and os.path.exists(presaved_llm_results):
-        llm_results_df = pd.read_json(presaved_llm_results, orient="records")
-    else:
-        pattern = get_filename_pattern(**llm_kwargs)
-        print("Filename pattern:", pattern.pattern)
-        paths = [
-            os.path.join(llm_output_dir, f)
-            for f in os.listdir(llm_output_dir)
-            if pattern.match(f)
-        ]
-        print(f"Files found ({len(paths)}):", *paths, sep="\n")
-        llm_results_df = load_output_files_df(paths, corpus_path, pattern)
-
-        if not len(llm_results_df):
-            raise "No output files were found when loading results data."
-        with open(presaved_llm_results, "w") as f:
-            llm_results_df.to_json(f, orient="records")
-
-    # Group results by ID (join all result files) and calculate average
-    # Note: This DataFrame is indexed by ID
-    llm_results_df = llm_results_df.groupby(by="id").mean()
-    # Add MedShake class to LLM results for later use
-    llm_results_df = llm_results_df.join(df.groupby("id").first()[class_col])
+    # Load LLM rates from model output
+    llm_results_df = load_model_results_output(
+        df,
+        corpus_path=corpus_path,
+        llm_output_dir=model_output_dir,
+        class_col=class_col,
+    )
 
     # Plot score by tag value, for each tag of interest
     for base_col, col_values in columns_config.items():
