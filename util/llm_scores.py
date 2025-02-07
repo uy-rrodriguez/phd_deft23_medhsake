@@ -3,7 +3,9 @@ Scripts that use advanced features of LLMs, like accessing the internal weights
 and token scores/probabilities.
 """
 
+import itertools
 import json
+import logging
 import os
 import sys
 
@@ -13,13 +15,21 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 # Trick to import local packages when this script is run from the terminal
 sys.path.append(os.path.abspath("."))
 
+from deft import get_prompt, template_from_id
+
 # HuggingFace authentication
 # from util.hugging_face import hf_login
 # hf_login()
 
-def print_err(*args, **kwargs):
-    kwargs.update({"file": sys.stderr})
-    print(*args, **kwargs)
+
+# The _flask_logger is set by the Flask app if the code is run from there.
+# Otherwise the logs are printed to standard output.
+_flask_logger = None
+def log(*args, **kwargs):
+    if _flask_logger is not None:
+        _flask_logger.info(*args)
+    else:
+        print(*args, **kwargs)
 
 
 def load_model(
@@ -72,7 +82,7 @@ def generate(
         if v is not None
     }
     if print_hyper_kwargs and len(hyper_kwargs):
-        print_err(
+        log(
             "Hyper-parameters:",
             *[f"  - {k}: {v}" for k, v in hyper_kwargs.items()],
             "\n",
@@ -194,12 +204,10 @@ def output_scores(model, tokenizer):
     generated_tokens = sequences[inputs.input_ids.shape[1]:]
     generated_text = tokenizer.decode(generated_tokens)
 
-    print_err()
-    print_err(f"PROMPT: [{prompt_text}]")
-    print_err(f"GENERATED: [{generated_text}]")
-    print_err(f"Number of score tensors: {len(scores)}")
+    log(f"\nPROMPT: [{prompt_text}]")
+    log(f"GENERATED: [{generated_text}]")
+    log(f"Number of score tensors: {len(scores)}")
 
-    print_err("\n")
     chosen_tokens_probs = [
         f"{tokenizer.decode(token_id)}  >>>  {p[token_id].item()}"
         for p, token_id in zip(
@@ -207,11 +215,10 @@ def output_scores(model, tokenizer):
             generated_tokens
         )
     ]
-    print_err("Token probabilities")
+    log("\nToken probabilities")
     json.dump(chosen_tokens_probs, indent=2, fp=sys.stderr)
 
-    print_err("\n")
-    print_err("Probability of EOS")
+    log("\nProbability of EOS")
     # n_gen = len(scores)
     # eos_results = [
     #     [probs[i][tokenizer.eos_token_id].item() for i in range(n_gen)],
@@ -221,23 +228,22 @@ def output_scores(model, tokenizer):
         probs[0][tokenizer.eos_token_id].item(),
         logits_probs[0][tokenizer.eos_token_id].item(),
     ]
-    print_err(json.dumps(eos_results, indent=2))
+    log(json.dumps(eos_results, indent=2))
 
     # Highest tokens
-    print_err("\n")
-    print_err("Scores and logits of N highest tokens")
+    log("\n")
+    log("Scores and logits of N highest tokens")
     n_high = 5
     sorted_logits, indices = logits_probs[0].sort(descending=True)
     high_results = {
         tokenizer.decode(t): (probs[0][t].item(), logit.item())
         for t, logit in zip(indices[:n_high], sorted_logits[:n_high])
     }
-    print_err(json.dumps(high_results, indent=2))
+    log(json.dumps(high_results, indent=2))
 
     # Scores and logits of answers each time an answer token appears in the
     # response
-    print_err("\n")
-    print_err("Scores and logits of all answers given")
+    log("\nScores and logits of all answers given")
     all_answer_results = {}
     for i, token in enumerate(generated_tokens):
         if token in letters_tokens:
@@ -245,7 +251,7 @@ def output_scores(model, tokenizer):
                 c: (probs[i][t].item(), logits_probs[i][t].item())
                 for c, t in zip(letters, letters_tokens)
             }
-    print_err(json.dumps(all_answer_results, indent=2))
+    log(json.dumps(all_answer_results, indent=2))
 
     # return all_answer_results
     return eos_results
@@ -257,6 +263,121 @@ def main_output_scores():
     output_scores(model, tokenizer)
 
 
+def calc_sample_probs(
+        model: AutoModelForCausalLM, tokenizer: AutoTokenizer,
+        inst: dict, combinations: list[tuple], prompt_tpl: str = "0"):
+    """
+    Queries the model with the given sample `inst` to get the probabilties for
+    each combinations of answers.
+    """
+    def answer_to_str(letter):
+        return f'({letter}) {inst["answers"][letter]}'
+
+    log(f"{'-'*80}\n{inst['id']}")
+
+    base_prompt: str = get_prompt(
+        template_from_id(prompt_tpl),
+        inst,
+        add_left_parenthesis=False,
+    )
+
+    results = {}
+    eos_logits = []
+    for comb in combinations:
+        log(f"\nCOMBINATION: {' '.join(comb)}")
+
+        prompt = (
+            f"{base_prompt}"
+            f"{'; '.join(answer_to_str(c) for c in comb)}"
+            ".\n"
+        )
+        inputs, outputs = generate(
+            model, tokenizer,
+            prompt,
+            max_new_tokens=1,
+            return_dict_in_generate=True,
+            output_scores=True,
+            output_logits=True,
+            temperature=0.01,
+
+            # Custom parameter
+            return_raw_output=True,
+        )
+
+        # Squeeze output (removing first dimension of size 1)
+        sequences = outputs.sequences.squeeze(0)
+        # Get the logits
+        logits = [t.squeeze(0) for t in outputs.logits]
+        eos_logit = logits[0][tokenizer.eos_token_id].item()
+        eos_logits.append(eos_logit)
+
+        # Get the generated text
+        prompt_text = tokenizer.decode(sequences[:inputs.input_ids.shape[1]])
+        log(f"PROMPT: [{prompt_text}]")
+        generated_text = tokenizer.decode(sequences[inputs.input_ids.shape[1]:])
+        log(f"GENERATED: [{generated_text}]")
+
+        # Convert scores to probabilities
+        logits_probs = [torch.softmax(t, dim=-1) for t in logits]
+        eos_prob = logits_probs[0][tokenizer.eos_token_id].item()
+        log(f"EOS: {eos_prob}")
+
+    # Transform logits to probabilities
+    eos_logits = torch.softmax(torch.tensor(eos_logits), dim=-1)
+    # log("Results after softmax", eos_logits)
+
+    results = {
+        " ".join(comb): prob.tolist()
+        for comb, prob in zip(combinations, eos_logits)
+    }
+    log(f"\nALL EOS: {results}")
+    return results
+
+
+def calc_model_distribution(
+        model: AutoModelForCausalLM, tokenizer: AutoTokenizer,
+        corpus_path: str = "data/test-medshake-score.json",
+        output_path: str = "output/model_scores/test-model-scores.json",
+):
+    """
+    Queries the model with all possible combinations of answers and calculates
+    their probabilities with the internal model scores.
+    """
+    print(f"Loading corpus '{corpus_path}")
+    with open(corpus_path) as fp:
+        corpus = json.load(fp)
+
+    # For debugging
+    # id = "4c0a40502de05e79aacd7131e714319e80300f37a119a944516fbde8e1d006c4"
+    # corpus = filter(lambda s: s["id"] == id, corpus)
+
+    choices = "a b c d e".split()
+    combs = []
+    for i in range(1, len(choices) + 1):
+        combs.extend(itertools.combinations(choices, i))
+    combs.sort(key=len)
+
+    all_results = {}
+    for inst in corpus:
+        eos_results = calc_sample_probs(model, tokenizer, inst, combs)
+        all_results[inst["id"]] = eos_results
+
+    with open(output_path, "w") as fp:
+        json.dump(all_results, fp, indent=2)
+
+    return all_results
+
+
+def main_calc_model_distribution(
+        model_path: str = "models/llama3/llama-3-8b-deft_002_20240731",
+        output_path: str =
+            "output/model_scores/llama3/llama-3-8b-deft_002_20240731-scores"
+            ".json",
+):
+    model, tokenizer = load_model(model_path)
+    calc_model_distribution(model, tokenizer, output_path=output_path)
+
 if __name__ == "__main__":
     import fire
-    fire.Fire(main_output_scores)
+    # fire.Fire(main_output_scores)
+    fire.Fire(main_calc_model_distribution)
