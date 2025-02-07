@@ -2,6 +2,7 @@
 Scripts to compare Human vs LLM answers, generate plots, tables, etc.
 """
 
+import json
 import os
 import sys
 
@@ -92,11 +93,59 @@ def load_model_results_output(
         corpus_with_tags.groupby("id").first()[class_col])
 
 
+def load_model_scores(
+        corpus_path: str = "data/test-medshake-score.json",
+        model_scores_path: str = "output/model_scores/test-model-scores.json",
+        model_score_col = "medshake",
+        class_col = "medshake_class",
+) -> pd.DataFrame:
+    """
+    Helper to load the model probabilities for each question and answer.
+
+    This was extracted from the internal model logits, the probability that the
+    model generated "<|end-of-text|>" given each possible combination of
+    answers.
+
+    The "medshake difficulty" for LLMs is based on the probability the model
+    gives to the correct answer.
+    """
+    with open(model_scores_path) as fp:
+        model_probs = json.load(fp)
+    # print(pd.read_json(model_scores_path, orient="index"))
+
+    corpus = load_corpus(corpus_path)
+
+    llm_results = []
+    for _, inst in corpus.iterrows():
+        _id = inst["id"]
+        correct_answers = " ".join(inst["correct_answers"])
+        model_inst = model_probs.get(_id)
+        if not model_inst:
+            print(f"Probabilities not found for '{_id}'", file=sys.stderr)
+            model_score = 0
+        else:
+            model_score = model_inst[correct_answers]
+        llm_results.append({
+            "id": _id,
+            model_score_col: model_score,
+            class_col: inst[class_col],
+        })
+
+    # Note: This DataFrame is indexed by ID
+    llm_results_df = pd.DataFrame(
+        llm_results,
+        index=[inst["id"] for inst in llm_results])
+    # print(llm_results_df)
+    return llm_results_df
+
+
 def plot_tags_topics(
         corpus_path: str = "data/test-medshake-score.json",
         data_output_path: str = "output/analysis/regression-data.json",
-        model_output_dir: str = "output/llama3/tuned_002_20240731",
-        figure_path: str = "output/compare/model_outputs/compare.png",
+        model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-scores.json",
+        figure_path: str = "output/compare/model_scores/compare.png",
+        # model_output_dir: str = "output/llama3/tuned_002_20240731",
+        # figure_path: str = "output/compare/model_outputs/compare.png",
         plot_all: bool = False,
 ) -> None:
     """
@@ -140,10 +189,18 @@ def plot_tags_topics(
                 columns_config[base].append(val)
 
     # Load LLM rates from model output
-    llm_results_df = load_model_results_output(
-        df,
+    # llm_results_df = load_model_results_output(
+    #     df,
+    #     corpus_path=corpus_path,
+    #     llm_output_dir=model_output_dir,
+    #     class_col=class_col,
+    # )
+
+    # Load LLM rates from model scores
+    llm_results_df = load_model_scores(
         corpus_path=corpus_path,
-        llm_output_dir=model_output_dir,
+        model_scores_path=model_scores_path,
+        model_score_col=llm_score_col,
         class_col=class_col,
     )
 
