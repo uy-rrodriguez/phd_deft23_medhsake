@@ -5,7 +5,6 @@ and token scores/probabilities.
 
 import itertools
 import json
-import logging
 import os
 import sys
 
@@ -257,15 +256,10 @@ def output_scores(model, tokenizer):
     return eos_results
 
 
-def main_output_scores():
-    model_path = "models/llama3/llama-3-8b-deft_002_20240731"
-    model, tokenizer = load_model(model_path)
-    output_scores(model, tokenizer)
-
-
-def calc_sample_probs(
+def calc_sample_scores(
         model: AutoModelForCausalLM, tokenizer: AutoTokenizer,
-        inst: dict, combinations: list[tuple], prompt_tpl: str = "0"):
+        inst: dict, combinations: list[tuple], prompt_tpl: str = "0",
+):
     """
     Queries the model with the given sample `inst` to get the probabilties for
     each combinations of answers.
@@ -298,7 +292,7 @@ def calc_sample_probs(
             return_dict_in_generate=True,
             output_scores=True,
             output_logits=True,
-            temperature=0.01,
+            # temperature=0.01,  # default: 0.6. score = logit / temp
 
             # Custom parameter
             return_raw_output=True,
@@ -309,7 +303,9 @@ def calc_sample_probs(
         # Get the logits
         logits = [t.squeeze(0) for t in outputs.logits]
         eos_logit = logits[0][tokenizer.eos_token_id].item()
-        eos_logits.append(eos_logit)
+        # Get the scores
+        scores = [t.squeeze(0) for t in outputs.scores]
+        eos_score = scores[0][tokenizer.eos_token_id].item()
 
         # Get the generated text
         prompt_text = tokenizer.decode(sequences[:inputs.input_ids.shape[1]])
@@ -320,29 +316,41 @@ def calc_sample_probs(
         # Convert scores to probabilities
         logits_probs = [torch.softmax(t, dim=-1) for t in logits]
         eos_prob = logits_probs[0][tokenizer.eos_token_id].item()
-        log(f"EOS: {eos_prob}")
-
-    # Transform logits to probabilities
-    eos_logits = torch.softmax(torch.tensor(eos_logits), dim=-1)
-    # log("Results after softmax", eos_logits)
+        scores_probs = [torch.softmax(t, dim=-1) for t in scores]
+        eos_score_prob = scores_probs[0][tokenizer.eos_token_id].item()
+        log(
+            f"EOS: logit={eos_logit} | score={eos_score}"
+            f" | logit_prob={eos_prob}% | score_prob={eos_score_prob}%"
+        )
+        raise ValueError
 
     results = {
-        " ".join(comb): prob.tolist()
-        for comb, prob in zip(combinations, eos_logits)
+        " ".join(comb): logit
+        for comb, logit in zip(combinations, eos_logits)
     }
     log(f"\nALL EOS: {results}")
     return results
 
 
-def calc_model_distribution(
-        model: AutoModelForCausalLM, tokenizer: AutoTokenizer,
+def calc_model_scores(
+        model_path: str = "models/llama3/llama-3-8b-deft_002_20240731",
+        model: AutoModelForCausalLM = None,
+        tokenizer: AutoTokenizer = None,
         corpus_path: str = "data/test-medshake-score.json",
-        output_path: str = "output/model_scores/test-model-scores.json",
+        output_path: str =
+            "output/model_scores/llama3/"
+            "llama-3-8b-deft_002_20240731-logits.json",
 ):
     """
     Queries the model with all possible combinations of answers and calculates
     their probabilities with the internal model scores.
     """
+    if model is not None and tokenizer is not None:
+        log(f"Using model '{model.__class__.__name__}'")
+    else:
+        log(f"Using model '{model_path}'")
+        model, tokenizer = load_model(model_path)
+
     print(f"Loading corpus '{corpus_path}")
     with open(corpus_path) as fp:
         corpus = json.load(fp)
@@ -359,7 +367,7 @@ def calc_model_distribution(
 
     all_results = {}
     for inst in corpus:
-        eos_results = calc_sample_probs(model, tokenizer, inst, combs)
+        eos_results = calc_sample_scores(model, tokenizer, inst, combs)
         all_results[inst["id"]] = eos_results
 
     with open(output_path, "w") as fp:
@@ -368,16 +376,14 @@ def calc_model_distribution(
     return all_results
 
 
-def main_calc_model_distribution(
-        model_path: str = "models/llama3/llama-3-8b-deft_002_20240731",
-        output_path: str =
-            "output/model_scores/llama3/llama-3-8b-deft_002_20240731-scores"
-            ".json",
-):
-    model, tokenizer = load_model(model_path)
-    calc_model_distribution(model, tokenizer, output_path=output_path)
+def main(method_name: str, *args, **kwargs):
+    from util import llm_scores
+    method = getattr(llm_scores, method_name)
+    if not method:
+        raise f"Method '{method_name}' not found"
+    return method(*args, **kwargs)
+
 
 if __name__ == "__main__":
     import fire
-    # fire.Fire(main_output_scores)
-    fire.Fire(main_calc_model_distribution)
+    fire.Fire(main)
