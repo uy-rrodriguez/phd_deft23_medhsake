@@ -6,9 +6,11 @@ import json
 import os
 import sys
 
-import pandas as pd
 from matplotlib import pyplot as plt
 import matplotlib.text as mtext
+import numpy as np
+import pandas as pd
+import torch
 
 # Trick to import local packages when this script is run from the terminal
 sys.path.append(os.path.abspath("."))
@@ -98,6 +100,8 @@ def load_model_scores(
         model_scores_path: str = "output/model_scores/test-model-scores.json",
         model_score_col = "medshake",
         class_col = "medshake_class",
+        apply_softmax: bool = True,
+        softmax_temp: float = 0.6,  # Default in LLaMa-3-8b AutoModelForCausalLM.generate
 ) -> pd.DataFrame:
     """
     Helper to load the model probabilities for each question and answer.
@@ -108,9 +112,18 @@ def load_model_scores(
 
     The "medshake difficulty" for LLMs is based on the probability the model
     gives to the correct answer.
+
+    `apply_softmax` as True is required when the scores file contains logits
+    instead of probabilities.
     """
     with open(model_scores_path) as fp:
         model_probs = json.load(fp)
+
+    # Pre-process Log-P output
+    if "-logp" in model_scores_path:
+        for v in model_probs.values():
+            for k, d in v.items():
+                v[k] = d["seq_log_prob"]
     # print(pd.read_json(model_scores_path, orient="index"))
 
     corpus = load_corpus(corpus_path)
@@ -124,6 +137,17 @@ def load_model_scores(
             print(f"Probabilities not found for '{_id}'", file=sys.stderr)
             model_score = 0
         else:
+            if apply_softmax:
+                # Convert str "-inf" to a float
+                for k, v in model_inst.items():
+                    if type(v) == str:
+                        model_inst[k] = np.float16(v)
+                # Get softmax probability
+                probs = torch.softmax(
+                    torch.tensor(list(model_inst.values())) / softmax_temp,
+                    dim=0,
+                ).tolist()
+                model_inst = {k: v for k, v in zip(model_inst.keys(), probs)}
             model_score = model_inst[correct_answers]
         llm_results.append({
             "id": _id,
@@ -142,8 +166,8 @@ def load_model_scores(
 def plot_tags_topics(
         corpus_path: str = "data/test-medshake-score.json",
         data_output_path: str = "output/analysis/regression-data.json",
-        model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-scores.json",
-        figure_path: str = "output/compare/model_scores/compare.png",
+        model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-logp.json",
+        figure_path: str = "output/compare/model_scores/logp/compare.png",
         # model_output_dir: str = "output/llama3/tuned_002_20240731",
         # figure_path: str = "output/compare/model_outputs/compare.png",
         plot_all: bool = False,
@@ -202,6 +226,8 @@ def plot_tags_topics(
         model_scores_path=model_scores_path,
         model_score_col=llm_score_col,
         class_col=class_col,
+        apply_softmax=True,
+        softmax_temp=1,
     )
 
     # Plot score by tag value, for each tag of interest

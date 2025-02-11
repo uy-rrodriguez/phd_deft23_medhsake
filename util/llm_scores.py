@@ -376,6 +376,119 @@ def calc_model_scores(
     return all_results
 
 
+def calc_sample_logp(
+        model: AutoModelForCausalLM, tokenizer: AutoTokenizer,
+        inst: dict, combinations: list[tuple], prompt_tpl: str = "0",
+) -> float:
+    """
+    Calculates the log probability for a given sentence.
+
+    Log Probability is defined as:
+      LogP(S) = Sum( log P(wi|w1, w2, ..., wi-1) )
+
+    where wi is the i-th token in the sequence S.
+
+    This can be interpreted as the probability given by the model to a specific
+    sequence of tokens.
+
+    https://blog.uptrain.ai/decoding-perplexity-and-its-significance-in-llms/
+    """
+    def answer_to_str(letter):
+        return f'({letter}) {inst["answers"][letter]}'
+
+    log(f"{'-'*80}\n{inst['id']}")
+
+    base_prompt: str = get_prompt(
+        template_from_id(prompt_tpl),
+        inst,
+        add_left_parenthesis=False,
+    )
+
+    results = {}
+    for comb in combinations:
+        log(f"COMBINATION: {' '.join(comb)}")
+
+        # Get logits from the model
+        prompt = (
+            f"{base_prompt}"
+            f"{'; '.join(answer_to_str(c) for c in comb)}"
+            f".\n{tokenizer.eos_token}"
+        )
+        inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
+
+        with torch.no_grad():
+            outputs = model(inputs.input_ids)
+        # outputs.logits.shape => (batch, seq length, vocab size)
+        input_ids = inputs.input_ids.squeeze(0)  # Remove batch dimension
+        log(input_ids)
+        log(input_ids.shape)
+        logits = outputs.logits.squeeze(0)
+        log(logits)
+        log(logits.shape)
+
+        log_probs = []
+        for i in range(1, input_ids.size(0)):
+            prob = torch.softmax(logits[i-1], dim=-1)
+            token_id = input_ids[i]
+            log_prob = torch.log(prob[token_id])
+            log_probs.append(log_prob.item())
+
+        # Sequence probability
+        seq_log_prob = sum(log_probs)
+        log(f"Sequence log prob: {seq_log_prob}")
+        log(f"EOS log prob: {log_probs[-1]}")
+
+        results[" ".join(comb)] = {
+            "seq_log_prob": seq_log_prob,
+            "eos_log_prob": log_probs[-1],
+        }
+
+    return results
+
+
+def calc_model_logp(
+        model_path: str = "models/llama3/llama-3-8b-deft_002_20240731",
+        model: AutoModelForCausalLM = None,
+        tokenizer: AutoTokenizer = None,
+        corpus_path: str = "data/test-medshake-score.json",
+        output_path: str =
+            "output/model_scores/llama3/llama-3-8b-deft_002_20240731-logp.json",
+):
+    """
+    Queries the model with all possible combinations of answers and calculates
+    the Negative Log Likelihood of each sentence.
+    """
+    if model is not None and tokenizer is not None:
+        log(f"Using model '{model.__class__.__name__}'")
+    else:
+        log(f"Using model '{model_path}'")
+        model, tokenizer = load_model(model_path)
+
+    print(f"Loading corpus '{corpus_path}")
+    with open(corpus_path) as fp:
+        corpus = json.load(fp)
+
+    # For debugging
+    # id = "4c0a40502de05e79aacd7131e714319e80300f37a119a944516fbde8e1d006c4"
+    # corpus = filter(lambda s: s["id"] == id, corpus)
+
+    choices = "a b c d e".split()
+    combs = []
+    for i in range(1, len(choices) + 1):
+        combs.extend(itertools.combinations(choices, i))
+    combs.sort(key=len)
+
+    all_results = {}
+    for inst in corpus:
+        sample_results = calc_sample_logp(model, tokenizer, inst, combs)
+        all_results[inst["id"]] = sample_results
+
+    with open(output_path, "w") as fp:
+        json.dump(all_results, fp, indent=2)
+
+    return all_results
+
+
 def main(method_name: str, *args, **kwargs):
     from util import llm_scores
     method = getattr(llm_scores, method_name)
