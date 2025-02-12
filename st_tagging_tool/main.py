@@ -1,3 +1,8 @@
+# import tracemem
+
+
+import os
+
 # Suppress FutureWarning messages
 import warnings
 warnings.simplefilter(action="ignore", category=FutureWarning)
@@ -9,17 +14,6 @@ import streamlit as st
 import pandas as pd
 
 from config import *
-
-
-# @st.cache_data
-def load_data(path):
-    data = pd.read_json(path)
-    return data
-
-
-@st.cache_data
-def filter_data(df: pd.DataFrame, filters: pd.DataFrame) -> pd.DataFrame:
-    return df[filters]
 
 
 def sync_query_params(key, default):
@@ -78,7 +72,15 @@ st.set_page_config(
     menu_items=None)
 
 
-df = load_data(DATA_PATH)
+if "main_df" not in st.session_state:
+    df = data = pd.read_json(DATA_PATH)
+    st.session_state["main_df"] = df
+else:
+    df = st.session_state["main_df"]
+
+if not os.path.exists(TAGS_PATH):
+    with open(TAGS_PATH, "w") as fp:
+        fp.write("{}")
 df_tags = pd.read_json(TAGS_PATH, orient="index")
 
 
@@ -110,6 +112,14 @@ st.markdown("""
         /*color: rgb(255, 75, 75);*/
         font-weight: bold;
     }
+
+    .st-key-tags div[role="radiogroup"] > label {
+        width: 100%;
+    }
+
+    .st-key-tags div[role="radiogroup"] > label:hover {
+        background: #EEEEEE;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -123,11 +133,11 @@ with st.sidebar:
 
     # Base filters (filters based on main datasource)
     # item_idx = st.text_input("Item")
-    years = sorted([0] + df["year"].unique().tolist())
+    years = sorted([0] + df["year"].dropna().astype(int).unique().tolist())
     topics = [""] + sorted(
         set(
             chain.from_iterable(
-                df["topics"].tolist())))
+                df["topics"].dropna().tolist())))
     filters = {
         "id": st.text_input(
             "ID",
@@ -204,26 +214,18 @@ with st.sidebar:
             & (df["medshake_difficulty"] <= filters["difficulty"][1] / 100)
 
     # Filters from tags
-    # These filters are done via a negation, so _df_tags will contain all items
-    # that do not match the selected tags. Then, the main _df is filtered to
-    # keep all items that do not appear in _df_tags.
-    filters_df_tags = None
     for key, value in filters_tags.items():
         if value and value != "":
             if value == TAGS_EMPTY:
-                _filter = ~df_tags[key].isna()
+                filters_df = filters_df \
+                    & (df["id"].isin(df_tags[df_tags[key].isna()].index)
+                       | ~df["id"].isin(df_tags.index))
             else:
-                _filter = df_tags[key] != value
-            if filters_df_tags is None:
-                filters_df_tags = _filter
-            else:
-                filters_df_tags = filters_df_tags & _filter
-    if filters_df_tags is not None:
-        _df_tags = df_tags[filters_df_tags]
-        filters_df = filters_df & ~df["id"].isin(_df_tags.index)
+                filters_df = filters_df \
+                    & df["id"].isin(df_tags[df_tags[key] == value].index)
 
     # Apply filters
-    _df = filter_data(df, filters_df)
+    _df = df[filters_df]
     st.markdown(f"_Found {len(_df.index)} in {len(df.index)}_")
 
     st.subheader("Sorting")
@@ -319,3 +321,6 @@ with st.container(key="row_nav"):
 # )
 
 # st.dataframe(_df)
+
+
+# tracemem.show_results()
