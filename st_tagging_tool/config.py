@@ -1,5 +1,5 @@
-DATA_PATH = "data/test-medshake-score.json"
-TAGS_PATH = "out/tags.json"
+DATA_PATH = "data/train-MERGED-FIXED-CLEAN.json"
+TAGS_PATH = "out/tags-train-MERGED-FIXED-CLEAN.json"
 TAGS_EMPTY = "n/a"
 TAGS_OPTS_NEGATION = (TAGS_EMPTY, "no", "yes")
 TAGS_OPTS_COMPOSITION = (TAGS_EMPTY, "no", "yes")

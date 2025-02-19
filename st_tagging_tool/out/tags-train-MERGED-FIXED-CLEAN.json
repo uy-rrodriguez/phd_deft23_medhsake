@@ -1,0 +1,4622 @@
+{
+    "002319e0292373232f4bf99f83d084a02cfed6035cd251b01e6cf7d0b00fbf84": {
+        "id": "002319e0292373232f4bf99f83d084a02cfed6035cd251b01e6cf7d0b00fbf84",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "00cc2d12fa55da98b55a2477bddde2392848cfd24de4a1e95c626735cd2a16fa": {
+        "id": "00cc2d12fa55da98b55a2477bddde2392848cfd24de4a1e95c626735cd2a16fa",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0152ec66931fbec5361373b23d1ee889a5133197095c1158a92b1c640905a916": {
+        "id": "0152ec66931fbec5361373b23d1ee889a5133197095c1158a92b1c640905a916",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "019b8a59e4a9cbbfc6f5d65fdaab90d8c5c9eda58a745fce0ea191f72962e3b1": {
+        "id": "019b8a59e4a9cbbfc6f5d65fdaab90d8c5c9eda58a745fce0ea191f72962e3b1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "01d9ac6014b00c75ee173d9f5a8c168783a646bf503d2a65794eb1eb860035a8": {
+        "id": "01d9ac6014b00c75ee173d9f5a8c168783a646bf503d2a65794eb1eb860035a8",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "02985e0b26a578e25eedb869f906b5f41ae9592e3fa14f74cbf0c652b324e89a": {
+        "id": "02985e0b26a578e25eedb869f906b5f41ae9592e3fa14f74cbf0c652b324e89a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "04315cd4e0ab7f4a518ad0ec27337a7318630f188fbc788bab26e907529ce282": {
+        "id": "04315cd4e0ab7f4a518ad0ec27337a7318630f188fbc788bab26e907529ce282",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "047f7180dc552f30ee631848ecc871b74688f6bcf972e855030c2be05c0e3b00": {
+        "id": "047f7180dc552f30ee631848ecc871b74688f6bcf972e855030c2be05c0e3b00",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "049fde525d54388d6ce2916eb68b0bf1307fe5c5872ab7c5fe4223b9c1379159": {
+        "id": "049fde525d54388d6ce2916eb68b0bf1307fe5c5872ab7c5fe4223b9c1379159",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "04a8e4d55d4be531f4a2595ba74e8937db5b23d3d3a7edaa804c46191713dda2": {
+        "id": "04a8e4d55d4be531f4a2595ba74e8937db5b23d3d3a7edaa804c46191713dda2",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "04b13f92854729bf410ca035dad5803f1c4cd6b2b10b1fd1ea6e66ee5f2453dc": {
+        "id": "04b13f92854729bf410ca035dad5803f1c4cd6b2b10b1fd1ea6e66ee5f2453dc",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "05ed8fd93bb462b5761b789424e51babad2ff67a58ce227eaee9d16397e365f5": {
+        "id": "05ed8fd93bb462b5761b789424e51babad2ff67a58ce227eaee9d16397e365f5",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0617a430d33526dea6a0054c84b024cc8c7caa6adf8d25b76e5d01b8f6ceb22e": {
+        "id": "0617a430d33526dea6a0054c84b024cc8c7caa6adf8d25b76e5d01b8f6ceb22e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0636ecc643dbb4922f650ea7ea87d23ffbd69e8048cc955d49a14046451a9149": {
+        "id": "0636ecc643dbb4922f650ea7ea87d23ffbd69e8048cc955d49a14046451a9149",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "06427656f143abcfb456017a1a9b8ab4dd4097ad931503d5a670bfd3a96cd533": {
+        "id": "06427656f143abcfb456017a1a9b8ab4dd4097ad931503d5a670bfd3a96cd533",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "06b738a0793361c5977b8b3280a71bd9c0a79024204a6a1dcb1df546785c278f": {
+        "id": "06b738a0793361c5977b8b3280a71bd9c0a79024204a6a1dcb1df546785c278f",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "06bb0cf61f8ce53e589b137a82edb08ad56ee332774e5f14e1da841dd84aeb8a": {
+        "id": "06bb0cf61f8ce53e589b137a82edb08ad56ee332774e5f14e1da841dd84aeb8a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "06c614ce52d546baa708e101d90c97e6ccdfd220b971a6d9a0275bae529abfd6": {
+        "id": "06c614ce52d546baa708e101d90c97e6ccdfd220b971a6d9a0275bae529abfd6",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "06f077b7d886e8b84b4a1946e376f5170120a4f1d26a78349284457f15b3a998": {
+        "id": "06f077b7d886e8b84b4a1946e376f5170120a4f1d26a78349284457f15b3a998",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0733eb70e78bc1e095477b3c149240a1548f4b27797a13709ccf334b59d1bede": {
+        "id": "0733eb70e78bc1e095477b3c149240a1548f4b27797a13709ccf334b59d1bede",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0832c8a3ecb3cadd2b0846757baf8e73e0238758c22215f5aa68cf32f9ccdcf2": {
+        "id": "0832c8a3ecb3cadd2b0846757baf8e73e0238758c22215f5aa68cf32f9ccdcf2",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "085e59ac6cefbfe5520c780cfd8b062697955eef5d5bc87ca4b6d16ad8d26231": {
+        "id": "085e59ac6cefbfe5520c780cfd8b062697955eef5d5bc87ca4b6d16ad8d26231",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "08c8c70795bf8ec010302f9541c033c0b52fecdd5d08e96c0098b9704808f729": {
+        "id": "08c8c70795bf8ec010302f9541c033c0b52fecdd5d08e96c0098b9704808f729",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "09654ace054117e7b7684b78b06b9defe8c04fd2def56b66e40bddddd56e185c": {
+        "id": "09654ace054117e7b7684b78b06b9defe8c04fd2def56b66e40bddddd56e185c",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "09dc729efd6cb4550f96c993a6fc1662c1d396972b61395fb61319802d93cb6e": {
+        "id": "09dc729efd6cb4550f96c993a6fc1662c1d396972b61395fb61319802d93cb6e",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0a0c3115c04ce655f8cc5fbd9a54b2966524c86c71e7285e30366af8ab7260d4": {
+        "id": "0a0c3115c04ce655f8cc5fbd9a54b2966524c86c71e7285e30366af8ab7260d4",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0a6e8cce1f1c636d27d113a76e6249a0d5762a96d52ec7ca2aaf8294f1634705": {
+        "id": "0a6e8cce1f1c636d27d113a76e6249a0d5762a96d52ec7ca2aaf8294f1634705",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0ae66e74139c41e5f71f75768fb55bf61ac287c21ce9b6595fa77bb67f0a4659": {
+        "id": "0ae66e74139c41e5f71f75768fb55bf61ac287c21ce9b6595fa77bb67f0a4659",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0aea0358bd7f16b6c4cc40b5900376ef3ea8fcaa07828e710b16e5b600762eea": {
+        "id": "0aea0358bd7f16b6c4cc40b5900376ef3ea8fcaa07828e710b16e5b600762eea",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "0b39e1dce73ae5c27d727b1e687973141529382e642f2d08aecb7cb59b92bffd": {
+        "id": "0b39e1dce73ae5c27d727b1e687973141529382e642f2d08aecb7cb59b92bffd",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0b58b67a6c176680e9551bb47e0c6f7a0fb57692ba5545e2b364a2903447b620": {
+        "id": "0b58b67a6c176680e9551bb47e0c6f7a0fb57692ba5545e2b364a2903447b620",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0b59055176f5f1f6f9a6042b6a311abb1c313adfdfa889bac3bdf4c87c507ba3": {
+        "id": "0b59055176f5f1f6f9a6042b6a311abb1c313adfdfa889bac3bdf4c87c507ba3",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0b5c53a5804220ceddd6f0f0c3ffd3af69c393ccf0917f9a9333d4761cedb875": {
+        "id": "0b5c53a5804220ceddd6f0f0c3ffd3af69c393ccf0917f9a9333d4761cedb875",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0b73770a8c5a5cc3db2963258fe12ea32f626f7a1cbfbc4b8903a546e6ae5e35": {
+        "id": "0b73770a8c5a5cc3db2963258fe12ea32f626f7a1cbfbc4b8903a546e6ae5e35",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "0b89bc7ce67edab68a9865ce60f22b28984dc38088486bb0d2f6c328188f3787": {
+        "id": "0b89bc7ce67edab68a9865ce60f22b28984dc38088486bb0d2f6c328188f3787",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "0bbd9139b22c5773c50209972881b4eef0028bcad5acd10f58c5bac112932c4b": {
+        "id": "0bbd9139b22c5773c50209972881b4eef0028bcad5acd10f58c5bac112932c4b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0bdccf2660cf143dc2da5530dc3d60d379aafe7e94f2f5cb9bc4d3b35b02d9bc": {
+        "id": "0bdccf2660cf143dc2da5530dc3d60d379aafe7e94f2f5cb9bc4d3b35b02d9bc",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0ca718ff033bb68503e41c4d30b4f7580cb3f220e000a2e2d8520803ffdb8b06": {
+        "id": "0ca718ff033bb68503e41c4d30b4f7580cb3f220e000a2e2d8520803ffdb8b06",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "0cd24eb7335ec9556aa09b186d1b7f7a72f56b35467edab4e2473913abccde8d": {
+        "id": "0cd24eb7335ec9556aa09b186d1b7f7a72f56b35467edab4e2473913abccde8d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "0d0909d7d3c6d39fcca2034641f5c60de40561408eac8bbce9601a17b7841f5f": {
+        "id": "0d0909d7d3c6d39fcca2034641f5c60de40561408eac8bbce9601a17b7841f5f",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0d7ec25b917547a0040a45c4b08550fed4ad67e67cd0739b60ce3a60162fab44": {
+        "id": "0d7ec25b917547a0040a45c4b08550fed4ad67e67cd0739b60ce3a60162fab44",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0de421320791952c800b7e52957a79e1f8c0ed9de4b5ab2fd7efa135a5505b6d": {
+        "id": "0de421320791952c800b7e52957a79e1f8c0ed9de4b5ab2fd7efa135a5505b6d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_answer": "single"
+    },
+    "0dfe53d0637c2e4bab5999fc62f67d1e0e220b98b93573216fcc39d7226059e7": {
+        "id": "0dfe53d0637c2e4bab5999fc62f67d1e0e220b98b93573216fcc39d7226059e7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0fb4b3616a35e8b2a37995239dd1a8e46cbea9da5083bf844cc008b2d4e7384f": {
+        "id": "0fb4b3616a35e8b2a37995239dd1a8e46cbea9da5083bf844cc008b2d4e7384f",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "0febc6b681ca4c7deeeb495e8cb988f83397c0d17e9b02b21f9b57117007f007": {
+        "id": "0febc6b681ca4c7deeeb495e8cb988f83397c0d17e9b02b21f9b57117007f007",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "1017cd3c09651412c7068bd45144a9624180777313f76bb1a77e4bab0b98c5a4": {
+        "id": "1017cd3c09651412c7068bd45144a9624180777313f76bb1a77e4bab0b98c5a4",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1062d0b54212d0c75617f2378faeb1973a107e0c4cee844fd51071a4268eed3a": {
+        "id": "1062d0b54212d0c75617f2378faeb1973a107e0c4cee844fd51071a4268eed3a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "10b0e82ff34abedace138ff4cae84943fcb49efe1689f7bea9d2106588706538": {
+        "id": "10b0e82ff34abedace138ff4cae84943fcb49efe1689f7bea9d2106588706538",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1119d7f17a154a71212c670c71a35bbb0bc3d964479cc90f4bbc2dee9b4aca79": {
+        "id": "1119d7f17a154a71212c670c71a35bbb0bc3d964479cc90f4bbc2dee9b4aca79",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1148b57794864152a4d67c251ebe92a3799c1bdc732352affce3abed53fd94a0": {
+        "id": "1148b57794864152a4d67c251ebe92a3799c1bdc732352affce3abed53fd94a0",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "120f618a02152d65a3f0d5e96e1b1c8084f1cda4ac0951cd98f1b0f441fb6c79": {
+        "id": "120f618a02152d65a3f0d5e96e1b1c8084f1cda4ac0951cd98f1b0f441fb6c79",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "13a6b0cdbf8087adbe87ba7e76b6470eaa4a2e11de9d14c818f8c075415091d3": {
+        "id": "13a6b0cdbf8087adbe87ba7e76b6470eaa4a2e11de9d14c818f8c075415091d3",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "13d18362ed320e1e58c303f540af974ef9f3303b71363e0191030860e7863ac1": {
+        "id": "13d18362ed320e1e58c303f540af974ef9f3303b71363e0191030860e7863ac1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "145d7a580a2dcb75998719d5721167747d809421dae0ae79a8d73a2206e7aea9": {
+        "id": "145d7a580a2dcb75998719d5721167747d809421dae0ae79a8d73a2206e7aea9",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "146bb51736c5ed07efeb1e4bc5d31a0805ec937e31b066c8e50884b7251c8718": {
+        "id": "146bb51736c5ed07efeb1e4bc5d31a0805ec937e31b066c8e50884b7251c8718",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "157e2d29f7e530f4f8f3c177bdcd5b7af04f08d34fbd2854119a9ec24e1dd8a2": {
+        "id": "157e2d29f7e530f4f8f3c177bdcd5b7af04f08d34fbd2854119a9ec24e1dd8a2",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "15efe61148f7322246dcedf3015c7262dc1c144578da691804b94b5b748094e2": {
+        "id": "15efe61148f7322246dcedf3015c7262dc1c144578da691804b94b5b748094e2",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "162ba69c889df6bf2f46d7bc209bca835d54146477c87855b21ca1212ac93be3": {
+        "id": "162ba69c889df6bf2f46d7bc209bca835d54146477c87855b21ca1212ac93be3",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1729814731c9ae364712148c013755bd6c87ee2180e48467848f556a0a61e85a": {
+        "id": "1729814731c9ae364712148c013755bd6c87ee2180e48467848f556a0a61e85a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "177b1a195a174b1ec8980fe75a6d6e8271cdf67f06503a530309ae0aff48d954": {
+        "id": "177b1a195a174b1ec8980fe75a6d6e8271cdf67f06503a530309ae0aff48d954",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "17c1f096826e6b35239790b83e7cff82b42b50f08d982547d31e5908376eddc1": {
+        "id": "17c1f096826e6b35239790b83e7cff82b42b50f08d982547d31e5908376eddc1",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1981ccf58ac99b3c081939b4d752eba04cf51a7fe8ffe1b2201fb9ed72f04998": {
+        "id": "1981ccf58ac99b3c081939b4d752eba04cf51a7fe8ffe1b2201fb9ed72f04998",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "19edf90cb3c969613ca2274478b9cffe856d5522a5a9ed76b7716f3ca1b22c47": {
+        "id": "19edf90cb3c969613ca2274478b9cffe856d5522a5a9ed76b7716f3ca1b22c47",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "1aa7b56483d9848277e71899d96acd3687c8091ead0902448dca2685a5fe4866": {
+        "id": "1aa7b56483d9848277e71899d96acd3687c8091ead0902448dca2685a5fe4866",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1b661e5487239ad84cccf7c6b31bb88d7fcbe92eceb2c57f423e5dfe45947377": {
+        "id": "1b661e5487239ad84cccf7c6b31bb88d7fcbe92eceb2c57f423e5dfe45947377",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1bb661501e25cedac3f16d70227b07be3f3010bebbd369b8e8af1011719130e9": {
+        "id": "1bb661501e25cedac3f16d70227b07be3f3010bebbd369b8e8af1011719130e9",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1c213d58a56323ebb5eaccd12cb5c694f16944b97a63bcdf0b0b1589d944fb4d": {
+        "id": "1c213d58a56323ebb5eaccd12cb5c694f16944b97a63bcdf0b0b1589d944fb4d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1c612a47549a11f90d10f8392a19175df8187874c22bcd69793d89fbd2e5ca72": {
+        "id": "1c612a47549a11f90d10f8392a19175df8187874c22bcd69793d89fbd2e5ca72",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "1c6d0e5222c91efbb9b534d81ee0ea3255db8b27dfc1283f456b690b60b54622": {
+        "id": "1c6d0e5222c91efbb9b534d81ee0ea3255db8b27dfc1283f456b690b60b54622",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1d079717a9559d7a96f96ad2bfc84de101f87c9a76ff312f98a4046d53bf1456": {
+        "id": "1d079717a9559d7a96f96ad2bfc84de101f87c9a76ff312f98a4046d53bf1456",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1e5c1f12bc84b59e545cad379c327af1ecabd6fbd8a0a78e3cda6876aa480155": {
+        "id": "1e5c1f12bc84b59e545cad379c327af1ecabd6fbd8a0a78e3cda6876aa480155",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1e698beeba45364c2d2b9e3751ede400694edc152e75869661d9cb6694e2e3ce": {
+        "id": "1e698beeba45364c2d2b9e3751ede400694edc152e75869661d9cb6694e2e3ce",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1f2a0899515ffcc94c9461755ec6a92a9bb244fabb19d821b3add8bb3e74698d": {
+        "id": "1f2a0899515ffcc94c9461755ec6a92a9bb244fabb19d821b3add8bb3e74698d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1f81dd147f0cceeed13b7617a7cf3d7f6d5102a2aabfbf4c4471e447119934f1": {
+        "id": "1f81dd147f0cceeed13b7617a7cf3d7f6d5102a2aabfbf4c4471e447119934f1",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "1fadc9136339659bb1ee0cf793b5d7e70ec879c31629da60779fdf02f0bf993a": {
+        "id": "1fadc9136339659bb1ee0cf793b5d7e70ec879c31629da60779fdf02f0bf993a",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "undefined"
+    },
+    "2018b5bb40398c8fd5b4ff94b548f4a30f2bab090de37fdea074a68c8639b104": {
+        "id": "2018b5bb40398c8fd5b4ff94b548f4a30f2bab090de37fdea074a68c8639b104",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2018de81650aca7daf64666890af7089bdd19bd6768d8c897a48b302e432de90": {
+        "id": "2018de81650aca7daf64666890af7089bdd19bd6768d8c897a48b302e432de90",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "20c033c59dd29dd9fa3ad54cd66aa96d09c1a6e71d55b69d877c07fe77d1dd28": {
+        "id": "20c033c59dd29dd9fa3ad54cd66aa96d09c1a6e71d55b69d877c07fe77d1dd28",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "negative",
+        "tag_answer": "undefined"
+    },
+    "20e542c49cef8bf85d9be91a7aefb15179589634d5753e16967433e7520fd6c7": {
+        "id": "20e542c49cef8bf85d9be91a7aefb15179589634d5753e16967433e7520fd6c7",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "215f734d0f9d24c29e22dcc388f20971832dd1c910d9eee462ce2d9320c5617c": {
+        "id": "215f734d0f9d24c29e22dcc388f20971832dd1c910d9eee462ce2d9320c5617c",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "217c39677cd1705feeddf20bdcbefc6ade11db3f5178c04daffe0c82c0a3b550": {
+        "id": "217c39677cd1705feeddf20bdcbefc6ade11db3f5178c04daffe0c82c0a3b550",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "229cea761bdd9e6c19cbeaa7405b4de5022406621ad8af0aa1db4fdd21e2cba5": {
+        "id": "229cea761bdd9e6c19cbeaa7405b4de5022406621ad8af0aa1db4fdd21e2cba5",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "22b79eaa1c8aa4faedb290d7e937d0ad51453f04881cbc467321992944a324dd": {
+        "id": "22b79eaa1c8aa4faedb290d7e937d0ad51453f04881cbc467321992944a324dd",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "230bac49b0fe863b772410bc8d01a025f63c3c999065480131d6334abd2efeff": {
+        "id": "230bac49b0fe863b772410bc8d01a025f63c3c999065480131d6334abd2efeff",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "2431cdc8e3d18d254ebf97e203a04837985448c9190b35c52dab48bdc43d78ee": {
+        "id": "2431cdc8e3d18d254ebf97e203a04837985448c9190b35c52dab48bdc43d78ee",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "2498684fdf6501f472a831cb0ac7341cbf2d86c0e1f75f3873cfbc903add16bb": {
+        "id": "2498684fdf6501f472a831cb0ac7341cbf2d86c0e1f75f3873cfbc903add16bb",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2503a5a653dcc72564371deb059eba7f03e46d69552b9d5f5edf14fd096331f3": {
+        "id": "2503a5a653dcc72564371deb059eba7f03e46d69552b9d5f5edf14fd096331f3",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "257a54d5f90273b9e31d1af194a95cd9a69cdc65969a181e20080ee7470e0534": {
+        "id": "257a54d5f90273b9e31d1af194a95cd9a69cdc65969a181e20080ee7470e0534",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "25dc50974d1130dfd14e81ce52f9b925bc0150ebf27a7918cada0377db90bc63": {
+        "id": "25dc50974d1130dfd14e81ce52f9b925bc0150ebf27a7918cada0377db90bc63",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "25fc0f65ab86cb2bb995713df3b34f5c3e1fd56ada00742fa20e922951693c28": {
+        "id": "25fc0f65ab86cb2bb995713df3b34f5c3e1fd56ada00742fa20e922951693c28",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "26641d0611a6c896c0308ad671db99f5342a676e2870782c53e906fbe056d916": {
+        "id": "26641d0611a6c896c0308ad671db99f5342a676e2870782c53e906fbe056d916",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "26d6b8aac2c68c34a561f18236141301231e8f2553ec6b6c8658db6f72803c19": {
+        "id": "26d6b8aac2c68c34a561f18236141301231e8f2553ec6b6c8658db6f72803c19",
+        "tag_negation": "yes",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2713f49778ff45745df1c2b429575f35e45af63d406abe2cfabeb7be03bb801e": {
+        "id": "2713f49778ff45745df1c2b429575f35e45af63d406abe2cfabeb7be03bb801e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "279dfb56dfaf374cb3c1ca95fbb2567665999c0862060ca99b7504939f11dc8e": {
+        "id": "279dfb56dfaf374cb3c1ca95fbb2567665999c0862060ca99b7504939f11dc8e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2837f757099f4d8b5c9fc2d2d8be5971909cbf3e1b1341028553afc9724ada0e": {
+        "id": "2837f757099f4d8b5c9fc2d2d8be5971909cbf3e1b1341028553afc9724ada0e",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "294303b72cdb5f2798320c2e0a57f266ecd476f90bcba7aac0c4922d3096efa3": {
+        "id": "294303b72cdb5f2798320c2e0a57f266ecd476f90bcba7aac0c4922d3096efa3",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "298a1521354a7bd1e0e810d0606f19b685c31ad244e4a3eea3fe9d89d936bbe1": {
+        "id": "298a1521354a7bd1e0e810d0606f19b685c31ad244e4a3eea3fe9d89d936bbe1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "29d7243249150a3f1043a9c25b869f94534a63a53345447eacf618b97706095a": {
+        "id": "29d7243249150a3f1043a9c25b869f94534a63a53345447eacf618b97706095a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "29e3fd28f00e73f16886ada773864be9c01b11d6f1772c7690c455538c870672": {
+        "id": "29e3fd28f00e73f16886ada773864be9c01b11d6f1772c7690c455538c870672",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2a15deb62de44d0e7c9da17c3875aa2973be0e151abfecdbf7ff3e7e1e1691a8": {
+        "id": "2a15deb62de44d0e7c9da17c3875aa2973be0e151abfecdbf7ff3e7e1e1691a8",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2a24bb763e8ce35d84be0598e8a1af3cc5ba95c19d675d68cd6dba8d47a6d865": {
+        "id": "2a24bb763e8ce35d84be0598e8a1af3cc5ba95c19d675d68cd6dba8d47a6d865",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "2c14e6c8f7d2be2a86a3597fbe7692bf13b18d05df8d7c84605f56cfbc11f30b": {
+        "id": "2c14e6c8f7d2be2a86a3597fbe7692bf13b18d05df8d7c84605f56cfbc11f30b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2ce1709bd588a3e758fec59bbf7a3ac0221ab77f2a5b7d81d595b35f2b20cf09": {
+        "id": "2ce1709bd588a3e758fec59bbf7a3ac0221ab77f2a5b7d81d595b35f2b20cf09",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "2d270d8a3a1187071ec47e373e5979ba9156a993820a7c981f7948cc6652452d": {
+        "id": "2d270d8a3a1187071ec47e373e5979ba9156a993820a7c981f7948cc6652452d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2d6d03f6db6c8dcac35438db633e3da55cffd205ab15d3a9843f92ca44cea23b": {
+        "id": "2d6d03f6db6c8dcac35438db633e3da55cffd205ab15d3a9843f92ca44cea23b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2dacc0b72a605604287e0f7a5ac5b674401aa8c73f36091e2cbbf53d71eaabf9": {
+        "id": "2dacc0b72a605604287e0f7a5ac5b674401aa8c73f36091e2cbbf53d71eaabf9",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "2e81f5fb379745f254e117308725a44ada15ed4c9d777948ce467e94469a3969": {
+        "id": "2e81f5fb379745f254e117308725a44ada15ed4c9d777948ce467e94469a3969",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2f1e23e185baf9fbce618db0b228e92e50644c0c4383099b981f4a475fa60ed6": {
+        "id": "2f1e23e185baf9fbce618db0b228e92e50644c0c4383099b981f4a475fa60ed6",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2f8d98235dfc1aa55632b7d214a0e4d78bccd9c621681dd9b823855cacf636e3": {
+        "id": "2f8d98235dfc1aa55632b7d214a0e4d78bccd9c621681dd9b823855cacf636e3",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "2ffc4cb59e62f9ea297bd650e578196368636c8c81721445fa24e6ff7d649c06": {
+        "id": "2ffc4cb59e62f9ea297bd650e578196368636c8c81721445fa24e6ff7d649c06",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "3004f2202fe797afd4a34a86d61b70f33788e0fe51dcd9a498b2b3621c175975": {
+        "id": "3004f2202fe797afd4a34a86d61b70f33788e0fe51dcd9a498b2b3621c175975",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "30a1da058f05c8444173a68ee7e66f83fb15e5057033408a4677d38be271aa4c": {
+        "id": "30a1da058f05c8444173a68ee7e66f83fb15e5057033408a4677d38be271aa4c",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "30f0cb03774b59dc0aa970e5710b88e5ade62fcfea9943bfd2efc70a1a47eff5": {
+        "id": "30f0cb03774b59dc0aa970e5710b88e5ade62fcfea9943bfd2efc70a1a47eff5",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3152b61f0c73a8c2520618378a401d5834c924430ca8943e6c921f5ca6abcb1c": {
+        "id": "3152b61f0c73a8c2520618378a401d5834c924430ca8943e6c921f5ca6abcb1c",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "31aacc57ab75e197505abff88377ba4d3340563a29bcbe2ecc7dd437c2f6841c": {
+        "id": "31aacc57ab75e197505abff88377ba4d3340563a29bcbe2ecc7dd437c2f6841c",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "31beadf882430c66739e6489886d851a42ccde0e49333f550b8aa0fe3ec66b2b": {
+        "id": "31beadf882430c66739e6489886d851a42ccde0e49333f550b8aa0fe3ec66b2b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "33064a8bc4a86d3adeea381df89562985f7e7e2324841004f9594aa40c518124": {
+        "id": "33064a8bc4a86d3adeea381df89562985f7e7e2324841004f9594aa40c518124",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "337805b96b5f5ab87dce4d6b41fcd766da6af2f800154d2188e65f19fe2c4b02": {
+        "id": "337805b96b5f5ab87dce4d6b41fcd766da6af2f800154d2188e65f19fe2c4b02",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "33abc27fe58b7edf952f34e8cab6c3f6853dc792b18e22f8defe5af15f36f35d": {
+        "id": "33abc27fe58b7edf952f34e8cab6c3f6853dc792b18e22f8defe5af15f36f35d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "33ed37318700e9e1c02770ad66d766c8245c800e5cfa185389539a241adfd542": {
+        "id": "33ed37318700e9e1c02770ad66d766c8245c800e5cfa185389539a241adfd542",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "346e60ba5c6e8b9940460449d0d8730d655d3f43f49e140ab7613d3639eda4f3": {
+        "id": "346e60ba5c6e8b9940460449d0d8730d655d3f43f49e140ab7613d3639eda4f3",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3489bf70d52a288fe1cd6988017b7deae12d1ae4c1cb2c5a73cc75c5c3468b0b": {
+        "id": "3489bf70d52a288fe1cd6988017b7deae12d1ae4c1cb2c5a73cc75c5c3468b0b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3529e518980c3bb38da29547aab83d26296e8f9008471f6431766883b9c2037b": {
+        "id": "3529e518980c3bb38da29547aab83d26296e8f9008471f6431766883b9c2037b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "35565738f24ddf2df18ad209fe1d88632592b693f00834f44c5b618fc021b045": {
+        "id": "35565738f24ddf2df18ad209fe1d88632592b693f00834f44c5b618fc021b045",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "3595df3e0dc064a1fde667be33379645dcc50cddd98ea82bad816be22f5479f0": {
+        "id": "3595df3e0dc064a1fde667be33379645dcc50cddd98ea82bad816be22f5479f0",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "35a9cd62544b106000f68c144b68438b3ab9b4940fb50ef38758418a7676c840": {
+        "id": "35a9cd62544b106000f68c144b68438b3ab9b4940fb50ef38758418a7676c840",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "36014a90979da03229f68b457ad877196cfa1f450338dc5ef2d94ee2e8f6d651": {
+        "id": "36014a90979da03229f68b457ad877196cfa1f450338dc5ef2d94ee2e8f6d651",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "36781bf270d3bda5513a150a5c750fb07dc8ef5fa59bc0c09536b97c781aa359": {
+        "id": "36781bf270d3bda5513a150a5c750fb07dc8ef5fa59bc0c09536b97c781aa359",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "378563a0f5fb584d99ddb370f2e47ec4edb66e5fe3e30bf9b4b1cfab197602cb": {
+        "id": "378563a0f5fb584d99ddb370f2e47ec4edb66e5fe3e30bf9b4b1cfab197602cb",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "37ff611be3026aad3922f27ee8b02ae919b69a88c734fe31ce4a5e6bb600eba7": {
+        "id": "37ff611be3026aad3922f27ee8b02ae919b69a88c734fe31ce4a5e6bb600eba7",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "38884fb91f0cb1950b2c491756cd21faa71ee2d4602bd7ec9e6a35217fb5445d": {
+        "id": "38884fb91f0cb1950b2c491756cd21faa71ee2d4602bd7ec9e6a35217fb5445d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "388b84c3f58c5b76e6c6636d961736621e325e69061798fd2fc7b484c1e06e0a": {
+        "id": "388b84c3f58c5b76e6c6636d961736621e325e69061798fd2fc7b484c1e06e0a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "38c00541464e86e4f292a0aaa1c80609aedc6ded6b203aac08f50e7362d60955": {
+        "id": "38c00541464e86e4f292a0aaa1c80609aedc6ded6b203aac08f50e7362d60955",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "3942d6500c7f8fd5d76bfee9c73bbe454fa1a6ecbeaddd596ec7cf1c2b7327ab": {
+        "id": "3942d6500c7f8fd5d76bfee9c73bbe454fa1a6ecbeaddd596ec7cf1c2b7327ab",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "39ba2693cdc1a76d006d074235b3fa0b5afea9b0691ea95fd553f5540ca56d29": {
+        "id": "39ba2693cdc1a76d006d074235b3fa0b5afea9b0691ea95fd553f5540ca56d29",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3cd90fd44295bea72a42a347d22425a6f345e59b8825242a3d7ac68a09d34379": {
+        "id": "3cd90fd44295bea72a42a347d22425a6f345e59b8825242a3d7ac68a09d34379",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3d4d1fcd177bc3c40209cf648b5a9194c52f35413596b7f4e535dabe9a5b2a87": {
+        "id": "3d4d1fcd177bc3c40209cf648b5a9194c52f35413596b7f4e535dabe9a5b2a87",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3de629ddff6a15776b05d38001a45570b287f30f1ee4099e47203825c2976894": {
+        "id": "3de629ddff6a15776b05d38001a45570b287f30f1ee4099e47203825c2976894",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3e292fc26ab1844f7d3805a5cceba0534261fcd65446dc544b4f2f7e3459de01": {
+        "id": "3e292fc26ab1844f7d3805a5cceba0534261fcd65446dc544b4f2f7e3459de01",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "3e2ab157314563e816542a4022ebe32ee65d12299af6e2cbcf6ea7e5bbc5e7ff": {
+        "id": "3e2ab157314563e816542a4022ebe32ee65d12299af6e2cbcf6ea7e5bbc5e7ff",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "3e4224a32d29be06c115c9121b53eb6591e69b9ca659c78fa7e8e7369b4d9c72": {
+        "id": "3e4224a32d29be06c115c9121b53eb6591e69b9ca659c78fa7e8e7369b4d9c72",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3eceed6f1c3f4713943e4886b92d44e0b5e2b597971b1f91d377c0e129f006f4": {
+        "id": "3eceed6f1c3f4713943e4886b92d44e0b5e2b597971b1f91d377c0e129f006f4",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3edf245cba7fff22539cab5af3da629fb3eef4aa5879483b7b364a78c6e90ca3": {
+        "id": "3edf245cba7fff22539cab5af3da629fb3eef4aa5879483b7b364a78c6e90ca3",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3ee93d2471972a6d4a113a311c5d1910aed02a2c8fb6b94bd2e903c103a78f21": {
+        "id": "3ee93d2471972a6d4a113a311c5d1910aed02a2c8fb6b94bd2e903c103a78f21",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "undefined"
+    },
+    "3efaa9e7b3e4a8966deefaafdfb0c6042da0fccb45a9008187ec81f870baa001": {
+        "id": "3efaa9e7b3e4a8966deefaafdfb0c6042da0fccb45a9008187ec81f870baa001",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "3f3dcdcffc551fb036a3e25419bb39e24860a4884a540bac1f53c2d7fd8c7813": {
+        "id": "3f3dcdcffc551fb036a3e25419bb39e24860a4884a540bac1f53c2d7fd8c7813",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "41109e21e95cf2ff8bac201ba768e540c755fde6a6e553468fff34664b563a9a": {
+        "id": "41109e21e95cf2ff8bac201ba768e540c755fde6a6e553468fff34664b563a9a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "411484d24b59f5708ccbad72eeb29b0f16bbe7720da751f50316b1731a2ac24d": {
+        "id": "411484d24b59f5708ccbad72eeb29b0f16bbe7720da751f50316b1731a2ac24d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "434088e0ea904b92cd372d7ebe470c4a9046bb2d02a7965237081bd658013902": {
+        "id": "434088e0ea904b92cd372d7ebe470c4a9046bb2d02a7965237081bd658013902",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "436a6b53e4ace42953bccb5b3abfc7b55bfe8fef983b399fa9db1a1dc5aa31bc": {
+        "id": "436a6b53e4ace42953bccb5b3abfc7b55bfe8fef983b399fa9db1a1dc5aa31bc",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "438522637879835cc83e6973a41f03f5f745016ea510ed16393c020639ed0cc8": {
+        "id": "438522637879835cc83e6973a41f03f5f745016ea510ed16393c020639ed0cc8",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "43dce92c3a449aff80abfc6033c3d9be995101f4b70eee1ad16bd5435af8628b": {
+        "id": "43dce92c3a449aff80abfc6033c3d9be995101f4b70eee1ad16bd5435af8628b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4458bbd5b87abb675eb0e71fd294814a7502a6c834a7c8bbaa9e1f5cd2f436cd": {
+        "id": "4458bbd5b87abb675eb0e71fd294814a7502a6c834a7c8bbaa9e1f5cd2f436cd",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "44c1d48126f3b62e47af6859c3689cd382856227efd30ceb6ac4d4a6d465dc0f": {
+        "id": "44c1d48126f3b62e47af6859c3689cd382856227efd30ceb6ac4d4a6d465dc0f",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "451f9a5717af4436b9d09e1ec168f34ace2f7694def33579c633d0ad898d485d": {
+        "id": "451f9a5717af4436b9d09e1ec168f34ace2f7694def33579c633d0ad898d485d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "45a3dba6ce5f56777d323738ba675bf1b1f1594c3e3bfbc592349e74574ceb31": {
+        "id": "45a3dba6ce5f56777d323738ba675bf1b1f1594c3e3bfbc592349e74574ceb31",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "45d8b7a8c54fa7b3850b5c7d82a7a55003674b1a3652af5aec4429291a6ce93b": {
+        "id": "45d8b7a8c54fa7b3850b5c7d82a7a55003674b1a3652af5aec4429291a6ce93b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "46af4d09c0de4e98424d212dc586df572ee654575f5496349a3f38d7d48cced4": {
+        "id": "46af4d09c0de4e98424d212dc586df572ee654575f5496349a3f38d7d48cced4",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "477ac6b36d6df174ca33845c076f5064c9748bbe3d19d4996be6c3a08893384a": {
+        "id": "477ac6b36d6df174ca33845c076f5064c9748bbe3d19d4996be6c3a08893384a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "47a2d59087e7bd0d4db8c13c5f25657ffde1843fea9c134365106ae3e103bfcc": {
+        "id": "47a2d59087e7bd0d4db8c13c5f25657ffde1843fea9c134365106ae3e103bfcc",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "491b95f00d6aef9208ce8c49a437c4e8a9b4dcc64a9ecea4f71b8315dd4dd21b": {
+        "id": "491b95f00d6aef9208ce8c49a437c4e8a9b4dcc64a9ecea4f71b8315dd4dd21b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "499cbc03e1dc85a8d811db2e27ef95709a39943269e01bd37eb1722779bb3d07": {
+        "id": "499cbc03e1dc85a8d811db2e27ef95709a39943269e01bd37eb1722779bb3d07",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4a140639b1eeb2a4af61c9dcd579ce7be51330a95e1fcd4bd0e7b18aba22ef62": {
+        "id": "4a140639b1eeb2a4af61c9dcd579ce7be51330a95e1fcd4bd0e7b18aba22ef62",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "4a2132c1c62ea7101d8984e7ceccd0b0b88960eb4c67df44b12f9b93559916fd": {
+        "id": "4a2132c1c62ea7101d8984e7ceccd0b0b88960eb4c67df44b12f9b93559916fd",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4a825049563c7eb37c478d58c6e011cdfb38518922474deb445996eceaf31cb6": {
+        "id": "4a825049563c7eb37c478d58c6e011cdfb38518922474deb445996eceaf31cb6",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4a89deb02c5cd6abc5800d7d7800f948bc32a83ad694df86f688d4fa9765b9b4": {
+        "id": "4a89deb02c5cd6abc5800d7d7800f948bc32a83ad694df86f688d4fa9765b9b4",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4b19c8e235b331eb167a369c0d613dfa820b0556d242deb976a9c6d66d532ca7": {
+        "id": "4b19c8e235b331eb167a369c0d613dfa820b0556d242deb976a9c6d66d532ca7",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "4b6e881d818143cb12315bc7329c687e646f6f5eb0bc06e0aedb96252257e327": {
+        "id": "4b6e881d818143cb12315bc7329c687e646f6f5eb0bc06e0aedb96252257e327",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4b9faf98067f601cc55324c5a1f878299514fb99873f8ad5220210e94bbef797": {
+        "id": "4b9faf98067f601cc55324c5a1f878299514fb99873f8ad5220210e94bbef797",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "4c1e13150eab1959013417c4ee2164537c91033101f770b824522a26380204d4": {
+        "id": "4c1e13150eab1959013417c4ee2164537c91033101f770b824522a26380204d4",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "4ce6cc77e2434c26c7b294a0393b75474247c141f213af460b4b311023e7758a": {
+        "id": "4ce6cc77e2434c26c7b294a0393b75474247c141f213af460b4b311023e7758a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4d022fcc5e9ee8376704ea74c165c9544f6863c0cb0483990d268ee2a6e03f06": {
+        "id": "4d022fcc5e9ee8376704ea74c165c9544f6863c0cb0483990d268ee2a6e03f06",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4d65926dc36092474849aeb4516418df9dd6351959437333b0439fe498d87f00": {
+        "id": "4d65926dc36092474849aeb4516418df9dd6351959437333b0439fe498d87f00",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4db4a5f13e7fd49f5fa7d99b17fef84aa92c9034b2ea4e02e991d89b9bd98315": {
+        "id": "4db4a5f13e7fd49f5fa7d99b17fef84aa92c9034b2ea4e02e991d89b9bd98315",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4dbc50df51f1c4f67d6368e32b085e84fc1ce8c0f4f5093f5754a3d51b927683": {
+        "id": "4dbc50df51f1c4f67d6368e32b085e84fc1ce8c0f4f5093f5754a3d51b927683",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4e12d3015ef931004283dee825a8f214578b67f1c1a6555c52716569d1f4c9c8": {
+        "id": "4e12d3015ef931004283dee825a8f214578b67f1c1a6555c52716569d1f4c9c8",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4e991a1cdc72b9d50dbf80ba42d96505fcce844faf3eeb869e0cf95af9afb759": {
+        "id": "4e991a1cdc72b9d50dbf80ba42d96505fcce844faf3eeb869e0cf95af9afb759",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "4eb0fcc08a30d4b5b659f4d2dc57faa447d94bd184ce7bf9434741c77206574d": {
+        "id": "4eb0fcc08a30d4b5b659f4d2dc57faa447d94bd184ce7bf9434741c77206574d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4f4a4ebde07bfbb8eafb86ec4b9e253dd66f6d59bdfb39eeb80fad996941557a": {
+        "id": "4f4a4ebde07bfbb8eafb86ec4b9e253dd66f6d59bdfb39eeb80fad996941557a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "4f963dcb44e12f18996dbe9a6126a2cf158620f2f15703114603c571d20a0cf5": {
+        "id": "4f963dcb44e12f18996dbe9a6126a2cf158620f2f15703114603c571d20a0cf5",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "4fe5d6f3f37a8302b579883d272c0fe9a01de4e4150c2824109295ab335b2272": {
+        "id": "4fe5d6f3f37a8302b579883d272c0fe9a01de4e4150c2824109295ab335b2272",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "50144d6f68176fbe7e701671d4ecf3f6cecb8ff1258896e262373dcfbc4d864f": {
+        "id": "50144d6f68176fbe7e701671d4ecf3f6cecb8ff1258896e262373dcfbc4d864f",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "505a0a10a0cb583a7f711612504488b2c0e7ae5233a098d0426c8a40da8ab6ba": {
+        "id": "505a0a10a0cb583a7f711612504488b2c0e7ae5233a098d0426c8a40da8ab6ba",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "510cdfe28c04c1e233920bd35024e43cd6ef345b09f29c07b56c1e073206934a": {
+        "id": "510cdfe28c04c1e233920bd35024e43cd6ef345b09f29c07b56c1e073206934a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "510f0587f9effd584e033be9165e378153b3f4de7dd6ad5ff8088e1c7c945ede": {
+        "id": "510f0587f9effd584e033be9165e378153b3f4de7dd6ad5ff8088e1c7c945ede",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "511276289bf8729252abd750a39a525788d5b02f71acd48e4c0610c48d773b75": {
+        "id": "511276289bf8729252abd750a39a525788d5b02f71acd48e4c0610c48d773b75",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "51213016f1293fe5d9ae91da05e477f4de105a7cdac02030ccf67ff6d0f5acd3": {
+        "id": "51213016f1293fe5d9ae91da05e477f4de105a7cdac02030ccf67ff6d0f5acd3",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "51364e04ed77c7746f01f34774b03e6f67ef9e841cc6a4e3bef54dd4d9e29af2": {
+        "id": "51364e04ed77c7746f01f34774b03e6f67ef9e841cc6a4e3bef54dd4d9e29af2",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "51c77a50577f2018f812db328002dd85ecb7b4633504314af0e1b77d3b1abfed": {
+        "id": "51c77a50577f2018f812db328002dd85ecb7b4633504314af0e1b77d3b1abfed",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "528145f7c03a5b7e0161204054fa16b45ff3b35f04cce3b0c11f71da3b1e72ec": {
+        "id": "528145f7c03a5b7e0161204054fa16b45ff3b35f04cce3b0c11f71da3b1e72ec",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "529e04edb59a2e925ece9ec454eee953b4119becfd03fa796a47fd511ada1964": {
+        "id": "529e04edb59a2e925ece9ec454eee953b4119becfd03fa796a47fd511ada1964",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "52feea9baff77901969a168db034100bc120170142a9d0f3588b372d8150410d": {
+        "id": "52feea9baff77901969a168db034100bc120170142a9d0f3588b372d8150410d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "532bdd09e43d29e80192c20c740062848bb99a3c9df6c8bd98c3e277b69d35bc": {
+        "id": "532bdd09e43d29e80192c20c740062848bb99a3c9df6c8bd98c3e277b69d35bc",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "53e17b7804396fd98d3dbb4e546db481ddd2291f745940e5e4ec5e917b507a90": {
+        "id": "53e17b7804396fd98d3dbb4e546db481ddd2291f745940e5e4ec5e917b507a90",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "54287357278d2674d7dad3c05884a4853fac620166d4ba19f6d4b7e9c291f47e": {
+        "id": "54287357278d2674d7dad3c05884a4853fac620166d4ba19f6d4b7e9c291f47e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "54adf03d5bc7f4ba6a63d771273d5793110cb07ab668cc855b1b733c0d34dfd9": {
+        "id": "54adf03d5bc7f4ba6a63d771273d5793110cb07ab668cc855b1b733c0d34dfd9",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "54c89f5e2ce6e712d089b2b415c15711333ae92f49cb20d3490cdf778f1c45f6": {
+        "id": "54c89f5e2ce6e712d089b2b415c15711333ae92f49cb20d3490cdf778f1c45f6",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "55427da90c6944a9ad6887c648d340f137463272bd11a249c18c559d4fb1d5bc": {
+        "id": "55427da90c6944a9ad6887c648d340f137463272bd11a249c18c559d4fb1d5bc",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "55b722b612dd0e169d1d8fb025df52e53011b14c35a71a44091ea617416953c8": {
+        "id": "55b722b612dd0e169d1d8fb025df52e53011b14c35a71a44091ea617416953c8",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "561a93655655485a397059bf1ffc070ca8e1d382459b22845c5c325bd8323f7e": {
+        "id": "561a93655655485a397059bf1ffc070ca8e1d382459b22845c5c325bd8323f7e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "562164027fa495ad500801900ec3dd649f71b6cd3ff5ebf5db695d74811904f9": {
+        "id": "562164027fa495ad500801900ec3dd649f71b6cd3ff5ebf5db695d74811904f9",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "568713f03d84adc32e3634550ef3d932adc2f30b243521c6b2d3b7c559f79928": {
+        "id": "568713f03d84adc32e3634550ef3d932adc2f30b243521c6b2d3b7c559f79928",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "56f6a3e7196718bcefa25a867bc68d01f692dc775ee256b1a3a5133496030b92": {
+        "id": "56f6a3e7196718bcefa25a867bc68d01f692dc775ee256b1a3a5133496030b92",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "5745991d4744b7554529d0b9c739bffba71db27ad0449bddaa58c72d3944f12b": {
+        "id": "5745991d4744b7554529d0b9c739bffba71db27ad0449bddaa58c72d3944f12b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "5752fb719511b28dedce1ff28252e94c927d34b651b6d40620f3e2524da29d6f": {
+        "id": "5752fb719511b28dedce1ff28252e94c927d34b651b6d40620f3e2524da29d6f",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "579eaf2a9da3eb66e215ce04bd599daeba8535d445558abbf384e395f5cf5bc2": {
+        "id": "579eaf2a9da3eb66e215ce04bd599daeba8535d445558abbf384e395f5cf5bc2",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "58c0250db4672ff88304fbba5426e1a243697258119a02d8b279f518dd830d3f": {
+        "id": "58c0250db4672ff88304fbba5426e1a243697258119a02d8b279f518dd830d3f",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "59998a46ba37885276d4a835f804966f16eaf62af90762b6eae8991a2d92b61c": {
+        "id": "59998a46ba37885276d4a835f804966f16eaf62af90762b6eae8991a2d92b61c",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "5a04a09fec65d25fae54773e3569ba2e50e86f831003c639063ff70b276a4911": {
+        "id": "5a04a09fec65d25fae54773e3569ba2e50e86f831003c639063ff70b276a4911",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "5b90624aa48d2ba153787ce30ed65c189442250e6616a9c72753230147eb3701": {
+        "id": "5b90624aa48d2ba153787ce30ed65c189442250e6616a9c72753230147eb3701",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "5c9d25d610dc4e054a59d1fafacecc4e97868ded692b3f0ca78212ee705e1020": {
+        "id": "5c9d25d610dc4e054a59d1fafacecc4e97868ded692b3f0ca78212ee705e1020",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "5cc1d311d25aabebf932c620f0967e658a8a15f7f180a0c7dcde1802381eecc6": {
+        "id": "5cc1d311d25aabebf932c620f0967e658a8a15f7f180a0c7dcde1802381eecc6",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "undefined"
+    },
+    "5d22147d2c61980d17658f827bd528a789bb4f4464fa2bb12a353ca3419b59c7": {
+        "id": "5d22147d2c61980d17658f827bd528a789bb4f4464fa2bb12a353ca3419b59c7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "5d2362d4f83e0d3efea98190ed3677e8268a96976874e388683417ede66135e9": {
+        "id": "5d2362d4f83e0d3efea98190ed3677e8268a96976874e388683417ede66135e9",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "5d751dea534e85fa9adc9c528cf8a3536b5965e70e8ea50c02f9b513232a5a83": {
+        "id": "5d751dea534e85fa9adc9c528cf8a3536b5965e70e8ea50c02f9b513232a5a83",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "5e0ea40d02325b3cf32336b2f04ca4626b3be677864504ba45f379a82a89c317": {
+        "id": "5e0ea40d02325b3cf32336b2f04ca4626b3be677864504ba45f379a82a89c317",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "5e2757034aea847b21ea23c57cbe8fcdefc78cfa0ffffac3629c5c83b29fa4b8": {
+        "id": "5e2757034aea847b21ea23c57cbe8fcdefc78cfa0ffffac3629c5c83b29fa4b8",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "5f1c1bdffc8880648d87c9cc279f3a2976ed1ca6bbbd40e6fc397cf31433f15d": {
+        "id": "5f1c1bdffc8880648d87c9cc279f3a2976ed1ca6bbbd40e6fc397cf31433f15d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "5f746ac8aaa0f1ef6d1b3379af7ffc7c564924b7acb57c4bcd4d673eb244fd13": {
+        "id": "5f746ac8aaa0f1ef6d1b3379af7ffc7c564924b7acb57c4bcd4d673eb244fd13",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "5fe7e87bee3dbb4e700c6c8b3aecdc02aeba5cb225e691cbac549575b3859b4e": {
+        "id": "5fe7e87bee3dbb4e700c6c8b3aecdc02aeba5cb225e691cbac549575b3859b4e",
+        "tag_negation": "yes",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6088f885db3e317bbe6881ebed1cb3e786fb66fde725dd2297082df1a5da907f": {
+        "id": "6088f885db3e317bbe6881ebed1cb3e786fb66fde725dd2297082df1a5da907f",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "60dc05e4d07913a0ceca02d9468a5d3523f5fc2859ced8beb345854122d1fd90": {
+        "id": "60dc05e4d07913a0ceca02d9468a5d3523f5fc2859ced8beb345854122d1fd90",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "60e8cc6526a2086b414c7c06fd824834d285440f1b50f9099034529f5320a23c": {
+        "id": "60e8cc6526a2086b414c7c06fd824834d285440f1b50f9099034529f5320a23c",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "616885d75c920474a8c5ff1d4284b1a6ba93a473cf2816f712a910a6d560fac1": {
+        "id": "616885d75c920474a8c5ff1d4284b1a6ba93a473cf2816f712a910a6d560fac1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6193190b659878d8b176504198194f8574b414212cdf6f21fecdd1f74533ebd9": {
+        "id": "6193190b659878d8b176504198194f8574b414212cdf6f21fecdd1f74533ebd9",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "61fdb2bb1b5c9b1f446e4a48b774a8c40820160bc417c691669cc90beb284f73": {
+        "id": "61fdb2bb1b5c9b1f446e4a48b774a8c40820160bc417c691669cc90beb284f73",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "6270c6e4f36b5c48b8cc4872246f48ce5ca867cb71c73729fc53296f5efdac87": {
+        "id": "6270c6e4f36b5c48b8cc4872246f48ce5ca867cb71c73729fc53296f5efdac87",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "628766e6a581d38fd8d6df5da5f46e50e977a19d69859f22ebecfc2727f88d33": {
+        "id": "628766e6a581d38fd8d6df5da5f46e50e977a19d69859f22ebecfc2727f88d33",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "634ac04ef9edfcf9d9ce8a757611269c7d18cd0bab4ab5dbb67dafdc0e39974b": {
+        "id": "634ac04ef9edfcf9d9ce8a757611269c7d18cd0bab4ab5dbb67dafdc0e39974b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6458b2fa86965c2733536bf94f82ec7a7299662d1533f6ede1153c45ad436a06": {
+        "id": "6458b2fa86965c2733536bf94f82ec7a7299662d1533f6ede1153c45ad436a06",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "64f356148c583fb07877cf04a124c45aa9ea42bf147918f264da3db7c5762042": {
+        "id": "64f356148c583fb07877cf04a124c45aa9ea42bf147918f264da3db7c5762042",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "65514e1c222120ff9cb4c2fb060fd53b1207442b44d9a4fff4a8c1bb2ad061a4": {
+        "id": "65514e1c222120ff9cb4c2fb060fd53b1207442b44d9a4fff4a8c1bb2ad061a4",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6571501e1619d273ac57b186cbcded1ee0b5fa222ff2681c1d5f9980080733c3": {
+        "id": "6571501e1619d273ac57b186cbcded1ee0b5fa222ff2681c1d5f9980080733c3",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "658fe88fd1fe7f59f467868831ce7bc957cd41137fa326acc12f71081e12e22e": {
+        "id": "658fe88fd1fe7f59f467868831ce7bc957cd41137fa326acc12f71081e12e22e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "65cfde93d87a79262237554af6c78401d39bd5c348d0059ecc7bfc2e1fd6d4a8": {
+        "id": "65cfde93d87a79262237554af6c78401d39bd5c348d0059ecc7bfc2e1fd6d4a8",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "66543d64b1466a29bacab4dd897dd1fe7034f20bc3420c59bb1f05ff7a8f5f5d": {
+        "id": "66543d64b1466a29bacab4dd897dd1fe7034f20bc3420c59bb1f05ff7a8f5f5d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "674781039b60406f34d86f24582690d075ad524c0d717c10d5fae5c816df8483": {
+        "id": "674781039b60406f34d86f24582690d075ad524c0d717c10d5fae5c816df8483",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "679f97932226d78a557988ca80550105ee7aa4bea9b1710f29fc9fdcf33c35f7": {
+        "id": "679f97932226d78a557988ca80550105ee7aa4bea9b1710f29fc9fdcf33c35f7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "67d2c3fd17b1f750427e5edaf98fb5a43a5ae8b14b4c7c294bc4f088524a022a": {
+        "id": "67d2c3fd17b1f750427e5edaf98fb5a43a5ae8b14b4c7c294bc4f088524a022a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "67ec2abc4d26f40e06a518f09220b4bd918eda0dce337967a08710be405c6d62": {
+        "id": "67ec2abc4d26f40e06a518f09220b4bd918eda0dce337967a08710be405c6d62",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "686477a00e4d94133caf47761ee3ee39524ddc0a39fb34fface315a425e5e6cc": {
+        "id": "686477a00e4d94133caf47761ee3ee39524ddc0a39fb34fface315a425e5e6cc",
+        "tag_negation": "yes",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "68e964c7043620fb2f644f9b3dde0f789490394b6ce2f221e40684e3128289f9": {
+        "id": "68e964c7043620fb2f644f9b3dde0f789490394b6ce2f221e40684e3128289f9",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6979d46501a3270436d37b98cf351439fbcbec8d5890d293dabfb8f85f723904": {
+        "id": "6979d46501a3270436d37b98cf351439fbcbec8d5890d293dabfb8f85f723904",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6a6a4e6840e58d36f53b70a4dd1ca0432d3457817d2ff465d2f3b865ee96745e": {
+        "id": "6a6a4e6840e58d36f53b70a4dd1ca0432d3457817d2ff465d2f3b865ee96745e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6a8cc70c9e63fbec7e4713f18c39d8b7317420698debfed778bd6d00d5608b19": {
+        "id": "6a8cc70c9e63fbec7e4713f18c39d8b7317420698debfed778bd6d00d5608b19",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "6b420aa8e5f66f65505d7d0d135084b5beb4f007c4935f98e519b2d5776fa181": {
+        "id": "6b420aa8e5f66f65505d7d0d135084b5beb4f007c4935f98e519b2d5776fa181",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "6b92757ed3720dc210073a7d17bb55db4768beba219b9656b24e7fbcfe7322f2": {
+        "id": "6b92757ed3720dc210073a7d17bb55db4768beba219b9656b24e7fbcfe7322f2",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6bbdb9a4d51edef5c64dde7836fd024889c86326cb1a94c099c8dd07d9431393": {
+        "id": "6bbdb9a4d51edef5c64dde7836fd024889c86326cb1a94c099c8dd07d9431393",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6c0231fef9af59365031e9fe735a31bf5344aaa4c737030d7b17928eb6a85b51": {
+        "id": "6c0231fef9af59365031e9fe735a31bf5344aaa4c737030d7b17928eb6a85b51",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "6c35039202449b2b89e7b8a79dd0d7ae1b73ad650988446f331d3a26e8ecff60": {
+        "id": "6c35039202449b2b89e7b8a79dd0d7ae1b73ad650988446f331d3a26e8ecff60",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "6c82eb95dcf5f8522ebdd22d711ba9a4dfbf8d4c3fb674ed18fc336f8e2d1d41": {
+        "id": "6c82eb95dcf5f8522ebdd22d711ba9a4dfbf8d4c3fb674ed18fc336f8e2d1d41",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6cb14cbfad28e0a98fe0215e6731da08ae26ceaef7dff3da1677ea46905ea961": {
+        "id": "6cb14cbfad28e0a98fe0215e6731da08ae26ceaef7dff3da1677ea46905ea961",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6cb598f2477e38c2e471873cc1f93e39a1baa08c72f281c7087f23b915736dd6": {
+        "id": "6cb598f2477e38c2e471873cc1f93e39a1baa08c72f281c7087f23b915736dd6",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "6cfb33796fa217129b188a3787efdc7f92dac974b7f09eb1140d3899a5feabfd": {
+        "id": "6cfb33796fa217129b188a3787efdc7f92dac974b7f09eb1140d3899a5feabfd",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "6d3cc26b10ab94436c8bb0ce03c6625e2b49c96f8fed0107066ca6a134172fd1": {
+        "id": "6d3cc26b10ab94436c8bb0ce03c6625e2b49c96f8fed0107066ca6a134172fd1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6da6d91fc2796d3802df68551cd6f66960eb34e94f1233259bc8abd1a254b063": {
+        "id": "6da6d91fc2796d3802df68551cd6f66960eb34e94f1233259bc8abd1a254b063",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6dae02ab9a45101ab65577f9b93367a33b5d643728a4e490b0078405512c4bfb": {
+        "id": "6dae02ab9a45101ab65577f9b93367a33b5d643728a4e490b0078405512c4bfb",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6db5aeb3f1e97f334ec28008dbbecee7565b99ddd2b07f96b41de120333035f6": {
+        "id": "6db5aeb3f1e97f334ec28008dbbecee7565b99ddd2b07f96b41de120333035f6",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6dde69268d517f9b43ad71b8c07e7be7a126b7fbb1522ce91b9e9af0d773fcd9": {
+        "id": "6dde69268d517f9b43ad71b8c07e7be7a126b7fbb1522ce91b9e9af0d773fcd9",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "6df57459b807221b9320351c59916c57c24fea91dec4979b67152b0a3eccd475": {
+        "id": "6df57459b807221b9320351c59916c57c24fea91dec4979b67152b0a3eccd475",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6eabd79c1c8709f37dd1d5e494835c9ba94bb9909e6a76baae97990c93d43b74": {
+        "id": "6eabd79c1c8709f37dd1d5e494835c9ba94bb9909e6a76baae97990c93d43b74",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "6eae6907e0daa522c8dddee2a3e8fd676ddf85a4db1085eea8d4e8fc4fc5854e": {
+        "id": "6eae6907e0daa522c8dddee2a3e8fd676ddf85a4db1085eea8d4e8fc4fc5854e",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6ef3b9f6d5134e0f3ffabaf58affdca53d9d8d5d3e30acbf17bee90673c2ba83": {
+        "id": "6ef3b9f6d5134e0f3ffabaf58affdca53d9d8d5d3e30acbf17bee90673c2ba83",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6f1cf5072208ab5dbbeadaa06ca34521626095f030bb1d47b55f1447814b25d4": {
+        "id": "6f1cf5072208ab5dbbeadaa06ca34521626095f030bb1d47b55f1447814b25d4",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "6f67b816d91d6f12ffd8707f17ccc930a74a5fd3e2d6ed34013a527ab4cdd2bd": {
+        "id": "6f67b816d91d6f12ffd8707f17ccc930a74a5fd3e2d6ed34013a527ab4cdd2bd",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "702316fc160873edb488570cd16865cb1761a2b807c6041108b8ea2b3c566645": {
+        "id": "702316fc160873edb488570cd16865cb1761a2b807c6041108b8ea2b3c566645",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "710fa45fcd6d1566f56b8d2fa884fec023bd14c167cf86787941cf93089f94ba": {
+        "id": "710fa45fcd6d1566f56b8d2fa884fec023bd14c167cf86787941cf93089f94ba",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "712c7dacb919ce18219362e7d70ed26e903e2c3c164e124116c9447ad3d9bd29": {
+        "id": "712c7dacb919ce18219362e7d70ed26e903e2c3c164e124116c9447ad3d9bd29",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "717259722442f4d2d8a39813bb248a7967291d8e6f00dd255063434abde9c28c": {
+        "id": "717259722442f4d2d8a39813bb248a7967291d8e6f00dd255063434abde9c28c",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "71d717f7d0ffd429e167b85b897c48e48b81fd642117612c5d7bfe3771cb58d7": {
+        "id": "71d717f7d0ffd429e167b85b897c48e48b81fd642117612c5d7bfe3771cb58d7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7203c6d7d4f83f16103e24a003a597e785839e4d989a5a6b8d6c6ad3b875631b": {
+        "id": "7203c6d7d4f83f16103e24a003a597e785839e4d989a5a6b8d6c6ad3b875631b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "739d9c8c4ab42a8079345cd7890d887ad7b51d5b1e43c7916d76a3c804558fd9": {
+        "id": "739d9c8c4ab42a8079345cd7890d887ad7b51d5b1e43c7916d76a3c804558fd9",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "7454ff097d6d24bf4163fc32a6ad9e806bc90b00fd59228589daf77d627c202a": {
+        "id": "7454ff097d6d24bf4163fc32a6ad9e806bc90b00fd59228589daf77d627c202a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7458e90c3b11b7ee915856631aee22819dceebeafb10ec4b7b45d90e6dba4e1a": {
+        "id": "7458e90c3b11b7ee915856631aee22819dceebeafb10ec4b7b45d90e6dba4e1a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "745d95027cb5a99ac7cafe915ba4dd5a86f5198ece119069387def66ffc51b1a": {
+        "id": "745d95027cb5a99ac7cafe915ba4dd5a86f5198ece119069387def66ffc51b1a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "746687e4a7b8ee0cec7ac9c0481ff1740f26ab9add2d1a0b4237b2252e7999d1": {
+        "id": "746687e4a7b8ee0cec7ac9c0481ff1740f26ab9add2d1a0b4237b2252e7999d1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7538df70f3a8314a4924c35a3671a67c710160068fcc1170e6c26a5cbbeb02dc": {
+        "id": "7538df70f3a8314a4924c35a3671a67c710160068fcc1170e6c26a5cbbeb02dc",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7627547d98795c175d4e474ab627a46e6bebf6c0b32d3cbbdb8bbcf513be0934": {
+        "id": "7627547d98795c175d4e474ab627a46e6bebf6c0b32d3cbbdb8bbcf513be0934",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7675e339e3735c15d9fabe65852e93f0e1d40f8374066a979198bf213b6f08dd": {
+        "id": "7675e339e3735c15d9fabe65852e93f0e1d40f8374066a979198bf213b6f08dd",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "76794323bbb99bc7372ecdbe9758f21b32aaac8213de296c25519759917e3888": {
+        "id": "76794323bbb99bc7372ecdbe9758f21b32aaac8213de296c25519759917e3888",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "76816c25f7a3917e9ed8b7dae452cfcf4df3a47bef4a0dbbc924bd531627916b": {
+        "id": "76816c25f7a3917e9ed8b7dae452cfcf4df3a47bef4a0dbbc924bd531627916b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7714ed99f2664a4917f615175e9f3b30950b44be5a3911136bf366a63182fb0c": {
+        "id": "7714ed99f2664a4917f615175e9f3b30950b44be5a3911136bf366a63182fb0c",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "77309b8fc4b8e9c8753d5125c3ad0685b41d4f0c883537c96b6fde88c7110698": {
+        "id": "77309b8fc4b8e9c8753d5125c3ad0685b41d4f0c883537c96b6fde88c7110698",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "77e30ba659eeb8de0f11f667db54a56877cd6663d60b3570c9e546586db13a9d": {
+        "id": "77e30ba659eeb8de0f11f667db54a56877cd6663d60b3570c9e546586db13a9d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "77ea8aa552d49922d36529bc31eeecaa00a88a79c49759ff38f4a1d3ecf08a72": {
+        "id": "77ea8aa552d49922d36529bc31eeecaa00a88a79c49759ff38f4a1d3ecf08a72",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "783987883594c6b48313fa8e3dc8b231924d2785303ec7792655cddd1b5c34a9": {
+        "id": "783987883594c6b48313fa8e3dc8b231924d2785303ec7792655cddd1b5c34a9",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "792d0541ce2da026f8a88479659d0704291c5f0e686e46f45b8e283a5321a8e5": {
+        "id": "792d0541ce2da026f8a88479659d0704291c5f0e686e46f45b8e283a5321a8e5",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "795fec3acfff27d74789b34956b6f08902e13066c41e36cfbb41cdd471d54b19": {
+        "id": "795fec3acfff27d74789b34956b6f08902e13066c41e36cfbb41cdd471d54b19",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "79b08feb4c489346191bac5b9dc22aaed63b5bdf83299e03c4efaf2d2e9d8ded": {
+        "id": "79b08feb4c489346191bac5b9dc22aaed63b5bdf83299e03c4efaf2d2e9d8ded",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "79d3dca548d05d45c414dd66044e57396d5a3253b0df069ec361a77659fd827e": {
+        "id": "79d3dca548d05d45c414dd66044e57396d5a3253b0df069ec361a77659fd827e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7a6f3ebf83e8b2be423c30f102dc528f65587800c655641fdfffa671692d8afd": {
+        "id": "7a6f3ebf83e8b2be423c30f102dc528f65587800c655641fdfffa671692d8afd",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "7ac92cb0cbe9a1a278898820e2e6d7c8843b4384dba3bade2a4b4b8269d9d6c4": {
+        "id": "7ac92cb0cbe9a1a278898820e2e6d7c8843b4384dba3bade2a4b4b8269d9d6c4",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7b1ce9ba25a738f1666ee72fa984394636ee919aa69d1e49e0fe5fd69b782f32": {
+        "id": "7b1ce9ba25a738f1666ee72fa984394636ee919aa69d1e49e0fe5fd69b782f32",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7c07795c851439629efe3b5488bc808a8cc8809756db656a44cdb6a210038326": {
+        "id": "7c07795c851439629efe3b5488bc808a8cc8809756db656a44cdb6a210038326",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "negative",
+        "tag_answer": "undefined"
+    },
+    "7c22bff86874a6ecfb75fa902073cf6eae0b70453ecdcc602689c59c851941c7": {
+        "id": "7c22bff86874a6ecfb75fa902073cf6eae0b70453ecdcc602689c59c851941c7",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7c4e7408aca3c5bc0818525b8218201c0c02e665a8506454750a0875033ee821": {
+        "id": "7c4e7408aca3c5bc0818525b8218201c0c02e665a8506454750a0875033ee821",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7d91b70a1171a6ba96f93c1ad82d5934e4861552498e5e70dc450c0e6a639d35": {
+        "id": "7d91b70a1171a6ba96f93c1ad82d5934e4861552498e5e70dc450c0e6a639d35",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "7dce530a2a2e0697b23e03dbe828a21fa892731fed802c7ce217074db1c315d5": {
+        "id": "7dce530a2a2e0697b23e03dbe828a21fa892731fed802c7ce217074db1c315d5",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7e59e981807dde089f686ac4b3779d1fd971eaaba254fd5a4cf99793944f42dd": {
+        "id": "7e59e981807dde089f686ac4b3779d1fd971eaaba254fd5a4cf99793944f42dd",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7ec142291b07d9f70c2a875efb942dc26b39d85f82efe4fb4686d162b25a41f8": {
+        "id": "7ec142291b07d9f70c2a875efb942dc26b39d85f82efe4fb4686d162b25a41f8",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "undefined"
+    },
+    "7ed7d26e98afe0e0e7e385bac0117ed92819c20d4df1efb02affdb69f7ea44b1": {
+        "id": "7ed7d26e98afe0e0e7e385bac0117ed92819c20d4df1efb02affdb69f7ea44b1",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7eef92ee0b01a7bb53f89f1eb6e6ec89c5146f214adff0ab7e9a02cbe776fdf6": {
+        "id": "7eef92ee0b01a7bb53f89f1eb6e6ec89c5146f214adff0ab7e9a02cbe776fdf6",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7efeb3bd13a00f38f2cc6ec9df96a41a8f06c8b5ba90570ea572613ba3ce7fcc": {
+        "id": "7efeb3bd13a00f38f2cc6ec9df96a41a8f06c8b5ba90570ea572613ba3ce7fcc",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7f3c8675a70fb21a070092e8ba20c7b8fd7540a0227c6433e7730695e28ac8b6": {
+        "id": "7f3c8675a70fb21a070092e8ba20c7b8fd7540a0227c6433e7730695e28ac8b6",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7f415db4c1030e81a20978c161f0532f4b84970fda781bb6fc5387c77e622c00": {
+        "id": "7f415db4c1030e81a20978c161f0532f4b84970fda781bb6fc5387c77e622c00",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "7f873af322b19ba91492b96be582edd5d0c8b13276266089b3b84e4de041a885": {
+        "id": "7f873af322b19ba91492b96be582edd5d0c8b13276266089b3b84e4de041a885",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "802d92488705db4beb71642a74873375248b06cbf135c43c89597f515826231b": {
+        "id": "802d92488705db4beb71642a74873375248b06cbf135c43c89597f515826231b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "80473c275b925067b070531f70f165a66ef5dfe364fefff562c12d9d44e367b0": {
+        "id": "80473c275b925067b070531f70f165a66ef5dfe364fefff562c12d9d44e367b0",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "805f746086c528498e4881c01989fcf54cc3b819cecf87c73327659f9adf383f": {
+        "id": "805f746086c528498e4881c01989fcf54cc3b819cecf87c73327659f9adf383f",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8141782779c50e4ca25327d7a3b320f316b2ae965ecf45489397cc224f541d53": {
+        "id": "8141782779c50e4ca25327d7a3b320f316b2ae965ecf45489397cc224f541d53",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "81b4064cb22bf884519d8ecb24bc19db3a00f6e1e368ab56eea846aa11426c86": {
+        "id": "81b4064cb22bf884519d8ecb24bc19db3a00f6e1e368ab56eea846aa11426c86",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "82474007cf1b18fe0530062c3183da89b3df8f50b05c736bee81328f22f127d8": {
+        "id": "82474007cf1b18fe0530062c3183da89b3df8f50b05c736bee81328f22f127d8",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "835c63dea8fdafb6851f407650fe8b9318006f39d7dfe903444dbc8b43606264": {
+        "id": "835c63dea8fdafb6851f407650fe8b9318006f39d7dfe903444dbc8b43606264",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "848336659ac0cfac2acbed9f402309d37d2ac7c79f1eab1a5ca8ba3c08109989": {
+        "id": "848336659ac0cfac2acbed9f402309d37d2ac7c79f1eab1a5ca8ba3c08109989",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8491a2e18ba8663a34f4a32e195b1e17aedea848fd179c5730fdce96237e81b2": {
+        "id": "8491a2e18ba8663a34f4a32e195b1e17aedea848fd179c5730fdce96237e81b2",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "84dc4d91f3e19079a0126ff83068f4adcc7efe43cd5c393e51781a1d750c4fd7": {
+        "id": "84dc4d91f3e19079a0126ff83068f4adcc7efe43cd5c393e51781a1d750c4fd7",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "853861018c81aaf3ce817e73443a79095fc5792a2bfe3b3e83ea6439649d401e": {
+        "id": "853861018c81aaf3ce817e73443a79095fc5792a2bfe3b3e83ea6439649d401e",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "85890c40437a4f7e0da57e65831e4a06fdf8ef08e5d071459fe08961a5d217d1": {
+        "id": "85890c40437a4f7e0da57e65831e4a06fdf8ef08e5d071459fe08961a5d217d1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "858b785fd71b47c7280669908aafebea15ba639da47956ebc0255d6262c61390": {
+        "id": "858b785fd71b47c7280669908aafebea15ba639da47956ebc0255d6262c61390",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "86d24da4b58426a5041c72a6f7dd5bedb89f4730c1b686e6ddeef512009087ef": {
+        "id": "86d24da4b58426a5041c72a6f7dd5bedb89f4730c1b686e6ddeef512009087ef",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "8768ebb1a43f9e819ffbf0f9e090e6498c64ae550b8cc734f8675076b171caa3": {
+        "id": "8768ebb1a43f9e819ffbf0f9e090e6498c64ae550b8cc734f8675076b171caa3",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "87c69188ef0f19e7613b6b1f86379c77f54922ad72eb0aa20f482e405327012d": {
+        "id": "87c69188ef0f19e7613b6b1f86379c77f54922ad72eb0aa20f482e405327012d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "87d20a11fa4f697d054d27ccf87ff2e666cdee6e7a04b4c3176915e01ee635e7": {
+        "id": "87d20a11fa4f697d054d27ccf87ff2e666cdee6e7a04b4c3176915e01ee635e7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "884d1ddae74a8082b4a75078b10e63492e7f7ad7595d02a3fc2e1dc28873472d": {
+        "id": "884d1ddae74a8082b4a75078b10e63492e7f7ad7595d02a3fc2e1dc28873472d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "88c88a0a619232e1089ac143dbfdd020830d7b76463dd6358325b723f8881919": {
+        "id": "88c88a0a619232e1089ac143dbfdd020830d7b76463dd6358325b723f8881919",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8a263901a21017d7c84c08dcdc484d56bd0e8a98211048a619f479f20440c7c8": {
+        "id": "8a263901a21017d7c84c08dcdc484d56bd0e8a98211048a619f479f20440c7c8",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8b34c8eff46a7a9158486a053e958b94d6eb9485decd3e0696fc904b346f968d": {
+        "id": "8b34c8eff46a7a9158486a053e958b94d6eb9485decd3e0696fc904b346f968d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8b3765d0aed9e90a17b10c954282806ea86045f94ace84d11e1ac7a321095275": {
+        "id": "8b3765d0aed9e90a17b10c954282806ea86045f94ace84d11e1ac7a321095275",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8ced90491666966532c5441a9ecddb050dee89c2b13c3137fdb2deede32a1453": {
+        "id": "8ced90491666966532c5441a9ecddb050dee89c2b13c3137fdb2deede32a1453",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8d48b9356b50606732c2caaba2e3673b242210d6fa4bb45bf1857a56e3ae0642": {
+        "id": "8d48b9356b50606732c2caaba2e3673b242210d6fa4bb45bf1857a56e3ae0642",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8d91b2d6f397306c09cb1c81b8116656c5c74dae633f03fb85235645031062d5": {
+        "id": "8d91b2d6f397306c09cb1c81b8116656c5c74dae633f03fb85235645031062d5",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "8ddd7647b5b6abd0a5df62182e7f34642c701ba31a257a5c89c71a71805496f3": {
+        "id": "8ddd7647b5b6abd0a5df62182e7f34642c701ba31a257a5c89c71a71805496f3",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8e735d2a6cfeacc872593b6b1fcc8c4759134acc8521ee5b05de836f9e5bf3d0": {
+        "id": "8e735d2a6cfeacc872593b6b1fcc8c4759134acc8521ee5b05de836f9e5bf3d0",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8e8421320c3d9fefe029443e4f6ce50d39cff41058d419aff5212ddbb858c5e1": {
+        "id": "8e8421320c3d9fefe029443e4f6ce50d39cff41058d419aff5212ddbb858c5e1",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8e9e7d99e61600761d4d9c58e4c598017d9eeeac3e2eecef92b551ba1fba20aa": {
+        "id": "8e9e7d99e61600761d4d9c58e4c598017d9eeeac3e2eecef92b551ba1fba20aa",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "8f1275c85c3bc80be651a59803977f18f74e20aa497dc776e058760bda3fd690": {
+        "id": "8f1275c85c3bc80be651a59803977f18f74e20aa497dc776e058760bda3fd690",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8f50481b403460ea855ddad6782915498129d4475741235dac171e1c604aa711": {
+        "id": "8f50481b403460ea855ddad6782915498129d4475741235dac171e1c604aa711",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8f882f33c36b95ae2641b9ad825d0a4a2eb7e07b73fd103c4f01f3966bfc4260": {
+        "id": "8f882f33c36b95ae2641b9ad825d0a4a2eb7e07b73fd103c4f01f3966bfc4260",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "8fd86aafc48a090f39676295059d1289a8767f74538fe6f954ac141e9cb64f34": {
+        "id": "8fd86aafc48a090f39676295059d1289a8767f74538fe6f954ac141e9cb64f34",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "901601489aafa0dd742081f971b267d5643a625d74c0c45ead011ada91af05a7": {
+        "id": "901601489aafa0dd742081f971b267d5643a625d74c0c45ead011ada91af05a7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9084b9926c4cbe5e7e1ac56de6307786c602a9e9575b773ed06fd00c4d00c321": {
+        "id": "9084b9926c4cbe5e7e1ac56de6307786c602a9e9575b773ed06fd00c4d00c321",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "90ddd40e22ab1c572594f8634f063fe28a41c768a9599aa306973ca85762fadc": {
+        "id": "90ddd40e22ab1c572594f8634f063fe28a41c768a9599aa306973ca85762fadc",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "91a048b71eb13e99719d8368969072ec4a37c7120de16535b85231c072ebed08": {
+        "id": "91a048b71eb13e99719d8368969072ec4a37c7120de16535b85231c072ebed08",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "91a0bb4938f74bad0b0d97b8bfc697107880baeadf6cad026ebd298d1f425811": {
+        "id": "91a0bb4938f74bad0b0d97b8bfc697107880baeadf6cad026ebd298d1f425811",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "936b6b9d3e91481ffd6ae834f1ceba6dc1727ebbb775aee64823b23f3d86ae08": {
+        "id": "936b6b9d3e91481ffd6ae834f1ceba6dc1727ebbb775aee64823b23f3d86ae08",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "938718c6230e12d58ca32eaad8f14c4bc561c922de94f477fe06473e09db9dbb": {
+        "id": "938718c6230e12d58ca32eaad8f14c4bc561c922de94f477fe06473e09db9dbb",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "94384cb3c66e95d493a91ba94eb307e57dc66e677db315419bedc7afaee79fc7": {
+        "id": "94384cb3c66e95d493a91ba94eb307e57dc66e677db315419bedc7afaee79fc7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "94bcb9c3c87b92f1578c3d59bb96fd5d3073efd23d67a941902b807986aed968": {
+        "id": "94bcb9c3c87b92f1578c3d59bb96fd5d3073efd23d67a941902b807986aed968",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "94d7e27915344b373d51749346e702cb7a1cff80ef6833c97fb935213c362cef": {
+        "id": "94d7e27915344b373d51749346e702cb7a1cff80ef6833c97fb935213c362cef",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "94d901fdb9ea809c024091a6cda1671b506f0296bdfa6fccf892751075d6c99b": {
+        "id": "94d901fdb9ea809c024091a6cda1671b506f0296bdfa6fccf892751075d6c99b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "9540a106b1e716261056ada7ac2af056f14a2be8e8395b605bd64c808b58f5e5": {
+        "id": "9540a106b1e716261056ada7ac2af056f14a2be8e8395b605bd64c808b58f5e5",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "961fbf8c4175f0c78280c7ddfc9c58e10c30e60207b71ff5a1279430db8bec23": {
+        "id": "961fbf8c4175f0c78280c7ddfc9c58e10c30e60207b71ff5a1279430db8bec23",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "965ef8b4c096f6e79efaf660e0eefc7f702aa976e0a11eb91ecc3cce6bb97894": {
+        "id": "965ef8b4c096f6e79efaf660e0eefc7f702aa976e0a11eb91ecc3cce6bb97894",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9688338b90370b124af797a205e9516bec515d99785c685689e03be505125cec": {
+        "id": "9688338b90370b124af797a205e9516bec515d99785c685689e03be505125cec",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "968cef7b0860fc7053e80d6d8c3cdb2558388dba33c2ce455d826ac0fea81862": {
+        "id": "968cef7b0860fc7053e80d6d8c3cdb2558388dba33c2ce455d826ac0fea81862",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "96bf4688c1a89ab559741511ac04aa1166035c72d36248cbd6d1c48245d6331c": {
+        "id": "96bf4688c1a89ab559741511ac04aa1166035c72d36248cbd6d1c48245d6331c",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "9851b66a2152abf4f67765e7abd4a432d7133f97f03ad48b0cb20e2c66f50a3a": {
+        "id": "9851b66a2152abf4f67765e7abd4a432d7133f97f03ad48b0cb20e2c66f50a3a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9852f46b392dac6ec2fdf4444401163287e83d3d6525f9a5f4d9080df790fe01": {
+        "id": "9852f46b392dac6ec2fdf4444401163287e83d3d6525f9a5f4d9080df790fe01",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "985ef0424387b364afd062769016dac517284044df0026dc1fca3a864cb25f08": {
+        "id": "985ef0424387b364afd062769016dac517284044df0026dc1fca3a864cb25f08",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9955b3bd68ee708701212c41f32fb386a7930d21445c61a02e509f39cea05b97": {
+        "id": "9955b3bd68ee708701212c41f32fb386a7930d21445c61a02e509f39cea05b97",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9a6e14dbfc509ceba9a09571b5da5272059ee251d9fdc34bd8dff201f0f12681": {
+        "id": "9a6e14dbfc509ceba9a09571b5da5272059ee251d9fdc34bd8dff201f0f12681",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9a922f54c8e5d06dd4df13a7f629877e8bfe9e630486793a9c574486f0d27d8f": {
+        "id": "9a922f54c8e5d06dd4df13a7f629877e8bfe9e630486793a9c574486f0d27d8f",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "9c88f96ec641b69a3d4554aa5681fe90c19515d6d312a82719181a36f0c3e590": {
+        "id": "9c88f96ec641b69a3d4554aa5681fe90c19515d6d312a82719181a36f0c3e590",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9caa16c03bc579b0d2f4324b2808b5ec82d1005dc45569b503b199946114d342": {
+        "id": "9caa16c03bc579b0d2f4324b2808b5ec82d1005dc45569b503b199946114d342",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9d0050f2c333bb68d42b116da4e74bea22f8f55b5ebdd245f81abacaf16999fe": {
+        "id": "9d0050f2c333bb68d42b116da4e74bea22f8f55b5ebdd245f81abacaf16999fe",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9d0c340a69950c67127e8145c580f55fe4aa91309a607511ac08c5d44ed824cb": {
+        "id": "9d0c340a69950c67127e8145c580f55fe4aa91309a607511ac08c5d44ed824cb",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9dfb53a11522652c0cc1ccef1b16f086b2d98232372795617249361aa7d2aba5": {
+        "id": "9dfb53a11522652c0cc1ccef1b16f086b2d98232372795617249361aa7d2aba5",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9eb39243214e94bfabe4c957dc1e81d783f28132abe4353d32154124611d3373": {
+        "id": "9eb39243214e94bfabe4c957dc1e81d783f28132abe4353d32154124611d3373",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "9ee02153253e0a08b7cfd1caf5c9e53de5e004ecbd37e1f60bac528fb884cf41": {
+        "id": "9ee02153253e0a08b7cfd1caf5c9e53de5e004ecbd37e1f60bac528fb884cf41",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9f13379ed3d936f463edec1492525b9dbb1908500c804386f376981b8a803871": {
+        "id": "9f13379ed3d936f463edec1492525b9dbb1908500c804386f376981b8a803871",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "9f3d05f068adf471bc3246026c11b4526fd573a3edf76654de970a12a99d69f1": {
+        "id": "9f3d05f068adf471bc3246026c11b4526fd573a3edf76654de970a12a99d69f1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a121b13e7245d0100572270681a604e86b9f882c15e893bf168f30fed7f83a73": {
+        "id": "a121b13e7245d0100572270681a604e86b9f882c15e893bf168f30fed7f83a73",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a1e4a9614e01b0bf9b2e5ab8f435347d5f295fd849e1564bb35ab4343e34d1f7": {
+        "id": "a1e4a9614e01b0bf9b2e5ab8f435347d5f295fd849e1564bb35ab4343e34d1f7",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a21792fb36b154d91a92cf322a0dee1590cf61d05de8a7cff5a29634276dc0a8": {
+        "id": "a21792fb36b154d91a92cf322a0dee1590cf61d05de8a7cff5a29634276dc0a8",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a21e412a3b0862e70e05ca81fc0658f495807c64bc42a706277c6b6aa2654b9b": {
+        "id": "a21e412a3b0862e70e05ca81fc0658f495807c64bc42a706277c6b6aa2654b9b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a28cfcce108bf2329155604e1913c2c252314c32c2789fbcf394ac5e8870a363": {
+        "id": "a28cfcce108bf2329155604e1913c2c252314c32c2789fbcf394ac5e8870a363",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "a36a4dda69fc4bb8881a4577e2048c965ee760632362a6d86b1688f105eda46e": {
+        "id": "a36a4dda69fc4bb8881a4577e2048c965ee760632362a6d86b1688f105eda46e",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a3d21374330f5c7ad85f4feee03354687f75f6299a03352523499b9042522b77": {
+        "id": "a3d21374330f5c7ad85f4feee03354687f75f6299a03352523499b9042522b77",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "undefined"
+    },
+    "a4c724f059a4a97fa8586f3079c7bf7da5c612b50ef6de839b472809c8b998b7": {
+        "id": "a4c724f059a4a97fa8586f3079c7bf7da5c612b50ef6de839b472809c8b998b7",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a4c9c93e148b5530ea1a517d10e88ae6220bc77dd9394cbe708238984b532f15": {
+        "id": "a4c9c93e148b5530ea1a517d10e88ae6220bc77dd9394cbe708238984b532f15",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a4f4302a10b611254de8d30e7c77cf208331c6de2570f4dda45b04bd48139278": {
+        "id": "a4f4302a10b611254de8d30e7c77cf208331c6de2570f4dda45b04bd48139278",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "a5492ebaa106b270bb66edb84184642d2f9d49853a51183ccda88267fc65f867": {
+        "id": "a5492ebaa106b270bb66edb84184642d2f9d49853a51183ccda88267fc65f867",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a5ae98f610e554972e7bd0048b26403aa4b99d4d98269a7b574e05dca9d0bcc1": {
+        "id": "a5ae98f610e554972e7bd0048b26403aa4b99d4d98269a7b574e05dca9d0bcc1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "a5f801b7d816f3f3942a1aa7a64aef24e35e8c0f6a2ddc52623b2fb12875c38d": {
+        "id": "a5f801b7d816f3f3942a1aa7a64aef24e35e8c0f6a2ddc52623b2fb12875c38d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "a6aefd8a675cf444d6550101b66db2e41e7d1d6c3a0c5e283968fcb375776c3c": {
+        "id": "a6aefd8a675cf444d6550101b66db2e41e7d1d6c3a0c5e283968fcb375776c3c",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a6da8f0cdfdb0cbdf8fe22139481647b4e1a84ce6f54eddf94a1eec601bc82d1": {
+        "id": "a6da8f0cdfdb0cbdf8fe22139481647b4e1a84ce6f54eddf94a1eec601bc82d1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a6dc1e5dc51b2cb362b9855d78a681901ea99ef7a1262536a40d43d96d1cf117": {
+        "id": "a6dc1e5dc51b2cb362b9855d78a681901ea99ef7a1262536a40d43d96d1cf117",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a7f85036e0edb0cf7d758e8d9fdace400888a5ad51ab332b3ce77cc58f40f9e9": {
+        "id": "a7f85036e0edb0cf7d758e8d9fdace400888a5ad51ab332b3ce77cc58f40f9e9",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a8340c3bedc74ca1a297424be2158021918e6f25ee0405e3f3ae087d93dbddc8": {
+        "id": "a8340c3bedc74ca1a297424be2158021918e6f25ee0405e3f3ae087d93dbddc8",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a861f4cd99242ae616380a6fc4530ce0e9b2d69bcb1d6747f42b975db233e322": {
+        "id": "a861f4cd99242ae616380a6fc4530ce0e9b2d69bcb1d6747f42b975db233e322",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "a8bf27ac1ca06cde66b9c500858e1c7cdd292d4e503ab0e9602861d18d90d3bc": {
+        "id": "a8bf27ac1ca06cde66b9c500858e1c7cdd292d4e503ab0e9602861d18d90d3bc",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "a9d463df1686a78d04684f56aab28c60e8326f20b2515c8695cc5e45fcb719db": {
+        "id": "a9d463df1686a78d04684f56aab28c60e8326f20b2515c8695cc5e45fcb719db",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "aa038fa962bdb7361a45b2174351761db1eb813d5af056845b13316c51c15e4f": {
+        "id": "aa038fa962bdb7361a45b2174351761db1eb813d5af056845b13316c51c15e4f",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "aa88eed59024b0fcf433dd08bbcdac5b3f36571a846ef75d8d65fab59e5dadb7": {
+        "id": "aa88eed59024b0fcf433dd08bbcdac5b3f36571a846ef75d8d65fab59e5dadb7",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "aac26518e2c84eecc0b2adb45168af020b3989a949a4f58729b9f7ff92f3b2d1": {
+        "id": "aac26518e2c84eecc0b2adb45168af020b3989a949a4f58729b9f7ff92f3b2d1",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "acaf59d38572e0643d41034aadd96d7caca67db65a84cf82fcc7b948d8464d05": {
+        "id": "acaf59d38572e0643d41034aadd96d7caca67db65a84cf82fcc7b948d8464d05",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ace54a7d3d19f80a67b6e06d8b6711be573363cfa0505ce82070119b3fb45498": {
+        "id": "ace54a7d3d19f80a67b6e06d8b6711be573363cfa0505ce82070119b3fb45498",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "ae3101351ebab9fb630e433a6e4b627b8fca1ec21008c1674fd9192a9d567603": {
+        "id": "ae3101351ebab9fb630e433a6e4b627b8fca1ec21008c1674fd9192a9d567603",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "afa8e84245ec0af4782b97fab7ec4e963fe06965395dc552eb10a6c029679679": {
+        "id": "afa8e84245ec0af4782b97fab7ec4e963fe06965395dc552eb10a6c029679679",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "b0168233163b045ee2e4e91ff5e22111de9ea6ee2857267f7439702a38b65d47": {
+        "id": "b0168233163b045ee2e4e91ff5e22111de9ea6ee2857267f7439702a38b65d47",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "b030ed33f4caddbbf3c289e53f118bf9c46542c54fafb420c88b342d705c7ecf": {
+        "id": "b030ed33f4caddbbf3c289e53f118bf9c46542c54fafb420c88b342d705c7ecf",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b07a3e2e89aa3eb21b7a8d8d3feaccc1bae081d689c3cce66662e15c2c9c0565": {
+        "id": "b07a3e2e89aa3eb21b7a8d8d3feaccc1bae081d689c3cce66662e15c2c9c0565",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "b1c317085d43d057cdf2158169080aded4d5cf2dbb75164f39918471f4bd1d7a": {
+        "id": "b1c317085d43d057cdf2158169080aded4d5cf2dbb75164f39918471f4bd1d7a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b213a890ad8d62da37900ad844fec099c5ba174a57fa3a723208084fea271703": {
+        "id": "b213a890ad8d62da37900ad844fec099c5ba174a57fa3a723208084fea271703",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b39dccd55e6d6fa5afbe96384924466466b5a2dbc8f924bd972c854033893e4c": {
+        "id": "b39dccd55e6d6fa5afbe96384924466466b5a2dbc8f924bd972c854033893e4c",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b3a8dff8caee92bca616d1d922ddac3d44dec7f4a8da5c2afcdbe80eef2588c6": {
+        "id": "b3a8dff8caee92bca616d1d922ddac3d44dec7f4a8da5c2afcdbe80eef2588c6",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b3bfd9648a87a01526b08e94fc69a270dd776da56006a4044403cf10e07f58d0": {
+        "id": "b3bfd9648a87a01526b08e94fc69a270dd776da56006a4044403cf10e07f58d0",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b3c815ccf26889e2fd360413b6667c2904c1b75af2d70fa09ddebb55a74ccbd7": {
+        "id": "b3c815ccf26889e2fd360413b6667c2904c1b75af2d70fa09ddebb55a74ccbd7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "b40e33ab7d4f11b81ad6d37b80c910037a199833c994b43bbb0b3ce8a7dd01f6": {
+        "id": "b40e33ab7d4f11b81ad6d37b80c910037a199833c994b43bbb0b3ce8a7dd01f6",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b415436e00a47388c907101d5b48e063ee8b930c42e6251f3eac246d55bb8862": {
+        "id": "b415436e00a47388c907101d5b48e063ee8b930c42e6251f3eac246d55bb8862",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b450279a1b9e83b054c4b6b5e1833e6243cca0fa89f5f1acc80769ff23079c98": {
+        "id": "b450279a1b9e83b054c4b6b5e1833e6243cca0fa89f5f1acc80769ff23079c98",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "b561f41060b864e7aeed0b046cb43d7df7ab13464ab2bf72694042aad8452e3b": {
+        "id": "b561f41060b864e7aeed0b046cb43d7df7ab13464ab2bf72694042aad8452e3b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "b5f14aebaef7a9c4d03cbeaecfba4fa445d844bced9f1569a3b0f27a1b086ddf": {
+        "id": "b5f14aebaef7a9c4d03cbeaecfba4fa445d844bced9f1569a3b0f27a1b086ddf",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "b67a3a26c0b510ddb611b98d6a80e7813c8d7bbf28545874817986ca541fcbc9": {
+        "id": "b67a3a26c0b510ddb611b98d6a80e7813c8d7bbf28545874817986ca541fcbc9",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b68fd59d27b32336fdf9ee29753d538e99c97cb44f4b33cef1410843bc976725": {
+        "id": "b68fd59d27b32336fdf9ee29753d538e99c97cb44f4b33cef1410843bc976725",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "b6a4ef2829f8cc6e89824f02f9ada12f551b7f5771c1ed7485224b96dca8d801": {
+        "id": "b6a4ef2829f8cc6e89824f02f9ada12f551b7f5771c1ed7485224b96dca8d801",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b6faab080257a70c60b22a5fccc12f2e284863a3f94060a55b5f411e620d586d": {
+        "id": "b6faab080257a70c60b22a5fccc12f2e284863a3f94060a55b5f411e620d586d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "b9451749b40901bd148d39633900c9a7302a4a75c35f90c193f6129c8c478644": {
+        "id": "b9451749b40901bd148d39633900c9a7302a4a75c35f90c193f6129c8c478644",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ba146423b9e2e4355d1f277ece8732dec9659299ed247ec69c99ac5cf5f94581": {
+        "id": "ba146423b9e2e4355d1f277ece8732dec9659299ed247ec69c99ac5cf5f94581",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "ba5abefea1d0ff22fb47055cecfac20cd93f294e310b1bdd14c65eb381e9878a": {
+        "id": "ba5abefea1d0ff22fb47055cecfac20cd93f294e310b1bdd14c65eb381e9878a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "ba72e9a07f83477f9cccf923077195f6c2da8e91cdf2b5c3c1ea06ce98201742": {
+        "id": "ba72e9a07f83477f9cccf923077195f6c2da8e91cdf2b5c3c1ea06ce98201742",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ba7a0ce67f06b1e14e212e7f7f12e6acf6b48f6158028d04ee6f012796f885ce": {
+        "id": "ba7a0ce67f06b1e14e212e7f7f12e6acf6b48f6158028d04ee6f012796f885ce",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "bb23731439573fec65a8788bfead7e1a98152448ba149a3001271d7a5295c0fd": {
+        "id": "bb23731439573fec65a8788bfead7e1a98152448ba149a3001271d7a5295c0fd",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "bb633658592309c12e5c0d1cdaeb34a81161de1b1999f3cd8fd55d3e624a4d64": {
+        "id": "bb633658592309c12e5c0d1cdaeb34a81161de1b1999f3cd8fd55d3e624a4d64",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "bca3e00b55ada34406b91c8222d0ef71c245625b4350dd5e365fa41dfeac0f5e": {
+        "id": "bca3e00b55ada34406b91c8222d0ef71c245625b4350dd5e365fa41dfeac0f5e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "bcb72d7290fb9713d7b56d7436335aa8cb1c01e2edba9083422882edbc80c77e": {
+        "id": "bcb72d7290fb9713d7b56d7436335aa8cb1c01e2edba9083422882edbc80c77e",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "bcf247e14e369f83ec2e2d9bc4691e7e0aae0279a315f61a8a33f7b35946179c": {
+        "id": "bcf247e14e369f83ec2e2d9bc4691e7e0aae0279a315f61a8a33f7b35946179c",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "bd5fe01f72a07db85771094de38e487a7c6f086aa6fa8b30cecaac91cba341df": {
+        "id": "bd5fe01f72a07db85771094de38e487a7c6f086aa6fa8b30cecaac91cba341df",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "bd6253303686b74ec6b5424b483b5b24c327fb6173a0ff8fc45a6b24dbefd7e6": {
+        "id": "bd6253303686b74ec6b5424b483b5b24c327fb6173a0ff8fc45a6b24dbefd7e6",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "bdf0ae4ab3dc359d3f9b4ed3c36cf663d69150ee576ff72545a2be04662ae7a2": {
+        "id": "bdf0ae4ab3dc359d3f9b4ed3c36cf663d69150ee576ff72545a2be04662ae7a2",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "be17cf47bb3cffe502ca4c1f2d59553edc251dec071699a2c1b33d57cd7758a8": {
+        "id": "be17cf47bb3cffe502ca4c1f2d59553edc251dec071699a2c1b33d57cd7758a8",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "bebde744635b81a5ea802963e792493fe46440d57b6c01bdeafa9f060557127b": {
+        "id": "bebde744635b81a5ea802963e792493fe46440d57b6c01bdeafa9f060557127b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "bf00415b5f8b7c675e7288eff92ef18a09a0fa38cdaed9cc4c2a6e3a00d0ba36": {
+        "id": "bf00415b5f8b7c675e7288eff92ef18a09a0fa38cdaed9cc4c2a6e3a00d0ba36",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "bf00e12da6dbf0bbacec51d263fcafa8aa525e8cba7f0f796d631a763b65650c": {
+        "id": "bf00e12da6dbf0bbacec51d263fcafa8aa525e8cba7f0f796d631a763b65650c",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "c00828b00cbeaea6053b829a2036b1ed4278f47cb39cf1cb0239f125b0ac716f": {
+        "id": "c00828b00cbeaea6053b829a2036b1ed4278f47cb39cf1cb0239f125b0ac716f",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "c034ac433c230e29c780264221648dcff889ca31c7921b9a13aebe0612dd941d": {
+        "id": "c034ac433c230e29c780264221648dcff889ca31c7921b9a13aebe0612dd941d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c059a87b3c9fa507802cc95b48cf65374301f739c7715e4d0606c543ea9387cd": {
+        "id": "c059a87b3c9fa507802cc95b48cf65374301f739c7715e4d0606c543ea9387cd",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c05f94d1e3df559bab17e0674b50bec50cea63907988ba124be5f6853402adbb": {
+        "id": "c05f94d1e3df559bab17e0674b50bec50cea63907988ba124be5f6853402adbb",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "c0a5f616446f8174853bad6fbc106cc6282344df0f7d4ee35b35073bbe0fcbd7": {
+        "id": "c0a5f616446f8174853bad6fbc106cc6282344df0f7d4ee35b35073bbe0fcbd7",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c0c82f37a5016cdadff021a77d2ab97fbcbd7f5112766db917afcde7ba844820": {
+        "id": "c0c82f37a5016cdadff021a77d2ab97fbcbd7f5112766db917afcde7ba844820",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c0c9d0bc04ba037a5ac46c8cba94fc740299199313fb2e6b0b9f676cce7bd413": {
+        "id": "c0c9d0bc04ba037a5ac46c8cba94fc740299199313fb2e6b0b9f676cce7bd413",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "c1d471076d0754f5f888bd4c44ecc804236499c303a62ca5ba68cf54d557cce7": {
+        "id": "c1d471076d0754f5f888bd4c44ecc804236499c303a62ca5ba68cf54d557cce7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c2000f770b47712783a28580eb96207807a8e78060277a1fcb7a1e8fb3435ee0": {
+        "id": "c2000f770b47712783a28580eb96207807a8e78060277a1fcb7a1e8fb3435ee0",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c237dedf8f8553ae77f263566acbf8e5ebe96555846b29c80dcb7cae1930d1c9": {
+        "id": "c237dedf8f8553ae77f263566acbf8e5ebe96555846b29c80dcb7cae1930d1c9",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c2a65c3cef0e1d3f96e632f4a835cac78965384da9945a031f7a07385cb2e3f7": {
+        "id": "c2a65c3cef0e1d3f96e632f4a835cac78965384da9945a031f7a07385cb2e3f7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c2aa6a13603664fb9f68005af780f0a16343f10b619a13397a39eb86fe195f08": {
+        "id": "c2aa6a13603664fb9f68005af780f0a16343f10b619a13397a39eb86fe195f08",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c359a0f25f6d65ba012ecb452c2beace62cb10946600e55d57eb1fc18f559a5b": {
+        "id": "c359a0f25f6d65ba012ecb452c2beace62cb10946600e55d57eb1fc18f559a5b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c393a0115e5f67d714eb709176e9b60cd4d2f71e8b414095bab80228460fe860": {
+        "id": "c393a0115e5f67d714eb709176e9b60cd4d2f71e8b414095bab80228460fe860",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c41d4f33467a9f6bd1fde03c574a206bc6e8772eaf7c2a169bec975ca269e986": {
+        "id": "c41d4f33467a9f6bd1fde03c574a206bc6e8772eaf7c2a169bec975ca269e986",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c58d76cdc8a01a7c045737a3b8d6218cc27d46de5d074b5f7f5a567479919c3d": {
+        "id": "c58d76cdc8a01a7c045737a3b8d6218cc27d46de5d074b5f7f5a567479919c3d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c59b2c63f42c606b19297abdd21ee77c38c871f99c88b2be7fc8c9ac5fbb31bb": {
+        "id": "c59b2c63f42c606b19297abdd21ee77c38c871f99c88b2be7fc8c9ac5fbb31bb",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c64052f356c34cdada0533a42df568a638b41b5fc6bfa76094e36edfa1c408e3": {
+        "id": "c64052f356c34cdada0533a42df568a638b41b5fc6bfa76094e36edfa1c408e3",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "c6495d8169bfb22b297a49a2f5bb671081cde55a59fd79891270d1c258c1bb1f": {
+        "id": "c6495d8169bfb22b297a49a2f5bb671081cde55a59fd79891270d1c258c1bb1f",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c659085df6facf33ecf12ebaacf23d7ac6e0ea6ddc45d8da11cf694f14f902ca": {
+        "id": "c659085df6facf33ecf12ebaacf23d7ac6e0ea6ddc45d8da11cf694f14f902ca",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c6d8c2dbf0efad2c397013a1b568a357c0d293c7f6a8db74b753f0f8bd84a93c": {
+        "id": "c6d8c2dbf0efad2c397013a1b568a357c0d293c7f6a8db74b753f0f8bd84a93c",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c71cdb55c98b9783cedc66cc0a19bde668588d8a72ace07ccf3f68dd7059a280": {
+        "id": "c71cdb55c98b9783cedc66cc0a19bde668588d8a72ace07ccf3f68dd7059a280",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c71d118d23b5aae1925d908ee1e37330dbbb807465a82ca94e8182e34f060469": {
+        "id": "c71d118d23b5aae1925d908ee1e37330dbbb807465a82ca94e8182e34f060469",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c7ce9f6f9ad26ad59a041dcce090ac28ed63dbc49f1ffdbfb63b34a94aab9075": {
+        "id": "c7ce9f6f9ad26ad59a041dcce090ac28ed63dbc49f1ffdbfb63b34a94aab9075",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "c910f9131bd14f54fd1895a0414833153dfae99a43a1e1d47c5602a75f1222db": {
+        "id": "c910f9131bd14f54fd1895a0414833153dfae99a43a1e1d47c5602a75f1222db",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ca8fcf52bfdd268a10e7cf2c4d6a759a188385e8d8f5ca848e6c0c7d4b3cb1bc": {
+        "id": "ca8fcf52bfdd268a10e7cf2c4d6a759a188385e8d8f5ca848e6c0c7d4b3cb1bc",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "caf0a1a800eedb9e2ea6be6baf9e9f8d8a34bbd81c426bfd1dae829e96b9047a": {
+        "id": "caf0a1a800eedb9e2ea6be6baf9e9f8d8a34bbd81c426bfd1dae829e96b9047a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "cb8497f382ce2abe91fa856c7f2ab055190e9cd585abe8342cd5b138a8decf5b": {
+        "id": "cb8497f382ce2abe91fa856c7f2ab055190e9cd585abe8342cd5b138a8decf5b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "cba9bdf3c43a9ea500b5bbf4c36cf99a961c634b6b98e9911767dae7d62557ab": {
+        "id": "cba9bdf3c43a9ea500b5bbf4c36cf99a961c634b6b98e9911767dae7d62557ab",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "cc04c3d11ce8207d2c7e47a8dc1557e0cf7674e5ae1d1a0c1fce71873537ed8d": {
+        "id": "cc04c3d11ce8207d2c7e47a8dc1557e0cf7674e5ae1d1a0c1fce71873537ed8d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "cc050cff8f3ad685fdb51296b74bc703390286ec2f453aeaaa0dd347ae9eb977": {
+        "id": "cc050cff8f3ad685fdb51296b74bc703390286ec2f453aeaaa0dd347ae9eb977",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "cc3f6fb818db612e6513d48feaded4157fb4a73c53b71ea5a57991822081c706": {
+        "id": "cc3f6fb818db612e6513d48feaded4157fb4a73c53b71ea5a57991822081c706",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "cca047e5cc3f32c32a80052d73e826ef715bb8874917e42ea4ff8ce343b25e7f": {
+        "id": "cca047e5cc3f32c32a80052d73e826ef715bb8874917e42ea4ff8ce343b25e7f",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "cd2586354c051e042d2402915b6192249f4192931c20fd9e2ecc91e5879e1e56": {
+        "id": "cd2586354c051e042d2402915b6192249f4192931c20fd9e2ecc91e5879e1e56",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_answer": "undefined"
+    },
+    "cd56bc0499173eb5dda9e55aa8f7cd59ea1cee81a3071c46ce8bfe1bf59d49f2": {
+        "id": "cd56bc0499173eb5dda9e55aa8f7cd59ea1cee81a3071c46ce8bfe1bf59d49f2",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "ce2173d50aa16e5a5b7777469224482c06e95d083a40bc5b9b1006be19961324": {
+        "id": "ce2173d50aa16e5a5b7777469224482c06e95d083a40bc5b9b1006be19961324",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "ce68f3f107c760371b5e61c8566980c706bb326d8bdaa6cca561a889f0a2c53b": {
+        "id": "ce68f3f107c760371b5e61c8566980c706bb326d8bdaa6cca561a889f0a2c53b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ce9c6c573a8fe0e88929d69a7fa1475afaf8c37ef83e0ea4026af0fbf56fcede": {
+        "id": "ce9c6c573a8fe0e88929d69a7fa1475afaf8c37ef83e0ea4026af0fbf56fcede",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "cef9700dc01404a63c7384c5dc483404a19b7ab0dbf786eccecace2128473a6d": {
+        "id": "cef9700dc01404a63c7384c5dc483404a19b7ab0dbf786eccecace2128473a6d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "cf566bf1eeb9638471746d2fb4e70b10b162ce429140f409e971466d5152ec7a": {
+        "id": "cf566bf1eeb9638471746d2fb4e70b10b162ce429140f409e971466d5152ec7a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "cf71faafdbd97ca6e82d45e46534da6f3738f7ebe69012e07c1ce8cfe002a4b4": {
+        "id": "cf71faafdbd97ca6e82d45e46534da6f3738f7ebe69012e07c1ce8cfe002a4b4",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "cff867744a81442e594eb97cfe91a6a7f46e47adf4cc4ac5b29c92cf9f113463": {
+        "id": "cff867744a81442e594eb97cfe91a6a7f46e47adf4cc4ac5b29c92cf9f113463",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "d0cdd50508c824e2f756636f6d9ab6ba5c327fc98fcdf09bbb42c8c5aa7388be": {
+        "id": "d0cdd50508c824e2f756636f6d9ab6ba5c327fc98fcdf09bbb42c8c5aa7388be",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "d1e375801221a3b64d3ed87fda9fe6dcfe7d81c104c2e5c89fcfd6c379f83878": {
+        "id": "d1e375801221a3b64d3ed87fda9fe6dcfe7d81c104c2e5c89fcfd6c379f83878",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "d220dfa2a76429b08798d1e9f2fa449f6003c168e70ce3b8cf91721c1b391d6b": {
+        "id": "d220dfa2a76429b08798d1e9f2fa449f6003c168e70ce3b8cf91721c1b391d6b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "d2521bcbd15af08fe8f3ccb20d931890108f348fceafeea24115eb10f813bfa5": {
+        "id": "d2521bcbd15af08fe8f3ccb20d931890108f348fceafeea24115eb10f813bfa5",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "d426679d579e8bfc0b94bb7826889e67a8d6ca8dcb58ff18ada9f43060f4798e": {
+        "id": "d426679d579e8bfc0b94bb7826889e67a8d6ca8dcb58ff18ada9f43060f4798e",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "d429ca343374ec7cd292036128d5eef5d224028174eea1e5478e1abb6910faf6": {
+        "id": "d429ca343374ec7cd292036128d5eef5d224028174eea1e5478e1abb6910faf6",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "d4a5c516ddd2a7dcdbeb9642b3ad2d45aaacc0e521ae78d32351cf223970860e": {
+        "id": "d4a5c516ddd2a7dcdbeb9642b3ad2d45aaacc0e521ae78d32351cf223970860e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "d558956ae74953dcb1c84c9a4ec7572d7e34c65ead2aac7afcc1e1378ce13e9b": {
+        "id": "d558956ae74953dcb1c84c9a4ec7572d7e34c65ead2aac7afcc1e1378ce13e9b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "d67440b02e6828fa93d5921229b4c9443ba677540918c14f4908dd6183cb7e79": {
+        "id": "d67440b02e6828fa93d5921229b4c9443ba677540918c14f4908dd6183cb7e79",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "d8150455f1d0232bea468c16baf47c613d9bef4ef9d213ef92c3916ad1a5dc36": {
+        "id": "d8150455f1d0232bea468c16baf47c613d9bef4ef9d213ef92c3916ad1a5dc36",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "d87fcbad33c054fd952c2ad5d48b0c8219bfe5e5db30316a0bc1fe1cd1b55e7a": {
+        "id": "d87fcbad33c054fd952c2ad5d48b0c8219bfe5e5db30316a0bc1fe1cd1b55e7a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "d89fc164567830409c1568e9bae37e2f67530dc71a34c60caac3e29f453c8188": {
+        "id": "d89fc164567830409c1568e9bae37e2f67530dc71a34c60caac3e29f453c8188",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "d8de6dbd53b0ce5ec863878837533f0cf35e4b927a5b252e488ed3eb2bc84846": {
+        "id": "d8de6dbd53b0ce5ec863878837533f0cf35e4b927a5b252e488ed3eb2bc84846",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "d8e216b90eaad9b6cb1085eb00488c4f3577603db7c247156a740ca371d25b1d": {
+        "id": "d8e216b90eaad9b6cb1085eb00488c4f3577603db7c247156a740ca371d25b1d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "single"
+    },
+    "d96f6d7527a4dc6886f208cec394f9dddeb3ca8eea044ca98a55a6106881fe2b": {
+        "id": "d96f6d7527a4dc6886f208cec394f9dddeb3ca8eea044ca98a55a6106881fe2b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "da692b87394fc33b10c72c04f95f6d5648c152dcf650defa6a174a242772b556": {
+        "id": "da692b87394fc33b10c72c04f95f6d5648c152dcf650defa6a174a242772b556",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "da8cba031e650b9ddfe1b69f756222f74033252c316eb1c03622c9b634b54202": {
+        "id": "da8cba031e650b9ddfe1b69f756222f74033252c316eb1c03622c9b634b54202",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "da8f7d90fc39e0a3082daebb065a182c08d5c22a17b38c6d0db3f5a7629afb8a": {
+        "id": "da8f7d90fc39e0a3082daebb065a182c08d5c22a17b38c6d0db3f5a7629afb8a",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "dabec486e6f0944a2508f6aa26c1106a35b2bc0d59296ad6472646f486a715f4": {
+        "id": "dabec486e6f0944a2508f6aa26c1106a35b2bc0d59296ad6472646f486a715f4",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "daf4c48cbcf42c88e55256edd87a50e5bf67fea47d12f7de6bcf2b04c1ede9dd": {
+        "id": "daf4c48cbcf42c88e55256edd87a50e5bf67fea47d12f7de6bcf2b04c1ede9dd",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "db72edd554e950a8e3692a3f1d2fa74e52d994e452e32d43f883f3b2da7080d2": {
+        "id": "db72edd554e950a8e3692a3f1d2fa74e52d994e452e32d43f883f3b2da7080d2",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "dcf8bfa6bea742d337173fe3c0a3bfe3f21839d794910da515bba7421ce6ff37": {
+        "id": "dcf8bfa6bea742d337173fe3c0a3bfe3f21839d794910da515bba7421ce6ff37",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "dd39598f83a51258dc16cd37c21496ed298cf66b7245f80217a5fa9891c509ac": {
+        "id": "dd39598f83a51258dc16cd37c21496ed298cf66b7245f80217a5fa9891c509ac",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "dd3fb54109913a568f51a2b4a4fcce3c7cdf2984573ee852afdbdcd1b87014b4": {
+        "id": "dd3fb54109913a568f51a2b4a4fcce3c7cdf2984573ee852afdbdcd1b87014b4",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "dee29aeba421a0fa7295426d19d1cdbc5edb01184826849e6303d1acba2cf020": {
+        "id": "dee29aeba421a0fa7295426d19d1cdbc5edb01184826849e6303d1acba2cf020",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "df8deb515f2c6b86f976db1d2ade11ed446248dfe40806db8f1ab0ceb16907df": {
+        "id": "df8deb515f2c6b86f976db1d2ade11ed446248dfe40806db8f1ab0ceb16907df",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "dfd5d9c2f3fe5c4cfc974c9f543dd715cf19d7e28f2517c27dd2352ae24c3f80": {
+        "id": "dfd5d9c2f3fe5c4cfc974c9f543dd715cf19d7e28f2517c27dd2352ae24c3f80",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "e014c45ddd7a087e95709b696eed549ebbfca55e58d4308db70e525a9b4cee1e": {
+        "id": "e014c45ddd7a087e95709b696eed549ebbfca55e58d4308db70e525a9b4cee1e",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e0351f62af6e20b5b9f03445f59b0bd95a8516c24fa800971f6ab878324c0b20": {
+        "id": "e0351f62af6e20b5b9f03445f59b0bd95a8516c24fa800971f6ab878324c0b20",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e0a6bdb071a5cc63ec2f3565b010baf9da0664c3edaedf1bd4e9d540311afd91": {
+        "id": "e0a6bdb071a5cc63ec2f3565b010baf9da0664c3edaedf1bd4e9d540311afd91",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e0f16198f9e6241d45364beb742663203b3c2718dfa6df2c9c470c715c71cc83": {
+        "id": "e0f16198f9e6241d45364beb742663203b3c2718dfa6df2c9c470c715c71cc83",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e1a8ecd87b49f4aaac4522d533e146adcccbea6a238d45976ad63bdd3b9fffa0": {
+        "id": "e1a8ecd87b49f4aaac4522d533e146adcccbea6a238d45976ad63bdd3b9fffa0",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e1fc80208a75b0b3ca78084f45314f8d8924a6a78dede603f3e13fe56fe63aaf": {
+        "id": "e1fc80208a75b0b3ca78084f45314f8d8924a6a78dede603f3e13fe56fe63aaf",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e2ce9f5d66ae52ab4bfa7ffc1dbb3994942168d51aff07ea9f8e77f42dc194c7": {
+        "id": "e2ce9f5d66ae52ab4bfa7ffc1dbb3994942168d51aff07ea9f8e77f42dc194c7",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e411d74ab72d8d959e4035ba11c4aa3c142ff3c387fc9f0a5339d96d98d1afb1": {
+        "id": "e411d74ab72d8d959e4035ba11c4aa3c142ff3c387fc9f0a5339d96d98d1afb1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e49ba43fe310e1def8a0a512ac19bd90b4c50e4b544803d2d1f84d0f25c7e69e": {
+        "id": "e49ba43fe310e1def8a0a512ac19bd90b4c50e4b544803d2d1f84d0f25c7e69e",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e4da25dcf9a5d8ddc639cb5a492413939d700f557270ca0a6693228ee390f290": {
+        "id": "e4da25dcf9a5d8ddc639cb5a492413939d700f557270ca0a6693228ee390f290",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e4f260f07a5e1b4e12bf09d7f8b60614753b65d1f614d6ccf44e12a320020d60": {
+        "id": "e4f260f07a5e1b4e12bf09d7f8b60614753b65d1f614d6ccf44e12a320020d60",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e55bff946673f35a326889691e8acf776d133f33e6d53012892456486632149e": {
+        "id": "e55bff946673f35a326889691e8acf776d133f33e6d53012892456486632149e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e63b5bed034615a64281444c1e393b2f1a7c8930264cffc854105afcf7812d0f": {
+        "id": "e63b5bed034615a64281444c1e393b2f1a7c8930264cffc854105afcf7812d0f",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e7607d064a363c10422bc8eb0ef2bb7e665dc050060beb10c428bd49f3003621": {
+        "id": "e7607d064a363c10422bc8eb0ef2bb7e665dc050060beb10c428bd49f3003621",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e86ec7fef1263529b1fea1d60a7e255be81925bb01f149fcfb45cd087aea3a1c": {
+        "id": "e86ec7fef1263529b1fea1d60a7e255be81925bb01f149fcfb45cd087aea3a1c",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e8a64a9d01cca126f78a789e64e8eb269bcf0e7d758da9e2168f259a9af87de5": {
+        "id": "e8a64a9d01cca126f78a789e64e8eb269bcf0e7d758da9e2168f259a9af87de5",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e8d18f4473c504018ce3d9576653a19716c8bdfcda4b4fa154c4bdb244bc4c3d": {
+        "id": "e8d18f4473c504018ce3d9576653a19716c8bdfcda4b4fa154c4bdb244bc4c3d",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e92881e4a2913dc7fd87cbbb317ede6417fd79e4c61b827795c297803e359d4b": {
+        "id": "e92881e4a2913dc7fd87cbbb317ede6417fd79e4c61b827795c297803e359d4b",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "e9cc77fb65590f101680d1c63ea908612478ea7a1887f48371b96fbc8ce375fe": {
+        "id": "e9cc77fb65590f101680d1c63ea908612478ea7a1887f48371b96fbc8ce375fe",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "eabb7eaafd308d4aefe50a3d8b0e9a2ee2388736e84bbd4a20f3eb497a0ce98f": {
+        "id": "eabb7eaafd308d4aefe50a3d8b0e9a2ee2388736e84bbd4a20f3eb497a0ce98f",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "eb3f2245d2eb5785b73b32aa753767d88ad116b39dcd9907591c93c360de6e5d": {
+        "id": "eb3f2245d2eb5785b73b32aa753767d88ad116b39dcd9907591c93c360de6e5d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "eb6503013e09d1c84967cc730d8c985418c490f6c3d1bc4dfbeeef027ee5c29c": {
+        "id": "eb6503013e09d1c84967cc730d8c985418c490f6c3d1bc4dfbeeef027ee5c29c",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ec426919ec2d046decf13a748fb546dfd211cf5e59050ea200ed22c330679dbb": {
+        "id": "ec426919ec2d046decf13a748fb546dfd211cf5e59050ea200ed22c330679dbb",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ec697ee8dd796049506d7055708be69bc0bb217c7d2560bf7ca9f45f7d438dbd": {
+        "id": "ec697ee8dd796049506d7055708be69bc0bb217c7d2560bf7ca9f45f7d438dbd",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "eca2c0522331ca9dad1727a6bb0f3c4dc7f1eceb8d6057b1811d5db1b0422ed4": {
+        "id": "eca2c0522331ca9dad1727a6bb0f3c4dc7f1eceb8d6057b1811d5db1b0422ed4",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ed3b6214be869b3e365b9f5b832fe0ab2c5bbf1b2030fc4ef17134d497057347": {
+        "id": "ed3b6214be869b3e365b9f5b832fe0ab2c5bbf1b2030fc4ef17134d497057347",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ed5bacf6bfd8dc2f1c8204a66619f652d1e4b1864e3775b0e59b68edf199c3a5": {
+        "id": "ed5bacf6bfd8dc2f1c8204a66619f652d1e4b1864e3775b0e59b68edf199c3a5",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "edcad72c1e3132b4f4c7cc32d79a4242d658d1d4552e77d28a13ebb5e9b1e904": {
+        "id": "edcad72c1e3132b4f4c7cc32d79a4242d658d1d4552e77d28a13ebb5e9b1e904",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ee87f2b251b4f7626ec98f7341e57144968fcf9d0edd7ee7f2bdacbe27fc2f54": {
+        "id": "ee87f2b251b4f7626ec98f7341e57144968fcf9d0edd7ee7f2bdacbe27fc2f54",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "single"
+    },
+    "eea47a9cea0d1cda9d706591adfe1f1dd0a57610393e4715fd1523a74b297ab8": {
+        "id": "eea47a9cea0d1cda9d706591adfe1f1dd0a57610393e4715fd1523a74b297ab8",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "eec76780375995e98bb9da6d57e28c53f2df29e74f5ff0e039a09ef55b01f14e": {
+        "id": "eec76780375995e98bb9da6d57e28c53f2df29e74f5ff0e039a09ef55b01f14e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "eef158345f526805673fb22f69c7004d6949c14432cecfa7eab1ed0b0c8ca724": {
+        "id": "eef158345f526805673fb22f69c7004d6949c14432cecfa7eab1ed0b0c8ca724",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ef1e20fcaf3613c098378c42b264502598ed5399bfc9310043bef7b5df0efcdf": {
+        "id": "ef1e20fcaf3613c098378c42b264502598ed5399bfc9310043bef7b5df0efcdf",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ef7790faedf562db598536b184434d8c3737eb11c48d29efcba3e2ef100c1533": {
+        "id": "ef7790faedf562db598536b184434d8c3737eb11c48d29efcba3e2ef100c1533",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "efc575cffd4ab5b348d074c3e942d029ee7f9fd60bd36c5bfc8fb06c1a8df921": {
+        "id": "efc575cffd4ab5b348d074c3e942d029ee7f9fd60bd36c5bfc8fb06c1a8df921",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f097767bc2c54e22c5fb6ba33166a64f5824393af9a74d58c5f936ad1708f2b5": {
+        "id": "f097767bc2c54e22c5fb6ba33166a64f5824393af9a74d58c5f936ad1708f2b5",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f0a8b0e03f18fa1f4483ff2512bdab8f5c81befd3b6ba21638caf7eec38bd7cc": {
+        "id": "f0a8b0e03f18fa1f4483ff2512bdab8f5c81befd3b6ba21638caf7eec38bd7cc",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f115b4fbaa6d768eb603c49068792da7a6c31cafc96ae3821c3258714d5f4b1e": {
+        "id": "f115b4fbaa6d768eb603c49068792da7a6c31cafc96ae3821c3258714d5f4b1e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f28f6af2325b7dbd59aa3fcc450c2d5a747b37df2403445a2f65167d326d4b51": {
+        "id": "f28f6af2325b7dbd59aa3fcc450c2d5a747b37df2403445a2f65167d326d4b51",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f4033bc7c3ea17e0e35de01944a2027deda7d8bc53568cc4e30a75208cb9e4a7": {
+        "id": "f4033bc7c3ea17e0e35de01944a2027deda7d8bc53568cc4e30a75208cb9e4a7",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f45b9fb363a30ee8fbf626ec13c919f9ba18c786b092e7f18b135cfb908cae8d": {
+        "id": "f45b9fb363a30ee8fbf626ec13c919f9ba18c786b092e7f18b135cfb908cae8d",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f550f0ed86ab59646dde508a77d19108b5c5970f7f764e47bbac2fd7f2764c95": {
+        "id": "f550f0ed86ab59646dde508a77d19108b5c5970f7f764e47bbac2fd7f2764c95",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f567db6cebbcd2979b6c64f449e1cecb491d3c79e386beb37c04b9ef107f1fe8": {
+        "id": "f567db6cebbcd2979b6c64f449e1cecb491d3c79e386beb37c04b9ef107f1fe8",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f578b4b0659d5fa5e0a452ff8e32c296b5d252fc6159d4285c524f554fdc432b": {
+        "id": "f578b4b0659d5fa5e0a452ff8e32c296b5d252fc6159d4285c524f554fdc432b",
+        "tag_negation": "yes",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "negative",
+        "tag_answer": "multiple"
+    },
+    "f5931df0ceeda7816f7381683f0fc13f7f927b2e2db8afe3b253e503aa7bbf48": {
+        "id": "f5931df0ceeda7816f7381683f0fc13f7f927b2e2db8afe3b253e503aa7bbf48",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "f59b855a4df980cfe78c7df152fb9bc9802ab8c4eb27fb40bad50792e19e9ff2": {
+        "id": "f59b855a4df980cfe78c7df152fb9bc9802ab8c4eb27fb40bad50792e19e9ff2",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f6322abd11618264936ea68cc5fd568fe81c33c0d53c5f97693427d147527ea5": {
+        "id": "f6322abd11618264936ea68cc5fd568fe81c33c0d53c5f97693427d147527ea5",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f695c2e22a477b78a5e040d6b3dfe75733b8998f2f51dbf8d0711d658e999ef8": {
+        "id": "f695c2e22a477b78a5e040d6b3dfe75733b8998f2f51dbf8d0711d658e999ef8",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f698b03f1b16b6e27e001a9d536911cede014476538d3d63b3624c78c12463ba": {
+        "id": "f698b03f1b16b6e27e001a9d536911cede014476538d3d63b3624c78c12463ba",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f72bc88d21d74e7b9d550b3bfed0af1d5a56b0a967aef82eb29401d17149c3d9": {
+        "id": "f72bc88d21d74e7b9d550b3bfed0af1d5a56b0a967aef82eb29401d17149c3d9",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f8b71dd0dff9c8471e371d6d4e458be851754eba7b8c8e864e1c6b163558d03a": {
+        "id": "f8b71dd0dff9c8471e371d6d4e458be851754eba7b8c8e864e1c6b163558d03a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f908394f2c5396854073ee1ee56755d81d145929d86bf5dbf33748c8298ed121": {
+        "id": "f908394f2c5396854073ee1ee56755d81d145929d86bf5dbf33748c8298ed121",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f97e3bdb634de6d75c38f2635646f17a66df01c2700ac12219c6642d26b1cdad": {
+        "id": "f97e3bdb634de6d75c38f2635646f17a66df01c2700ac12219c6642d26b1cdad",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f9a69150a6dd130ec93dffa5e4ff41d395828d8c8112cbc0e53c3bdb29208849": {
+        "id": "f9a69150a6dd130ec93dffa5e4ff41d395828d8c8112cbc0e53c3bdb29208849",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "f9c45b61f21f614e703a77e3bba25eccf188755b3aa8554d5203c524212ee65e": {
+        "id": "f9c45b61f21f614e703a77e3bba25eccf188755b3aa8554d5203c524212ee65e",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "fa131bcabb60501b4caabb44287e0cba5c32ff8130157cf82541ff83e6380efa": {
+        "id": "fa131bcabb60501b4caabb44287e0cba5c32ff8130157cf82541ff83e6380efa",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "fb01a38c7524b3065c6389d359178b3d3a1190d9106e70f21b6960b2df64a2d1": {
+        "id": "fb01a38c7524b3065c6389d359178b3d3a1190d9106e70f21b6960b2df64a2d1",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "fb5fa151cbc4a493d3e4fc4287e2c72f491192cc91e7178974bfcda79208ce86": {
+        "id": "fb5fa151cbc4a493d3e4fc4287e2c72f491192cc91e7178974bfcda79208ce86",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "fbe3f6493f30f129ce2ea335df33c17ceb15de8906fa520059bb4e9043a0bd4a": {
+        "id": "fbe3f6493f30f129ce2ea335df33c17ceb15de8906fa520059bb4e9043a0bd4a",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "fc3e82da47d8daa570eb1026fc92525b63a1c9e6516474d535fc11fe0be00222": {
+        "id": "fc3e82da47d8daa570eb1026fc92525b63a1c9e6516474d535fc11fe0be00222",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "fc919aba54025b8ffe292f5854da52640c25f4a69931cbcdf9906d5380cdf475": {
+        "id": "fc919aba54025b8ffe292f5854da52640c25f4a69931cbcdf9906d5380cdf475",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "affirmation",
+        "tag_positive": "positive",
+        "tag_answer": "multiple"
+    },
+    "fd645c59f6727cbeca96f9d3aac4e784c177ae4f53f4513c2b8f7fa5cbe72ee7": {
+        "id": "fd645c59f6727cbeca96f9d3aac4e784c177ae4f53f4513c2b8f7fa5cbe72ee7",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_highlight": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "fddc059ce418fd669fc85012aa5c450dd8da817f189dea5eaab25fbd4dc1224b": {
+        "id": "fddc059ce418fd669fc85012aa5c450dd8da817f189dea5eaab25fbd4dc1224b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "fdf02f4f66085ae01e2c392d556c5f4177f66ceaf910e7303a589af76ee74490": {
+        "id": "fdf02f4f66085ae01e2c392d556c5f4177f66ceaf910e7303a589af76ee74490",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "fe610f0fccce46c0d25d258cd0c22525e5475b7c08b399d39baff99bd6121d8b": {
+        "id": "fe610f0fccce46c0d25d258cd0c22525e5475b7c08b399d39baff99bd6121d8b",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "instruction",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ff1597f9534a1ddfd303931017ad68b3eaf0dc35ee16a2767e3373b598bb1fa2": {
+        "id": "ff1597f9534a1ddfd303931017ad68b3eaf0dc35ee16a2767e3373b598bb1fa2",
+        "tag_negation": "no",
+        "tag_composition": "yes",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    },
+    "ff21078a1acea8d3c88c28dd9992729a846a45ac88fc9592834f15a512fe16a6": {
+        "id": "ff21078a1acea8d3c88c28dd9992729a846a45ac88fc9592834f15a512fe16a6",
+        "tag_negation": "no",
+        "tag_composition": "no",
+        "tag_mode": "question",
+        "tag_positive": "positive",
+        "tag_answer": "undefined"
+    }
+}
