@@ -41,10 +41,13 @@ def invert_medshake_difficulty(
     "medshake_difficulty" represent harder questions.
     """
     print(f"Loading corpus '{corpus_path}'")
-    df = pd.read_json(corpus_path)
-    df["medshake_difficulty"] = df["medshake_difficulty"].apply(lambda x: 1 - x)
-    with open(output_path, "w") as fp:
-        json.dump(df.to_dict(orient="records"), fp, indent=4, ensure_ascii=False)
+    with open(corpus_path, encoding="utf-8") as fp:
+        corpus = json.load(fp)
+    for inst in corpus:
+        if "medshake_difficulty" in inst:
+            inst["medshake_difficulty"] = 1 - inst["medshake_difficulty"]
+    with open(output_path, "w", encoding="utf-8") as fp:
+        json.dump(corpus, fp, indent=4, ensure_ascii=True)
 
 
 def student_rates():
@@ -627,7 +630,7 @@ def merge_corpus_with_year_topic():
                 inst["incorrect_answers"] = True
             else:
                 correct_nb = inst["medshake"][correct]["nb_answer"]
-            inst["medshake_difficulty"] = correct_nb / total_nb
+            inst["medshake_difficulty"] = 1 - (correct_nb / total_nb)
 
     # Save to new corpus file
     corpus = [
