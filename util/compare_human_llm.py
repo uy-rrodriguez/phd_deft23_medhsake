@@ -99,10 +99,15 @@ def load_model_results_output(
 def load_model_scores(
         corpus_path: str = "data/test-medshake-score.json",
         model_scores_path: str = "output/model_scores/test-model-scores.json",
-        model_score_col = "medshake",
-        class_col = "medshake_class",
-        apply_softmax: bool = True,
-        softmax_temp: float = 0.6,  # Default in LLaMa-3-8b AutoModelForCausalLM.generate
+        model_score_col: str = "medshake",
+        class_col: str = "medshake_class",
+        score_field: str = "seq_logp",
+        softmax: bool = False,
+        softmax_temp: float = 1,  # 0.6 == Default in LLaMa-3-8b AutoModelForCausalLM.generate
+        normalise_softmax: bool = False,  # Normalise with seq. length before softmax
+        normalise_letters: bool = False,  # Normalise scores with the length of the choices
+        normalise: bool = False,  # Normalise scores (v_i = v_i / sum_i_N(v_i))
+        perplexity: bool = False,  # Calculate Perplexity (Pxty_i = e^(-v_i/len seq i))
 ) -> pd.DataFrame:
     """
     Helper to load the model probabilities for each question and answer.
@@ -114,17 +119,35 @@ def load_model_scores(
     The "medshake difficulty" for LLMs is based on the probability the model
     gives to the correct answer.
 
-    `apply_softmax` as True is required when the scores file contains logits
-    instead of probabilities.
+    `softmax` is used when the scores file contains logits instead of
+    probabilities.
+
+    `normalise` is used when the file contains log probabilities, to bring them
+    to the range 0..1, normalising by the sum of all values.
+
+    `normalise_softmax` is used when the length of answer sequence is available,
+    and normalises using this length to then apply softmax.
+
+    `normalise_letters` is used when the file contains log probabilities of the
+    choice letters only, and normalises using the number of letters in the
+    combination.
+
+    `perplexity` is used when the file contains log probabilities and the length
+    of each sequence. The log prob. is already the sum of log P of each token in
+    the sequence. Dividing by -1/N (number of tokens) and calculating the
+    exponential gives us the perplexity.
     """
     with open(model_scores_path) as fp:
         model_probs = json.load(fp)
 
     # Pre-process Log-P output
     if "-logp" in model_scores_path:
-        for v in model_probs.values():
+        seq_lengths = {}
+        for _id, v in model_probs.items():
+            seq_lengths[_id] = {}
             for k, d in v.items():
-                v[k] = d["seq_log_prob"]
+                v[k] = d[score_field]
+                seq_lengths[_id][k] = d["seq_len"]
     # print(pd.read_json(model_scores_path, orient="index"))
 
     corpus = load_corpus(corpus_path)
@@ -138,18 +161,75 @@ def load_model_scores(
             print(f"Probabilities not found for '{_id}'", file=sys.stderr)
             model_score = 0
         else:
-            if apply_softmax:
-                # Convert str "-inf" to a float
-                for k, v in model_inst.items():
-                    if type(v) == str:
-                        model_inst[k] = np.float16(v)
-                # Get softmax probability
+            # Convert str "-inf" to a float
+            for k, v in model_inst.items():
+                if type(v) == str:
+                    model_inst[k] = np.float16(v)
+
+            # Get softmax probability
+            if softmax:
                 probs = torch.softmax(
                     torch.tensor(list(model_inst.values())) / softmax_temp,
                     dim=0,
                 ).tolist()
                 model_inst = {k: v for k, v in zip(model_inst.keys(), probs)}
+
+            # Get softmax probability after normalising with the length of the
+            # sequence
+            elif normalise_softmax:
+                _len = seq_lengths[_id]
+                normalised = [v/_len[k] for k, v in model_inst.items()]
+                # _sum = sum(normalised)
+                # probs = [p/_sum for p in normalised]
+                probs = torch.softmax(
+                    torch.tensor(normalised) / softmax_temp,
+                    dim=0,
+                ).tolist()
+                model_inst = {k: v for k, v in zip(model_inst.keys(), probs)}
+
+            # Get softmax probability after normalising with the number of
+            # letters in each combination
+            elif normalise_letters:
+                normalised = [v/(len(k.split()) + 1) for k, v in model_inst.items()]
+                # _sum = sum(normalised)
+                # probs = [p/_sum for p in normalised]
+                probs = torch.softmax(
+                    torch.tensor(normalised) / softmax_temp,
+                    dim=0,
+                ).tolist()
+                model_inst = {k: v for k, v in zip(model_inst.keys(), probs)}
+
+            # Normalise log probabilities
+            elif normalise:
+                _sum = sum(model_inst.values())
+                probs = [v/_sum for v in model_inst.values()]
+                model_inst = {k: v for k, v in zip(model_inst.keys(), probs)}
+
+            # Normalised Perplexity based on log P and sequence length.
+            #
+            # Our method is analogous to calculating the softmax of the average
+            # log P of a token in the sequence:
+            #   Avg_Log_P(S) = 1/N * Sum_1_N[logP(w_i|w1, ..., w_i-1)]
+            #   Perplexity(S) = e^Avg_Log_P(S)
+            #   => Normalised_Perp(S) = Perp(S) / Sum_1_M[Perp(S_j)]
+            #
+            # Softmax is calculated as follows:
+            #   Softmax(x) = e^x / Sum_1_N[e^x_i]
+            elif perplexity:
+                # Calculate perplexity(x) = e^(-1/N * x)
+                _len = seq_lengths[_id]
+                probs = [np.exp(-1/_len[k] * v) for k, v in model_inst.items()]
+                # Normalise to [0..1] ~ softmax
+                _sum = sum(probs)
+                probs = [p/_sum for p in probs]
+                # probs = torch.softmax(
+                #     torch.tensor(probs) / softmax_temp,
+                #     dim=0,
+                # ).tolist()
+                model_inst = {k: v for k, v in zip(model_inst.keys(), probs)}
+
             model_score = model_inst[correct_answers]
+
         llm_results.append({
             "id": _id,
             model_score_col: model_score,
@@ -167,10 +247,11 @@ def load_model_scores(
 def plot_tags_topics(
         corpus_path: str = "data/test-medshake-score.json",
         data_output_path: str = "output/analysis/regression-data.json",
-        model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-logp.json",
+        model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-logp_20250218.json",
+        # model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-perp_20250220.json",
         figure_path: str = "output/compare/model_scores/logp/compare.png",
         # model_output_dir: str = "output/llama3/tuned_002_20240731",
-        # figure_path: str = "output/compare/model_outputs/compare.png",
+        # figure_path: str = "output/compare/model_outputs/20250218/compare.png",
         plot_all: bool = False,
 ) -> None:
     """
@@ -197,6 +278,7 @@ def plot_tags_topics(
         columns_config = {
             # Load tag values from streamlit app config, ignoring the option N/A
             "tag_negation": tags_config.TAGS_OPTS_NEGATION[1:],
+            "tag_mode": tags_config.TAGS_OPTS_MODE[1:],
             "tag_composition": tags_config.TAGS_OPTS_COMPOSITION[1:],
             "tag_positive": tags_config.TAGS_OPTS_POSITIVE[1:],
             "tag_answer": tags_config.TAGS_OPTS_SINGLE[1:],
@@ -228,8 +310,14 @@ def plot_tags_topics(
         model_scores_path=model_scores_path,
         model_score_col=llm_score_col,
         class_col=class_col,
-        apply_softmax=True,
-        softmax_temp=1,
+        # score_field="seq_logp",
+        # score_field="letters_logp",
+        # softmax=True,
+        # softmax_temp=0.01,
+        # normalise_letters=True,
+        # normalise_softmax=True,
+        # normalise=True,
+        # perplexity=True,
     )
 
     # Plot score by tag value, for each tag of interest
