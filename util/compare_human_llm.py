@@ -93,6 +93,7 @@ def load_model_results_output(
     # Add MedShake class to LLM results for later use
     llm_results_df = llm_results_df.join(
         corpus_with_tags.groupby("id").first()[class_col])
+    return llm_results_df
 
 
 def load_model_scores(
@@ -181,7 +182,8 @@ def plot_tags_topics(
     # Definition of relevant columns
     diff_col = "medshake_difficulty"
     class_col = "medshake_class"
-    llm_score_col = "medshake"
+    # llm_score_col = "medshake"
+    llm_score_col = "emr"
     colours = ("#1f77b4", "#ff7f0e")  # Human: blue, LLM: orange
 
     # Load data source with tags
