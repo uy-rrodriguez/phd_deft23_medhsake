@@ -17,6 +17,7 @@ sys.path.append(os.path.abspath("."))
 
 from util.classify_questions import load_corpus, LABEL_COLOURS
 from util.analyse_questions import merge_with_metadata
+from util.markdown import save_params
 from util.process_output import (
     gen_output_suffix,
     get_filename_pattern,
@@ -99,15 +100,17 @@ def load_model_results_output(
 def load_model_scores(
         corpus_path: str = "data/test-medshake-score.json",
         model_scores_path: str = "output/model_scores/test-model-scores.json",
+        params_out_dir: str = "output/compare/model_scores/logp",
         model_score_col: str = "medshake",
         class_col: str = "medshake_class",
-        score_field: str = "seq_logp",
-        softmax: bool = False,
-        softmax_temp: float = 1,  # 0.6 == Default in LLaMa-3-8b AutoModelForCausalLM.generate
-        normalise_softmax: bool = False,  # Normalise with seq. length before softmax
-        normalise_letters: bool = False,  # Normalise scores with the length of the choices
-        normalise: bool = False,  # Normalise scores (v_i = v_i / sum_i_N(v_i))
-        perplexity: bool = False,  # Calculate Perplexity (Pxty_i = e^(-v_i/len seq i))
+        score_field: str = None,
+        length_field: str = None,
+        softmax: bool = None,
+        softmax_temp: float = None,  # 0.6 == Default in LLaMa-3-8b AutoModelForCausalLM.generate
+        normalise_softmax: bool = None,  # Normalise with seq. length before softmax
+        normalise_letters: bool = None,  # Normalise scores with the length of the choices
+        normalise: bool = None,  # Normalise scores (v_i = v_i / sum_i_N(v_i))
+        perplexity: bool = None,  # Calculate Perplexity (Pxty_i = e^(-v_i/len seq i))
 ) -> pd.DataFrame:
     """
     Helper to load the model probabilities for each question and answer.
@@ -137,17 +140,36 @@ def load_model_scores(
     the sequence. Dividing by -1/N (number of tokens) and calculating the
     exponential gives us the perplexity.
     """
+    # Save a README with some key execution parameters
+    save_params(
+        os.path.join(params_out_dir, "README.md"),
+        "load_model_scores",
+        model_scores_path=model_scores_path,
+        score_field=score_field,
+        length_field=length_field,
+        softmax=softmax,
+        softmax_temp=softmax_temp,
+        normalise_softmax=normalise_softmax,
+        normalise_letters=normalise_letters,
+        normalise=normalise,
+        perplexity=perplexity,
+    )
+
+    # Default temperature is 1 if not given
+    softmax_temp = softmax_temp or 1
+
     with open(model_scores_path) as fp:
         model_probs = json.load(fp)
 
-    # Pre-process Log-P output
-    if "-logp" in model_scores_path:
-        seq_lengths = {}
-        for _id, v in model_probs.items():
-            seq_lengths[_id] = {}
-            for k, d in v.items():
-                v[k] = d[score_field]
-                seq_lengths[_id][k] = d["seq_len"]
+    # Extract score and sequence length from given fields
+    seq_lengths = {}
+    for _id, v in model_probs.items():
+        seq_lengths[_id] = {}
+        for k, d in v.items():
+            if score_field is not None:
+                v[k] = sum(d[f] for f in score_field.split("+"))
+            if length_field is not None:
+                seq_lengths[_id][k] = sum(d[f] for f in length_field.split("+"))
     # print(pd.read_json(model_scores_path, orient="index"))
 
     corpus = load_corpus(corpus_path)
@@ -248,8 +270,8 @@ def plot_tags_topics(
         corpus_path: str = "data/test-medshake-score.json",
         data_output_path: str = "output/analysis/regression-data.json",
         model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-logp_20250218.json",
-        # model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-perp_20250220.json",
-        figure_path: str = "output/compare/model_scores/logp/compare.png",
+        # model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-hf_perp_20250220.json",
+        figure_path: str = "output/compare/model_scores/llama-3-8b-deft_002_20240731/logp/compare.png",
         # model_output_dir: str = "output/llama3/tuned_002_20240731",
         # figure_path: str = "output/compare/model_outputs/20250218/compare.png",
         plot_all: bool = False,
@@ -306,23 +328,17 @@ def plot_tags_topics(
     #     class_col=class_col,
     # )
 
-    # Save the scores file alongside the figures, for future reference
-    import shutil
-    new_scores_path = os.path.join(
-        os.path.dirname(figure_path),
-        os.path.basename(model_scores_path)
-    )
-    shutil.copyfile(model_scores_path, new_scores_path)
-    model_scores_path = new_scores_path
-
     # Load LLM rates from model scores
     llm_results_df = load_model_scores(
         corpus_path=corpus_path,
         model_scores_path=model_scores_path,
+        params_out_dir=os.path.dirname(figure_path),
         model_score_col=llm_score_col,
         class_col=class_col,
-        # score_field="seq_logp",
+        score_field="seq_logp",
+        # score_field="prompt_logp+seq_logp",
         # score_field="letters_logp",
+        length_field="seq_len",
         # softmax=True,
         # softmax_temp=0.01,
         # normalise_letters=True,
