@@ -253,6 +253,7 @@ def plot_tags_topics(
         # model_output_dir: str = "output/llama3/tuned_002_20240731",
         # figure_path: str = "output/compare/model_outputs/20250218/compare.png",
         plot_all: bool = False,
+        scores_boxplot_only: bool = False,
 ) -> None:
     """
     Plot MedShake score of Humans vs LLM, splitting data by tags and topics.
@@ -266,6 +267,7 @@ def plot_tags_topics(
     # llm_score_col = "medshake"
     llm_score_col = "emr"
     colours = ("#1f77b4", "#ff7f0e")  # Human: blue, LLM: orange
+    classes = list(LABEL_COLOURS.keys())
 
     # Load data source with tags
     df = merge_with_metadata(
@@ -304,6 +306,15 @@ def plot_tags_topics(
     #     class_col=class_col,
     # )
 
+    # Save the scores file alongside the figures, for future reference
+    import shutil
+    new_scores_path = os.path.join(
+        os.path.dirname(figure_path),
+        os.path.basename(model_scores_path)
+    )
+    shutil.copyfile(model_scores_path, new_scores_path)
+    model_scores_path = new_scores_path
+
     # Load LLM rates from model scores
     llm_results_df = load_model_scores(
         corpus_path=corpus_path,
@@ -317,8 +328,43 @@ def plot_tags_topics(
         # normalise_letters=True,
         # normalise_softmax=True,
         # normalise=True,
-        # perplexity=True,
+        # perplexity=True,  # Perplexity with normalisation to 0..1
     )
+
+    # Boxplot of scores, to visualise variation
+    fig, ax = plt.subplots()
+    fig.suptitle("Humas vs LLM (scores variation)")
+    ax.set_ylabel("EMR Score")
+    human_scores = 1 - df[diff_col]
+    llm_scores = llm_results_df[llm_score_col]
+    ax.boxplot(
+        human_scores, positions=(1,), tick_labels=("Human",),
+        boxprops={"color": colours[0]}, medianprops={"color": "#000"})
+    ax.boxplot(llm_scores, positions=(2,), tick_labels=("LLM",),
+        boxprops={"color": colours[1]}, medianprops={"color": "#000"})
+    fig.savefig(figure_path.replace(".", f"_box."), bbox_inches="tight")
+
+    # Boxplots by class
+    _df = df.groupby(by=class_col)[diff_col].apply(lambda v: 1 - v)
+    ax.clear()
+    ax.boxplot(
+        [_df.loc[k] if k in _df.index else None for k in classes],
+        positions=[i*3+1 for i in range(len(classes))],
+        tick_labels=LABEL_COLOURS.keys(),
+        boxprops={"color": colours[0]}, medianprops={"color": "#000"})
+    _df = llm_results_df.groupby(by=class_col)[llm_score_col].apply(lambda x: x)
+    ax.boxplot(
+        [_df.loc[k] if k in _df.index else None for k in classes],
+        positions=[i*3+2 for i in range(len(classes))],
+        tick_labels=classes,
+        boxprops={"color": colours[1]}, medianprops={"color": "#000"})
+    ax.xaxis.set_tick_params(rotation=40)
+    for i in range(len(classes) - 1):
+        ax.axvline(x=i*3+3, color="#EEEEEE", linestyle="--")
+    fig.savefig(figure_path.replace(".", f"_box_cls."), bbox_inches="tight")
+
+    if scores_boxplot_only:
+        return
 
     # Plot score by tag value, for each tag of interest
     for base_col, col_values in columns_config.items():
@@ -363,10 +409,10 @@ def plot_tags_topics(
             _df = _df.groupby(by=class_col)[diff_col] \
                     .mean().apply(lambda v: 1 - v)
             ax_line.plot(
-                LABEL_COLOURS.keys(),
+                classes,
                 [
                     _df.loc[k] if k in _df.index else None
-                    for k in LABEL_COLOURS
+                    for k in classes
                 ],
                 label=f"Human {val.capitalize()}",
             )
@@ -381,10 +427,10 @@ def plot_tags_topics(
             # )
             _llm_df = _llm_df.groupby(by=class_col)[llm_score_col].mean()
             ax_line.plot(
-                LABEL_COLOURS.keys(),
+                classes,
                 [
                     _llm_df.loc[k] if k in _llm_df.index else None
-                    for k in LABEL_COLOURS
+                    for k in classes
                 ],
                 label=f"LLM {val.capitalize()}",
             )
@@ -392,7 +438,7 @@ def plot_tags_topics(
         # Setup plot axes
         for ax in (ax_bar, ax_line):
             ax.set_title(f"Humans vs LLM ({base_col})")
-            ax.set_ylabel("MedShake score")
+            ax.set_ylabel("EMR Score")
 
         # Bar plot
         ax_bar.legend(("Human", "LLM"))
