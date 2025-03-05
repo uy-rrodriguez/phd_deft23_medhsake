@@ -304,7 +304,7 @@ def plot_tags_topics(
             "tag_negation": tags_config.TAGS_OPTS_NEGATION[1:],
             "tag_mode": tags_config.TAGS_OPTS_MODE[1:],
             "tag_composition": tags_config.TAGS_OPTS_COMPOSITION[1:],
-            "tag_positive": tags_config.TAGS_OPTS_POSITIVE[1:],
+            "tag_intruder": tags_config.TAGS_OPTS_INTRUDER[1:],
             "tag_answer": tags_config.TAGS_OPTS_SINGLE[1:],
             "topic": ("galénique", "chimieanalytique", "immunologie",
                       "physiologie")

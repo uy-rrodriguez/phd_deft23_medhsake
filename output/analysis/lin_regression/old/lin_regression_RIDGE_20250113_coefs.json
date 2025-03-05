@@ -107,8 +107,8 @@
   "tag_mode_affirmation": -0.07854011721641188,
   "tag_mode_instruction": 0.054348167776425836,
   "tag_mode_question": 0.024191949439979068,
-  "tag_positive_negative": 0.024383909556871843,
-  "tag_positive_positive": -0.024383909556869927,
+  "tag_intruder_yes": 0.024383909556871843,
+  "tag_intruder_no": -0.024383909556869927,
   "tag_answer_multiple": 0.08502433497290285,
   "tag_answer_single": -0.17035532908011047,
   "tag_answer_undefined": 0.08533099410721363
