@@ -6,7 +6,7 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --mem=16G
 #SBATCH --constraint='GPURAM_Min_16GB&GPURAM_Max_32GB'
-#SBATCH --time=3:00:00
+#SBATCH --time=8:00:00
 #SBATCH --requeue
 #--SBATCH --mail-type=ALL
 #SBATCH --mail-type=ARRAY_TASKS,FAIL,INVALID_DEPEND,REQUEUE,TIME_LIMIT
@@ -49,7 +49,7 @@ PROMPT_TPL=$(   read_config $CONFIG $TASK 2)
 NUM_SHOTS=$(    read_config $CONFIG $TASK 3)
 ANSWER_TXT=$(   read_config $CONFIG $TASK 4)
 MODEL_REF=$(    read_config $CONFIG $TASK 5)
-NUM_RUN=$(      read_config $CONFIG $TASK 6)
+NUM_RUNS=$(     read_config $CONFIG $TASK 6)
 
 if [[ $TASK != $TASK_ID ]]
 then
@@ -147,8 +147,6 @@ if [[ $ANSWER_TXT == 1 ]]; then
     SUFF=${SUFF}_answertxt
 fi
 
-SUFF=${SUFF}_${NUM_RUN}
-
 # Select appropriate prompt id in deft.py
 if [[ $PROMPT_TPL == 1 || $PROMPT_TPL == 2 ]]; then
     PROMPT_ID=0
@@ -203,21 +201,33 @@ conda activate $ENV
 # Create output directories
 mkdir -p output/$DIR logs/$DIR
 
-echo "Running inference with '$MODEL' (shots $NUM_SHOTS, run $NUM_RUN)"
-        # --corpus_path=data/test.json \
-run_with_time_track \
-    python $RUN_SCRIPT \
-        --corpus_path=data/test-medshake-score.json \
-        --result_path=output/$DIR/${FILENAME}_${SUFF}.txt \
-        --model_path="$MODEL" \
-        --use_special_pad_token=$SPECIAL_PAD \
-        --prompt_template_id="'$PROMPT_ID'" \
-        --num_shots=$NUM_SHOTS \
-        --shots_full_answer=$ANSWER_TXT \
-        --do_sample=$SAMPLING \
-        --top_p=$SAMPLING_TOP_P \
-        --top_k=$SAMPLING_TOP_K \
-        --temperature=$TEMP \
-        --num_beams=$NUM_BEAMS \
-        2>&1 \
-        | tee logs/$DIR/${FILENAME}_${SUFF}.txt
+
+# Handle multiple runs with similar config (supported "1-3,5-6")
+IFS=',' read -ra RUN_RANGES <<< "$NUM_RUNS"
+for r in "${RUN_RANGES[@]}"; do
+  IFS='-' read -ra RANGE_LIM <<< "$r"
+  RUN_IDS+=$(seq ${RANGE_LIM[@]})
+done
+
+for NUM_RUN in $(echo "${RUN_IDS[@]}"); do
+  RUN_SUFF=${SUFF}_${NUM_RUN}
+
+  echo "Running inference with '$MODEL' (shots $NUM_SHOTS, run $NUM_RUN)"
+  run_with_time_track \
+      python $RUN_SCRIPT \
+          --corpus_path=data/test-medshake-score.json \
+          --result_path=output/$DIR/${FILENAME}_${RUN_SUFF}.txt \
+          --model_path="$MODEL" \
+          --use_special_pad_token=$SPECIAL_PAD \
+          --prompt_template_id="'$PROMPT_ID'" \
+          --num_shots=$NUM_SHOTS \
+          --shots_full_answer=$ANSWER_TXT \
+          --do_sample=$SAMPLING \
+          --top_p=$SAMPLING_TOP_P \
+          --top_k=$SAMPLING_TOP_K \
+          --temperature=$TEMP \
+          --num_beams=$NUM_BEAMS \
+          2>&1 \
+          | tee logs/$DIR/${FILENAME}_${RUN_SUFF}.txt
+
+done
