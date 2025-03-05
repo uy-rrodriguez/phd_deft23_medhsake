@@ -12,14 +12,11 @@
 #SBATCH --mail-type=ARRAY_TASKS,FAIL,INVALID_DEPEND,REQUEUE,TIME_LIMIT
 #
 # Run multiple commands in parallel:
-#--SBATCH --array=402-448%2
-#--SBATCH --array=450-495%2
-#--SBATCH --array=499-501,505-507,511-513,517-519%3
 #SBATCH --array=569-592%4
 #
 # >>> LLaMa-3-70B
 #--SBATCH --constraint='GPURAM_Min_80GB'
-#--SBATCH --array=139-141,145-147,151-153,157-159%2
+#--SBATCH --array=45-50%2
 #
 
 source functions.sh
