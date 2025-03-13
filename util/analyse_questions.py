@@ -270,8 +270,8 @@ def one_hot_encode_list(
         df.drop(col, axis=1, inplace=True)
 
 
-def merge_with_metadata(
-        df: pd.DataFrame = None,
+def corpus_with_metadata(
+        corpus_path: str = "data/test-medshake-score.json",
         tags_path: str = None,
         ignored_tags: tuple[str] = ["tag_highlight"],
         ngrams_path: str | None = None,
@@ -296,7 +296,7 @@ def merge_with_metadata(
         df = pd.read_json(data_output_path)
     else:
         # Pre-process source data, add metadata and remove unnecessary columns
-        df = df.copy()
+        df = load_corpus(corpus_path)
 
         # Add metadata from questions and answers
         if include_qa_lengths:
@@ -426,14 +426,12 @@ def merge_with_metadata(
     return df
 
 
-def main_merge_with_metadata(
+def main_corpus_with_metadata(
         force_reload: bool = False,
 ):
-    print("\nMerge with metadata")
-    corpus_path = "data/test-medshake-score.json"
-    df = load_corpus(corpus_path)
-    df = merge_with_metadata(
-        df,
+    print("\nLoad corpus with metadata")
+    df = corpus_with_metadata(
+        corpus_path="data/test-medshake-score.json",
         tags_path="data/tags-test-medshake-score.json",
         ngrams_path="data/ngrams-test-medshake-score.json",
         data_output_path="output/analysis/random-forests-data.json",
@@ -443,7 +441,7 @@ def main_merge_with_metadata(
     # print(df[df.filter(regex=r"(first)_.*").columns])
 
 def test_normalise(
-        df: pd.DataFrame,
+        corpus_path: str,
         tags_path: str,
         data_output_path: str | None,
         figure_path: str,
@@ -452,8 +450,8 @@ def test_normalise(
     """
     Plots corpus with metadata after multiple techniques of normalisation.
     """
-    df = merge_with_metadata(
-        df,
+    df = corpus_with_metadata(
+        corpus_path=corpus_path,
         tags_path=tags_path,
         data_output_path=data_output_path,
         force_reload=force_reload,
@@ -503,10 +501,8 @@ def main_test_normalise(
         # force_reload: bool = False,
 ):
     print("\nNormalise metadata")
-    corpus_path = "data/test-medshake-score.json"
-    df = load_corpus(corpus_path)
     df = test_normalise(
-        df,
+        corpus_path="data/test-medshake-score.json",
         tags_path="data/tags-test-medshake-score.json",
         data_output_path="output/analysis/regression-data.json",
         figure_path="output/analysis/test_normalisation.png",
@@ -514,8 +510,8 @@ def main_test_normalise(
     )
 
 
-def tsne(
-        df: pd.DataFrame,
+def tsne_from_features(
+        corpus_path: str,
         tags_path: str,
         ngrams_path: str,
         data_output_path: str,
@@ -527,8 +523,8 @@ def tsne(
     Executes the tSNE algorithm for dimension reduction and clustering over the
     source data, enriched with the given tags and n-grams.
     """
-    df_rich = merge_with_metadata(
-        df,
+    df_rich = corpus_with_metadata(
+        corpus_path=corpus_path,
         tags_path=tags_path,
         ngrams_path=ngrams_path,
         data_output_path=data_output_path,
@@ -584,15 +580,13 @@ def tsne(
     fig.savefig(figure_path, bbox_inches="tight")
 
 
-def main_tsne(
+def main_tsne_from_features(
         force_reload: bool = False,
         force_reload_embeddings: bool = False,
 ):
     print("\ntSNE")
-    corpus_path = "data/test-medshake-score.json"
-    df = load_corpus(corpus_path)
-    tsne(
-        df,
+    tsne_from_features(
+        "data/test-medshake-score.json",
         "data/tags-test-medshake-score.json",
         "data/ngrams-test-medshake-score.json",
         "output/analysis/random-forests-data.json",
@@ -602,8 +596,8 @@ def main_tsne(
     )
 
 
-def umap(
-        df: pd.DataFrame,
+def umap_from_features(
+        corpus_path: str,
         tags_path: str,
         ngrams_path: str,
         data_output_path: str,
@@ -614,8 +608,8 @@ def umap(
     Executes the UMAP algorithm for dimension reduction and clustering over the
     source data, enriched with the given tags and n-grams.
     """
-    df_rich = merge_with_metadata(
-        df,
+    df_rich = corpus_with_metadata(
+        corpus_path=corpus_path,
         tags_path=tags_path,
         ngrams_path=ngrams_path,
         data_output_path=data_output_path,
@@ -660,12 +654,10 @@ def umap(
     fig.savefig(figure_path, bbox_inches="tight")
 
 
-def main_umap(force_reload: bool = False):
+def main_umap_from_features(force_reload: bool = False):
     print("\nUMAP")
-    corpus_path = "data/test-medshake-score.json"
-    df = load_corpus(corpus_path)
-    umap(
-        df,
+    umap_from_features(
+        "data/test-medshake-score.json",
         "data/tags-test-medshake-score.json",
         "data/ngrams-test-medshake-score.json",
         "output/analysis/random-forests-data.json",

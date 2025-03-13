@@ -20,7 +20,7 @@ from tqdm import tqdm
 # Trick to import local packages when this script is run from the terminal
 sys.path.append(os.path.abspath("."))
 
-from analyse_questions import merge_with_metadata
+from analyse_questions import corpus_with_metadata
 from classify_questions import load_corpus, LABEL_COLOURS
 
 
@@ -87,7 +87,7 @@ def async_random_forest(
 
 
 def random_forest(
-        df: pd.DataFrame,
+        corpus_path: str,
         tags_path: str,
         ngrams_path: str,
         data_output_path: str,
@@ -113,8 +113,8 @@ def random_forest(
 
     preds_exist = os.path.exists(preds_output_path)
     if force_reload_forests or not preds_exist:
-        df = merge_with_metadata(
-            df,
+        df = corpus_with_metadata(
+            corpus_path=corpus_path,
             tags_path=tags_path,
             ngrams_path=ngrams_path,
             data_output_path=data_output_path,
@@ -218,13 +218,11 @@ def main_random_forests(
         force_reload_forests: bool = False,
 ):
     print("\nRandom Forests (with n-grams)")
-    corpus_path = "data/test-medshake-score.json"
-    df = load_corpus(corpus_path)
     from datetime import date
     today = date.strftime(date.today(), "%Y%m%d")
     base_path = f"output/analysis/forests/random_forests_{today}"
     random_forest(
-        df,
+        "data/test-medshake-score.json",
         "data/tags-test-medshake-score.json",
         "data/ngrams-test-medshake-score.json",
         "output/analysis/random-forests-data.json",
@@ -310,7 +308,7 @@ def plot_regression_coefs(
 
 
 def logistic_regression(
-        df: pd.DataFrame,
+        corpus_path: str,
         tags_path: str,
         use_ngrams: bool,
         ngrams_path: str | None,
@@ -344,8 +342,8 @@ def logistic_regression(
             assert ngrams_path is not None
         else:
             ngrams_path = None
-        df = merge_with_metadata(
-            df,
+        df = corpus_with_metadata(
+            corpus_path=corpus_path,
             tags_path=tags_path,
             ngrams_path=ngrams_path,
             data_output_path=data_output_path,
@@ -456,13 +454,11 @@ def main_logistic_regression(
         force_reload: bool = False,
 ):
     print("\nLogistic Regression")
-    corpus_path = "data/test-medshake-score.json"
-    df = load_corpus(corpus_path)
     from datetime import date
     today = date.strftime(date.today(), "%Y%m%d")
     base_path = f"output/analysis/log_regression/log_regression_{today}"
     logistic_regression(
-        df,
+        "data/test-medshake-score.json",
         "data/tags-test-medshake-score.json",
         use_ngrams=False,
         ngrams_path=None,  # "data/ngrams-test-medshake-score.json",
@@ -479,7 +475,7 @@ def main_logistic_regression(
 ################################################################################
 
 def linear_regression(
-        df: pd.DataFrame,
+        corpus_path: str,
         tags_path: str,
         use_ngrams: bool,
         ngrams_path: str | None,
@@ -530,8 +526,8 @@ def linear_regression(
             assert ngrams_path is not None
         else:
             ngrams_path = None
-        df = merge_with_metadata(
-            df,
+        df = corpus_with_metadata(
+            corpus_path=corpus_path,
             tags_path=tags_path,
             ngrams_path=ngrams_path,
             data_output_path=data_output_path,
@@ -755,15 +751,13 @@ def main_linear_regression(
         force_reload: bool = False,
 ):
     print("\nLinear Regression")
-    corpus_path = "data/test-medshake-score.json"
-    df = load_corpus(corpus_path)
     from datetime import datetime
     # _date = datetime.strftime(datetime.now(), "%Y%m%d_%H%M")
     _date = datetime.strftime(datetime.now(), "%Y%m%d")
     base_path = f"output/analysis/lin_regression/{_date}/lin_regression_MY_RIDGE_{_date}"
     os.makedirs("/".join(base_path.split("/")[:-1]), exist_ok=True)
     linear_regression(
-        df,
+        corpus_path="data/test-medshake-score.json",
         tags_path="data/tags-test-medshake-score.json",
         use_ngrams=False,
         ngrams_path="data/ngrams-test-medshake-score.json",
@@ -820,7 +814,7 @@ def main_plot_residuals():
     else:
         data_path = "output/analysis/regression-data.json"
         print(f"Loading data from file '{data_path}'")
-        df = merge_with_metadata(
+        df = corpus_with_metadata(
             data_output_path=data_path,
             result_ignored_cols=["question", "medshake_class"],
         )

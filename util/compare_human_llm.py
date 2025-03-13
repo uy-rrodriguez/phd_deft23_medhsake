@@ -16,7 +16,7 @@ import torch
 sys.path.append(os.path.abspath("."))
 
 from util.classify_questions import load_corpus, LABEL_COLOURS
-from util.analyse_questions import merge_with_metadata
+from util.analyse_questions import corpus_with_metadata
 from util.markdown import save_params
 from util.process_output import (
     gen_output_suffix,
@@ -292,7 +292,7 @@ def plot_tags_topics(
     classes = list(LABEL_COLOURS.keys())
 
     # Load data source with tags
-    df = merge_with_metadata(
+    df = corpus_with_metadata(
         data_output_path=data_output_path,
         result_ignored_cols=None,
     )
