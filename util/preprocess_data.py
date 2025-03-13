@@ -725,6 +725,46 @@ def extract_missing_corpus():
         fp.write("\n")
 
 
+def concat_corpus():
+    """
+    Concat multiple splits of the corpus into one file.
+    """
+    basedir = "data"
+    files = [
+        "train-with-medshake.json",
+        "test-medshake-score.json",
+    ]
+    output_file = "train+test-with-medshake.json"
+
+    # Concat corpus and tags files
+    for prefix in ("", "tags-"):
+        content = []
+        if prefix:
+            content = {}
+        for f in files:
+            with open(f"{basedir}/{prefix}{f}", encoding="utf-8") as fp:
+                if prefix:
+                    content.update(json.load(fp))
+                else:
+                    # Exclude records without MedShake data (applies to "test")
+                    content.extend([
+                        x for x in json.load(fp)
+                        if "medshake" in x
+                    ])
+        output = f"{basedir}/{prefix}{output_file}"
+        with open(output, "w", encoding="utf-8") as fp:
+            json.dump(content, fp, indent=2, ensure_ascii=False)
+
+
+def main(method_name: str, *args, **kwargs):
+    import inspect
+    module = inspect.getmodule(main)
+    method = getattr(module, method_name)
+    if not method:
+        raise f"Method '{method_name}' not found"
+    return method(*args, **kwargs)
+
+
 if __name__ == "__main__":
     import fire
     fire.Fire(invert_medshake_difficulty)
