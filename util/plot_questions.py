@@ -510,13 +510,26 @@ def main_all() -> None:
 
 
 def plot_tags(
-        df: pd.DataFrame,
-        tags_path: str,
-        figure_path_tpl: str,
+        corpus_path: str = "data/test-medshake-score.json",
+        tags_path: str = "data/tags-train+test-with-medshake.json",
+        figure_path_tpl: str = "output/plots/tags/train+test/plot.png",
+        single_figure: bool = False,
 ):
     """
-    Plot the distribution of tags amongst the MedShake classes.
+    Plot the distribution of tags amongst the question classes.
     """
+    os.makedirs(os.path.dirname(figure_path_tpl), exist_ok=True)
+
+    tag_title_map = {
+        "tag_negation": "Negation",
+        "tag_composition": "Composition Required",
+        # "tag_mode": "Question Mode",
+        # "tag_intruder": "Identification of Intruder",
+        "tag_answer": "Number of Choices",
+    }
+
+    df = load_corpus(corpus_path)
+
     # Load tags
     print(f"Loading tags from '{tags_path}'")
     df_tags = pd.read_json(tags_path, orient="index")
@@ -529,8 +542,14 @@ def plot_tags(
 
     # Plot with classes
     # One bar per class, with stacked tag choices
-    class_col = "medshake_class"
-    for tag_col in df_tags.filter(regex="^tag_*").columns:
+    if single_figure:
+        fig, ax = plt.subplots(ncols=len(tag_title_map), sharey=True)
+        # ax = [a for a in ax]
+    else:
+        fig, ax = plt.subplots()
+        ax = [ax] * len(tag_title_map)
+
+    for tag_col, ax in zip(tag_title_map, ax):
         tag_values = sorted(df_tags[tag_col].unique())
         print("Processing", tag_col, tag_values)
         bars_data = {n: [0] * len(LABEL_COLOURS.keys()) for n in tag_values}
@@ -545,29 +564,26 @@ def plot_tags(
             "labels": tag_values,
             "loc": "lower left",
         }
-        path_suffix = f"_{tag_col}"
-        figure_path = figure_path_tpl.replace(".png", f"{path_suffix}.png")
 
         bars_df = pd.DataFrame(data=bars_data, index=bars_index)
-        ax = bars_df.plot.bar(stacked=True, rot=0, color=bar_colours)
-        ax.set_xlabel("MedShake Class")
-        ax.set_ylabel(tag_col)
+        bars_df.plot.bar(
+            stacked=True, rot=0, color=bar_colours, ax=ax, figsize=(12, 3))
+        ax.set_ylabel("Number of samples")
         ax.legend(**legend_data)
 
-        # Save the figure
-        fig = ax.get_figure()
-        fig.suptitle(f"MCQ {tag_col} per Class ({class_col})")
-        fig.savefig(figure_path, bbox_inches="tight")
+        if single_figure:
+            ax.set_title(f"Tag {tag_title_map[tag_col]} per class")
+        else:
+            # Save the figure
+            # fig = ax.get_figure()
+            path_suffix = f"_{tag_col}"
+            figure_path = figure_path_tpl.replace(".png", f"{path_suffix}.png")
+            fig.suptitle(f"Tag {tag_title_map[tag_col]} per class")
+            fig.savefig(figure_path, bbox_inches="tight")
+            fig.clear()
 
-
-def main_plot_tags():
-    corpus_path = "data/test-medshake-score.json"
-    df = load_corpus(corpus_path)
-    plot_tags(
-        df,
-        "data/tags-test-medshake-score.json",
-        "output/plots/tags/plot.png",
-    )
+    if single_figure:
+        fig.savefig(figure_path_tpl, bbox_inches="tight")
 
 
 def plot_topics(
@@ -766,8 +782,9 @@ def main_plot_years():
 
 
 def main(method_name: str, *args, **kwargs):
-    from util import plot_questions
-    method = getattr(plot_questions, method_name)
+    import inspect
+    module = inspect.getmodule(main)
+    method = getattr(module, method_name)
     if not method:
         raise f"Method '{method_name}' not found"
     return method(*args, **kwargs)
