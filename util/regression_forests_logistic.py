@@ -223,12 +223,12 @@ def main_random_forests(
     print("\nRandom Forests (with n-grams)")
     from datetime import date
     today = date.strftime(date.today(), "%Y%m%d")
-    base_path = f"output/analysis/forests/random_forests_{today}"
+    base_path = f"output/regression/forests/random_forests_{today}"
     random_forest(
         "data/test-medshake-score.json",
         "data/tags-test-medshake-score.json",
         "data/ngrams-test-medshake-score.json",
-        "output/analysis/random-forests-data.json",
+        "output/regression/random-forests-data.json",
         f"{base_path}_preds.txt",
         f"{base_path}_rates.txt",
         train_len=0.66,
@@ -464,13 +464,13 @@ def main_logistic_regression(
     print("\nLogistic Regression")
     from datetime import date
     today = date.strftime(date.today(), "%Y%m%d")
-    base_path = f"output/analysis/log_regression/log_regression_{today}"
+    base_path = f"output/regression/logistic/log_regression_{today}"
     logistic_regression(
         "data/test-medshake-score.json",
         "data/tags-test-medshake-score.json",
         use_ngrams=False,
         ngrams_path=None,  # "data/ngrams-test-medshake-score.json",
-        data_output_path="output/analysis/regression-data.json",
+        data_output_path="output/regression/regression-data.json",
         coefs_output_path=f"{base_path}_coefs.json",
         result_output_path=f"{base_path}_results.txt",
         figure_path=f"{base_path}_coefs.png",

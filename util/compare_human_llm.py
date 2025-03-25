@@ -256,7 +256,7 @@ def load_model_scores(
 
 def plot_tags_topics(
         corpus_path: str = "data/test-medshake-score.json",
-        data_output_path: str = "output/analysis/regression-data.json",
+        data_output_path: str = "output/regression/regression-data.json",
         model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-logp_20250218.json",
         # model_scores_path: str = "output/model_scores/llama3/llama-3-8b-deft_002_20240731-hf_perp_20250220.json",
         figure_path: str = "output/compare/model_scores/llama-3-8b-deft_002_20240731/logp/compare.png",

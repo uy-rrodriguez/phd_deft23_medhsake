@@ -470,17 +470,17 @@ def main_linear_regression(
     from datetime import datetime
     # _date = datetime.strftime(datetime.now(), "%Y%m%d_%H%M")
     _date = datetime.strftime(datetime.now(), "%Y%m%d")
-    out_dir = f"output/analysis/lin_regression/{_date}_train+test"
+    out_dir = f"output/regression/linear/{_date}_train+test"
     corpus_path = "data/train+test-with-medshake.json"
     tags_path = "data/tags-train+test-with-medshake.json"
-    regression_data_path = "output/analysis/train+test-regression-data.json"
+    regression_data_path = "output/regression/train+test-regression-data.json"
 
     if with_inference:
         out_dir += "/inference"
         # Inference is only generated for the test split
         corpus_path = "data/test-medshake-data.json"
         tags_path = "data/tags-test-with-medshake.json"
-        regression_data_path = "output/analysis/test-regression-data.json"
+        regression_data_path = "output/regression/test-regression-data.json"
     elif with_logits:
         out_dir += "/logits"
     else:
@@ -520,7 +520,7 @@ def main_linear_regression(
 
             # Output path
             coefs_output_path=coefs_output_path,
-            # coefs_output_path="output/analysis/lin_regression/20250122/lin_regression_MY_RIDGE_20250122_coefs",
+            # coefs_output_path="output/regression/linear/20250122/lin_regression_MY_RIDGE_20250122_coefs",
             figure_path=coefs_output_path.replace(".json", ".png"),
         )
 
@@ -568,7 +568,7 @@ def main_plot_residuals():
 
     if load_results:
         result_path = (
-            "output/analysis/lin_regression/"
+            "output/regression/linear/"
             "lin_regression_MY_EL_20250115_results.txt"
         )
         results = {}
@@ -582,7 +582,7 @@ def main_plot_residuals():
         y_pred = values[0]
 
     else:
-        data_path = "output/analysis/regression-data.json"
+        data_path = "output/regression/regression-data.json"
         print(f"Loading data from file '{data_path}'")
         df = corpus_with_metadata(
             data_output_path=data_path,
@@ -590,7 +590,7 @@ def main_plot_residuals():
         )
 
         coefs_path = (
-            "output/analysis/lin_regression/20250122/"
+            "output/regression/linear/20250122/"
             "lin_regression_MY_RIDGE_20250122_coefs.json"
         )
         print(f"Loading coefficients from file '{coefs_path}'")
@@ -612,7 +612,7 @@ def main_plot_residuals():
         y = df["medshake_difficulty"],
         y_pred = reg.predict(X)
 
-    plot_residuals(y, y_pred, "output/analysis/lin_regression/residuals.png")
+    plot_residuals(y, y_pred, "output/regression/linear/residuals.png")
 
 
 def main(method_name: str, *args, **kwargs):
