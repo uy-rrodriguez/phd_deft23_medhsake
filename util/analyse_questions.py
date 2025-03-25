@@ -7,7 +7,7 @@ import json
 import os
 import sys
 
-from itertools import chain, combinations
+from itertools import chain
 
 import matplotlib.pyplot as plt
 import nltk
@@ -25,8 +25,6 @@ from util.classify_questions import (
     load_corpus,
     CLASS_COL, CLASS_COLOUR_COL, LABEL_COLOURS,
 )
-# from process_output import get_filename_pattern
-from st_tagging_tool.config import TAGS_CONFIG
 
 
 CAT_BOOL = pd.CategoricalDtype(categories=[0, 1])
@@ -420,14 +418,10 @@ def corpus_with_metadata(
         data_output_path: str | None = None,
         force_reload: bool = False,
         result_filter_cols: bool = True,
-        result_ignored_cols: list[str] = ["question", "medshake_difficulty", "shannon_difficulty"],
+        result_ignored_cols: list[str] = None,
 ):
     """
     Enriches the source data with the given tags and n-grams.
-
-    Pass "clean_for_regression" = True if the data is used for algorthms such as
-    tSNE, Random Forest, or Linear Regression. This will remove non numeric
-    columns and MedShake and Shannon classes.
     """
     # Try to load existing file
     if not force_reload and data_output_path and os.path.exists(data_output_path):
@@ -524,7 +518,7 @@ def corpus_with_metadata(
             df_not_na = df.notna()
             norm_df = df.drop(norm_ignored_cols, axis=1, errors="ignore")
             norm_df = norm_df.fillna(0)
-            scaler = preprocessing.MaxAbsScaler()
+            scaler = preprocessing.MinMaxScaler()  # MaxAbsScaler()
             scaled_df = scaler.fit_transform(norm_df)
             scaled_df = pd.DataFrame(scaled_df, columns=norm_df.columns)
             df[norm_df.columns] = scaled_df
@@ -555,6 +549,8 @@ def corpus_with_metadata(
     # For selected feature groups (e.g. year), remove columns where there
     # are less than 3 samples with a value for it (e.g. year_2017 if only
     # one sample is for that year).
+    #
+    # Not very relevant when using L1 or L2 normalisation
     if result_filter_cols:
         cols_filter = df.filter(
             regex=r"(first|last|answer|year|topic|tag|ngram)_.+"
@@ -565,25 +561,38 @@ def corpus_with_metadata(
         df.drop(cols_drop, axis=1, inplace=True)
 
     # Remove columns not needed by the algorithm to follow
+    df.drop(
+        ["question", "question_nbr", "synonym"], axis=1, inplace=True,
+        errors="ignore")
     if result_ignored_cols:
+        # Some columns are never necessary
         df.drop(result_ignored_cols, axis=1, inplace=True)
 
     return df
 
 
-def main_corpus_with_metadata(
+def generate_corpus_with_metadata(
         force_reload: bool = False,
 ):
     print("\nLoad corpus with metadata")
     df = corpus_with_metadata(
-        corpus_path="data/test-medshake-score.json",
-        tags_path="data/tags-test-medshake-score.json",
-        ngrams_path="data/ngrams-test-medshake-score.json",
-        data_output_path="output/analysis/random-forests-data.json",
+        # corpus_path="data/test-medshake-score.json",
+        # tags_path="data/tags-test-medshake-score.json",
+        # data_output_path="output/analysis/test-regression-data.json",
+        corpus_path="data/train+test-with-medshake.json",
+        tags_path="data/tags-train+test-with-medshake.json",
+        data_output_path="output/analysis/train+test-regression-data.json",
+        # N-grams excluded to reduce number of features
+        # ngrams_path="data/ngrams-test-medshake-score.json",
         force_reload=force_reload,
+        # Customise data
+        include_qa_lengths=True,
+        include_first_last_words=False,
+        include_linguistic=True,
     )
     print(df.head())
     # print(df[df.filter(regex=r"(first)_.*").columns])
+
 
 def test_normalise(
         corpus_path: str,
@@ -811,10 +820,10 @@ def main_umap_from_features(force_reload: bool = False):
         force_reload=force_reload,
     )
 
-
 def main(method_name: str, *args, **kwargs):
-    from util import analyse_questions
-    method = getattr(analyse_questions, method_name)
+    import inspect
+    module = inspect.getmodule(main)
+    method = getattr(module, method_name)
     if not method:
         raise f"Method '{method_name}' not found"
     return method(*args, **kwargs)
