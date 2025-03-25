@@ -60,14 +60,16 @@ def invert_medshake_difficulty(
         json.dump(corpus, fp, indent=4, ensure_ascii=True)
 
 
-def student_rates():
+def student_rates(
+        corpus_path: str = "data/test-medshake-score.json",
+        print_results: bool = True,
+):
     """
     Calculates MedShake and other rates for student responses and prints a LaTeX
     table.
     """
 
     # Test MedShake rate of all students
-    corpus_path = "data/test-medshake-score.json"
     with open(corpus_path, "r") as f:
         corpus = json.load(f)
 
@@ -128,11 +130,14 @@ def student_rates():
         "medshake_by_class": medshake_by_class,
     }
 
-    print(json.dumps(results, indent=2))
+    if print_results:
+        print(json.dumps(results, indent=2))
 
-    df = get_results_dataframe([results])
-    latex_print_results(df, single_table=True, table_title="Human Results",
-                        highlight_top=False)
+        df = get_results_dataframe([results])
+        latex_print_results(df, single_table=True, table_title="Human Results",
+                            highlight_top=False)
+
+    return results
 
     # OUTPUT:
     #
@@ -223,6 +228,38 @@ def student_rates():
     # print(med_rate)
     # assert med_rate == (27.5/40 + 10/50) / 2  # 0.44375
 
+
+def count_total_students():
+    """
+    Counts the total of student answers per corpus split and question averages.
+    """
+    paths = (
+        "data/train-MERGED-FIXED-CLEAN.json",
+        "data/dev-medshake-score.json",
+        "data/test-medshake-score.json",
+    )
+    num_answers_split = {}
+    for p in paths:
+        if os.path.exists(p):
+            with open(p) as fp:
+                corpus = json.load(fp)
+            num_answers = [
+                sum(v["nb_answer"] for v in s["medshake"].values())
+                for s in corpus
+                if "medshake" in s
+            ]
+            num_answers_split[os.path.basename(p)] = num_answers
+    for k, v in num_answers_split.items():
+        print(k, sum(v), np.average(v))
+    print(
+        "Total",
+        np.average([np.average(v) for v in num_answers_split.values()]))
+    # return num_answers_split
+
+
+################################################################################
+#   INTEGRATE MEDSHAKE DATA                                                    #
+################################################################################
 
 def _load_medshake_data(extra_data_path: str) -> list[dict]:
     """
@@ -763,7 +800,7 @@ def concat_corpus():
                     ])
         output = f"{basedir}/{prefix}{output_file}"
         with open(output, "w", encoding="utf-8") as fp:
-            json.dump(content, fp, indent=2, ensure_ascii=False)
+            json.dump(content, fp, indent=4, ensure_ascii=False)
 
 
 def main(method_name: str, *args, **kwargs):
@@ -1240,12 +1277,4 @@ def generate_corpus_with_metadata(
 
 if __name__ == "__main__":
     import fire
-    fire.Fire(invert_medshake_difficulty)
-    # fire.Fire(student_rates)
-    # fire.Fire(calc_question_distances)
-    # fire.Fire(test_load_distance_matrix)
-    # fire.Fire(test_find_closest)
-    # fire.Fire(merge_corpus_with_year_topic)
-    # fire.Fire(apply_fix_merged_corpus)
-    # fire.Fire(clean_fixed_merged_corpus)
-    # fire.Fire(extract_missing_corpus)
+    fire.Fire(main)
