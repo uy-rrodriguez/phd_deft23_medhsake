@@ -10,15 +10,18 @@ import sys
 from itertools import chain, combinations
 
 import matplotlib.pyplot as plt
+import nltk
 import numpy as np
 import pandas as pd
+from sklearn import preprocessing
+import stanza
+from stanza.models.common.doc import Document, Sentence
 from tqdm import tqdm
 
 # Trick to import local packages when this script is run from the terminal
 sys.path.append(os.path.abspath("."))
 
-import st_tagging_tool
-from classify_questions import (
+from util.classify_questions import (
     load_corpus,
     CLASS_COL, CLASS_COLOUR_COL, LABEL_COLOURS,
 )
@@ -229,6 +232,138 @@ def main_extract_ngrams():
     extract_ngrams(df, "data/ngrams-test-medshake-score.json")
 
 
+def nltk_synt_tree(pos_tagged_tokens: list[tuple[str, str]]) -> nltk.Tree:
+    # nltk.download('punkt')
+    # nltk.download('averaged_perceptron_tagger')
+    from nltk import RegexpParser
+
+    # Stanza's universal POS (UPOS) tags to treebank-specific POS (XPOS) tags
+    pos_map = {
+        "DET": "DT",  # Determinant
+        "ADJ": "JJ",  # Adjective
+        "NOUN": "NN", # Noun
+        "PRON": "NN", # Pronoun
+        "VERB": "VB", # Verb
+        "AUX": "VB",  # Verb (auxiliar)
+        "ADV": "RB",  # Adverb
+        "ADP": "IN",  # Preposition/subordinate
+    }
+    pos_tagged_tokens = [
+        (t[0], pos_map.get(t[1], t[1]))
+        for t in pos_tagged_tokens
+    ]
+
+    # Extract all parts of speech from any text
+    grammar = RegexpParser("""
+        NP: {<DT>?<JJ>*<NN><JJ>*}  # Extract Noun Phrases
+        P: {<IN>}                  # Extract Prepositions
+        V: {<RB>?<V.*><RB>?}       # Extract Verbs with Adverbs
+        PP: {<P> <NP>}             # Extract Prepositional Phrases
+        VP: {<V> <NP|PP>*}         # Extract Verb Phrases
+        """)
+
+    # Generate syntax tree
+    tree: nltk.Tree = grammar.parse(pos_tagged_tokens)
+
+    # Print tree to file
+    with open("stanza/nltk_tree.svg", "w") as fp:
+        fp.write(tree._repr_svg_())
+    return tree
+
+
+def nltk_synt_tree_search(node: nltk.Tree, label: str) -> list[nltk.Tree]:
+    out = []
+    if type(node) != nltk.Tree:
+        return []
+    if node.label() == label:
+        out.append(node)
+    for n in node:
+        out.extend(nltk_synt_tree_search(n, label))
+    return out
+
+
+def add_linguistic_features(
+        df: pd.DataFrame,
+        lang: str = "fr",
+        processors: str = "tokenize,mwt,pos,lemma,depparse",
+        show_progress: bool = False,
+):
+    """
+    Extracts linguistic features from questions and answers using Stanza.
+    """
+    basedir = "stanza"
+    os.makedirs(basedir, exist_ok=True)
+    # stanza.download(lang, processors=processors, model_dir=basedir)
+    nlp = stanza.Pipeline(
+        lang, processors=processors, dir=basedir, download_method=None)
+    all_feats = {}
+    it = tqdm(df.iterrows()) if show_progress else df.iterrows()
+    for i, inst in it:
+        doc_q: Document = nlp(inst["question"])
+        # print(doc_q.text)
+        sentences: list[Sentence] = doc_q.sentences
+        lens = []
+        len_trees = []
+        len_n_phrases = []
+        len_v_phrases = []
+        len_p_phrases = []
+        for s in sentences:
+            lens.append(len(s.words))
+            # print(s.text)
+            pos_tagged = [(w.text, w.upos) for w in s.words]
+            # print(pos_tagged)
+            tree = nltk_synt_tree(pos_tagged)
+            len_trees.append(tree.height())
+            n_phrases = nltk_synt_tree_search(tree, "NP")
+            p_phrases = nltk_synt_tree_search(tree, "PP")
+            v_phrases = nltk_synt_tree_search(tree, "VP")
+            len_n_phrases.extend([len(np.flatten()) for np in n_phrases])
+            len_v_phrases.extend([len(vp.flatten()) for vp in v_phrases])
+            len_p_phrases.extend([len(pp.flatten()) for pp in p_phrases])
+        feats = {
+            "word_count": doc_q.num_words,
+            "avg_word_count": np.mean(lens),
+            "avg_tree": np.mean(len_trees),
+            "np_count": len(len_n_phrases),
+            "avg_np_words": np.mean(len_n_phrases) if len_n_phrases else 0.0,
+            "vp_count": len(len_v_phrases),
+            "avg_vp_words": np.mean(len_v_phrases) if len_v_phrases else 0.0,
+            "pp_count": len(len_p_phrases),
+            "avg_pp_words": np.mean(len_p_phrases) if len_p_phrases else 0.0,
+        }
+        # print(json.dumps(feats, indent=2))
+        all_feats[i] = feats
+    all_feats_df = pd.DataFrame(all_feats).T
+    cols = all_feats_df.columns
+    df[cols] = all_feats_df
+    # print(df[cols])
+    return cols
+
+
+def test_linguistic_features():
+    corpus_path = "data/test-medshake-score.json"
+    df = load_corpus(corpus_path)
+    # df = df[df["id"] == "da38bc31fb7735ebe42f826c925ac9b7154adc2b45c73f9049717b0dc837a83c"]
+    new_cols = add_linguistic_features(df, show_progress=True)
+
+    # Save box plot of counts and means
+    fig, ax = plt.subplots()  # (figsize=figsize)
+    fig.suptitle("MCQ Linguistic features in test corpus")
+    ax.set_xlabel("Features")
+    ax.set_ylabel("Normalised values")
+    scaler = preprocessing.MinMaxScaler()  # MaxAbsScaler()
+    scaled_df = scaler.fit_transform(df[new_cols])
+    scaled_df = pd.DataFrame(scaled_df, columns=new_cols)
+    scaled_df.boxplot(ax=ax)
+    ax.xaxis.set_tick_params(
+        rotation=60, gridOn=True, grid_color="#EEEEEE", grid_dashes=(1, 2),
+        grid_linewidth=1.5)
+    fig_dir = "output/plots/linguistic/"
+    fig_path = fig_dir + os.path.basename(corpus_path).replace(".json", ".png")
+    os.makedirs(fig_dir, exist_ok=True)
+    fig.savefig(fig_path, bbox_inches="tight")
+
+
 def one_hot_encode(
         df: pd.DataFrame, col: str, new_prefix: str, drop_col: bool = True,
 ) -> None:
@@ -280,6 +415,7 @@ def corpus_with_metadata(
         ngrams_path: str | None = None,
         include_qa_lengths: bool = False,
         include_first_last_words: bool = False,
+        include_linguistic: bool = False,
         normalise: bool = True,
         data_output_path: str | None = None,
         force_reload: bool = False,
@@ -315,6 +451,10 @@ def corpus_with_metadata(
             df.rename(
                 inplace=True,
                 columns=lambda k: "last_other" if k == "last_<other>" else k)
+
+        # Include linguistic features from questions
+        if include_linguistic:
+            add_linguistic_features(df)
 
         # Transform correct_answers into a string, then into a categorical type
         one_hot_encode_list(df, "correct_answers", "answer")
@@ -375,7 +515,6 @@ def corpus_with_metadata(
 
         # Normalise feature values
         if normalise:
-            from sklearn import preprocessing
             norm_ignored_cols = [
                 "id", "question", "synonym",
                 "medshake_difficulty", "shannon_difficulty",
@@ -465,7 +604,6 @@ def test_normalise(
     )
 
     # Normalise feature values
-    from sklearn import preprocessing
     scalers = (
         None,
         preprocessing.StandardScaler(),
