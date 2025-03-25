@@ -12,6 +12,8 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 
+CLASS_COL = "shannon_class"  # Change to "medshake_class" to use old method
+CLASS_COLOUR_COL = "shannon_colour"  # Change to "medshake_colour" if needed
 # LABELS = ["very hard", "hard", "medium", "easy", "very easy"]
 LABEL_COLOURS = {
     "very easy": "#FDE725",
@@ -126,35 +128,23 @@ def load_corpus(corpus: str | dict[str, any]) -> pd.DataFrame:
     # labels = list(reversed(LABEL_COLOURS.keys()))
     med_bins = pd.qcut(df["medshake_difficulty"], len(labels), labels=labels)
     # print(bins_qcut)
-    sh_bins_qcut = pd.qcut(df["shannon_difficulty"], len(labels), labels=labels)
+    sh_bins = pd.qcut(df["shannon_difficulty"], len(labels), labels=labels)
     # print(sh_bins_qcut)
-
-    # print("\n\nEqual-ranged classes (pandas.cut):")
-    # bins_cut = pd.cut(df.medshake_difficulty, len(LABELS), right=True,
-    #                   labels=LABELS)
-    # print(bins_cut.head())
-    # print(bins_cut.value_counts())
-    sh_bins_cut = pd.cut(
-        df["shannon_difficulty"], len(labels), right=True, labels=labels)
 
     df["medshake_class"] = med_bins
     df["medshake_colour"] = \
         df["medshake_class"].apply(lambda x: LABEL_COLOURS[x])
 
-    df["shannon_class_qcut"] = sh_bins_qcut
-    df["shannon_colour_qcut"] = \
-        df["shannon_class_qcut"].apply(lambda x: LABEL_COLOURS[x])
-
-    df["shannon_class_cut"] = sh_bins_cut
-    df["shannon_colour_cut"] = \
-        df["shannon_class_cut"].apply(lambda x: LABEL_COLOURS[x])
+    df["shannon_class"] = sh_bins
+    df["shannon_colour"] = \
+        df["shannon_class"].apply(lambda x: LABEL_COLOURS[x])
 
     return df
 
 
 def plot_question_classification(df: pd.DataFrame, scatter_path: str) -> None:
     # Plot with classes
-    fig, ax = plt.subplots(nrows=3, sharex=True, figsize=(8, 12))
+    fig, ax = plt.subplots(nrows=2, sharex=True, figsize=(8, 12))
     fig.suptitle("MCQ Question Classification")
     # fig.text(0.5, 0.02, "Questions", horizontalalignment="center")
     # fig.text(0.02, 0.5, "% Exams Answered Correctly", rotation="vertical",
@@ -179,22 +169,13 @@ def plot_question_classification(df: pd.DataFrame, scatter_path: str) -> None:
     # ax[0].set_xlabel("")
 
     # Add Shannon classification
-    ax[1].set_title("All Response Rates (shannon_class, qcut)")
+    ax[1].set_title("All Response Rates (shannon_class)")
     # ax[1].set_xlabel("Questions")
     ax[1].set_ylabel("Normalised Shannon Entropy")
     for label in LABEL_COLOURS.keys():
-        _df = df[df["shannon_class_qcut"] == label]
+        _df = df[df["shannon_class"] == label]
         ax[1].scatter(
-            _df.index, _df["shannon_difficulty"], c=_df["shannon_colour_qcut"],
-            label=label)
-
-    ax[2].set_title("All Response Rates (shannon_class, cut)")
-    ax[2].set_xlabel("Questions")
-    ax[2].set_ylabel(ax[1].get_ylabel())
-    for label in LABEL_COLOURS.keys():
-        _df = df[df["shannon_class_cut"] == label]
-        ax[2].scatter(
-            _df.index, _df["shannon_difficulty"], c=_df["shannon_colour_cut"],
+            _df.index, _df["shannon_difficulty"], c=_df["shannon_colour"],
             label=label)
 
     # Save all the classifications together
@@ -205,7 +186,7 @@ def plot_question_classification(df: pd.DataFrame, scatter_path: str) -> None:
 def plot_num_answers_distribution(
         df: pd.DataFrame, bars_path: str,
         bars_stack_by_class: bool = True,
-        class_col: str = "medshake_class",
+        class_col: str = CLASS_COL,
 ) -> None:
     """
     Generate bar plots to display distributuion of nbr_correct_answers per class
@@ -236,17 +217,14 @@ def plot_num_answers_distribution(
                 bars_data[n][idx] = count
         xlabel = {
             "medshake_class": "MedShake Class",
-            "shannon_class_qcut": "Shannon Class (qcut)",
-            "shannon_class_cut": "Shannon Class (cut)",
+            "shannon_class": "Shannon Class",
         }[class_col]
         bar_colours = None
         legend_data = {
             "labels": [
                 f"{n} answer{'s' if n > 1 else ''}" for n in all_answers
             ],
-            "loc":
-                "upper left" if class_col == "shannon_class_cut"
-                else "lower left"
+            "loc": "lower left"
         }
         path_suffix += "_stacked_answers"
 
@@ -277,20 +255,20 @@ def get_average_by_difficulty(
     hamming_by_class = {k: [] for k in LABEL_COLOURS}
     medshake_by_class = {k: [] for k in LABEL_COLOURS}
     for i, sample in df.iterrows():
-        matches_by_class[sample.medshake_class].append(match_results[i])
-        hamming_by_class[sample.medshake_class].append(hamming_results[i])
-        medshake_by_class[sample.medshake_class].append(medshake_results[i])
+        matches_by_class[sample[CLASS_COL]].append(match_results[i])
+        hamming_by_class[sample[CLASS_COL]].append(hamming_results[i])
+        medshake_by_class[sample[CLASS_COL]].append(medshake_results[i])
 
     matches_avg = {
-        k: np.average(v)
+        k: np.mean(v).item()
         for k, v in matches_by_class.items()
     }
     hamming_avg = {
-        k: np.average(v)
+        k: np.mean(v).item()
         for k, v in hamming_by_class.items()
     }
     medshake_avg = {
-        k: np.average(v)
+        k: np.mean(v).item()
         for k, v in medshake_by_class.items()
     }
     return matches_avg, hamming_avg, medshake_avg
@@ -308,7 +286,7 @@ def main() -> None:
 
     # Bar plots of question difficulty vs number of correct answers
     #
-    class_cols = ("medshake_class", "shannon_class_qcut", "shannon_class_cut")
+    class_cols = ("medshake_class", "shannon_class")
     for class_col in class_cols:
         for bars_stack in (True, False):
             plot_num_answers_distribution(

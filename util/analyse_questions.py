@@ -18,7 +18,10 @@ from tqdm import tqdm
 sys.path.append(os.path.abspath("."))
 
 import st_tagging_tool
-from classify_questions import load_corpus, LABEL_COLOURS
+from classify_questions import (
+    load_corpus,
+    CLASS_COL, CLASS_COLOUR_COL, LABEL_COLOURS,
+)
 # from process_output import get_filename_pattern
 from st_tagging_tool.config import TAGS_CONFIG
 
@@ -281,7 +284,7 @@ def corpus_with_metadata(
         data_output_path: str | None = None,
         force_reload: bool = False,
         result_filter_cols: bool = True,
-        result_ignored_cols: list[str] = ["question", "medshake_difficulty"],
+        result_ignored_cols: list[str] = ["question", "medshake_difficulty", "shannon_difficulty"],
 ):
     """
     Enriches the source data with the given tags and n-grams.
@@ -331,8 +334,7 @@ def corpus_with_metadata(
 
         # Drop unecessary columns
         drop_cols_re = (
-            r"^(answers|subject_name|year|medshake|.*_colour(_q?cut)?"
-            r"|shannon_.*)$"
+            r"^(answers|subject_name|year|medshake|.*_colour)$"
         )
         df.drop(df.filter(regex=drop_cols_re).columns, axis=1, inplace=True)
 
@@ -375,11 +377,14 @@ def corpus_with_metadata(
         if normalise:
             from sklearn import preprocessing
             norm_ignored_cols = [
-                "id", "question", "medshake_difficulty", "medshake_class",
+                "id", "question", "synonym",
+                "medshake_difficulty", "shannon_difficulty",
+                "medshake_class", "shannon_class",
             ]
             # Remember which cells had NaN
             df_not_na = df.notna()
-            norm_df = df.drop(norm_ignored_cols, axis=1).fillna(0)
+            norm_df = df.drop(norm_ignored_cols, axis=1, errors="ignore")
+            norm_df = norm_df.fillna(0)
             scaler = preprocessing.MaxAbsScaler()
             scaled_df = scaler.fit_transform(norm_df)
             scaled_df = pd.DataFrame(scaled_df, columns=norm_df.columns)
@@ -402,7 +407,8 @@ def corpus_with_metadata(
                 json.dump(df_dict, fp, indent=4, ensure_ascii=False)
 
     # Apply appropriate dtypes
-    df["medshake_class"] = df["medshake_class"].astype(str)
+    class_cols = ["medshake_class", "shannon_class"]
+    df[class_cols] = df[class_cols].astype(str)
 
     # Replace NA with zeros in all non-categorical columns
     df = df.fillna(0)
@@ -455,7 +461,7 @@ def test_normalise(
         tags_path=tags_path,
         data_output_path=data_output_path,
         force_reload=force_reload,
-        result_ignored_cols = ["id", "question", "medshake_class"],
+        result_ignored_cols = ["id", "question", "medshake_class", "shannon_class"],
     )
 
     # Normalise feature values
@@ -529,8 +535,9 @@ def tsne_from_features(
         ngrams_path=ngrams_path,
         data_output_path=data_output_path,
         force_reload=force_reload,
-        result_ignored_cols = ["id", "question", "medshake_difficulty",
-                               "medshake_class"],
+        result_ignored_cols = [
+            "id", "question", "medshake_difficulty", "shannon_difficulty",
+            "medshake_class", "shannon_class"],
     )
 
     # tSNE algorithm
@@ -551,8 +558,8 @@ def tsne_from_features(
             # print(df_tsne.shape)
             df_tsne = pd.DataFrame(
                 df_tsne, columns=tsne.get_feature_names_out())
-            df_tsne[["id", "medshake_class", "medshake_colour"]] = \
-                df[["id", "medshake_class", "medshake_colour"]]
+            df_tsne[["id", CLASS_COL, CLASS_COLOUR_COL]] = \
+                df[["id", CLASS_COL, CLASS_COLOUR_COL]]
             # print(df_tsne)
 
             # Save projection to file
@@ -570,10 +577,10 @@ def tsne_from_features(
         ax.set_ylabel("tSNE Comp 2")
 
         for label in LABEL_COLOURS.keys():
-            _df = df_tsne[df_tsne["medshake_class"] == label]
+            _df = df_tsne[df_tsne[CLASS_COL] == label]
             ax.scatter(
                 *[_df[f"tsne{i}"] for i in range(n_comp)],
-                c=_df["medshake_colour"], label=label)
+                c=_df[CLASS_COLOUR_COL], label=label)
 
     # Save the figure
     fig.legend(labels=LABEL_COLOURS.keys())
@@ -614,8 +621,9 @@ def umap_from_features(
         ngrams_path=ngrams_path,
         data_output_path=data_output_path,
         force_reload=force_reload,
-        result_ignored_cols = ["id", "question", "medshake_difficulty",
-                               "medshake_class"],
+        result_ignored_cols = [
+            "id", "question", "medshake_difficulty", "shannon_difficulty",
+            "medshake_class", "shannon_class"],
     )
 
     # UMAP algorithm
@@ -642,10 +650,10 @@ def umap_from_features(
     ax.set_ylabel("UMAP Comp 2")
 
     for label in LABEL_COLOURS.keys():
-        _df = df[df["medshake_class"] == label]
+        _df = df[df[CLASS_COL] == label]
         ax.scatter(
             _df["umap_1"], _df["umap_2"],
-            c=_df["medshake_colour"], label=label)
+            c=_df[CLASS_COLOUR_COL], label=label)
 
     # Save the figure
     # fig.legend(loc=(0.8, 0.62))

@@ -15,7 +15,11 @@ import torch
 # Trick to import local packages when this script is run from the terminal
 sys.path.append(os.path.abspath("."))
 
-from util.classify_questions import load_corpus, LABEL_COLOURS
+from util.classify_questions import (
+    load_corpus,
+    CLASS_COL,
+    LABEL_COLOURS,
+)
 from util.analyse_questions import corpus_with_metadata
 from util.markdown import save_params
 from util.process_output import (
@@ -51,7 +55,6 @@ def load_model_results_output(
         corpus_with_tags: pd.DataFrame,
         corpus_path: str = "data/test-medshake-score.json",
         llm_output_dir: str = "output/llama3/tuned_002_20240731",
-        class_col = "medshake_class",
         force_reload: bool = True,
 ) -> pd.DataFrame:
     """
@@ -91,9 +94,9 @@ def load_model_results_output(
     # Group results by ID (join all result files) and calculate average
     # Note: This DataFrame is indexed by ID
     llm_results_df = llm_results_df.groupby(by="id").mean()
-    # Add MedShake class to LLM results for later use
+    # Add MedShake∕Shannon class to LLM results for later use
     llm_results_df = llm_results_df.join(
-        corpus_with_tags.groupby("id").first()[class_col])
+        corpus_with_tags.groupby("id").first()[CLASS_COL])
     return llm_results_df
 
 
@@ -102,7 +105,7 @@ def load_model_scores(
         model_scores_path: str = "output/model_scores/test-model-scores.json",
         params_out_dir: str = "output/compare/model_scores/logp",
         model_score_col: str = "medshake",
-        class_col: str = "medshake_class",
+        class_col: str = CLASS_COL,
         score_field: str = None,
         length_field: str = None,
         softmax: bool = None,
@@ -285,7 +288,6 @@ def plot_tags_topics(
     """
     # Definition of relevant columns
     diff_col = "medshake_difficulty"
-    class_col = "medshake_class"
     # llm_score_col = "medshake"
     llm_score_col = "emr"
     colours = ("#1f77b4", "#ff7f0e")  # Human: blue, LLM: orange
@@ -325,7 +327,6 @@ def plot_tags_topics(
     #     df,
     #     corpus_path=corpus_path,
     #     llm_output_dir=model_output_dir,
-    #     class_col=class_col,
     # )
 
     # Load LLM rates from model scores
@@ -334,7 +335,6 @@ def plot_tags_topics(
         model_scores_path=model_scores_path,
         params_out_dir=os.path.dirname(figure_path),
         model_score_col=llm_score_col,
-        class_col=class_col,
         score_field="seq_logp",
         # score_field="prompt_logp+seq_logp",
         # score_field="letters_logp",
@@ -361,14 +361,14 @@ def plot_tags_topics(
     fig.savefig(figure_path.replace(".", f"_box."), bbox_inches="tight")
 
     # Boxplots by class
-    _df = df.groupby(by=class_col)[diff_col].apply(lambda v: 1 - v)
+    _df = df.groupby(by=CLASS_COL)[diff_col].apply(lambda v: 1 - v)
     ax.clear()
     ax.boxplot(
         [_df.loc[k] if k in _df.index else None for k in classes],
         positions=[i*3+1 for i in range(len(classes))],
         tick_labels=LABEL_COLOURS.keys(),
         boxprops={"color": colours[0]}, medianprops={"color": "#000"})
-    _df = llm_results_df.groupby(by=class_col)[llm_score_col].apply(lambda x: x)
+    _df = llm_results_df.groupby(by=CLASS_COL)[llm_score_col].apply(lambda x: x)
     ax.boxplot(
         [_df.loc[k] if k in _df.index else None for k in classes],
         positions=[i*3+2 for i in range(len(classes))],
@@ -422,7 +422,7 @@ def plot_tags_topics(
             #         ]),
             #     label=f"Human {val.capitalize()}",
             # )
-            _df = _df.groupby(by=class_col)[diff_col] \
+            _df = _df.groupby(by=CLASS_COL)[diff_col] \
                     .mean().apply(lambda v: 1 - v)
             ax_line.plot(
                 classes,
@@ -441,7 +441,7 @@ def plot_tags_topics(
             #         ]),
             #     label=f"LLM {val.capitalize()}",
             # )
-            _llm_df = _llm_df.groupby(by=class_col)[llm_score_col].mean()
+            _llm_df = _llm_df.groupby(by=CLASS_COL)[llm_score_col].mean()
             ax_line.plot(
                 classes,
                 [
@@ -464,7 +464,7 @@ def plot_tags_topics(
             ax_bar.xaxis.set_tick_params(rotation=80)
 
         # Line plot
-        ax_line.set_xlabel("MedShake Class")
+        ax_line.set_xlabel("Class")
         ax_line.legend()
         # Sort labels in legend and add group titles
         handles, labels = fig_line.gca().get_legend_handles_labels()

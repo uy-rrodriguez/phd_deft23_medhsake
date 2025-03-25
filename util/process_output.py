@@ -388,7 +388,7 @@ def split_results_by_rate(df: pd.DataFrame, exclude_std_by_class: bool = True) \
     Parameters:
         df: DataFrame with results to split.
         exclude_std_by_class: If True (default), the columns with standard
-            deviation by MedShake class are also excluded.
+            deviation by question class are also excluded.
     """
     prefixes = "|".join(RATE_TITLES.keys())
     # df = df.filter(regex=prefixes)

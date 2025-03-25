@@ -20,7 +20,7 @@ from tqdm import tqdm
 # Trick to import local packages when this script is run from the terminal
 sys.path.append(os.path.abspath("."))
 
-from analyse_questions import corpus_with_metadata
+from analyse_questions import CLASS_COL, corpus_with_metadata
 from classify_questions import load_corpus, LABEL_COLOURS
 
 
@@ -119,11 +119,12 @@ def random_forest(
             ngrams_path=ngrams_path,
             data_output_path=data_output_path,
             force_reload=force_reload,
+            result_ignored_cols=["medshake_difficulty", "shannon_difficulty"],
         )
         # df = df[:10]
 
         # Split train/test randomly
-        col_y = "medshake_class"
+        col_y = CLASS_COL
         df_train_x, df_test_x, df_train_y, df_test_y = train_test_split(
             df.drop(col_y, axis=1), df[col_y],
             train_size=train_len, random_state=None)
@@ -348,10 +349,11 @@ def logistic_regression(
             ngrams_path=ngrams_path,
             data_output_path=data_output_path,
             force_reload=force_reload,
+            result_ignored_cols=["medshake_difficulty", "shannon_difficulty"],
         )
 
         # Split train/test randomly
-        col_y = "medshake_class"
+        col_y = CLASS_COL
         df_train_x, df_test_x, df_train_y, df_test_y = train_test_split(
             df.drop(col_y, axis=1), df[col_y],
             train_size = 0.66, random_state=None)
@@ -540,8 +542,8 @@ def linear_regression(
 
         col_class = "medshake_class"
         col_y = "medshake_difficulty"
-        df_class = df[col_class]
-        df = df.drop(col_class, axis=1)
+        df_class = df[CLASS_COL]
+        df = df.drop(CLASS_COL, axis=1)
 
         ####### START REGRESSION ###############################################
 
@@ -816,7 +818,7 @@ def main_plot_residuals():
         print(f"Loading data from file '{data_path}'")
         df = corpus_with_metadata(
             data_output_path=data_path,
-            result_ignored_cols=["question", "medshake_class"],
+            result_ignored_cols=["question", "medshake_class", "shannon_class"],
         )
 
         coefs_path = (

@@ -20,7 +20,7 @@ from transformers import AutoModel, AutoTokenizer
 sys.path.append(os.path.abspath("."))
 
 from util.analyse_questions import calc_first_last_words, calc_qa_lengths
-from util.classify_questions import load_corpus
+from util.classify_questions import CLASS_COL, CLASS_COLOUR_COL, load_corpus
 
 
 # LABELS = ["very hard", "hard", "medium", "easy", "very easy"]
@@ -93,9 +93,9 @@ def plot_question_length(df: pd.DataFrame, figure_path: str) -> None:
         ax[i].set_title(cols[col])
         ax[i].set_ylabel("MedShake Difficulty")
         for label in LABEL_COLOURS.keys():
-            _df = df[df["medshake_class"] == label]
+            _df = df[df[CLASS_COL] == label]
             ax[i].scatter(
-                _df[col], _df[rate_col], c=_df["medshake_colour"],
+                _df[col], _df[rate_col], c=_df[CLASS_COLOUR_COL],
                 label=label)
 
     # Save the figure
@@ -163,7 +163,7 @@ def plot_embeddings(
         u, s, v = torch.pca_lowrank(embeddings)
         result = torch.matmul(embeddings, v[:, :2])
         df_pca = pd.DataFrame(result, columns=["pca0", "pca1"])
-        extra_cols = ["id", "medshake_class", "medshake_colour"]
+        extra_cols = ["id", CLASS_COL, CLASS_COLOUR_COL]
         df_pca[extra_cols] = df[extra_cols]
         # print(df_pca)
 
@@ -173,10 +173,10 @@ def plot_embeddings(
         ax.set_xlabel("Principal Comp 1")
         ax.set_ylabel("Principal Comp 2")
         for label in LABEL_COLOURS.keys():
-            _df = df_pca[df_pca["medshake_class"] == label]
+            _df = df_pca[df_pca[CLASS_COL] == label]
             ax.scatter(
                 _df["pca0"], _df["pca1"],
-                c=_df["medshake_colour"], label=label)
+                c=_df[CLASS_COLOUR_COL], label=label)
         ax.legend()
 
     # tSNE algorithm
@@ -198,7 +198,7 @@ def plot_embeddings(
 
                 df_tsne = pd.DataFrame(
                     result, columns=tsne.get_feature_names_out())
-                extra_cols = ["id", "medshake_class", "medshake_colour"]
+                extra_cols = ["id", CLASS_COL, CLASS_COLOUR_COL]
                 df_tsne[extra_cols] = df[extra_cols]
                 # print(df_tsne)
 
@@ -216,10 +216,10 @@ def plot_embeddings(
             ax.set_xlabel("tSNE Comp 1")
             ax.set_ylabel("tSNE Comp 2")
             for label in LABEL_COLOURS.keys():
-                _df = df_tsne[df_tsne["medshake_class"] == label]
+                _df = df_tsne[df_tsne[CLASS_COL] == label]
                 ax.scatter(
                     *[_df[f"tsne{i}"] for i in range(n_comp)],
-                    c=_df["medshake_colour"], label=label)
+                    c=_df[CLASS_COLOUR_COL], label=label)
 
         fig.legend(labels=LABEL_COLOURS.keys())
 
@@ -240,7 +240,7 @@ def plot_embeddings(
             # print(result.shape)
 
             df_umap = pd.DataFrame(result, columns=["umap0", "umap1"])
-            extra_cols = ["id", "medshake_class", "medshake_colour"]
+            extra_cols = ["id", CLASS_COL, CLASS_COLOUR_COL]
             df_umap[extra_cols] = df[extra_cols]
             # print(df_umap)
 
@@ -254,10 +254,10 @@ def plot_embeddings(
         ax.set_xlabel("UMAP Comp 1")
         ax.set_ylabel("UMAP Comp 2")
         for label in LABEL_COLOURS.keys():
-            _df = df_umap[df_umap["medshake_class"] == label]
+            _df = df_umap[df_umap[CLASS_COL] == label]
             ax.scatter(
                 _df["umap0"], _df["umap1"],
-                c=_df["medshake_colour"], label=label)
+                c=_df[CLASS_COLOUR_COL], label=label)
         ax.legend()
 
     # Save the figure
@@ -266,7 +266,7 @@ def plot_embeddings(
 
 def main_plot_embeddings(algorithm: str, force_reload: bool = False) -> None:
     """
-    Scatter plot of questions embeddings in 2D or 3D with MedShake class, using
+    Scatter plot of questions embeddings in 2D or 3D with question class, using
     PCA, tSNE, or UMAP.
     """
     supported = ("pca", "tsne", "umap")
@@ -316,10 +316,10 @@ def plot_question_negations(df: pd.DataFrame, figure_path: str) -> None:
     # Plot affirmative questions
     for label in LABEL_COLOURS.keys():
         _df = df[df["negation"] == 0]
-        _df = _df[_df["medshake_class"] == label]
+        _df = _df[_df[CLASS_COL] == label]
         ax.scatter(
             _df.index, _df[rate_column],
-            c=_df["medshake_colour"], label=label)
+            c=_df[CLASS_COLOUR_COL], label=label)
 
     # Plot highlighted negative questions
     _df = df[df["negation"] == 1]
@@ -363,12 +363,12 @@ def plot_questions_by_words(df: pd.DataFrame, figure_path: str) -> None:
     transposed = True
 
     if plot_first_instead_of_last:
-        # One bar per MedShake class, with stacked count of start/end categories
+        # One bar per class, with stacked count of start/end categories
         first_words = [k for k, _ in questions_by_top_first]
         bars_data = {}
 
         for group, _df in questions_by_top_first:
-            by_class = _df.groupby(by="medshake_class", sort=False)
+            by_class = _df.groupby(by=CLASS_COL, sort=False)
             bars_data[group] = {k: len(v) for k, v in by_class}
         print(bars_data)
 
@@ -397,12 +397,12 @@ def plot_questions_by_words(df: pd.DataFrame, figure_path: str) -> None:
         fig.savefig(figure_path, bbox_inches="tight")
 
     else:
-        # One bar per MedShake class, with stacked count of start/end categories
+        # One bar per class, with stacked count of start/end categories
         last_chars = [k for k, _ in questions_by_last]
         bars_data = {}
 
         for group, _df in questions_by_last:
-            by_class = _df.groupby(by="medshake_class", sort=False)
+            by_class = _df.groupby(by=CLASS_COL, sort=False)
             bars_data[group] = {k: len(v) for k, v in by_class}
 
         bars_df = pd.DataFrame(data=bars_data)  #, index=bars_index)
@@ -491,7 +491,7 @@ def main_all() -> None:
         "output/plots/questions_classes_by_length__med.png",
     )
 
-    # Scatter plot of negations (0 or 1) with MedShake class
+    # Scatter plot of negations (0 or 1) with class
     #
     plot_question_negations(
         test_df,
@@ -535,7 +535,7 @@ def plot_tags(
 
     # Join DataFrames
     df_tags = df_tags.merge(
-        df[["id", "medshake_class"]], on="id", validate="one_to_one",
+        df[["id", CLASS_COL]], on="id", validate="one_to_one",
         suffixes=("", "--orig"), copy=False)
 
     # Plot with classes
@@ -553,7 +553,7 @@ def plot_tags(
         bars_data = {n: [0] * len(LABEL_COLOURS.keys()) for n in tag_values}
         bars_index = []
         for idx, label in enumerate(LABEL_COLOURS.keys()):
-            _df = df_tags[df_tags[class_col] == label]
+            _df = df_tags[df_tags[CLASS_COL] == label]
             bars_index.append(label)
             for n, count in _df[tag_col].value_counts().items():
                 bars_data[n][idx] = count
@@ -628,16 +628,16 @@ def plot_topics(
         figure_path: str,
 ):
     """
-    Plot the distribution of topics amongst the MedShake classes.
+    Plot the distribution of topics amongst the question classes.
     """
-    class_col = "medshake_class"
+    class_col = CLASS_COL
     diff_col = "medshake_difficulty"
     topics = sorted(
         set(
             chain.from_iterable(
                 df["topics"].tolist())))
 
-    # Bar plot using MedShake class
+    # Bar plot using question class
     # One bar per topic, with stacked classes
     bars_data = {n: [0] * len(LABEL_COLOURS.keys()) for n in topics}
     bars_index = []
@@ -662,13 +662,13 @@ def plot_topics(
     fig, ax = plt.subplots(figsize=(10, 4))
     bars_df.plot.bar(stacked=True, rot=0, color=LABEL_COLOURS.values(), ax=ax)
     ax.set_xlabel("Topics")
-    ax.set_ylabel("MedShake Class")
+    ax.set_ylabel("Class")
     ax.xaxis.set_tick_params(rotation=80)
     ax.legend(labels=LABEL_COLOURS.keys(), loc="upper left")
 
     # Save the figure
     fig = ax.get_figure()
-    fig.suptitle(f"MCQ MedShake Class by Topic ({class_col})")
+    fig.suptitle(f"MCQ Class by Topic ({class_col})")
     fig.savefig(figure_path.replace(".", "_class."), bbox_inches="tight")
 
     ############################################################################
@@ -739,13 +739,13 @@ def plot_years(
         figure_path: str,
 ):
     """
-    Plot the distribution of years amongst the MedShake classes.
+    Plot the distribution of years amongst the question classes.
     """
-    class_col = "medshake_class"
+    class_col = CLASS_COL
     diff_col = "medshake_difficulty"
     years = sorted(df["year_txt"].unique())
 
-    # Bar plot using MedShake class,
+    # Bar plot using question class,
     # One bar per year, with stacked classes
     bars_data = {n: [0] * len(LABEL_COLOURS.keys()) for n in years}
     bars_index = []
@@ -760,13 +760,13 @@ def plot_years(
     fig, ax = plt.subplots(figsize=(10, 4))
     bars_df.plot.bar(stacked=True, rot=0, color=LABEL_COLOURS.values(), ax=ax)
     ax.set_xlabel("Years")
-    ax.set_ylabel("MedShake Class")
+    ax.set_ylabel("Class")
     ax.xaxis.set_tick_params(rotation=80)
     ax.legend(labels=LABEL_COLOURS.keys(), loc="upper left")
 
     # Save the figure
     fig = ax.get_figure()
-    fig.suptitle(f"MCQ MedShake Class by Year ({class_col})")
+    fig.suptitle(f"MCQ Class by Year ({class_col})")
     fig.savefig(figure_path.replace(".", "_class."), bbox_inches="tight")
 
     ############################################################################

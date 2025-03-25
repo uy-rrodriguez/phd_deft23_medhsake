@@ -127,7 +127,7 @@ for (let item of data) {
 // Draw all items
 for (let item of data) {
     const coord = getCoordinates(item);
-    backCtx.fillStyle = LABEL_COLOURS[item.medshake_class];  // + "BB";
+    backCtx.fillStyle = LABEL_COLOURS[item.shannon_class];  // + "BB";
     backCtx.beginPath();
     backCtx.arc(coord.x, coord.y, STROKE, 0, 2 * Math.PI);
     backCtx.fill();
@@ -185,7 +185,7 @@ foreground.addEventListener("mousemove", function(event) {
         for (let i = 0; i < found.length; i++) {
             const item = found[i];
             foreCtx.fillText(
-                `ID: ${item.id.substring(0, 10)} | ${item.medshake_class}`,
+                `ID: ${item.id.substring(0, 10)} | ${item.shannon_class}`,
                 mouseX + LINE_H, mouseY + i * LINE_H);
         }
     }
@@ -293,7 +293,7 @@ foreground.addEventListener("mouseup", function(event) {
             div.innerHTML =
                 `<span style="background: ${item.medshake_colour}">&nbsp;</span>`
                 + `<b>ID:</b> ${q.id}`
-                + `<br><b>Class:</b> ${item.medshake_class}`
+                + `<br><b>Class:</b> ${item.shannon_class}`
                 + `<br><b>Topics:</b> ${q.topics}`
                 + `<br><b>Year:</b> ${q.year_txt}`
                 + `<br><b>Question:</b> ${q.question}`
