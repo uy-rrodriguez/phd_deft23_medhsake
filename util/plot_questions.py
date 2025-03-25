@@ -156,8 +156,6 @@ def plot_embeddings(
         print(f"Saving embeddings to '{embeddings_path}'")
         torch.save(embeddings, embeddings_path)
 
-
-
     # PCA algorithm
     if algorithm == "pca":
         # Apply PCA to reduce the embeddings to 2 dimensions
@@ -584,6 +582,45 @@ def plot_tags(
 
     if single_figure:
         fig.savefig(figure_path_tpl, bbox_inches="tight")
+
+
+def count_by_tags_topics():
+    """
+    Counts the number of questions in each tag (negation, mode, etc.) and topic.
+    """
+    print("count_samples_by_tags")
+    corpus_path = "data/test-medshake-score.json"
+    tags_path="data/tags-test-medshake-score.json"
+
+    df = load_corpus(corpus_path)
+
+    # Load tags
+    print(f"Loading tags from '{tags_path}'")
+    df_tags = pd.read_json(tags_path, orient="index")
+    df_tags.drop("tag_highlight", axis=1, inplace=True)
+
+    # Join DataFrames
+    df = df_tags.merge(
+        df[["id", CLASS_COL, "topics"]], on="id", validate="one_to_one",
+        suffixes=("", "--orig"), copy=False)
+
+    # Count tags
+    for tag_col in df.filter(regex=r"^tag_.+").columns:
+        print(f"*** {tag_col} ***")
+        for val, count in df[tag_col].value_counts().items():
+            percent = count * 100 / len(df)
+            print(f"    {val}: {count} ({percent:2.2f}%)")
+
+    # Count topics
+    print(f"*** topics ***")
+    topics, count = np.unique(
+        list(
+            chain.from_iterable(
+                df["topics"].tolist())),
+        return_counts=True)
+    for val, count in zip(topics, count):
+        percent = count * 100 / len(df)
+        print(f"    {val}: {count} ({percent:2.2f}%)")
 
 
 def plot_topics(
