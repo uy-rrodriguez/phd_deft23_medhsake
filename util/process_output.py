@@ -216,17 +216,34 @@ def load_output_files(paths: list[str], corpus_path: str,
 
 
 def load_output_files_df(
-        paths: list[str],
+        basedir: str,
         corpus_path: str,
-        pattern: str = None,
+        pattern_kwargs: dict = None,
+        force_reload: bool = False,
 ) -> pd.DataFrame:
     """
     Loads output files and returns the results as a DataFrame.
 
-    MedShake scores per question are calculated, but no average nor any other
-    calculation is done on the data.
+    EMR, Hamming and MedShake scores per question are calculated, but no average
+    nor any other aggregation is done to the data.
     """
-    pattern = pattern or get_filename_pattern()
+    suffix = gen_output_suffix(**pattern_kwargs)
+    presaved_llm_results = \
+        f"{basedir}/raw_rates_outputs{suffix}_details.json"
+
+    if not force_reload and os.path.exists(presaved_llm_results):
+        return pd.read_json(presaved_llm_results, orient="records")
+
+    pattern = get_filename_pattern(**pattern_kwargs)
+    print("Filename pattern:", pattern.pattern)
+    paths = [
+        os.path.join(basedir, f)
+        for f in os.listdir(basedir)
+        if pattern.match(f)
+    ]
+    print(f"Files found ({len(paths)}):", *paths, sep="\n")
+
+    # Load files found into a DataFrame
     data = []
     with open(corpus_path, "r") as f:
         corpus = json.load(f)
@@ -255,8 +272,58 @@ def load_output_files_df(
                     "medshake": medshake_rate,
                 })
 
-    # print(json.dumps(results, indent=2), file=sys.stderr)
-    return pd.DataFrame(data)
+    if not len(data):
+        raise Exception("No output files were found when loading results data.")
+
+    # Save results to file
+    df = pd.DataFrame(data)
+    with open(presaved_llm_results, "w", encoding="utf-8") as f:
+        df.to_json(f, orient="records")
+    return df
+
+
+def inference_difficulty(
+        corpus_path: str = "data/test-medshake-score.json",
+        llm_output_dir: str = "output/mistral/tuned_017_20250304/varying_300",
+        llm_output_kwargs: dict = None,
+        force_reload: bool = False,
+):
+    """
+    Loads model inference output and generates a difficulty score per question.
+    """
+    # Arguments used to load LLM output files
+    llm_kwargs = {
+        # "regex_prompt_nbr": 2,
+        # "regex_shots_nbr": 3,
+        # "regex_finetuned": None,
+        # "regex_answer_txt": None,
+    }
+    llm_kwargs.update(llm_output_kwargs or {})
+    llm_results_df = load_output_files_df(
+        basedir=llm_output_dir,
+        corpus_path=corpus_path,
+        pattern_kwargs=llm_kwargs,
+        force_reload=force_reload,
+    )
+    # Group results by ID (join all result files) and calculate average
+    # Note: This DataFrame is indexed by ID
+    llm_results_df = llm_results_df.groupby(by="id").mean()
+    return llm_results_df["emr"].apply(lambda x: 1 - x) \
+        .rename("inference_difficulty")
+
+
+def test_inference_difficulty(
+        corpus_path: str = "data/test-medshake-score.json",
+):
+    diff = inference_difficulty(corpus_path=corpus_path)
+    print(diff)
+
+    _id = "006e1bacf5401adafd5797448a7feed411a1b4d1ae2b5ace26c669c33fcc0100"
+    print(type(diff[_id]), diff[_id])
+
+    corpus = pd.read_json(corpus_path, orient="records")
+    x = corpus[corpus["id"] == _id]
+    print(diff[x["id"]])
 
 
 def gen_output_suffix(

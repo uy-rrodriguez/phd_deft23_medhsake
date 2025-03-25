@@ -65,31 +65,16 @@ def load_model_results_output(
     # Arguments used to load LLM output files
     llm_kwargs = {
         "regex_prompt_nbr": 2,
-        "regex_shots_nbr": 2,
+        "regex_shots_nbr": 3,
         "regex_finetuned": True,
         "regex_answer_txt": False,
     }
-    suffix = gen_output_suffix(**llm_kwargs)
-    presaved_llm_results = \
-        f"{llm_output_dir}/raw_rates_outputs{suffix}_details.json"
-
-    if not force_reload and os.path.exists(presaved_llm_results):
-        llm_results_df = pd.read_json(presaved_llm_results, orient="records")
-    else:
-        pattern = get_filename_pattern(**llm_kwargs)
-        print("Filename pattern:", pattern.pattern)
-        paths = [
-            os.path.join(llm_output_dir, f)
-            for f in os.listdir(llm_output_dir)
-            if pattern.match(f)
-        ]
-        print(f"Files found ({len(paths)}):", *paths, sep="\n")
-        llm_results_df = load_output_files_df(paths, corpus_path, pattern)
-
-        if not len(llm_results_df):
-            raise "No output files were found when loading results data."
-        with open(presaved_llm_results, "w") as f:
-            llm_results_df.to_json(f, orient="records")
+    llm_results_df = load_output_files_df(
+        basedir=llm_output_dir,
+        corpus_path=corpus_path,
+        pattern_kwargs=llm_kwargs,
+        force_reload=force_reload,
+    )
 
     # Group results by ID (join all result files) and calculate average
     # Note: This DataFrame is indexed by ID
