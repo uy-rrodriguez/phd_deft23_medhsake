@@ -20,8 +20,8 @@ from util.classify_questions import (
     CLASS_COL,
     LABEL_COLOURS,
 )
-from util.analyse_questions import corpus_with_metadata
 from util.markdown import save_params
+from util.preprocess_data import corpus_with_metadata
 from util.process_output import (
     gen_output_suffix,
     get_filename_pattern,

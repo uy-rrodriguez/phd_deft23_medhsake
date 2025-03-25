@@ -16,8 +16,9 @@ from tqdm import tqdm
 # Trick to import local packages when this script is run from the terminal
 sys.path.append(os.path.abspath("."))
 
-from analyse_questions import CLASS_COL, corpus_with_metadata
+from analyse_questions import CLASS_COL
 from classify_questions import load_corpus, LABEL_COLOURS
+from preprocess_data import corpus_with_metadata
 
 
 ################################################################################
