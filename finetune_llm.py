@@ -85,7 +85,7 @@ def finetune_lora(
         save_steps: int = 0,
         logging_steps: int = 1,
         max_seq_length: int = 256,
-        packing: bool = False,
+        # packing: bool = False,
         device_map: str = '{"":0}',
         report_to: str = "wandb",
         train_on_completions_only: bool = True,
@@ -199,7 +199,11 @@ def finetune_lora(
         #eval_dataset=eval_dataset,
         peft_config=peft_config,
         tokenizer=tokenizer,
-        packing=packing,
+
+        # Error: SFTTrainer.__init__() got an unexpected keyword argument
+        # 'packing'
+        # packing=packing,
+
         data_collator=collator,
         args=sft_config,
     )

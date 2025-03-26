@@ -75,7 +75,7 @@ def main(
         inputs = tokenizer(input_string, return_tensors="pt")
         outputs = model.generate(
             input_ids=inputs.input_ids.to("cuda"),
-            attention_mask=inputs.attention_mask,
+            attention_mask=inputs.attention_mask.to("cuda"),
             max_new_tokens=32,
             pad_token_id=tokenizer.eos_token_id,
 
