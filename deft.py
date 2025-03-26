@@ -43,16 +43,23 @@ lm_response_templates = [
 letters = 'abcdefghijklmnopqrstuvwxyz'
 
 def linearize_instance(
-        instance, include_correct_answers=False, include_full_answers=False,
+        instance,
+        included_answers: dict = None,
+        include_correct_answers=False, include_full_answers=False,
         add_left_parenthesis=True, **kwargs,
 ) -> tuple[str, str]:
     question = instance['question'] + '\n' + '\n'.join('(%s) %s.' % (k, v) for k, v in instance['answers'].items())
     answers = ""
-    if include_correct_answers:
+    if include_correct_answers or included_answers is not None:
+        if included_answers is None:
+            included_answers = instance['correct_answers']
         if include_full_answers:
-            answers = '; '.join('(%s) %s' % (a, instance['answers'][a]) for a in instance['correct_answers'])
+            answers = '; '.join(
+                '(%s) %s' % (a, instance['answers'][a])
+                for a in included_answers
+            )
         else:
-            answers = ' '.join('(%s)' % a for a in instance['correct_answers'])
+            answers = ' '.join('(%s)' % a for a in included_answers)
         answers = answers + "\n"
     elif add_left_parenthesis:
         answers = "("
@@ -219,9 +226,11 @@ def medshake_rate(predicted: list[str],
     model. If the combination of predicted answers is not found in the instance
     data, the result is 0.
 
-    Since MedShake scores 2 for the correct answer, 1 for an incomplete answer,
-    and 0 for everything else, this function will output: 1, 0.5, or 0,
-    respectively.
+    E.g.: MedShake gives 2 points for the exactly correct answer, and 0.4-1 for
+    certain partial answers, 0 for the rest.
+
+    This function will return a value between 0 and 1 based on the MedShake
+    score.
     """
     # Generate a key based on the predicted answers (they are already sorted)
     med_key = " ".join(sorted(predicted))
