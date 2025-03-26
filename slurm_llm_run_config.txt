@@ -1,7 +1,7 @@
 ################################################################################
 #									LLAMA-3									   #
 ################################################################################
-ArrayTaskID	Prompt	NumShots	AnswerText	ModelRef					NumRuns
+ConfigID	Prompt	NumShots	AnswerText	ModelRef					NumRuns (left for reference, not used)
 1			2		0			0			llama3						1-4
 2			2		1			0			llama3						1-4
 3			2		2			0			llama3						1-4
@@ -154,6 +154,16 @@ ArrayTaskID	Prompt	NumShots	AnswerText	ModelRef					NumRuns
 246			2		3			0			mistral_v01/016_20241107	1-4
 247			2		4			0			mistral_v01/016_20241107	1-4
 248			2		5			0			mistral_v01/016_20241107	1-4
+
+
+249			2		0			0			mistral/017_20250304		1-4
+250			2		1			0			mistral/017_20250304		1-4
+251			2		2			0			mistral/017_20250304		1-4
+252			2		3			0			mistral/017_20250304		1-4
+253			2		4			0			mistral/017_20250304		1-4
+254			2		5			0			mistral/017_20250304		1-4
+
+255			2		3			0			mistral/017_20250304		1-300
 
 
 

@@ -6,33 +6,28 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --mem=16G
 #SBATCH --constraint='GPURAM_Min_16GB&GPURAM_Max_32GB'
-#SBATCH --time=8:00:00
+#SBATCH --time=2:00:00
 #SBATCH --requeue
 #--SBATCH --mail-type=ALL
 #SBATCH --mail-type=ARRAY_TASKS,FAIL,INVALID_DEPEND,REQUEUE,TIME_LIMIT
 #
-# Run multiple commands in parallel:
-#SBATCH --array=569-592%4
-#
 # >>> LLaMa-3-70B
 #--SBATCH --constraint='GPURAM_Min_80GB'
-#--SBATCH --array=45-50%2
+#
+# Run multiple commands in parallel:
+#--SBATCH --array=1-300%5
 #
 
 source functions.sh
 
 
-# Node allocated, necessary to then calculate CO2 emissions
-# TODO: Add support for multiple nodes
-NODE=$(scontrol show job $SLURM_JOB_ID 2>/dev/null \
-       | grep -Po " NodeList=[^\s]+" | grep -Po "=.+" | grep -Po "\w+")
-GPU=$(sinfo -o "%N %G" | grep "${NODE}" | grep -Po "gpu:.+" \
-      | grep -Po ":.+?:" | grep -Po "[^:]+")
-echo "Allocated nodes: ${NODE} (${GPU})"
-
+# Define configuration to be loaded
+CONFIG_ID=255
 
 # Handle Slurm Task ID
-TASK=${SLURM_ARRAY_TASK_ID:="0"}
+# Multiple runs with similar config are handle by defining SBATCH (e.g. "1-4")
+# and the appropriate CONFIG_ID
+NUM_RUN=${SLURM_ARRAY_TASK_ID:="1"}
 
 # Conda environment
 ENV=deft2023
@@ -41,16 +36,15 @@ ENV=deft2023
 CONFIG=slurm_llm_run_config.txt
 
 # Extract the config for the current Slurm task
-TASK_ID=$(      read_config $CONFIG $TASK 1)
-PROMPT_TPL=$(   read_config $CONFIG $TASK 2)
-NUM_SHOTS=$(    read_config $CONFIG $TASK 3)
-ANSWER_TXT=$(   read_config $CONFIG $TASK 4)
-MODEL_REF=$(    read_config $CONFIG $TASK 5)
-NUM_RUNS=$(     read_config $CONFIG $TASK 6)
+LOADED_ID=$(    read_config $CONFIG $CONFIG_ID 1)
+PROMPT_TPL=$(   read_config $CONFIG $CONFIG_ID 2)
+NUM_SHOTS=$(    read_config $CONFIG $CONFIG_ID 3)
+ANSWER_TXT=$(   read_config $CONFIG $CONFIG_ID 4)
+MODEL_REF=$(    read_config $CONFIG $CONFIG_ID 5)
 
-if [[ $TASK != $TASK_ID ]]
+if [[ $LOADED_ID != $CONFIG_ID ]]
 then
-    >&2 echo "Error loading configuration for Task ID $TASK"
+    >&2 echo "Error loading configuration for ID $CONFIG_ID"
     exit 1
 fi
 
@@ -144,6 +138,9 @@ if [[ $ANSWER_TXT == 1 ]]; then
     SUFF=${SUFF}_answertxt
 fi
 
+SUFF=${SUFF}_${NUM_RUN}
+
+
 # Select appropriate prompt id in deft.py
 if [[ $PROMPT_TPL == 1 || $PROMPT_TPL == 2 ]]; then
     PROMPT_ID=0
@@ -172,6 +169,33 @@ VARY_TEMP=false # Whether to change temperature between runs
 TEMP=None       # Custom temperature
 NUM_BEAMS=None  # Custom number of beams (Beam-search decoding) for inference
 
+VARYING_TEMPS=(1.0 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1)
+VARYING_BEAMS=(1 2 3 4 5 6)
+VARYING_TOP_P=(1.0 0.95 0.90 0.85 0.8)
+
+# Run many instances varying temperature, sampling, and beams
+if [[ "$MODEL_FAMILY" == "mistral" ]]; then
+    DIR="${DIR}/varying_300"
+
+    VARY_TEMP=true
+    SAMPLING=true
+    SAMPLING_TOP_K=0
+
+    len_temps=${#VARYING_TEMPS[@]}
+    len_beams=${#VARYING_BEAMS[@]}
+    len_top_p=${#VARYING_TOP_P[@]}
+    p=$(( ($NUM_RUN-1) % $len_top_p ))
+    b=$(( ($NUM_RUN-1) / $len_top_p % $len_beams ))
+    t=$(( ($NUM_RUN-1) / $len_top_p / $len_beams % $len_temps ))
+
+    TEMP=${VARYING_TEMPS[$t]}
+    NUM_BEAMS=${VARYING_BEAMS[$b]}
+    SAMPLING_TOP_P=${VARYING_TOP_P[$p]}
+
+    echo "Using varying params: run $NUM_RUN, temp=$TEMP, beams=$NUM_BEAMS, top-p=$SAMPLING_TOP_P"
+fi
+
+
 # if [[ ( "$MODEL_FAMILY" == *mistral || "$MODEL_FAMILY" == apollo ) && $NUM_SHOTS == 0 ]]; then
 #     # VARY_TEMP=true
 #     SAMPLING=true
@@ -179,11 +203,18 @@ NUM_BEAMS=None  # Custom number of beams (Beam-search decoding) for inference
 #     SAMPLING_TOP_K=0
 # fi
 
+
+
+# if [[ "$MODEL_FAMILY" == *mistral ]]; then
+#     VARY_TEMP=true
+# fi
+
 # if $VARY_TEMP; then
-#     TEMPS=("1.0" "0.7" "0.4" "0.1")
-#     TEMP=${TEMPS[ $((NUM_RUN - 1)) ]}
+#     TEMP=${VARYING_TEMPS[ $((NUM_RUN - 1)) ]}
 #     echo "Using varying temperature: $TEMP for run $NUM_RUN"
 # fi
+
+
 
 # if [[ "$MODEL_FAMILY" == mistral && $NUM_SHOTS == 0 ]]; then
 #     NUM_BEAMS=5
@@ -199,32 +230,22 @@ conda activate $ENV
 mkdir -p output/$DIR logs/$DIR
 
 
-# Handle multiple runs with similar config (supported "1-3,5-6")
-IFS=',' read -ra RUN_RANGES <<< "$NUM_RUNS"
-for r in "${RUN_RANGES[@]}"; do
-  IFS='-' read -ra RANGE_LIM <<< "$r"
-  RUN_IDS+=$(seq ${RANGE_LIM[@]})
-done
-
-for NUM_RUN in $(echo "${RUN_IDS[@]}"); do
-  RUN_SUFF=${SUFF}_${NUM_RUN}
-
-  echo "Running inference with '$MODEL' (shots $NUM_SHOTS, run $NUM_RUN)"
-  run_with_time_track \
-      python $RUN_SCRIPT \
-          --corpus_path=data/test-medshake-score.json \
-          --result_path=output/$DIR/${FILENAME}_${RUN_SUFF}.txt \
-          --model_path="$MODEL" \
-          --use_special_pad_token=$SPECIAL_PAD \
-          --prompt_template_id="'$PROMPT_ID'" \
-          --num_shots=$NUM_SHOTS \
-          --shots_full_answer=$ANSWER_TXT \
-          --do_sample=$SAMPLING \
-          --top_p=$SAMPLING_TOP_P \
-          --top_k=$SAMPLING_TOP_K \
-          --temperature=$TEMP \
-          --num_beams=$NUM_BEAMS \
-          2>&1 \
-          | tee logs/$DIR/${FILENAME}_${RUN_SUFF}.txt
-
-done
+# Run script
+echo "Running inference with '$MODEL' (shots $NUM_SHOTS, run $NUM_RUN)"
+run_with_emissions_track \
+run_with_time_track \
+    python $RUN_SCRIPT \
+        --corpus_path=data/test-medshake-score.json \
+        --result_path=output/$DIR/${FILENAME}_${SUFF}.txt \
+        --model_path="$MODEL" \
+        --use_special_pad_token=$SPECIAL_PAD \
+        --prompt_template_id="'$PROMPT_ID'" \
+        --num_shots=$NUM_SHOTS \
+        --shots_full_answer=$ANSWER_TXT \
+        --do_sample=$SAMPLING \
+        --top_p=$SAMPLING_TOP_P \
+        --top_k=$SAMPLING_TOP_K \
+        --temperature=$TEMP \
+        --num_beams=$NUM_BEAMS \
+        2>&1 \
+        | tee logs/$DIR/${FILENAME}_${SUFF}.txt

@@ -54,7 +54,7 @@ ARGS="$@"
 
 
 # Run script as a Slurm background job
-info=$(sbatch "$SCRIPT" "$ARGS")
+info=$(sbatch "$SCRIPT" $ARGS)
 # info="Submitted job id 903164"
 slurm_code=$?
 echo $info

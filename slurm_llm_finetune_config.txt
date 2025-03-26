@@ -9,6 +9,7 @@ ArrayTaskID	Completions	SpecialPad	Prompt	AnswerText	MaxSeqLength	ModelRef
 
 8			1			0			2		1			512				mistral
 9			1			0			4		1			512				mistral
+17			1			0			2		0			512				mistral
 
 10			1			0			2		1			512				biomistral
 11			1			0			4		1			512				biomistral

@@ -12,7 +12,7 @@
 #SBATCH --mail-type=ALL
 #
 # Run multiple commands in parallel:
-#SBATCH --array=16
+#SBATCH --array=17
 #
 
 source functions.sh

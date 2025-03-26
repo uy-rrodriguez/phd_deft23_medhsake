@@ -18,8 +18,8 @@ read_config() {
 
     CONFIG_FILE=$1
     TASK_ID=$2
-    SEARCH_EXP="\$1==ArrayTaskID {print \$$3}"
-    awk -v ArrayTaskID=$TASK_ID "$SEARCH_EXP" "$CONFIG_FILE"
+    SEARCH_EXP="\$1==ConfigID {print \$$3}"
+    awk -v ConfigID=$TASK_ID "$SEARCH_EXP" "$CONFIG_FILE"
 }
 
 
@@ -63,6 +63,11 @@ run_with_emissions_track() {
     #           | tee test.txt
     #
 
+    JOB_ID=$SLURM_JOB_ID
+    if [[ "$SLURM_ARRAY_TASK_ID" != "" ]]; then
+        JOB_ID=${JOB_ID}_$SLURM_ARRAY_TASK_ID
+    fi
+
     function display_info() {
         # Display information from scontrol
         JOB_FIELDS="ArrayTaskId JobName RunTime StartTime EndTime NodeList \
@@ -76,7 +81,7 @@ run_with_emissions_track() {
         echo
         echo "Job information:"
         echo "────────────────"
-        scontrol show job $SLURM_JOB_ID | grep -Po "$GREP_REGEX" | grep -Po "\w.*"
+        scontrol show job $JOB_ID | grep -Po "$GREP_REGEX" | grep -Po "\w.*"
         echo "────────────────"
     }
 
@@ -85,7 +90,7 @@ run_with_emissions_track() {
 
     # Node allocated, necessary to then calculate CO2 emissions
     # TODO: Add support for multiple nodes
-    NODE=$(scontrol show job $SLURM_JOB_ID 2>/dev/null \
+    NODE=$(scontrol show job $JOB_ID 2>/dev/null \
            | grep -Po " NodeList=[^\s]+" | grep -Po "=.+" | grep -Po "\w+")
     GPU=$(sinfo -o "%N %G" | grep "${NODE}" | grep -Po "gpu:.+" \
           | grep -Po ":.+?:" | grep -Po "[^:]+")
