@@ -22,7 +22,7 @@ from util.classify_questions import (
     load_corpus,
     CLASS_COL, LABEL_COLOURS,
 )
-from util.compare_human_llm import load_model_scores
+from util.compare_human_llm import load_model_logits
 from util.linear_model import DataCVRidge
 from util.preprocess_data import corpus_with_metadata
 from util.process_output import inference_difficulty
@@ -103,7 +103,7 @@ def logits_difficulty(
     Loads model inference output and generates a difficulty score per question.
     """
     # Load LLM rates from model scores
-    llm_scores_df = load_model_scores(
+    llm_scores_df = load_model_logits(
         corpus_path=corpus_path,
         model_scores_path=model_scores_path,
         # score_field="LETTERS_ONLY",
