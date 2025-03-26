@@ -1,5 +1,0 @@
-Parameters of 'load_model_scores' as of 2025-02-25 18:26.
-
- - model_scores_path: 'output/model_scores/llama3/llama-3-8b-deft_002_20240731-logp_20250218.json'
- - score_field: 'prompt_logp+seq_logp'
- - softmax: True
