@@ -12,15 +12,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from classify_questions import get_average_by_difficulty
-
-
 # Hack to import deft when this script is run from the terminal
-try:
-    import deft
-except ImportError:
-    sys.path.append(os.path.abspath("."))
-    import deft
+sys.path.append(os.path.abspath("."))
+
+import deft
+from util.classify_questions import get_average_by_difficulty
 
 
 GENERIC_RE = \
@@ -385,11 +381,11 @@ def load_results(
             regex_answer_txt=regex_answer_txt,
         )
         print("Filename pattern:", pattern.pattern, file=sys.stderr)
-        paths = [
+        paths = sorted([
             os.path.join(basedir, f)
             for f in os.listdir(basedir)
             if pattern.match(f)
-        ]
+        ])
         print(f"Files found ({len(paths)}):", *paths, sep="\n", file=sys.stderr)
         # results = load_log_files(paths, pattern)
         results = load_output_files(paths, corpus_path, pattern)
@@ -659,35 +655,112 @@ def latex_print_results(
     print(result)
 
 
-def box_plot_results(df: pd.DataFrame, basedir: str, suffix: str) -> None:
+def box_plot_results(
+        df: pd.DataFrame, basedir: str, suffix: str,
+        classes_together: bool = True,
+) -> None:
     """
     Create plots for EMR and Hamming score of data grouping by shots.
     """
-    for prefix, title in RATE_TITLES.items():
-        # Plot rate grouped by shot
-        fig, ax = plt.subplots()
-        df.boxplot(by="shots", column=prefix, ax=ax)
-        fig.suptitle(None)
-        ax.set_title(title)
-        save_path = f"{basedir}/plots/{prefix}_by_shot{suffix}.png"
-        fig.savefig(save_path)
-        print(f"Plot saved in {save_path}", file=sys.stderr)
+    basedir = f"{basedir}/plots"
+    os.makedirs(basedir, exist_ok=True)
+    if classes_together:
+        # Plot each rate grouped by shot, all classes together
+        for prefix, title in RATE_TITLES.items():
+            fig, ax = plt.subplots()
+            df.boxplot(by="shots", column=prefix, ax=ax)
+            fig.suptitle(None)
+            ax.set_title(title)
+            save_path = f"{basedir}/{prefix}_by_shot{suffix}.png"
+            fig.savefig(save_path)
+            print(f"Plot saved in {save_path}", file=sys.stderr)
 
-        # Plot all rates for each number of shots
-        # df_groups = df.groupby(by="shots")
-        # for shots, _ in df_groups:
-        #     fig, ax = plt.subplots()
-        #     _df = df[df["shots"] == shots].filter(regex=prefix)
-        #     def renamer(prefix: str) -> None:
-        #         parts = prefix.split("_")
-        #         return prefix if len(parts) == 1 else "_".join(parts[1:])
-        #     _df.rename(inplace=True, columns=renamer)
-        #     _df.plot(ax=ax, kind="box", grid=True)
-        #     ax.set_title(f"{title} {shots}-shot")
-        #     fig.savefig(f"output/llama3/plots/{prefix}_by_class_shots{shots}{suffix}.png")
+    # Plot rates by shot and class
+    else:
+        df_groups = df.groupby(by="shots")
+        for prefix, title in RATE_TITLES.items():
+            for shots, _df in df_groups:
+                fig, ax = plt.subplots()
+                _df = _df.filter(regex=prefix)
+                # print(_df)
+                # print(_df.mean())
+                def renamer(col: str) -> None:
+                    parts = col.split("_")
+                    return col if len(parts) == 1 else "_".join(parts[1:])
+                _df = _df.rename(columns=renamer)
+                _df.plot(ax=ax, kind="box", grid=True)
+                ax.set_title(f"QCM {title} for {shots}-shot")
+                ax.set_xlabel("Classes")
+                ax.set_ylabel("Score")
+                fig.savefig(f"{basedir}/{prefix}_shots{shots}{suffix}.png")
 
 
-def main(
+def plot_rates_by_hyper(
+        basedir: str = "output/mistral/tuned_017_20250304/varying_300",
+        corpus_path: str = "data/test-medshake-score.json",
+        force_reload: bool = False,
+):
+    """
+    Plots rates comparing different hyper-parameters of the same model.
+    """
+    figure_path = f"{basedir}/plots/"
+    results = load_results(
+        basedir=basedir,
+        corpus_path=corpus_path,
+        force_reload=force_reload,
+    )
+
+    # Results sorted by run number
+    df = get_results_dataframe(results)
+    df = df.sort_values(by="run").reset_index()
+
+    # Enrich with the hyper-parameters used (derived from run number)
+    hypers = ["temp", "num_beams", "top_p"]
+    TEMPS = [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]
+    BEAMS = [1, 2, 3, 4, 5, 6]
+    TOP_P = [1.0, 0.95, 0.90, 0.85, 0.8]
+    df[hypers] = df["run"].apply(lambda x: pd.Series([
+        TEMPS[ (x-1) // len(TOP_P) // len(BEAMS) % len(TEMPS) ],
+        BEAMS[ (x-1) // len(TOP_P) % len(BEAMS) ],
+        TOP_P[ (x-1) % len(TOP_P) ],
+    ]))
+    # print(df)
+
+    # Create figures for each hyper-parameter
+    rates = ["emr", "medshake", "hamming"]
+    fig, ax = plt.subplots(
+        nrows=2, ncols=2,
+        sharey=True,
+        gridspec_kw={"wspace": 0.05, "hspace": 0.3})
+    df = df[["run"] + hypers + rates]
+    for col, _ax in zip(["run"] + hypers, ax.flatten()):
+        df.groupby(col).mean().plot(y=rates, ax=_ax)
+        # df.groupby("num_beams").mean().plot(y=rates, ax=ax)
+        # df.groupby("top_p").mean().plot(y=rates, ax=ax)
+        # df.plot(x="run", y=rates, ax=ax)
+    # fig.suptitle(None)
+    # ax.set_title(title)
+    fig.savefig(figure_path + "hyper.png", bbox_inches="tight")
+
+    # Heat map
+    _df = df.groupby(["temp", "top_p"]).mean()["emr"]
+    print(_df.index)
+    data = {}
+    for temp, beams in _df.index:
+        if temp not in data:
+            data[temp] = {}
+        data[temp][beams] = _df[temp, beams]
+    print(data)
+    _df = pd.DataFrame(data)
+    print(_df)
+    fig = plt.figure()
+    plt.pcolor(_df)
+    plt.yticks(np.arange(0.5, len(_df.index), 1), _df.index)
+    plt.xticks(np.arange(0.5, len(_df.columns), 1), _df.columns)
+    fig.savefig(figure_path + "heat.png", bbox_inches="tight")
+
+
+def results_summary(
         basedir: str,
         corpus_path: str = "data/test-medshake-score.json",
         force_reload: bool = False,
@@ -711,18 +784,27 @@ def main(
 
     df = get_results_dataframe(results)
 
-    # suffix = gen_output_suffix(
-    #     regex_prompt_nbr=regex_prompt_nbr,
-    #     regex_finetuned=regex_finetuned,
-    #     regex_answer_txt=regex_answer_txt,
-    # )
-    # box_plot_results(df, basedir=basedir, suffix=suffix)
+    suffix = gen_output_suffix(
+        regex_prompt_nbr=regex_prompt_nbr,
+        regex_finetuned=regex_finetuned,
+        regex_answer_txt=regex_answer_txt,
+    )
+    box_plot_results(df, basedir=basedir, suffix=suffix, classes_together=False)
 
     df = group_results_by_shots(df)
     # print_results(df, split_rates=True, head_only=False)
 
     latex_print_results(df, single_table=True, table_title="Results of model X",
                         highlight_top=highlight_top)
+
+
+def main(method_name: str = "results_summary", *args, **kwargs):
+    import inspect
+    module = inspect.getmodule(main)
+    method = getattr(module, method_name)
+    if not method:
+        raise f"Method '{method_name}' not found"
+    return method(*args, **kwargs)
 
 
 if __name__ == "__main__":
