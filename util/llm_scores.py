@@ -3,6 +3,7 @@ Scripts that use advanced features of LLMs, like accessing the internal weights
 and token scores/probabilities.
 """
 
+import datetime
 import itertools
 import json
 import os
@@ -420,7 +421,7 @@ def calc_sample_logp(
     for comb in combinations:
         log(f"COMBINATION: {' '.join(comb)}")
 
-        letters = list(inst["answers"].keys())
+        letters = [l for l in comb]
         eos = tokenizer.eos_token
 
         # Get logits from the model
@@ -504,10 +505,10 @@ def calc_sample_logp(
                         letters.remove(t)
                         break
 
-            if found:
-                log(f"{token} ({token_id}) => {prob}  <<<")
-            else:
-                log(f"{token} ({token_id}) => {prob}")
+            # if found or token == eos:
+            #     log(f"{token} ({token_id}) => {prob}  <<<")
+            # else:
+            #     log(f"{token} ({token_id}) => {prob}")
 
         # Make sure we found all letters in the current combination
         assert list(comb) == sorted(log_probs_letters), (
@@ -520,11 +521,11 @@ def calc_sample_logp(
         seq_logp = log_probs[len_prompt:].sum().item()
         eos_logp = log_probs[-1].item()
         letters_logp = sum(log_probs_letters.values()) + eos_logp
-        log(f"Sequence log P: {seq_logp}")
-        log(f"Prompt log P: {prompt_logp}")
-        log(f"EOS log P: {eos_logp}")
-        log(f"Letters + EOS log P: {letters_logp}")
-        log("\n" + "*"*80 + "\n")
+        # log(f"Sequence log P: {seq_logp}")
+        # log(f"Prompt log P: {prompt_logp}")
+        # log(f"EOS log P: {eos_logp}")
+        # log(f"Letters + EOS log P: {letters_logp}")
+        # log("\n" + "*"*80 + "\n")
 
         results[" ".join(comb)] = {
             "seq_logp": seq_logp,
@@ -540,12 +541,15 @@ def calc_sample_logp(
 
 
 def calc_model_logp(
-        model_path: str = "models/llama3/llama-3-8b-deft_002_20240731",
+        # model_path: str = "models/mistral/mistral-7b-deft_008_20241031",
+        model_path: str = "models/mistral/mistral-7b-deft_017_20250304",
         model: AutoModelForCausalLM = None,
         tokenizer: AutoTokenizer = None,
-        corpus_path: str = "data/test-medshake-score.json",
+        # corpus_path: str = "data/test-medshake-score.json",
+        corpus_path: str = "data/train+test-with-medshake.json",
         output_path: str =
-            "output/model_scores/llama3/llama-3-8b-deft_002_20240731-logp_20250218.json",
+            # "output/model_scores/mistral-7b-deft_008_20241031/logp.json",
+            "output/model_scores/mistral-7b-deft_017_20250304/train+test-logp.json",
 ):
     """
     Queries the model with all possible combinations of answers and calculates
@@ -562,7 +566,7 @@ def calc_model_logp(
         corpus = json.load(fp)
 
     # For debugging
-    # id = "4c0a40502de05e79aacd7131e714319e80300f37a119a944516fbde8e1d006c4"
+    # id = "68e964c7043620fb2f644f9b3dde0f789490394b6ce2f221e40684e3128289f9"
     # id = "c2dc3f530e04c26e52fb50f570f73bf6cdc804ff7b65a12d215049c82f13a90a"
     # corpus = filter(lambda s: s["id"] == id, corpus)
 
@@ -577,6 +581,9 @@ def calc_model_logp(
         sample_results = calc_sample_logp(model, tokenizer, inst, combs)
         all_results[inst["id"]] = sample_results
 
+    today = datetime.date.today().strftime("%Y%m%d")
+    output_path = output_path.replace(".json", f"_{today}.json")
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w") as fp:
         json.dump(all_results, fp, indent=2)
 
@@ -716,8 +723,9 @@ def calc_hf_perplexity(
 
 
 def main(method_name: str, *args, **kwargs):
-    from util import llm_scores
-    method = getattr(llm_scores, method_name)
+    import inspect
+    module = inspect.getmodule(main)
+    method = getattr(module, method_name)
     if not method:
         raise f"Method '{method_name}' not found"
     return method(*args, **kwargs)
