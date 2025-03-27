@@ -7,6 +7,7 @@ api_keys.py
 conda-environment.yml
 venv/
 gems/
+stanza/
 
 # Batch execution configuration
 slurm*
@@ -43,8 +44,9 @@ logs/drbert
 output/camembert
 logs/camembert
 
-# Random forests output (too big to commit ~200MB)
-output/analysis/forests
+# Output too big to commit
+output/regression/forests/
+logs/model_scores/
 
 # Extra output
 output/test
