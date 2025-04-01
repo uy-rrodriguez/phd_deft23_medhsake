@@ -1,6 +1,7 @@
-import re
+import itertools
 import json
 import random
+import re
 
 import numpy as np
 
@@ -219,8 +220,67 @@ def batch_hamming(preds_list, refs_list):
     return sum(score) / len(score)
 
 
-def medshake_rate(predicted: list[str],
-                  medshake_scores: dict[str, dict[str, int]]) -> float:
+def answer_combinations(num_answers: int = 5) -> list[list[chr]]:
+    """
+    Generate all possible of combinations from the given choices (default a-e).
+    """
+    choices = sorted(list(set(letters[:num_answers])))
+    return sorted(
+        itertools.chain.from_iterable([
+            itertools.combinations(choices, i + 1)
+            for i in range(len(choices))
+        ]),
+        key=len,
+    )
+
+
+def generate_medshake_scores(
+        correct_answers: list[str],
+        medshake_scores: dict[str, dict[str, float]] | None = None,
+        combinations: list[list[str]] = answer_combinations(),
+        points = [2.0, 1.0, 0.4, 0.0, 0.0, 0.0],  # points by nbr of mistakes
+) -> dict[str, dict[str, float]]:
+    """
+    Generates the MedShake scores for all the combinations of five choices a-e
+    given the correct answer.
+
+    If `medshake_scores` is given, the generation is done only for the missing
+    combinations of choices.
+
+    MedShake scoring defined in Decree of 12th April 2012, Article 4:
+    https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000025753008
+
+     - Correct answer is worth 2 points.
+     - Single-choice: incorrect answers => 0 points.
+     - Multiple-choice:
+        - If 1 mistake, missing or extra choice => 1 point;
+        - 2 mistake => 0.4 points;
+        - 3+ mistake => 0 points.
+    """
+    medshake_scores = medshake_scores or {}
+    _set = set(correct_answers)
+    if len(correct_answers) <= 1:
+        _points = lambda k: points[0] if set(k) == _set else 0.0
+    else:
+        _points = lambda k: points[len(_set.union(k) - _set.intersection(k))]
+    return {
+        " ".join(k): medshake_scores.get(" ".join(k), {
+            "nb_answer": 0,
+            "score": _points(k),
+        })
+        for k in combinations
+    }
+
+
+# Note: Not all questions have a student answer for the correct choice (i.e.
+# granting 2.0 points), so the maximum of points cannot be safely read from the
+# data and has to be hard-coded. E.g.: See question 2023-46:
+# https://www.medshake.net/pharmacie/concours-internat/annales/qcm/voir/2023/46/
+def medshake_rate(
+        predicted: list[str],
+        medshake_scores: dict[str, dict[str, float]],
+        max_score: float = 2.0,
+) -> float:
     """
     Returns a rate based on the MedShake score for the answer predicted by the
     model. If the combination of predicted answers is not found in the instance
@@ -235,7 +295,7 @@ def medshake_rate(predicted: list[str],
     # Generate a key based on the predicted answers (they are already sorted)
     med_key = " ".join(sorted(predicted))
     med_data = medshake_scores.get(med_key) or {}
-    max_score = max(x["score"] for x in medshake_scores.values())
+    # max_score = max(x["score"] for x in medshake_scores.values())
     return med_data.get("score", 0) / max_score
 
 
@@ -317,7 +377,11 @@ def run_single_inference(instance, generator, corpus, template, num_shots=0,
     print(answer, instance['correct_answers'])
     is_exact_match = set(answer) == set(instance['correct_answers'])
     hamming_val = hamming(answer, instance['correct_answers'])
-    medshake = medshake_rate(answer, instance.get("medshake", {}))
+    medshake_data = generate_medshake_scores(
+        correct_answers=instance['correct_answers'],
+        medshake_scores=instance.get('medshake'),
+    )
+    medshake = medshake_rate(answer, medshake_data)
     return answer, is_exact_match, hamming_val, medshake
 
 

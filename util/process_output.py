@@ -183,7 +183,10 @@ def load_output_files(paths: list[str], corpus_path: str,
                 expected = instance["correct_answers"]
                 is_match = set(generated) == set(expected)
                 hamming_rate = deft.hamming(generated, expected)
-                medshake_data = instance.get("medshake", {})
+                medshake_data = deft.generate_medshake_scores(
+                    correct_answers=expected,
+                    medshake_scores=instance.get("medshake"),
+                )
                 medshake_rate = deft.medshake_rate(generated, medshake_data)
                 all_match.append(is_match)
                 all_hamming.append(hamming_rate)
@@ -258,7 +261,10 @@ def load_output_files_df(
                 expected = instance["correct_answers"]
                 is_match = set(generated) == set(expected)
                 hamming_rate = deft.hamming(generated, expected)
-                medshake_data = instance.get("medshake", {})
+                medshake_data = deft.generate_medshake_scores(
+                    correct_answers=expected,
+                    medshake_scores=instance.get("medshake"),
+                )
                 medshake_rate = deft.medshake_rate(generated, medshake_data)
                 data.append({
                     "id": question_id,

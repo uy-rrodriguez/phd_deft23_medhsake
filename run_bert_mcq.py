@@ -457,7 +457,11 @@ def run_inference(
 
         is_exact_match = set(answer) == set(instance["correct_answers"])
         hamming_val = deft.hamming(answer, instance["correct_answers"])
-        medshake = deft.medshake_rate(answer, instance["medshake"])
+        medshake_data = deft.generate_medshake_scores(
+            correct_answers=instance["correct_answers"],
+            medshake_scores=instance["medshake"],
+        )
+        medshake = deft.medshake_rate(answer, medshake_data)
 
         results.append(instance["id"] + ";" + "|".join(answer))
         all_match.append(is_exact_match)

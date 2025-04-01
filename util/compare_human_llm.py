@@ -16,7 +16,7 @@ import torch
 # Trick to import local packages when this script is run from the terminal
 sys.path.append(os.path.abspath("."))
 
-from deft import hamming, medshake_rate
+from deft import hamming, medshake_rate, generate_medshake_scores
 from util.classify_questions import (
     load_corpus,
     CLASS_COL,
@@ -788,6 +788,10 @@ def calc_argmax_rates(
             for _, inst in corpus_df.iterrows():
                 _id = inst["id"]
                 expected = inst["correct_answers"]
+                medshake_data = generate_medshake_scores(
+                    correct_answers=expected,
+                    medshake_scores=inst["medshake"],
+                )
 
                 # Choose the would-be "predicted" answer based on argmax of
                 # scores
@@ -797,7 +801,7 @@ def calc_argmax_rates(
 
                 all_matches.append(predicted == expected)
                 all_hamming.append(hamming(predicted, expected))
-                all_medshake.append(medshake_rate(predicted, inst["medshake"]))
+                all_medshake.append(medshake_rate(predicted, medshake_data))
 
             emr_by_class, hamming_by_class, medshake_by_class = \
                 get_average_by_difficulty(

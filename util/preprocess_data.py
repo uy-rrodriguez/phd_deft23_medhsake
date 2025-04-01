@@ -78,13 +78,18 @@ def student_rates(
     all_medshake = []
     for instance in corpus:
         expected = instance["correct_answers"]
-        total_nb = sum(x["nb_answer"] for x in instance["medshake"].values())
+        # Generate missing scores
+        medshake_data = deft.generate_medshake_scores(
+            correct_answers=expected,
+            medshake_scores=instance["medshake"],
+        )
+        total_nb = sum(x["nb_answer"] for x in medshake_data.values())
 
         # Average EMR of all students based on their answers
         # Average is calculated dividing by the total number of answers
         emr_avg = (
             # Only count students who answered the exact answer
-            instance["medshake"][" ".join(expected)]["nb_answer"]
+            medshake_data[" ".join(expected)]["nb_answer"]
             / total_nb
         )
 
@@ -93,7 +98,7 @@ def student_rates(
             sum(
                 # Hamming rate of each possible answer given by students
                 v["nb_answer"] * deft.hamming(k.split(), expected)
-                for k, v in instance["medshake"].items()
+                for k, v in medshake_data.items()
             )
             / total_nb
         )
@@ -102,9 +107,8 @@ def student_rates(
         medshake_avg = (
             sum(
                 # Total MedShake score with values projected to range 0..1
-                v["nb_answer"] * v["score"]
-                    / max(y["score"] for y in instance["medshake"].values())
-                for v in instance["medshake"].values()
+                v["nb_answer"] * deft.medshake_rate(k.split(), medshake_data)
+                for k, v in medshake_data.items()
             )
             / total_nb
         )
