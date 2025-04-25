@@ -163,8 +163,9 @@ def finetune_lora(
         max_seq_length=max_seq_length,
         output_dir=output_dir,
         num_train_epochs=num_train_epochs,
-        per_device_train_batch_size=batch_size,
+        per_device_train_batch_size=micro_batch_size,
         gradient_accumulation_steps=batch_size // micro_batch_size,
+        gradient_checkpointing=gradient_checkpointing,
         optim=optim,
         save_steps=save_steps,
         learning_rate=learning_rate,
@@ -177,6 +178,9 @@ def finetune_lora(
         group_by_length=group_by_length,
         lr_scheduler_type=lr_scheduler_type,
         run_name=run_name,
+
+        # Warning: No label_names provided for model class PeftModelForCausalLM
+        label_names=["labels"],
 
         # W&B config
         report_to=report_to,
@@ -198,7 +202,7 @@ def finetune_lora(
         train_dataset=train_dataset,
         #eval_dataset=eval_dataset,
         peft_config=peft_config,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
 
         # Error: SFTTrainer.__init__() got an unexpected keyword argument
         # 'packing'

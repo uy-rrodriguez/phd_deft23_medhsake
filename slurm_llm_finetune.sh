@@ -50,8 +50,9 @@ fi
 SUFF=$(printf "%03d" $TASK)_$(date +"%Y%m%d")
 
 # Finetuning parameters (optional)
-BATCH_SIZE=4        # Default as set in the code
-MICRO_BATCH_SIZE=4  # Default as set in the code
+EPOCHS=1            # Default is 1 (used for most fine-tuned models)
+BATCH_SIZE=4        # Default is 4
+MICRO_BATCH_SIZE=4  # Default is 4
 
 
 # Handle model selection, based on configured name (family/id)
@@ -123,6 +124,7 @@ run_with_time_track \
         --include_full_answers=$FULL_ANSWERS \
         --max_seq_length=$MAX_SEQ_LEN \
         --report-to=$REPORT_TO \
+        --num_train_epochs=$EPOCHS \
         --batch-size=$BATCH_SIZE \
         --micro-batch-size=$MICRO_BATCH_SIZE \
         2>&1 \
