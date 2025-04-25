@@ -803,6 +803,169 @@ def results_summary(
                         highlight_top=highlight_top)
 
 
+def mcnemar_test(
+        corpus_path: str = "data/test-medshake-score.json",
+        model_names: list[str] = [
+            "mistral-7b_full",
+            "mistral-7b_letters",
+            "llama3-8b",
+            "biomistral-7b",
+            "apollo-7b",
+        ],
+        metric: str = "emr",
+        force_reload: bool = False,
+):
+    """
+    Executes McNemar test between models to evaluate if their EMR results are
+    significatively different (i.e. p-value <= threshold) or given by chance.
+
+    NOTE: For each model there are normally four result files for given
+    parameters (n-shots, prompt, include full answers, etc.). Since McNemar
+    expects categorical values (correct/incorrect), the results are rounded to
+    the nearest integer, so an average EMR of 0.5 becomes 0, and 0.75 becomes 1.
+
+    :param metric: A metric name from "emr", "hamming", or "medshake".
+    """
+    print("Executing McNemar Test")
+
+    corpus_df = load_corpus(corpus_path)
+
+    # Parameters to load model outputs
+    from util.compare_human_llm import get_model_params
+    model_results = {}
+    for model_name in model_names:
+        _, model_output_dir, model_output_kwargs, _ = \
+            get_model_params(model_name, "", "", "")
+        model_results_df = load_output_files_df(
+            basedir=model_output_dir,
+            corpus=corpus_df,
+            pattern_kwargs=model_output_kwargs,
+            force_reload=force_reload,
+        )
+        model_results_df = model_results_df.groupby(by="id").mean().round(0)
+        model_results[model_name] = model_results_df
+
+    import statsmodels.api as sm
+    from itertools import combinations
+    results = {}
+
+    for model_A, model_B in combinations(model_names, 2):
+        # print(f"\n{'-'*80}\n\nCompare: {model_A} vs {model_B}\n")
+
+        model_A_df = model_results[model_A]
+        model_B_df = model_results[model_B]
+        models_df = pd.merge(
+            model_A_df[[metric]], model_B_df[[metric]],
+            left_index=True, right_index=True,
+            suffixes=["_A", "_B"],
+        ).astype(int)
+
+        # Create contingency table to compare metric across two models
+        cross_df = pd.crosstab(
+            models_df[f"{metric}_A"], models_df[f"{metric}_B"])
+        mcnemar = sm.stats.mcnemar(cross_df, exact=False, correction=False)
+        # print("McNemar X^2:\n", mcnemar)
+        # mcnemar_correct = sm.stats.mcnemar(cross_df, exact=False)
+        # print("McNemar X^2 (correction):\n", mcnemar_correct)
+        # mcnemar_bi = sm.stats.mcnemar(cross_df)
+        # print("McNemar Binomial:\n", mcnemar_bi)
+
+        if not model_A in results:
+            results[model_A] = {}
+        results[model_A][model_B] = {
+            "p": mcnemar.pvalue,
+            "stat": mcnemar.statistic,
+        }
+
+    pvalues = pd.DataFrame({
+        a: {
+            k: v["p"] for k, v in r.items()
+        }
+        for a, r in results.items()
+    })
+    print("\nP-values:\n", pvalues)
+
+    stats = pd.DataFrame({
+        a: {
+            k: v["stat"] for k, v in r.items()
+        }
+        for a, r in results.items()
+    })
+    print("\nStatistics (X^2):\n", stats)
+
+
+def mann_whitney_test(
+        corpus_path: str = "data/test-medshake-score.json",
+        model_names: list[str] = [
+            "mistral-7b_full",
+            "mistral-7b_letters",
+            "llama3-8b",
+            "biomistral-7b",
+            "apollo-7b",
+        ],
+        metric: str = "emr",
+        force_reload: bool = False,
+):
+    """
+    Executes Mann-Whitney U test between models to evaluate if their results
+    are significatively different (i.e. p-value <= threshold) or given by
+    chance.
+
+    :param metric: A metric name from "emr", "hamming", or "medshake".
+    """
+    print("Executing Mann-Whitney U Test")
+
+    corpus_df = load_corpus(corpus_path)
+
+    # Parameters to load model outputs
+    from util.compare_human_llm import get_model_params
+    model_results = {}
+    for model_name in model_names:
+        _, model_output_dir, model_output_kwargs, _ = \
+            get_model_params(model_name, "", "", "")
+        model_results_df = load_output_files_df(
+            basedir=model_output_dir,
+            corpus=corpus_df,
+            pattern_kwargs=model_output_kwargs,
+            force_reload=force_reload,
+        )
+        model_results_df = model_results_df.groupby(by="id").mean()
+        model_results[model_name] = model_results_df
+
+    from scipy.stats import mannwhitneyu
+    from itertools import combinations
+    results = {}
+
+    for model_A, model_B in combinations(model_names, 2):
+        # print(f"\n{'-'*80}\n\nCompare: {model_A} vs {model_B}\n")
+        model_A_df = model_results[model_A]
+        model_B_df = model_results[model_B]
+        res = mannwhitneyu(model_A_df[metric], model_B_df[metric])
+        # print("Mann-Whitney U:\n", res)
+        if not model_A in results:
+            results[model_A] = {}
+        results[model_A][model_B] = {
+            "p": res.pvalue,
+            "stat": res.statistic,
+        }
+
+    pvalues = pd.DataFrame({
+        a: {
+            k: v["p"] for k, v in r.items()
+        }
+        for a, r in results.items()
+    })
+    print("\nP-values:\n", pvalues)
+
+    stats = pd.DataFrame({
+        a: {
+            k: v["stat"] for k, v in r.items()
+        }
+        for a, r in results.items()
+    })
+    print("\nStatistics:\n", stats)
+
+
 def main(method_name: str = "results_summary", *args, **kwargs):
     import inspect
     module = inspect.getmodule(main)

@@ -63,6 +63,7 @@ def invert_medshake_difficulty(
 def student_rates(
         corpus: str | pd.DataFrame = "data/test-medshake-score.json",
         print_results: bool = True,
+        rates_per_sample: bool = False,
 ):
     """
     Calculates MedShake and other rates for student responses and prints a LaTeX
@@ -131,6 +132,12 @@ def student_rates(
         "hamming_by_class": hamming_by_class,
         "medshake_by_class": medshake_by_class,
     }
+    if rates_per_sample:
+        results.update({
+            "emr_by_sample": all_match,
+            "hamming_by_sample": all_hamming,
+            "medshake_by_sample": all_medshake,
+        })
 
     if print_results:
         print(json.dumps(results, indent=2))

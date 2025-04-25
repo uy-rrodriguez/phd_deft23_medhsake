@@ -269,12 +269,11 @@ def load_model_logits(
     llm_results = []
     for _, inst in corpus.iterrows():
         _id = inst["id"]
-        correct_answers = " ".join(inst["correct_answers"])
         sample_probs = model_probs.get(_id)
         if not sample_probs:
             print(f"Probabilities not found for '{_id}'", file=sys.stderr)
             sample_probs = {}
-            model_score = 0
+            _emr = _hamming = _medshake = 0
         else:
             # Convert str "-inf" to a float
             for k, v in sample_probs.items():
@@ -348,11 +347,28 @@ def load_model_logits(
                 # ).tolist()
                 sample_probs = {k: v for k, v in zip(sample_probs.keys(), probs)}
 
-            model_score = sample_probs[correct_answers]
+            # Calculate metrics based on logits probability
+            # (See analogous for humans in "preprocess_data.student_rates")
+            _emr = sample_probs[" ".join(inst["correct_answers"])]
+            _hamming = sum([
+                prob * hamming(k.split(), inst["correct_answers"])
+                for k, prob in sample_probs.items()
+            ])
+            medshake_data = generate_medshake_scores(
+                correct_answers=inst["correct_answers"],
+                medshake_scores=inst["medshake"],
+            )
+            _medshake = sum([
+                prob * medshake_rate(k.split(), medshake_data)
+                for k, prob in sample_probs.items()
+            ])
+            # print(_id, _emr, _hamming, _medshake)
 
         llm_results.append({
             "id": _id,
-            "emr": model_score,
+            "emr": _emr,
+            "hamming": _hamming,
+            "medshake": _medshake,
             class_col: inst[class_col],
             "probs": sample_probs,
         })
@@ -870,6 +886,186 @@ def eval_rates_summary():
                 caption=f"Scores of logits argmax for model {model}",
             )
         )
+
+
+def metrics_histogram(
+        corpus_path: str = "data/test-medshake-score.json",
+        model_name: str = "mistral-7b_letters",
+        model_scores_filename = "train+test-logp_20250318.json",
+        figure_basedir = "output/compare/metrics",
+        figure_filename: str = "metrics_hist.png",
+        score_field: str = "letters_logp",
+):
+    """
+    Histograms of the evaluation metrics to know if they approximate a normal
+    distribution.
+    """
+    num_bins = 10
+    metrics = ["emr", "hamming", "medshake"]
+
+    # Load corpus
+    corpus_df = load_corpus(corpus_path)
+
+    # Load student rates from Test
+    human_rates = student_rates(
+        corpus=corpus_df,
+        print_results=False,
+        rates_per_sample=True,
+    )
+    human_df = pd.DataFrame({
+        m: human_rates[f"{m}_by_sample"]
+        for m in metrics
+    })
+
+    model_logits_path, model_output_dir, model_output_kwargs, output_path = \
+        get_model_params(
+            model_name, model_scores_filename, figure_basedir, figure_filename)
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    # Load LLM rates from model output after 300-runs
+    infer_scores_df = load_model_results_output(
+        corpus_df,
+        model_output_dir=model_output_dir,
+        model_output_kwargs=model_output_kwargs,
+    )
+
+    # Load LLM rates from model scores
+    logits_scores_df = load_model_logits(
+        corpus=corpus_df,
+        model_scores_path=model_logits_path,
+        score_field=score_field,
+        readme_out_dir=os.path.dirname(output_path),
+        softmax=True,
+    )
+
+    # Gaussian curve to display on top
+    from scipy.optimize import curve_fit
+    x_gauss = np.linspace(0, 1, num_bins)
+    def gauss_function(x, a, x0, sigma):
+        return a*np.exp(-(x-x0)**2/(2*sigma**2))
+
+    # Draw graphs for humans and LLMs
+    plots_config = {
+        "Human": {"df": human_df, "colour": "#1F77B4"},
+        "Logits": {"df": logits_scores_df, "colour": "#FF7F0E"},
+        "Inference": {"df": infer_scores_df, "colour": "#5EC962"},
+    }
+    fig, axs = plt.subplots(3, 3, figsize=(7, 6), sharex=True, sharey="row")
+    # fig, axs = plt.subplots(3, 3, figsize=(7, 6), sharex=True, sharey=True)
+    for i, (k, config) in enumerate(plots_config.items()):
+        _df = config["df"]
+        colour = config["colour"]
+
+        for m in metrics:
+            _df[f"{m}_cat"] = pd.cut(_df[m], num_bins, include_lowest=True)
+
+        # fig, axs = plt.subplots(1, 3, figsize=(9, 3), sharey=True)
+        # _df.hist(column=metrics, ax=axs, bins=num_bins)
+        _df.hist(
+            column=metrics, ax=axs[i,],
+            bins=num_bins, color=colour,
+            label=k,
+            grid=False,
+        )
+        # _df.plot(
+        #     kind="hist", subplots=True, column=metrics, ax=axs[i,],
+        #     bins=num_bins, color=colour, label=k,
+        #     legend=False, ylabel="Num samples",
+        # )
+
+        if k != "Inference":
+            # for m, ax in zip(metrics, axs):
+            for m, ax in zip(metrics, axs[i,]):
+                # ax.set_xticks(np.arange(1.1, step=0.25))
+                # Mean and standard deviation
+                counts = _df.groupby(f"{m}_cat", observed=False).count()[m]
+                mean = counts.mean()
+                variance = counts.var()
+                sigma = np.sqrt(variance)
+                # Fit a Gaussian curve
+                try:
+                    popt, _ = curve_fit(
+                        gauss_function, x_gauss, counts, p0 = [1, mean, sigma],
+                        maxfev=5000)
+                    ax.plot(x_gauss, gauss_function(x_gauss, *popt), c="red")
+                except RuntimeError:
+                    pass
+
+        # _fig_path = output_path.replace(
+        #     figure_filename, f"{k.lower()}_{figure_filename}")
+        # fig.savefig(_fig_path, bbox_inches="tight")
+
+    # fig.subplots_adjust(top=0.8)
+    fig.suptitle(f"MCQ Human, Logits, and Inference metrics")
+    # fig.legend(labels=("Human", "Logits", "Inference"))
+    # axs[0,0].set_ylabel("Count samples")
+    for ax in axs[1:,].flatten():
+        ax.set_title(None)
+    fig.savefig(output_path, bbox_inches="tight")
+
+
+def calc_metrics_pearson(
+        corpus_path: str = "data/test-medshake-score.json",
+        model_name: str = "mistral-7b_letters",
+        model_scores_filename = "train+test-logp_20250318.json",
+        score_field: str = "letters_logp",
+):
+    """
+    Calculates Pearson correlation for the evaluation metrics.
+    (Bivariate correlation)
+    https://www.scribbr.com/statistics/pearson-correlation-coefficient/
+    """
+    metrics = ["emr", "hamming", "medshake"]
+
+    # Load corpus
+    corpus_df = load_corpus(corpus_path)
+
+    # Load student rates from Test
+    human_rates = student_rates(
+        corpus=corpus_df,
+        print_results=False,
+        rates_per_sample=True,
+    )
+    human_df = pd.DataFrame({
+        m: human_rates[f"{m}_by_sample"]
+        for m in metrics
+    })
+
+    model_logits_path, model_output_dir, model_output_kwargs, _ = \
+        get_model_params(model_name, model_scores_filename, "", "")
+
+    # Load LLM rates from model output after 300-runs
+    infer_scores_df = load_model_results_output(
+        corpus_df,
+        model_output_dir=model_output_dir,
+        model_output_kwargs=model_output_kwargs,
+    )
+
+    # Load LLM rates from model scores
+    logits_scores_df = load_model_logits(
+        corpus=corpus_df,
+        model_scores_path=model_logits_path,
+        score_field=score_field,
+        softmax=True,
+    )
+
+    dfs = {
+        "Human": human_df,
+        "Logits": logits_scores_df,
+        "Inference": infer_scores_df,
+    }
+
+    # Correlation of metrics within each group (Humans, LLMs)
+    for k, _df in dfs.items():
+        print(f"\n{k}")
+        res = np.corrcoef(_df[metrics].T)
+        print(pd.DataFrame(res, index=metrics, columns=metrics))
+
+    # Correlation of the same metric across groups (Humans vs LLMs)
+    for m in metrics:
+        print(f"\n{m}")
+        res = np.corrcoef([_df[m] for _df in dfs.values()])
+        print(pd.DataFrame(res, index=list(dfs), columns=list(dfs)))
 
 
 def main(method_name: str, *args, **kwargs):
