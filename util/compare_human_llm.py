@@ -58,6 +58,7 @@ class LegendTitle(object):
 def get_model_params(
         model_name: str,
         model_logits_filename: str,
+        output_basedir: str,
         output_filename: str,
 ) -> tuple[str, str, dict, str]:
     """
@@ -76,7 +77,7 @@ def get_model_params(
         "regex_answer_txt": False,
     }
     base_logits_path = "output/model_scores/%s/" + model_logits_filename
-    base_output = "output/compare/model_scores/%s/" + output_filename
+    base_output = f"{output_basedir}/%s/{output_filename}"
 
     # LLM parameters depending on chosen model
     if (model_name == "llama3-8b"):
@@ -84,17 +85,17 @@ def get_model_params(
         model_dir = "llama-3-8b-deft_002_20240731"
         model_output_kwargs["regex_shots_nbr"] = 3
 
-    elif (model_name == "mistral-7b-v0.3_full-answer"):
+    elif (model_name == "mistral-7b_full"):
         model_output_dir = "output/mistral/tuned_008_20241031/"
         model_dir = "mistral-7b-deft_008_20241031"
         model_output_kwargs["regex_shots_nbr"] = 4
 
-    elif (model_name == "mistral-7b-v0.3_letters"):
+    elif (model_name == "mistral-7b_letters"):
         model_output_dir = "output/mistral/tuned_017_20250304/base"
         model_dir = "mistral-7b-deft_017_20250304"
         model_output_kwargs["regex_shots_nbr"] = 3
 
-    elif (model_name == "mistral-7b-v0.3_300"):
+    elif (model_name == "mistral-7b_300"):
         model_output_dir = "output/mistral/tuned_017_20250304/varying_300"
         model_dir = "mistral-7b-deft_017_20250304"
         model_output_kwargs["regex_shots_nbr"] = 3
@@ -109,6 +110,9 @@ def get_model_params(
         model_dir = "apollo-7b-deft_013_20240920"
         model_output_kwargs["regex_prompt_nbr"] = 4
         model_output_kwargs["regex_shots_nbr"] = 3
+
+    else:
+        raise ValueError(f"Model '{model_name}' not recognised.")
 
     model_logits_path = base_logits_path % model_dir
     output_path = base_output % model_dir
@@ -362,7 +366,7 @@ def load_model_logits(
 
 
 def plot_tags_topics(
-        model_name: str = "mistral-7b-v0.3_letters",
+        model_name: str = "mistral-7b_letters",
         score_field: str = "letters_logp",
         length_field: str = None,
         include_inference: bool = False,
@@ -379,6 +383,7 @@ def plot_tags_topics(
     corpus_path = "data/train+test-with-medshake.json"
     data_output_path = "output/regression/train+test-regression-data.json"
     model_scores_filename = "train+test-logp_20250318.json"
+    figure_basedir = "output/compare/model_scores"
     figure_filename = "train+test/letters_logp_soft/compare.png"
     if include_inference:
         corpus_path = "data/test-medshake-score.json"
@@ -403,7 +408,8 @@ def plot_tags_topics(
 
     # LLM parameters depending on chosen model
     model_logits_path, model_output_dir, model_output_kwargs, output_path = \
-        get_model_params(model_name, model_scores_filename, figure_filename)
+        get_model_params(
+            model_name, model_scores_filename, figure_basedir, figure_filename)
 
     # Create output directories
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -703,13 +709,13 @@ def calc_argmax_rates(
     # Definition of relevant parameters
     summary_output_path = "output/compare/model_scores/eval_rates_summary.json"
     models = [
-        # model_name                     model_scores_filename
-        ("llama3-8b",                   "logp_20250218.json",),
-        ("mistral-7b-v0.3_full-answer", "logp_20250226.json",),
-        ("mistral-7b-v0.3_letters",     "logp_20250306.json",),
-        ("mistral-7b-v0.3_300",         "logp_20250306.json",),
-        ("biomistral-7b",               "logp_20250227.json",),
-        ("apollo-7b",                   "logp_20250227.json",),
+        # model_name            model_scores_filename
+        ("llama3-8b",           "logp_20250218.json"),
+        ("mistral-7b_full",     "logp_20250226.json"),
+        ("mistral-7b_letters",  "logp_20250306.json"),
+        ("mistral-7b_300",      "logp_20250306.json"),
+        ("biomistral-7b",       "logp_20250227.json"),
+        ("apollo-7b",           "logp_20250227.json"),
     ]
 
     summary_scores = {}
@@ -717,7 +723,8 @@ def calc_argmax_rates(
         # LLM parameters depending on chosen model
         model_scores_path, llm_output_dir, llm_output_kwargs, output_path = \
             get_model_params(
-                model_name, model_scores_filename, "eval_rates/eval_rates.json"
+                model_name, model_scores_filename,
+                "output/compare/model_scores", "eval_rates/eval_rates.json",
             )
 
         # Load data source with tags
