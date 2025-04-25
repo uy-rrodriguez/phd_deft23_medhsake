@@ -91,12 +91,16 @@ def test_shannon_entropy(id: str, deduplicate_answers: bool,
     print(shannon_entropy(instance, deduplicate_answers, use_natural_log))
 
 
-def load_corpus(corpus: str | dict[str, any]) -> pd.DataFrame:
+def load_corpus(corpus: str | list[dict] | pd.DataFrame) -> pd.DataFrame:
     if isinstance(corpus, str):
         print(f"Loading corpus '{corpus}'")
         df = pd.read_json(corpus, encoding="utf-8")
-    else:
+    elif isinstance(corpus, list):
         df = pd.DataFrame(corpus)
+    elif isinstance(corpus, pd.DataFrame):
+        df = corpus
+    else:
+        raise ValueError(f"Unrecognised corpus type '{type(corpus)}'")
     # print("\\nCorpus sample:")
     # print(df.head())
     # print("\n\nCorpus info:")
@@ -240,7 +244,7 @@ def plot_num_answers_distribution(
 
 
 def get_average_by_difficulty(
-        corpus: str | dict[str, any] | pd.DataFrame,
+        corpus: str | list[dict] | pd.DataFrame,
         match_results: list[bool],
         hamming_results: list[float],
         medshake_results: list[float],

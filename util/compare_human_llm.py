@@ -118,7 +118,6 @@ def get_model_params(
 
 def load_model_results_output(
         corpus_df: pd.DataFrame,
-        corpus_path: str,
         model_output_dir: str,
         model_output_kwargs: dict = None,
         force_reload: bool = False,
@@ -138,7 +137,7 @@ def load_model_results_output(
     model_kwargs.update(model_output_kwargs or {})
     model_results_df = load_output_files_df(
         basedir=model_output_dir,
-        corpus_path=corpus_path,
+        corpus=corpus_df,
         pattern_kwargs=model_kwargs,
         force_reload=force_reload,
     )
@@ -178,7 +177,7 @@ def _process_field_value(field: str, data: dict) -> float:
 
 
 def load_model_logits(
-        corpus_path: str = "data/test-medshake-score.json",
+        corpus: str | pd.DataFrame = "data/test-medshake-score.json",
         model_scores_path: str = "output/model_scores/test-model-scores.json",
         class_col: str = CLASS_COL,
         score_field: str = "letters_logp",
@@ -261,7 +260,7 @@ def load_model_logits(
                 seq_lengths[_id][k] = _process_field_value(length_field, d)
     # print(pd.read_json(model_scores_path, orient="index"))
 
-    corpus = load_corpus(corpus_path)
+    corpus = load_corpus(corpus)
 
     llm_results = []
     for _, inst in corpus.iterrows():
@@ -444,15 +443,14 @@ def plot_tags_topics(
 
     # Load LLM rates from model output
     infer_scores_df = load_model_results_output(
-        df,
-        corpus_path=corpus_path,
+        corpus_df=df,
         model_output_dir=model_output_dir,
         model_output_kwargs=model_output_kwargs,
     )
 
     # Load LLM rates from model scores
     logits_scores_df = load_model_logits(
-        corpus_path=corpus_path,
+        corpus=df,
         model_scores_path=model_logits_path,
         score_field=score_field,
         readme_out_dir=os.path.dirname(output_path),
@@ -727,7 +725,7 @@ def calc_argmax_rates(
 
         # Include scores of human answers
         results = {
-            "human": student_rates(corpus_path=corpus_path, print_results=False),
+            "human": student_rates(corpus=corpus_path, print_results=False),
         }
 
         # Create output directories
@@ -735,8 +733,7 @@ def calc_argmax_rates(
 
         # Load LLM rates from model output
         infer_scores_df = load_model_results_output(
-            corpus_df,
-            corpus_path=corpus_path,
+            corpus_df=corpus_df,
             model_output_dir=llm_output_dir,
             model_output_kwargs=llm_output_kwargs,
         )
@@ -776,7 +773,7 @@ def calc_argmax_rates(
         for score_field in score_fields:
             # Load LLM rates from model scores
             llm_scores_df = load_model_logits(
-                corpus_path=corpus_path,
+                corpus=corpus_df,
                 model_scores_path=model_scores_path,
                 score_field=score_field,
                 readme_out_dir=os.path.dirname(output_path),

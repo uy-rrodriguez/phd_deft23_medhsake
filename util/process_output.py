@@ -16,7 +16,7 @@ import pandas as pd
 sys.path.append(os.path.abspath("."))
 
 import deft
-from util.classify_questions import get_average_by_difficulty
+from util.classify_questions import get_average_by_difficulty, load_corpus
 
 
 GENERIC_RE = \
@@ -216,7 +216,7 @@ def load_output_files(paths: list[str], corpus_path: str,
 
 def load_output_files_df(
         basedir: str,
-        corpus_path: str,
+        corpus: str | pd.DataFrame,
         pattern_kwargs: dict = None,
         force_reload: bool = False,
 ) -> pd.DataFrame:
@@ -244,8 +244,7 @@ def load_output_files_df(
 
     # Load files found into a DataFrame
     data = []
-    with open(corpus_path, "r") as f:
-        corpus = json.load(f)
+    corpus = load_corpus(corpus).set_index("id", drop=False)
     for path in sorted(paths):
         # Read run parameters from file name
         path_data = parse_path(path, pattern)
@@ -257,7 +256,7 @@ def load_output_files_df(
                     generated = generated.split("|")
                 except IndexError as e:
                     raise IndexError(f"Parsing failed in line '{line}'", e)
-                instance = corpus[i]
+                instance = corpus.loc[question_id]
                 expected = instance["correct_answers"]
                 is_match = set(generated) == set(expected)
                 hamming_rate = deft.hamming(generated, expected)
@@ -303,7 +302,7 @@ def inference_difficulty(
     llm_kwargs.update(llm_output_kwargs or {})
     llm_results_df = load_output_files_df(
         basedir=llm_output_dir,
-        corpus_path=corpus_path,
+        corpus=corpus_path,
         pattern_kwargs=llm_kwargs,
         force_reload=force_reload,
     )

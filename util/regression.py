@@ -104,7 +104,7 @@ def logits_difficulty(
     """
     # Load LLM rates from model scores
     llm_scores_df = load_model_logits(
-        corpus_path=corpus_path,
+        corpus=corpus_path,
         model_scores_path=model_scores_path,
         # score_field="LETTERS_ONLY",
         score_field="letters_logp",

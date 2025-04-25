@@ -61,22 +61,20 @@ def invert_medshake_difficulty(
 
 
 def student_rates(
-        corpus_path: str = "data/test-medshake-score.json",
+        corpus: str | pd.DataFrame = "data/test-medshake-score.json",
         print_results: bool = True,
 ):
     """
     Calculates MedShake and other rates for student responses and prints a LaTeX
     table.
     """
-
-    # Test MedShake rate of all students
-    with open(corpus_path, "r") as f:
-        corpus = json.load(f)
+    # Load MedShake rate of all students
+    corpus = load_corpus(corpus)
 
     all_match = []
     all_hamming = []
     all_medshake = []
-    for instance in corpus:
+    for _, instance in corpus.iterrows():
         expected = instance["correct_answers"]
         # Generate missing scores
         medshake_data = deft.generate_medshake_scores(
