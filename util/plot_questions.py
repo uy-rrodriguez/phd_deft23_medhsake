@@ -19,7 +19,7 @@ from transformers import AutoModel, AutoTokenizer
 # Trick to import local packages when this script is run from the terminal
 sys.path.append(os.path.abspath("."))
 
-from util.analyse_questions import calc_first_last_words, calc_qa_lengths
+from util.preprocess_data import calc_first_last_words, calc_qa_lengths
 from util.classify_questions import CLASS_COL, CLASS_COLOUR_COL, load_corpus
 
 
@@ -67,6 +67,36 @@ def plot_nbr_correct_answers(dfs: dict[str, pd.DataFrame], fig_path: str) -> Non
     # Save all the classifications together
     ax.legend()
     fig.savefig(fig_path, bbox_inches="tight")
+
+
+def count_nbr_correct_answers():
+    """
+    Counts the samples for each number of expected answers grouped by split.
+    """
+    print("count_nbr_correct_answers")
+    corpus_paths = {
+        "train": "data/train-with-medshake.json",
+        "dev": "data/dev-with-medshake.json",
+        "test": "data/test-medshake-score.json",
+    }
+    corpus_dfs = {}
+    for split, p in corpus_paths.items():
+        df = load_corpus(p)
+        corpus_dfs[split] = df
+
+    # Join all splits
+    corpus_dfs["all"] = pd.concat(
+        corpus_dfs.values(), copy=False, ignore_index=True)
+
+    for split, df in corpus_dfs.items():
+        print(f"\n\n{split}\n{30*'-'}")
+
+        # Count answers
+        print(f"*** nbr_correct_answers ***")
+        for val, count in df["nbr_correct_answers"].value_counts() \
+                .sort_index().items():
+            percent = count * 100 / len(df)
+            print(f"    {val}: {count} ({percent:2.2f}%)")
 
 
 def plot_question_length(df: pd.DataFrame, figure_path: str) -> None:
@@ -588,39 +618,53 @@ def count_by_tags_topics():
     """
     Counts the number of questions in each tag (negation, mode, etc.) and topic.
     """
-    print("count_samples_by_tags")
-    corpus_path = "data/test-medshake-score.json"
-    tags_path="data/tags-test-medshake-score.json"
+    print("count_by_tags_topics")
+    corpus_paths = {
+        "train": "data/train-with-medshake.json",
+        "dev": "data/dev-with-medshake.json",
+        "test": "data/test-medshake-score.json",
+    }
+    corpus_dfs = {}
+    for split, p in corpus_paths.items():
+        df = load_corpus(p)
 
-    df = load_corpus(corpus_path)
+        # Load tags
+        tags_path=f"data/tags-{os.path.basename(p)}"
+        print(f"Loading tags from '{tags_path}'")
+        df_tags = pd.read_json(tags_path, orient="index")
+        df_tags.drop("tag_highlight", axis=1, inplace=True)
 
-    # Load tags
-    print(f"Loading tags from '{tags_path}'")
-    df_tags = pd.read_json(tags_path, orient="index")
-    df_tags.drop("tag_highlight", axis=1, inplace=True)
+        # Join DataFrames
+        df = df_tags.merge(
+            df[["id", CLASS_COL, "topics"]], on="id", validate="one_to_one",
+            suffixes=("", "--orig"), copy=False)
 
-    # Join DataFrames
-    df = df_tags.merge(
-        df[["id", CLASS_COL, "topics"]], on="id", validate="one_to_one",
-        suffixes=("", "--orig"), copy=False)
+        corpus_dfs[split] = df
 
-    # Count tags
-    for tag_col in df.filter(regex=r"^tag_.+").columns:
-        print(f"*** {tag_col} ***")
-        for val, count in df[tag_col].value_counts().items():
+    # Join all splits
+    corpus_dfs["all"] = pd.concat(
+        corpus_dfs.values(), copy=False, ignore_index=True)
+
+    for split, df in corpus_dfs.items():
+        print(f"\n\n{split}\n{30*'-'}")
+
+        # Count tags
+        for tag_col in df.filter(regex=r"^tag_.+").columns:
+            print(f"*** {tag_col} ***")
+            for val, count in df[tag_col].value_counts().items():
+                percent = count * 100 / len(df)
+                print(f"    {val}: {count} ({percent:2.2f}%)")
+
+        # Count topics
+        print(f"*** topics ***")
+        topics, count = np.unique(
+            list(
+                chain.from_iterable(
+                    df["topics"].dropna().tolist())),
+            return_counts=True)
+        for val, count in zip(topics, count):
             percent = count * 100 / len(df)
             print(f"    {val}: {count} ({percent:2.2f}%)")
-
-    # Count topics
-    print(f"*** topics ***")
-    topics, count = np.unique(
-        list(
-            chain.from_iterable(
-                df["topics"].tolist())),
-        return_counts=True)
-    for val, count in zip(topics, count):
-        percent = count * 100 / len(df)
-        print(f"    {val}: {count} ({percent:2.2f}%)")
 
 
 def plot_topics(

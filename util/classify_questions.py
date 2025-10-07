@@ -7,6 +7,8 @@ Helper script to classify questions in equal-sized classes:
  - very hard
 """
 
+import os
+
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -56,6 +58,9 @@ def shannon_entropy(instance: dict[str, any] | pd.Series,
     The log is calculated on base 10 unless `use_natural_log` is True, which
     will use base e.
     """
+    if "medshake" not in instance or not isinstance(instance["medshake"], dict):
+        return np.nan
+
     log_fn = np.log if use_natural_log else np.log10
     data: dict[str, int] = {
         k: v["nb_answer"]
@@ -146,7 +151,15 @@ def load_corpus(corpus: str | list[dict] | pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def plot_question_classification(df: pd.DataFrame, scatter_path: str) -> None:
+def plot_question_classification(
+        corpus_path: str = "data/test-medshake-score.json",
+        scatter_path: str = "output/plots/questions_classes_medshake_and_shannon.png",
+) -> None:
+    """
+    Scatter plot of questions and difficulties (MedShake, Shannon).
+    """
+    df = load_corpus(corpus_path)
+
     # Plot with classes
     fig, ax = plt.subplots(nrows=2, sharex=True, figsize=(8, 12))
     fig.suptitle("MCQ Question Classification")
@@ -243,13 +256,35 @@ def plot_num_answers_distribution(
     fig.savefig(bars_path.replace(".png", f"{path_suffix}.png"))
 
 
+def main_plot_num_answers(
+        corpus_path: str = "data/test-medshake-score.json",
+        bars_path: str = "output/plots/num_answers.png",
+):
+    """
+    Generate bar plots of nbr_correct_answers per difficulty class, for MedShake
+    and Shannon difficulty metrics.
+    """
+    df = load_corpus(corpus_path)
+    class_cols = ("medshake_class", "shannon_class")
+    for class_col in class_cols:
+        for bars_stack in (True, False):
+            plot_num_answers_distribution(
+                df,
+                bars_path,
+                bars_stack_by_class=bars_stack,
+                class_col=class_col,
+            )
+
+
 def get_average_by_difficulty(
         corpus: str | list[dict] | pd.DataFrame,
         match_results: list[bool],
         hamming_results: list[float],
         medshake_results: list[float],
 ) -> tuple[dict[str, float], dict[str, float], dict[str, float]]:
-
+    """
+    Calculate average of evaluation metrics per difficulty class.
+    """
     if not isinstance(corpus, pd.DataFrame):
         df = load_corpus(corpus)
     else:
@@ -278,36 +313,49 @@ def get_average_by_difficulty(
     return matches_avg, hamming_avg, medshake_avg
 
 
-def main() -> None:
-    df = load_corpus("data/test-medshake-score.json")
-
-    # Scatter plot of questions and difficulties (MedShake, Shannon)
-    #
-    plot_question_classification(
-        df,
-        "output/plots/questions_classes_medshake_and_shannon.png",
+def test_get_average_by_difficulty():
+    emr, ham, med = get_average_by_difficulty(
+        "data/test-medshake-score.json",
+        np.random.choice(a=[False, True], size=(1000,)),
+        np.random.rand(1000),
+        np.random.rand(1000),
     )
+    print(emr)
+    print(ham)
+    print(med)
 
-    # Bar plots of question difficulty vs number of correct answers
-    #
-    class_cols = ("medshake_class", "shannon_class")
-    for class_col in class_cols:
-        for bars_stack in (True, False):
-            plot_num_answers_distribution(
-                df,
-                "output/plots/num_answers.png",
-                bars_stack_by_class=bars_stack,
-                class_col=class_col,
-            )
 
-    # emr, ham, med = get_average_by_difficulty(
-    #     df,
-    #     np.random.choice(a=[False, True], size=(1000,)),
-    #     np.random.rand(1000),
-    # )
-    # print(emr)
-    # print(ham)
-    # print(med)
+def count_samples_per_class(class_col: str = CLASS_COL):
+    """
+    Counts the number of samples per difficulty class and in each split.
+    """
+    paths = (
+        "data/train-with-medshake.json",
+        "data/dev-with-medshake.json",
+        "data/test-medshake-score.json",
+    )
+    count_by_class_split = {}
+    for p in paths:
+        if os.path.exists(p):
+            corpus = load_corpus(p)
+            by_class = corpus.groupby(by=class_col, observed=True)
+            count_by_class_split[os.path.basename(p)] = {
+                _cls: len(_df)
+                for _cls, _df in by_class
+            }
+    for split, counts in count_by_class_split.items():
+        print(split)
+        for k, v in counts.items():
+            print("  ", k, v)
+
+
+def main(method_name: str, *args, **kwargs):
+    import inspect
+    module = inspect.getmodule(main)
+    method = getattr(module, method_name)
+    if not method:
+        raise f"Method '{method_name}' not found"
+    return method(*args, **kwargs)
 
 
 if __name__ == "__main__":
