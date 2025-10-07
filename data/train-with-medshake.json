@@ -115338,24 +115338,6 @@
         "missing": true
     },
     {
-        "id": "04c58320a365b34e9e7fc96b9b969731265be6e71453ccc0413b87767b67d460",
-        "question": "Parmi les caract\u00e8res suivants, lequel n'est pas retrouv\u00e9 chez Streptococcus pneumoniae\u00a0?",
-        "answers": {
-            "a": "Pr\u00e9sence d'une capsule",
-            "b": "Catalase n\u00e9gative",
-            "c": "Survie en a\u00e9robiose et ana\u00e9robiose",
-            "d": "Production d'une toxine de Panton-Valentine",
-            "e": "H\u00e9molytique sur g\u00e9lose au sang"
-        },
-        "incorrect_answers": true,
-        "correct_answers": [
-            "d"
-        ],
-        "subject_name": "pharmacie",
-        "nbr_correct_answers": 1,
-        "missing": true
-    },
-    {
         "id": "f3a11a47cb8dc7e9b04a4ae30ce6ff564cc6e3cd933eaba283302d7f23f2fdeb",
         "question": "A propos de l'oxyurose\u00a0:",
         "answers": {
