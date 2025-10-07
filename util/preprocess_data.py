@@ -240,11 +240,13 @@ def student_rates(
 
 def count_total_students():
     """
-    Counts the total of student answers per corpus split and question averages.
+    Estimates the average number of student answers per question and per split
+    (train, dev, test), based on the total of student answers available and the
+    expected number of correct choices.
     """
     paths = (
-        "data/train-MERGED-FIXED-CLEAN.json",
-        "data/dev-medshake-score.json",
+        "data/train-with-medshake.json",
+        "data/dev-with-medshake.json",
         "data/test-medshake-score.json",
     )
     num_answers_split = {}
@@ -254,6 +256,7 @@ def count_total_students():
                 corpus = json.load(fp)
             num_answers = [
                 sum(v["nb_answer"] for v in s["medshake"].values())
+                / s["nbr_correct_answers"]
                 for s in corpus
                 if "medshake" in s
             ]
@@ -261,7 +264,7 @@ def count_total_students():
     for k, v in num_answers_split.items():
         print(k, sum(v), np.average(v))
     print(
-        "Total",
+        "Overall average",
         np.average([np.average(v) for v in num_answers_split.values()]))
     # return num_answers_split
 
