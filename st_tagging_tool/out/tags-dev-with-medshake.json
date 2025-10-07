@@ -1448,7 +1448,7 @@
         "id": "87b84fcbdaba6de905ee84f63a496918db85929f419053f66442588d02ebd023",
         "tag_negation": "no",
         "tag_composition": "no",
-        "tag_mode": "affirmation",
+        "tag_mode": "instruction",
         "tag_intruder": "no",
         "tag_answer": "undefined"
     },

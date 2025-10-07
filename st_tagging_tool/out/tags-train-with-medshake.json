@@ -7683,7 +7683,7 @@
     "6cb598f2477e38c2e471873cc1f93e39a1baa08c72f281c7087f23b915736dd6": {
         "id": "6cb598f2477e38c2e471873cc1f93e39a1baa08c72f281c7087f23b915736dd6",
         "tag_negation": "no",
-        "tag_composition": "no",
+        "tag_composition": "yes",
         "tag_mode": "affirmation",
         "tag_intruder": "no",
         "tag_answer": "multiple"
@@ -9191,7 +9191,7 @@
     "81b4064cb22bf884519d8ecb24bc19db3a00f6e1e368ab56eea846aa11426c86": {
         "id": "81b4064cb22bf884519d8ecb24bc19db3a00f6e1e368ab56eea846aa11426c86",
         "tag_negation": "no",
-        "tag_composition": "no",
+        "tag_composition": "yes",
         "tag_mode": "affirmation",
         "tag_intruder": "no",
         "tag_answer": "undefined"
@@ -13616,7 +13616,7 @@
     "c0c9d0bc04ba037a5ac46c8cba94fc740299199313fb2e6b0b9f676cce7bd413": {
         "id": "c0c9d0bc04ba037a5ac46c8cba94fc740299199313fb2e6b0b9f676cce7bd413",
         "tag_negation": "no",
-        "tag_composition": "no",
+        "tag_composition": "yes",
         "tag_mode": "affirmation",
         "tag_intruder": "no",
         "tag_answer": "multiple"
