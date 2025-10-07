@@ -34,5 +34,6 @@ umap-learn
 # linear regression
 statsmodels
 
-# NLP for extracting n-grams
+# NLP for extracting n-grams and syntatic tree
 nltk
+stanza
