@@ -55,7 +55,7 @@ def save_tags(df_tags, tags, key):
             for id, data in df_tags_dict.items()
             if len(data.keys()) > 1
         }
-        with open(TAGS_PATH, "w") as fp:
+        with open(tags_path, "w") as fp:
             json.dump(df_tags_dict, fp, indent=4)
     return handler
 
@@ -66,22 +66,40 @@ def btn_nav_click(next: bool = True):
     return handler
 
 
+def on_dataset_change():
+    if "main_df" in st.session_state:
+        del st.session_state["main_df"]
+    sync_query_params("ds", "")()
+
+
 st.set_page_config(
     page_title="QCM annotator", page_icon=None,
     layout="wide", initial_sidebar_state="auto",
     menu_items=None)
 
 
+# Source and output dataset selection
+with st.sidebar:
+    ds = st.selectbox(
+        "Dataset",
+        key="ds",
+        options=list(DATASETS),
+        index=list(DATASETS).index(st.query_params.get("ds", DATASETS_DEFAULT)),
+        on_change=on_dataset_change)
+    data_path = DATASETS[ds][0]
+    tags_path = DATASETS[ds][1]
+
+
 if "main_df" not in st.session_state:
-    df = data = pd.read_json(DATA_PATH)
+    df = pd.read_json(data_path)
     st.session_state["main_df"] = df
 else:
     df = st.session_state["main_df"]
 
-if not os.path.exists(TAGS_PATH):
-    with open(TAGS_PATH, "w") as fp:
+if not os.path.exists(tags_path):
+    with open(tags_path, "w") as fp:
         fp.write("{}")
-df_tags = pd.read_json(TAGS_PATH, orient="index")
+df_tags = pd.read_json(tags_path, orient="index")
 
 
 # Custom styles
@@ -119,6 +137,10 @@ st.markdown("""
 
     .st-key-tags div[role="radiogroup"] > label:hover {
         background: #EEEEEE;
+    }
+
+    .st-key-tags div[role="radiogroup"] > label:hover > div:last-child {
+        color: #0e1117;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -168,15 +190,31 @@ with st.sidebar:
             step=1, min_value=0, max_value=5,
             value=int(st.query_params.get("num_answers", 0)),
             on_change=sync_query_params("num_answers", 0)),
-        "difficulty": st.slider(
+        "difficulty": None,
+    }
+
+    # Toggle to enable filtering by difficulty. Enabling this will also ignore
+    # the samples for which student data is not available.
+    by_difficulty = st.toggle(
+        "Filter by difficulty",
+        key="by_difficulty",
+        value=st.query_params.get("by_difficulty", False),
+        on_change=sync_query_params("by_difficulty", False))
+    if by_difficulty:
+        filters["difficulty"] = st.slider(
             "Difficulty", 0, 100, # min: 0, max: 100
             key="difficulty",
             value=[
                 int(x)
                 for x in st.query_params.get_all("difficulty") or (0, 100)
             ],
-            on_change=sync_query_params("difficulty", (0, 100))),
-    }
+            on_change=sync_query_params("difficulty", (0, 100)))
+    else:
+        # Completely clear remains of the "difficulty" filter
+        if "difficulty" in st.query_params:
+            del st.query_params["difficulty"]
+        if "difficulty" in st.session_state:
+            del st.session_state["difficulty"]
 
     # Tag filters (extra filters that look into tags assigned to questions)
     st.subheader("Tags")
@@ -215,7 +253,7 @@ with st.sidebar:
 
     # Filters from tags
     for key, value in filters_tags.items():
-        if value and value != "":
+        if value and value != "" and key in df_tags:
             if value == TAGS_EMPTY:
                 filters_df = filters_df \
                     & (df["id"].isin(df_tags[df_tags[key].isna()].index)
@@ -278,7 +316,8 @@ answers = [
 st.markdown(f"**Answers**:\n{''.join(answers)}")
 st.markdown(f"**Difficulty**: {item.medshake_difficulty}")
 st.markdown(f"**Year**: {item.year}")
-st.markdown(f"**Topics**: {', '.join(item.topics)}")
+st.markdown(f"**Topics**: {', '.join(item.topics)
+                           if isinstance(item.topics, list) else "nan"}")
 
 
 # Tagging tools

@@ -1,5 +1,19 @@
-DATA_PATH = "data/train-MERGED-FIXED-CLEAN.json"
-TAGS_PATH = "out/tags-train-MERGED-FIXED-CLEAN.json"
+DATASETS_DEFAULT = "train"
+DATASETS = {
+    "train": (
+        "data/train-with-medshake.json",
+        "out/tags-train-with-medshake.json",
+    ),
+    "dev": (
+        "data/dev-with-medshake.json",
+        "out/tags-dev-with-medshake.json",
+    ),
+    "test": (
+        "data/test-medshake-score.json",
+        "out/tags-test-medshake-score.json",
+    ),
+}
+
 TAGS_EMPTY = "n/a"
 TAGS_OPTS_NEGATION = (TAGS_EMPTY, "no", "yes")
 TAGS_OPTS_COMPOSITION = (TAGS_EMPTY, "no", "yes")
