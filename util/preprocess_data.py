@@ -31,6 +31,7 @@ import deft
 from util.classify_questions import (
     get_average_by_difficulty,
     load_corpus,
+    shannon_entropy,
 )
 from util.process_output import (
     get_results_dataframe,
@@ -784,35 +785,120 @@ def extract_missing_corpus():
         fp.write("\n")
 
 
-def concat_corpus():
+def concat_corpus(
+        join_splits: bool = True, separate_tags: bool = True,
+        rename_medshake_diff: bool = False, include_shannon_diff: bool = False,
+):
     """
     Concat multiple splits of the corpus into one file.
+
+    :param join_splits:
+        Whether to join test/dev/train in a single file.
+    :param separate_tags:
+        Whether to save a separate file for tags. If False, tags are included in
+        each sample.
+    :param rename_medshake_diff:
+        Whether to rename "medshake_difficulty" to "naive_difficulty" (change
+        used when sharing the dataset)
+    :param include_shannon_diff:
+        Whether to include "shannon_difficulty", a new field based on our
+        proposal for a difficulty metric based on the Shannon entropy (used when
+        sharing the dataset).
     """
-    basedir = "data"
+    base_dir = "data"
     files = [
         "train-with-medshake.json",
+        "dev-with-medshake.json",
         "test-medshake-score.json",
     ]
-    output_file = "train+test-with-medshake.json"
+
+    out_dir = "data"  # "ranlp2025_data"
+    out_full_file = "all-with-medshake.json"
+    out_files = [
+        "train-with-medshake.json",  # "data_train.json",
+        "dev-with-medshake.json",  # "data_dev.json",
+        "test-medshake-score.json",  # "data_test.json",
+    ]
+
+    all_bases = []
+    all_tags = []
+
+    # Load files
+    for f in files:
+        for prefix in ("", "tags-"):
+            print(f"{base_dir}/{prefix}{f}")
+            with open(f"{base_dir}/{prefix}{f}", encoding="utf-8") as fp:
+                _json = json.load(fp)
+
+            # Enrich dataset
+            if not prefix and (rename_medshake_diff or include_shannon_diff):
+                for x in _json:
+                    if "medshake" in x:
+                        if rename_medshake_diff:
+                            x["naive_difficulty"] = x["medshake_difficulty"]
+                            del x["medshake_difficulty"]
+                        if include_shannon_diff:
+                            x["shannon_difficulty"] = shannon_entropy(x)
+
+            if prefix:
+                all_tags.append(_json)
+            else:
+                all_bases.append(_json)
 
     # Concat corpus and tags files
-    for prefix in ("", "tags-"):
-        content = []
-        if prefix:
-            content = {}
-        for f in files:
-            with open(f"{basedir}/{prefix}{f}", encoding="utf-8") as fp:
-                if prefix:
-                    content.update(json.load(fp))
-                else:
-                    # Exclude records without MedShake data (applies to "test")
-                    content.extend([
-                        x for x in json.load(fp)
-                        if "medshake" in x
-                    ])
-        output = f"{basedir}/{prefix}{output_file}"
-        with open(output, "w", encoding="utf-8") as fp:
-            json.dump(content, fp, indent=4, ensure_ascii=False)
+    if join_splits:
+        joined_bases = []
+        joined_tags = {}
+        for base, tags in zip(all_bases, all_tags):
+            joined_bases.extend(base)
+            # Exclude records without MedShake data ("train")
+            # joined_bases.extend([
+            #     x for x in base
+            #     if "medshake" in x
+            # ])
+            joined_tags.update(tags)
+        if separate_tags:
+            for prefix in ("", "tags-"):
+                output = f"{out_dir}/{prefix}{out_full_file}"
+                with open(output, "w", encoding="utf-8") as fp:
+                    json.dump(
+                        joined_tags if prefix else joined_bases,
+                        fp, indent=4, ensure_ascii=False)
+        else:
+            merged_data = [
+                {
+                    **base,
+                    **{
+                        k: v
+                        for k, v in joined_tags[base["id"]].items()
+                        if k not in ("id", "highlight")
+                    }
+                }
+                for base in joined_bases
+            ]
+            output = f"{out_dir}/{out_full_file}".replace(".", "-and-tags.")
+            with open(output, "w", encoding="utf-8") as fp:
+                json.dump(merged_data, fp, indent=4, ensure_ascii=False)
+
+    # Separate files per split
+    else:
+        # (Note: Separate tags and separate splits is the same as doing nothing)
+        if not separate_tags:
+            for f, base, tags in zip(out_files, all_bases, all_tags):
+                merged_data = [
+                    {
+                        **x,
+                        **{
+                            k: v
+                            for k, v in tags[x["id"]].items()
+                            if k not in ("id", "highlight")
+                        }
+                    }
+                    for x in base
+                ]
+                output = f"{out_dir}/{f}".replace(".", "-and-tags.")
+                with open(output, "w", encoding="utf-8") as fp:
+                    json.dump(merged_data, fp, indent=4, ensure_ascii=False)
 
 
 def main(method_name: str, *args, **kwargs):

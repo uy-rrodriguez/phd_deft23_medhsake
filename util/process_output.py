@@ -155,8 +155,12 @@ def load_log_files(paths: list[str], pattern: str = None) -> list[dict]:
     return data
 
 
-def load_output_files(paths: list[str], corpus_path: str,
-                 pattern: str = None) -> list[dict]:
+def load_output_files(
+        paths: list[str],
+        corpus_path: str,
+        pattern: str = None,
+        include_answers: bool = False,
+) -> list[dict]:
     """
     Loads output files and returns the list of extracted results.
     """
@@ -173,6 +177,8 @@ def load_output_files(paths: list[str], corpus_path: str,
         all_match = []
         all_hamming = []
         all_medshake = []
+        all_generated = []
+        all_expected = []
         with open(path, "r") as f:
             for i, line in enumerate(f.readlines()):
                 try:
@@ -192,6 +198,9 @@ def load_output_files(paths: list[str], corpus_path: str,
                 all_hamming.append(hamming_rate)
                 all_medshake.append(medshake_rate)
 
+                all_generated.append(generated)
+                all_expected.append(expected)
+
         emr_by_class, hamming_by_class, medshake_by_class = \
             get_average_by_difficulty(
                 corpus,
@@ -209,6 +218,9 @@ def load_output_files(paths: list[str], corpus_path: str,
             "hamming_by_class": hamming_by_class,
             "medshake_by_class": medshake_by_class,
         }
+        if include_answers:
+            results["generated"] = all_generated
+            results["expected"] = all_expected
         # print(json.dumps(results, indent=2), file=sys.stderr)
         data.append(results)
     return data
@@ -356,8 +368,10 @@ def load_results(
         regex_prompt_nbr: int = None,
         regex_no_prompt: bool = None,
         regex_finetuned: bool = None,
+        regex_shots_nbr: int = None,
         regex_no_shots: bool = None,
         regex_answer_txt: bool = None,
+        include_answers: bool = False,
 ) -> list[dict]:
     """
     Loads and returns result data from output files found in the given
@@ -369,6 +383,7 @@ def load_results(
     """
     suffix = gen_output_suffix(
         regex_prompt_nbr=regex_prompt_nbr,
+        regex_shots_nbr=regex_shots_nbr,
         regex_finetuned=regex_finetuned,
         regex_answer_txt=regex_answer_txt,
     )
@@ -382,6 +397,7 @@ def load_results(
             regex_prompt_nbr=regex_prompt_nbr,
             regex_no_prompt=regex_no_prompt,
             regex_finetuned=regex_finetuned,
+            regex_shots_nbr=regex_shots_nbr,
             regex_no_shots=regex_no_shots,
             regex_answer_txt=regex_answer_txt,
         )
@@ -393,7 +409,8 @@ def load_results(
         ])
         print(f"Files found ({len(paths)}):", *paths, sep="\n", file=sys.stderr)
         # results = load_log_files(paths, pattern)
-        results = load_output_files(paths, corpus_path, pattern)
+        results = load_output_files(
+            paths, corpus_path, pattern, include_answers=include_answers)
         # print("Results:", results, file=sys.stderr)
 
         if not results:
@@ -766,12 +783,13 @@ def plot_rates_by_hyper(
 
 
 def results_summary(
-        basedir: str,
+        basedir: str = "output/mistral/tuned_017_20250304/base/",
         corpus_path: str = "data/test-medshake-score.json",
         force_reload: bool = False,
         regex_prompt_nbr: int = None,
         regex_no_prompt: bool = None,
         regex_finetuned: bool = None,
+        regex_shots_nbr: int = None,
         regex_no_shots: bool = None,
         regex_answer_txt: bool = None,
         highlight_top: bool = True,
@@ -783,6 +801,7 @@ def results_summary(
         regex_prompt_nbr=regex_prompt_nbr,
         regex_no_prompt=regex_no_prompt,
         regex_finetuned=regex_finetuned,
+        regex_shots_nbr=regex_shots_nbr,
         regex_no_shots=regex_no_shots,
         regex_answer_txt=regex_answer_txt,
     )
@@ -932,6 +951,16 @@ def mann_whitney_test(
         model_results_df = model_results_df.groupby(by="id").mean()
         model_results[model_name] = model_results_df
 
+    # Add human results to comparison
+    from preprocess_data import student_rates
+    human_results = student_rates(corpus=corpus_path, print_results=False)
+    del human_results["emr_by_class"]
+    del human_results["hamming_by_class"]
+    del human_results["medshake_by_class"]
+    # model_results["human"] = pd.DataFrame(human_results)
+    model_results["human"] = human_results
+    model_names.append("human")
+
     from scipy.stats import mannwhitneyu
     from itertools import combinations
     results = {}
@@ -964,6 +993,86 @@ def mann_whitney_test(
         for a, r in results.items()
     })
     print("\nStatistics:\n", stats)
+
+
+def results_f1_summary(
+        basedir: str = "output/mistral/tuned_017_20250304/base/",
+        corpus_path: str = "data/test-medshake-score.json",
+        force_reload: bool = False,
+        regex_prompt_nbr: int = None,
+        regex_no_prompt: bool = None,
+        regex_finetuned: bool = None,
+        regex_shots_nbr: int = None,
+        regex_no_shots: bool = None,
+        regex_answer_txt: bool = None,
+        highlight_top: bool = True,
+) -> None:
+    from sklearn.metrics import (
+        accuracy_score,
+        f1_score,
+    )
+    from classify_questions import LABEL_COLOURS, CLASS_COL
+
+    results = load_results(
+        basedir=basedir,
+        corpus_path=corpus_path,
+        force_reload=force_reload,
+        regex_prompt_nbr=regex_prompt_nbr,
+        regex_no_prompt=regex_no_prompt,
+        regex_finetuned=regex_finetuned,
+        regex_shots_nbr=regex_shots_nbr,
+        regex_no_shots=regex_no_shots,
+        regex_answer_txt=regex_answer_txt,
+        include_answers=True,
+    )
+
+    corpus = load_corpus(corpus_path)
+    df = pd.DataFrame(results)
+    # print(df)
+
+    # all_f1_by_class = []
+    all_f1_avg_by_class = []
+    all_f1_avg = []
+    # Loop over result files
+    for i, row in df.iterrows():
+        all_f1 = []
+        f1_by_class = {k: [] for k in LABEL_COLOURS}
+        for (i, sample), (exp, pred) in zip(corpus.iterrows(), zip(row["expected"], row["generated"])):
+            f1 = f1_score(y_true=["".join(exp)], y_pred=["".join(pred)], average="macro")
+            all_f1.append(f1)
+            f1_by_class[sample[CLASS_COL]].append(f1)
+
+        # Calculate average of evaluation metric per difficulty class.
+        f1_avg_by_class = {
+            k: np.mean(v).item()
+            for k, v in f1_by_class.items()
+        }
+
+        all_f1_avg.append(np.mean(all_f1))
+        # all_f1_by_class.append(f1_by_class)
+        all_f1_avg_by_class.append(f1_avg_by_class)
+
+    df["f1"] = all_f1_avg
+
+    df_f1 = pd.DataFrame(all_f1_avg_by_class)
+    df_f1.rename(inplace=True, columns=lambda k: "f1_" + "_".join(k.split()))
+    # print(df_f1)
+    df = df.join(df_f1)
+
+    df.drop(inplace=True, columns=[
+        "emr_by_class", "hamming_by_class", "medshake_by_class", "expected",
+        "generated",
+    ])
+    print(df)
+
+    # box_plot_results(df, basedir=basedir, suffix=suffix, classes_together=False)
+
+    df = group_results_by_shots(df)
+    print(df.filter(items=["f1", "f1_very_easy", "f1_easy", "f1_medium", "f1_hard", "f1_very_hard"]))
+    # print_results(df, split_rates=True, head_only=False)
+
+    # latex_print_results(df, single_table=True, table_title="Results of model X",
+    #                     highlight_top=highlight_top)
 
 
 def main(method_name: str = "results_summary", *args, **kwargs):

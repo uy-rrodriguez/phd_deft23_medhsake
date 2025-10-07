@@ -595,24 +595,35 @@ def plot_tags_topics(
 def plot_regressions(
         include_inference: bool = False,
         selected_only: bool = False,
+        hand_selected_only: bool = False,
+        lang: str = "en",
+        dpi: float = None, # e.g. 300 for large figures, default is 100
 ):
     """
     Plots to compare linear regressions of Humans vs LLMs.
     """
     model_name = "mistral-7b-deft_017_20250304"
     figures_dir = "logits+inference" if include_inference else "logits"
-    figure_name = "sel_feats" if selected_only else "all_feats"
+    if selected_only:
+        figure_name = "sel_feats"
+    elif hand_selected_only:
+        selected_only = True
+        figure_name = "hand_sel_feats"
+    else:
+        figure_name = "all_feats"
+    dpi_suffix = f"_{dpi}dpi" if dpi is not None else ""
+    figure_name = f"{figure_name}{'_fr' if lang == 'fr' else ''}{dpi_suffix}"
     figure_path = f"output/compare/regression/{model_name}/{figures_dir}/{figure_name}.png"
     os.makedirs(os.path.dirname(figure_path), exist_ok=True)
 
     basedir = "output/regression/linear/20250320_train+test"
     bar_config = {
         "humans": {
-            "label": "Humans", "colour": "#1F77B4",
+            "label": {"en": "Humans", "fr": "Humains"}, "colour": "#1F77B4",
             "coefs": f"{basedir}/humans/full_no_best/regression_coefs.json",
         },
         "logits": {
-            "label": "LLM logits", "colour": "#FF7F0E",
+            "label": {"en": "LLM logits", "fr": "Logits modèle"}, "colour": "#FF7F0E",
             "coefs": f"{basedir}/logits/full_no_best/regression_coefs.json",
         },
         # "argmax": {"label": "LLM argmax", "colour": "#AB1F90"},
@@ -627,17 +638,18 @@ def plot_regressions(
     bar_width = 0.3
 
     sel_feats_names = None
-    # sel_feats_names = [
-    #     "tag_answer_single", "tag_answer_undefined", "tag_answer_multiple",
+    if hand_selected_only:
+        sel_feats_names = [
+            "tag_answer_single", "tag_answer_undefined", "tag_answer_multiple",
 
-    #     "topic_chimieanalytique", "topic_immunologie", "topic_galénique",
-    #     "topic_physiologie", "topic_parasitologie", "topic_mycologie",
-    #     "topic_enzymologie", "topic_bactériologie", "topic_virologie",
-    #     "topic_statistiques",
+            "topic_chimieanalytique", "topic_immunologie", "topic_galénique",
+            "topic_physiologie", "topic_parasitologie", "topic_mycologie",
+            "topic_enzymologie", "topic_bactériologie", "topic_virologie",
+            "topic_statistiques",
 
-    #     "np_count", "q_len", "avg_vp_words", "qa_len", "vp_count",
-    #     "avg_word_count", "word_count",
-    # ]
+            "np_count", "q_len", "avg_vp_words", "qa_len", "vp_count",
+            "avg_word_count", "word_count",
+        ]
 
     feats_df = None
     for k, config in bar_config.items():
@@ -687,8 +699,11 @@ def plot_regressions(
 
     # Plot selected features
     fig, ax = plt.subplots(figsize=(12, 3) if selected_only else (26, 4))
-    fig.suptitle(
-        f"Humans vs LLMs: {'Selected' if selected_only else 'All'} features")
+    suptitle = {
+        "en": f"Humans vs LLMs: {'Selected' if selected_only else 'All'} features",
+        "fr": f"Humains face aux LLMs: Charactéristiques{' sélectionnées' if selected_only else ''}",
+    }
+    fig.suptitle(suptitle[lang])
     ax.set_ylabel("Coefficient")
     ax.xaxis.set_tick_params(rotation=60 if selected_only else 80)
     ax.axhline(y=0, color="black", linestyle="-")
@@ -701,14 +716,20 @@ def plot_regressions(
     for i, (k, config) in enumerate(bar_config.items()):
         ax.bar(
             x + bar_width*i, feats_df[k].values,
-            label=config["label"], color=config["colour"],
+            label=config["label"][lang], color=config["colour"],
             width=bar_width, align="center")
     ax.set_xticks(x + (len(bar_config)-1) / 2 * bar_width)
     ax.set_xticklabels(feats_df.index.tolist())
-    ax.set_yticks(np.arange(-0.25, 0.25, step=0.05))
+    if hand_selected_only:
+        ax.set_yticks(np.arange(-0.20, 0.20, step=0.05))
+    else:
+        ax.set_yticks(np.arange(-0.25, 0.25, step=0.05))
 
     ax.legend()
-    fig.savefig(figure_path, bbox_inches="tight")
+    if dpi is not None:
+        fig.savefig(figure_path, bbox_inches="tight", dpi=dpi)
+    else:
+        fig.savefig(figure_path, bbox_inches="tight")
 
 
 def calc_argmax_rates(
@@ -868,12 +889,12 @@ def eval_rates_summary():
         deltas = df \
             .apply(lambda x: [x[k] - x["inference"] for k in x.index]) \
             .apply(lambda x: [v if v != 0 else "" for v in x]) \
-            .rename(columns=lambda k: f"$\Delta$\_{k}")
+            .rename(columns=lambda k: f"$\\Delta$\\_{k}")
         df = df.join(deltas) \
             .rename(
-                index=lambda k: "seq\_logp (no letters)"
+                index=lambda k: "seq\\_logp (no letters)"
                 if k == "seq_logp-letters_logp+eos_logp"
-                else k.replace("_", "\_"))
+                else k.replace("_", "\\_"))
         df.columns.name = " " * 22
         print(
             df.style

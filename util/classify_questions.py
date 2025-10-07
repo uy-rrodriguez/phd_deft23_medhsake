@@ -24,6 +24,13 @@ LABEL_COLOURS = {
     "hard": "#3B528B",
     "very hard": "#440154",
 }
+LABEL_FR = {
+    "very easy": "t.facile",
+    "easy": "facile",
+    "medium": "moyen",
+    "hard": "difficile",
+    "very hard": "t.difficile",
+}
 
 
 def shannon_entropy(instance: dict[str, any] | pd.Series,

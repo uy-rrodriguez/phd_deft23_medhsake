@@ -20,17 +20,11 @@ from transformers import AutoModel, AutoTokenizer
 sys.path.append(os.path.abspath("."))
 
 from util.preprocess_data import calc_first_last_words, calc_qa_lengths
-from util.classify_questions import CLASS_COL, CLASS_COLOUR_COL, load_corpus
-
-
-# LABELS = ["very hard", "hard", "medium", "easy", "very easy"]
-LABEL_COLOURS = {
-    "very easy": "#FDE725",
-    "easy": "#5EC962",
-    "medium": "#21918C",
-    "hard": "#3B528B",
-    "very hard": "#440154",
-}
+from util.classify_questions import (
+    CLASS_COL, CLASS_COLOUR_COL,
+    LABEL_COLOURS, LABEL_FR,
+    load_corpus,
+)
 
 
 # def load_corpus(corpus: str | dict[str, any]) -> pd.DataFrame:
@@ -157,32 +151,54 @@ def plot_embeddings(
     else:
         print(f"Generating embeddings with '{model_checkpoint}'")
 
+        embeddings = torch.tensor([])
+
         # Maybe extract keywords instead of full question?
         # - spaCy
         # - https://github.com/vgrabovets/multi_rake
-        questions = [q for q in df["question"]]
+        from torch.utils.data import DataLoader
+        dataloader = DataLoader(df["question"][:12], batch_size=6, shuffle=True)
 
         tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
         model = AutoModel.from_pretrained(model_checkpoint)
 
-        encoded_input = tokenizer(
-            questions, padding=True, truncation=True, return_tensors="pt")
-        with torch.no_grad():
-            model_output = model(**encoded_input)
+        for q_batch in dataloader:
+            print("About to tokenize", len(q_batch))
+            encoded_input = tokenizer(
+                q_batch, padding=True, truncation=True,
+                return_tensors="pt")
+            print("Tokenized", encoded_input)
 
-        # Mean Pooling - Take attention mask into account for correct averaging
-        def mean_pooling(model_output, attention_mask):
-            # First element of model_output contains all token embeddings
-            token_embeddings = model_output[0]
-            input_mask_expanded = \
-                attention_mask.unsqueeze(-1) \
-                    .expand(token_embeddings.size()) \
-                    .float()
-            return (
-                torch.sum(token_embeddings * input_mask_expanded, 1)
-                / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
-            )
-        embeddings = mean_pooling(model_output, encoded_input["attention_mask"])
+            with torch.no_grad():
+                print("About to run model", len(encoded_input["input_ids"]))
+                model_output = model.forward(**encoded_input)
+                print("Model ran", model_output)
+
+            # Mean Pooling - Take attention mask into account for correct averaging
+            def mean_pooling(model_output, attention_mask):
+                # First element of model_output contains all token embeddings
+                token_embeddings = model_output[0]
+                input_mask_expanded = \
+                    attention_mask.unsqueeze(-1) \
+                        .expand(token_embeddings.size()) \
+                        .float()
+                return (
+                    torch.sum(token_embeddings * input_mask_expanded, 1)
+                    / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+                )
+            print("About to do mean pooling")
+            batch_embed = mean_pooling(model_output, encoded_input["attention_mask"])
+
+            print(type(batch_embed))
+            print(batch_embed.size())
+            print(batch_embed)
+
+            embeddings = torch.concat([embeddings, batch_embed])
+
+        print(type(embeddings))
+        print(embeddings.size())
+        print(embeddings)
+
         print(f"Saving embeddings to '{embeddings_path}'")
         torch.save(embeddings, embeddings_path)
 
@@ -193,7 +209,11 @@ def plot_embeddings(
         u, s, v = torch.pca_lowrank(embeddings)
         result = torch.matmul(embeddings, v[:, :2])
         df_pca = pd.DataFrame(result, columns=["pca0", "pca1"])
-        extra_cols = ["id", CLASS_COL, CLASS_COLOUR_COL]
+        extra_cols = [
+            "id",
+            "shannon_class", "shannon_colour",
+            "medshake_class", "medshake_colour",
+        ]
         df_pca[extra_cols] = df[extra_cols]
         # print(df_pca)
 
@@ -228,7 +248,11 @@ def plot_embeddings(
 
                 df_tsne = pd.DataFrame(
                     result, columns=tsne.get_feature_names_out())
-                extra_cols = ["id", CLASS_COL, CLASS_COLOUR_COL]
+                extra_cols = [
+                    "id",
+                    "shannon_class", "shannon_colour",
+                    "medshake_class", "medshake_colour",
+                ]
                 df_tsne[extra_cols] = df[extra_cols]
                 # print(df_tsne)
 
@@ -270,7 +294,11 @@ def plot_embeddings(
             # print(result.shape)
 
             df_umap = pd.DataFrame(result, columns=["umap0", "umap1"])
-            extra_cols = ["id", CLASS_COL, CLASS_COLOUR_COL]
+            extra_cols = [
+                "id",
+                "shannon_class", "shannon_colour",
+                "medshake_class", "medshake_colour",
+            ]
             df_umap[extra_cols] = df[extra_cols]
             # print(df_umap)
 
@@ -303,13 +331,13 @@ def main_plot_embeddings(algorithm: str, force_reload: bool = False) -> None:
     assert algorithm in supported, f"Algorithm '{algorithm}' not in {supported}"
 
     print(f"Plot Embeddings with {algorithm}")
-    corpus_path = "data/test-medshake-score.json"
+    corpus_path = "data/all-with-medshake.json"
     df = load_corpus(corpus_path)
     plot_embeddings(
         df,
         algorithm,
-        "output/plots/questions/questions_embed_BGE.pt",
-        f"output/plots/questions/questions_embed_BGE_{algorithm}.png",
+        "output/plots/questions/all_questions_embed_BGE.pt",
+        f"output/plots/questions/all_questions_embed_BGE_{algorithm}.png",
         force_reload=force_reload,
         # model_checkpoint="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
     )
@@ -538,80 +566,133 @@ def main_all() -> None:
 
 
 def plot_tags(
-        corpus_path: str = "data/test-medshake-score.json",
-        tags_path: str = "data/tags-train+test-with-medshake.json",
-        figure_path_tpl: str = "output/plots/tags/train+test/plot.png",
+        corpus_path: str = "data/all-with-medshake-and-tags.json",
+        tags_path: str = None,  # "data/tags-all-with-medshake.json",
+        tags_in_corpus: bool = True,
+        figure_path_tpl: str = "output/plots/tags/all/plot.png",
         single_figure: bool = False,
+        lang: str = "en",  # Supported: en, fr
+        dpi: float = None, # e.g. 300 for large figures, default is 100
 ):
     """
     Plot the distribution of tags amongst the question classes.
     """
+    dpi_suffix = f"_{dpi}dpi" if dpi is not None else ""
+    fig_suffix = f"{'_fr' if lang == 'fr' else ''}{dpi_suffix}"
     os.makedirs(os.path.dirname(figure_path_tpl), exist_ok=True)
 
-    tag_title_map = {
-        "tag_negation": "Negation",
-        "tag_composition": "Composition Required",
-        # "tag_mode": "Question Mode",
-        # "tag_intruder": "Identification of Intruder",
-        "tag_answer": "Number of Choices",
+    y_label = {
+        "en": "Number of samples",
+        "fr": "Nombre d'éléments",
     }
+    tag_title_map = {
+        "tag_negation": {
+            "en": "Negation",
+            "fr": "Négation",
+        },
+        "tag_composition": {
+            "en": "Composition Required",
+            "fr": "Composition Nécessaire",
+        },
+        "tag_mode": {
+            "en": "Question Mode",
+            "fr": "Mode Question",
+        },
+        "tag_intruder": {
+            "en": "Identification of Intruder",
+            "fr": "Identification d'Intrus",
+        },
+        "tag_answer": {
+            "en": "Number of Choices",
+            "fr": "Nombre de Choix",
+        },
+    }
+    tags_fr = {
+        # Translate tag values
+        "no": "non", "yes": "oui",
+        "undefined": "indéfini", "single": "unique",
+    }
+
+    if single_figure:
+        # These tags are less interesting to include in the single image
+        del tag_title_map["tag_mode"]
+        del tag_title_map["tag_intruder"]
 
     df = load_corpus(corpus_path)
 
     # Load tags
-    print(f"Loading tags from '{tags_path}'")
-    df_tags = pd.read_json(tags_path, orient="index")
-    df_tags.drop("tag_highlight", axis=1, inplace=True)
+    if tags_in_corpus:
+        df_tags = df
+    else:
+        print(f"Loading tags from '{tags_path}'")
+        df_tags = pd.read_json(tags_path, orient="index")
+        df_tags.drop("tag_highlight", axis=1, inplace=True)
 
-    # Join DataFrames
-    df_tags = df_tags.merge(
-        df[["id", CLASS_COL]], on="id", validate="one_to_one",
-        suffixes=("", "--orig"), copy=False)
+        # Join DataFrames
+        df_tags = df_tags.merge(
+            df[["id", CLASS_COL]], on="id", validate="one_to_one",
+            suffixes=("", "--orig"), copy=False)
 
     # Plot with classes
     # One bar per class, with stacked tag choices
     if single_figure:
-        fig, ax = plt.subplots(ncols=len(tag_title_map), sharey=True)
-        # ax = [a for a in ax]
-    else:
-        fig, ax = plt.subplots()
-        ax = [ax] * len(tag_title_map)
+        fig, axs = plt.subplots(ncols=len(tag_title_map), sharey=True)
 
-    for tag_col, ax in zip(tag_title_map, ax):
+    for i, tag_col in enumerate(tag_title_map):
         tag_values = sorted(df_tags[tag_col].unique())
         print("Processing", tag_col, tag_values)
-        bars_data = {n: [0] * len(LABEL_COLOURS.keys()) for n in tag_values}
+        bars_data = {n: [0] * len(LABEL_COLOURS) for n in tag_values}
         bars_index = []
-        for idx, label in enumerate(LABEL_COLOURS.keys()):
+        for idx, label in enumerate(LABEL_COLOURS):
             _df = df_tags[df_tags[CLASS_COL] == label]
-            bars_index.append(label)
+            bars_index.append(LABEL_FR[label] if lang == "fr" else label)
             for n, count in _df[tag_col].value_counts().items():
                 bars_data[n][idx] = count
         bar_colours = None
+        if lang == "fr":
+            tag_values = [tags_fr.get(v, v) for v in tag_values]
         legend_data = {
             "labels": tag_values,
             "loc": "lower left",
         }
 
+        if single_figure:
+            ax = axs[i]
+            figsize = (13, 3)
+        else:
+            figsize = (4, 3)
+            fig, ax = plt.subplots()
+
         bars_df = pd.DataFrame(data=bars_data, index=bars_index)
         bars_df.plot.bar(
-            stacked=True, rot=0, color=bar_colours, ax=ax, figsize=(12, 3))
-        ax.set_ylabel("Number of samples")
+            stacked=True, rot=0, color=bar_colours, ax=ax, figsize=figsize)
+        ax.set_ylabel(y_label[lang])
         ax.legend(**legend_data)
 
+        title = {
+            "en": f"Tag {tag_title_map[tag_col]["en"]} per class",
+            "fr": f"Tag {tag_title_map[tag_col]["fr"]} par classe",
+        }
         if single_figure:
-            ax.set_title(f"Tag {tag_title_map[tag_col]} per class")
+            ax.set_title(title[lang])
         else:
             # Save the figure
-            # fig = ax.get_figure()
             path_suffix = f"_{tag_col}"
-            figure_path = figure_path_tpl.replace(".png", f"{path_suffix}.png")
-            fig.suptitle(f"Tag {tag_title_map[tag_col]} per class")
-            fig.savefig(figure_path, bbox_inches="tight")
+            figure_path = \
+                figure_path_tpl.replace(".png", f"{path_suffix}{fig_suffix}.png")
+            fig.suptitle(title[lang])
+            if dpi is not None:
+                fig.savefig(figure_path, bbox_inches="tight", dpi=dpi)
+            else:
+                fig.savefig(figure_path, bbox_inches="tight")
             fig.clear()
 
     if single_figure:
-        fig.savefig(figure_path_tpl, bbox_inches="tight")
+        figure_path = figure_path_tpl.replace(".png", f"{fig_suffix}.png")
+        if dpi is not None:
+            fig.savefig(figure_path, bbox_inches="tight", dpi=dpi)
+        else:
+            fig.savefig(figure_path, bbox_inches="tight")
 
 
 def count_by_tags_topics():
